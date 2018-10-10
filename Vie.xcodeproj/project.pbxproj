@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6FAA65BC84322F294AC93E30 /* Pods_VieUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53FD258A9FD67DAE2393DB47 /* Pods_VieUITests.framework */; };
+		823D3E9BDE46C434512D6E64 /* Pods_VieTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 360B6F7CED58D2169AA1BC12 /* Pods_VieTests.framework */; };
+		C71383CC216DEA3800784CDC /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = C71383CB216DEA3700784CDC /* credentials.plist */; };
+		C71383D3216E053700784CDC /* CustomUItextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71383D2216E053700784CDC /* CustomUItextField.swift */; };
+		C71383D7216E0B1F00784CDC /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71383D6216E0B1F00784CDC /* SignUpVC.swift */; };
 		E7A857ED216C8009002683CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A857EC216C8009002683CD /* AppDelegate.swift */; };
 		E7A857EF216C8009002683CD /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A857EE216C8009002683CD /* MainVC.swift */; };
 		E7A857F2216C8009002683CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7A857F0216C8009002683CD /* Main.storyboard */; };
@@ -14,6 +19,7 @@
 		E7A857F7216C800B002683CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7A857F5216C800B002683CD /* LaunchScreen.storyboard */; };
 		E7A85802216C800B002683CD /* VieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A85801216C800B002683CD /* VieTests.swift */; };
 		E7A8580D216C800B002683CD /* VieUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A8580C216C800B002683CD /* VieUITests.swift */; };
+		EA4503950D51C7407D588B0C /* Pods_Vie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C95FFA22EFCB907A77E36770 /* Pods_Vie.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +40,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2825C181917DFB609ECF06B7 /* Pods-VieTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VieTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-VieTests/Pods-VieTests.release.xcconfig"; sourceTree = "<group>"; };
+		360B6F7CED58D2169AA1BC12 /* Pods_VieTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VieTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		53FD258A9FD67DAE2393DB47 /* Pods_VieUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VieUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		67A7FFB919536A63A723A155 /* Pods-Vie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vie.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Vie/Pods-Vie.debug.xcconfig"; sourceTree = "<group>"; };
+		AA7E0DEA1839441A21154563 /* Pods-VieTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VieTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VieTests/Pods-VieTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B80A59EA93C029CC31EB2CA1 /* Pods-VieUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VieUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-VieUITests/Pods-VieUITests.release.xcconfig"; sourceTree = "<group>"; };
+		C71383CB216DEA3700784CDC /* credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = credentials.plist; sourceTree = "<group>"; };
+		C71383D2216E053700784CDC /* CustomUItextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUItextField.swift; sourceTree = "<group>"; };
+		C71383D6216E0B1F00784CDC /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
+		C95FFA22EFCB907A77E36770 /* Pods_Vie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC69CECEDA1203139C64CF83 /* Pods-Vie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vie.release.xcconfig"; path = "Pods/Target Support Files/Pods-Vie/Pods-Vie.release.xcconfig"; sourceTree = "<group>"; };
+		D690221753A2AFF740EFAB95 /* Pods-VieUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VieUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VieUITests/Pods-VieUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E7A857E9216C8009002683CD /* Vie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7A857EC216C8009002683CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7A857EE216C8009002683CD /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
@@ -54,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA4503950D51C7407D588B0C /* Pods_Vie.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				823D3E9BDE46C434512D6E64 /* Pods_VieTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +88,44 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6FAA65BC84322F294AC93E30 /* Pods_VieUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		52F6B5FA66328C1D65C11388 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				67A7FFB919536A63A723A155 /* Pods-Vie.debug.xcconfig */,
+				CC69CECEDA1203139C64CF83 /* Pods-Vie.release.xcconfig */,
+				AA7E0DEA1839441A21154563 /* Pods-VieTests.debug.xcconfig */,
+				2825C181917DFB609ECF06B7 /* Pods-VieTests.release.xcconfig */,
+				D690221753A2AFF740EFAB95 /* Pods-VieUITests.debug.xcconfig */,
+				B80A59EA93C029CC31EB2CA1 /* Pods-VieUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C71383CF216E04D500784CDC /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				C71383D2216E053700784CDC /* CustomUItextField.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		D370E7B6C8EAAA4FD0EB53FD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C95FFA22EFCB907A77E36770 /* Pods_Vie.framework */,
+				360B6F7CED58D2169AA1BC12 /* Pods_VieTests.framework */,
+				53FD258A9FD67DAE2393DB47 /* Pods_VieUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E7A857E0216C8009002683CD = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +133,8 @@
 				E7A85800216C800B002683CD /* VieTests */,
 				E7A8580B216C800B002683CD /* VieUITests */,
 				E7A857EA216C8009002683CD /* Products */,
+				52F6B5FA66328C1D65C11388 /* Pods */,
+				D370E7B6C8EAAA4FD0EB53FD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -104,6 +158,7 @@
 				E7A857F3216C800B002683CD /* Assets.xcassets */,
 				E7A857F5216C800B002683CD /* LaunchScreen.storyboard */,
 				E7A857F8216C800B002683CD /* Info.plist */,
+				C71383CB216DEA3700784CDC /* credentials.plist */,
 			);
 			path = Vie;
 			sourceTree = "<group>";
@@ -145,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				E7A857EE216C8009002683CD /* MainVC.swift */,
+				C71383D6216E0B1F00784CDC /* SignUpVC.swift */,
 				E7A857EC216C8009002683CD /* AppDelegate.swift */,
 			);
 			path = Controller;
@@ -153,6 +209,7 @@
 		E7A8581D216C80F7002683CD /* Store */ = {
 			isa = PBXGroup;
 			children = (
+				C71383CF216E04D500784CDC /* Helper */,
 			);
 			path = Store;
 			sourceTree = "<group>";
@@ -164,6 +221,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E7A85811216C800B002683CD /* Build configuration list for PBXNativeTarget "Vie" */;
 			buildPhases = (
+				3574791BE33D82ECF03F670D /* [CP] Check Pods Manifest.lock */,
 				E7A857E5216C8009002683CD /* Sources */,
 				E7A857E6216C8009002683CD /* Frameworks */,
 				E7A857E7216C8009002683CD /* Resources */,
@@ -181,9 +239,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E7A85814216C800B002683CD /* Build configuration list for PBXNativeTarget "VieTests" */;
 			buildPhases = (
+				8D47A71A5B2B8DC8C7F34E1D /* [CP] Check Pods Manifest.lock */,
 				E7A857F9216C800B002683CD /* Sources */,
 				E7A857FA216C800B002683CD /* Frameworks */,
 				E7A857FB216C800B002683CD /* Resources */,
+				5491A5BB9784375641F602ED /* [CP] Embed Pods Frameworks */,
+				6C8FB3EB57AD3FA32BD8096C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -199,6 +260,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E7A85817216C800B002683CD /* Build configuration list for PBXNativeTarget "VieUITests" */;
 			buildPhases = (
+				F925FE9D10F81B79C761D55D /* [CP] Check Pods Manifest.lock */,
 				E7A85804216C800B002683CD /* Sources */,
 				E7A85805216C800B002683CD /* Frameworks */,
 				E7A85806216C800B002683CD /* Resources */,
@@ -262,6 +324,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7A857F7216C800B002683CD /* LaunchScreen.storyboard in Resources */,
+				C71383CC216DEA3800784CDC /* credentials.plist in Resources */,
 				E7A857F4216C800B002683CD /* Assets.xcassets in Resources */,
 				E7A857F2216C8009002683CD /* Main.storyboard in Resources */,
 			);
@@ -283,11 +346,110 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3574791BE33D82ECF03F670D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Vie-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5491A5BB9784375641F602ED /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-VieTests/Pods-VieTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VieTests/Pods-VieTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6C8FB3EB57AD3FA32BD8096C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-VieTests/Pods-VieTests-resources.sh",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VieTests/Pods-VieTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8D47A71A5B2B8DC8C7F34E1D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VieTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F925FE9D10F81B79C761D55D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VieUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E7A857E5216C8009002683CD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C71383D7216E0B1F00784CDC /* SignUpVC.swift in Sources */,
+				C71383D3216E053700784CDC /* CustomUItextField.swift in Sources */,
 				E7A857EF216C8009002683CD /* MainVC.swift in Sources */,
 				E7A857ED216C8009002683CD /* AppDelegate.swift in Sources */,
 			);
@@ -460,6 +622,7 @@
 		};
 		E7A85812216C800B002683CD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 67A7FFB919536A63A723A155 /* Pods-Vie.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -478,6 +641,7 @@
 		};
 		E7A85813216C800B002683CD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CC69CECEDA1203139C64CF83 /* Pods-Vie.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -496,6 +660,7 @@
 		};
 		E7A85815216C800B002683CD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AA7E0DEA1839441A21154563 /* Pods-VieTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -517,6 +682,7 @@
 		};
 		E7A85816216C800B002683CD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2825C181917DFB609ECF06B7 /* Pods-VieTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -538,6 +704,7 @@
 		};
 		E7A85818216C800B002683CD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D690221753A2AFF740EFAB95 /* Pods-VieUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -558,6 +725,7 @@
 		};
 		E7A85819216C800B002683CD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B80A59EA93C029CC31EB2CA1 /* Pods-VieUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

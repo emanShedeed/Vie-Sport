@@ -37,6 +37,9 @@ class MainVC: UIViewController , UIScrollViewDelegate{
         
     }
 
-
+    @IBAction func LoginBtnClicked(_ sender: Any) {
+        performSegue(withIdentifier: "goToSignUpVC", sender: self)
+    }
+    
 }
 
