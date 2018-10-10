@@ -12,6 +12,7 @@
 		C71383CC216DEA3800784CDC /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = C71383CB216DEA3700784CDC /* credentials.plist */; };
 		C71383D3216E053700784CDC /* CustomUItextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71383D2216E053700784CDC /* CustomUItextField.swift */; };
 		C71383D7216E0B1F00784CDC /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71383D6216E0B1F00784CDC /* SignUpVC.swift */; };
+		C71383DD216E16AD00784CDC /* HideKeyboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71383DC216E16AD00784CDC /* HideKeyboardVC.swift */; };
 		E7A857ED216C8009002683CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A857EC216C8009002683CD /* AppDelegate.swift */; };
 		E7A857EF216C8009002683CD /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A857EE216C8009002683CD /* MainVC.swift */; };
 		E7A857F2216C8009002683CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7A857F0216C8009002683CD /* Main.storyboard */; };
@@ -49,6 +50,7 @@
 		C71383CB216DEA3700784CDC /* credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = credentials.plist; sourceTree = "<group>"; };
 		C71383D2216E053700784CDC /* CustomUItextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUItextField.swift; sourceTree = "<group>"; };
 		C71383D6216E0B1F00784CDC /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
+		C71383DC216E16AD00784CDC /* HideKeyboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideKeyboardVC.swift; sourceTree = "<group>"; };
 		C95FFA22EFCB907A77E36770 /* Pods_Vie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC69CECEDA1203139C64CF83 /* Pods-Vie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vie.release.xcconfig"; path = "Pods/Target Support Files/Pods-Vie/Pods-Vie.release.xcconfig"; sourceTree = "<group>"; };
 		D690221753A2AFF740EFAB95 /* Pods-VieUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VieUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VieUITests/Pods-VieUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				C71383D2216E053700784CDC /* CustomUItextField.swift */,
+				C71383DC216E16AD00784CDC /* HideKeyboardVC.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -155,6 +158,7 @@
 				E7A8581B216C80C6002683CD /* View */,
 				E7A8581C216C80DC002683CD /* Controller */,
 				E7A8581D216C80F7002683CD /* Store */,
+				C71383CF216E04D500784CDC /* Helper */,
 				E7A857F3216C800B002683CD /* Assets.xcassets */,
 				E7A857F5216C800B002683CD /* LaunchScreen.storyboard */,
 				E7A857F8216C800B002683CD /* Info.plist */,
@@ -209,7 +213,6 @@
 		E7A8581D216C80F7002683CD /* Store */ = {
 			isa = PBXGroup;
 			children = (
-				C71383CF216E04D500784CDC /* Helper */,
 			);
 			path = Store;
 			sourceTree = "<group>";
@@ -448,6 +451,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C71383DD216E16AD00784CDC /* HideKeyboardVC.swift in Sources */,
 				C71383D7216E0B1F00784CDC /* SignUpVC.swift in Sources */,
 				C71383D3216E053700784CDC /* CustomUItextField.swift in Sources */,
 				E7A857EF216C8009002683CD /* MainVC.swift in Sources */,

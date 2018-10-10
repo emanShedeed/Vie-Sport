@@ -17,7 +17,7 @@ class SignUpVC: UIViewController {
         // Do any additional setup after loading the view.
         for textfield in textFields{
             textfield.setBottomBorder()
-            
+            self.hideKeyboardWhenTappedAround() 
         }
     }
 
