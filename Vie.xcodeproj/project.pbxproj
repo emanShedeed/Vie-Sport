@@ -20,6 +20,7 @@
 		E7A857F7216C800B002683CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7A857F5216C800B002683CD /* LaunchScreen.storyboard */; };
 		E7A85802216C800B002683CD /* VieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A85801216C800B002683CD /* VieTests.swift */; };
 		E7A8580D216C800B002683CD /* VieUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A8580C216C800B002683CD /* VieUITests.swift */; };
+		E7CBD127217499D000072F03 /* NotificationNamesExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7CBD126217499D000072F03 /* NotificationNamesExtension.swift */; };
 		EA4503950D51C7407D588B0C /* Pods_Vie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C95FFA22EFCB907A77E36770 /* Pods_Vie.framework */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +68,7 @@
 		E7A85808216C800B002683CD /* VieUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VieUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7A8580C216C800B002683CD /* VieUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VieUITests.swift; sourceTree = "<group>"; };
 		E7A8580E216C800B002683CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E7CBD126217499D000072F03 /* NotificationNamesExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationNamesExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 			children = (
 				C71383D2216E053700784CDC /* CustomUItextField.swift */,
 				C71383DC216E16AD00784CDC /* HideKeyboardVC.swift */,
+				E7CBD126217499D000072F03 /* NotificationNamesExtension.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -455,6 +458,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C71383DD216E16AD00784CDC /* HideKeyboardVC.swift in Sources */,
+				E7CBD127217499D000072F03 /* NotificationNamesExtension.swift in Sources */,
 				C71383D7216E0B1F00784CDC /* SignUpVC.swift in Sources */,
 				C71383D3216E053700784CDC /* CustomUItextField.swift in Sources */,
 				E7A857EF216C8009002683CD /* MainVC.swift in Sources */,

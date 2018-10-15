@@ -32,13 +32,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             print("\(error.localizedDescription)")
         } else {
             // Perform any operations on signed in user here.
-            let _ = user.userID                  // For client-side use only!
-            let _ = user.authentication.idToken // Safe to send to the server
-            let _ = user.profile.name
-            let _ = user.profile.givenName
-            let _ = user.profile.familyName
-            let _ = user.profile.email
-            // ...
+            let userId = user.userID                  // For client-side use only!
+            let idToken = user.authentication.idToken // Safe to send to the server
+            let fullName = user.profile.name
+            let givenName = user.profile.givenName
+            let familyName = user.profile.familyName
+            let email = user.profile.email
+            var profileImageURL:String?
+            if user.profile.hasImage
+            {
+                let URL=user.profile.imageURL(withDimension: 100)
+                profileImageURL=URL?.absoluteString ?? ""
+            }
+            let googleUserInfo = ["userId": userId,"idToken": idToken, "fullName": fullName,"givenName":givenName,"familyName":familyName,"email":email,"profileImageURL":profileImageURL]
+            
+            //NotificationCenter.default.postNotification(name: .didReceiveData, object: self, userInfo: googleUserInfo)
+            NotificationCenter.default.post(name: .didReceiveGoogleData, object: self, userInfo: googleUserInfo as [AnyHashable : Any])
         }
     }
     func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!,
