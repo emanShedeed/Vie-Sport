@@ -8,8 +8,7 @@
 
 import UIKit
 import GoogleSignIn
-class SignUpVC: UIViewController , GIDSignInUIDelegate{
-
+class SignUpVC: UIViewController ,GIDSignInUIDelegate {
     @IBOutlet var textFields: [UITextField]!
     @IBOutlet weak var signInButton: GIDSignInButton!
     override func viewDidLoad() {
@@ -19,18 +18,14 @@ class SignUpVC: UIViewController , GIDSignInUIDelegate{
             textfield.setBottomBorder()
         }
         self.hideKeyboardWhenTappedAround()
-        //MARK: - google login
-        GIDSignIn.sharedInstance().uiDelegate = self
-       signInButton.style = .iconOnly
-        // Uncomment to automatically sign in the user.
-        //GIDSignIn.sharedInstance().signInSilently()
-        
-        // TODO(developer) Configure the sign-in button look/feel
-        // ...
-        //MARK :- facebook login
+
 
     }
 
-
-   
+    // MARK :- Google Login
+    @IBAction func googleSgninBtnPressed(_ sender: Any) {
+        //GIDSignIn.sharedInstance().delegate=self
+        GIDSignIn.sharedInstance().uiDelegate=self
+        GIDSignIn.sharedInstance().signIn()
+    }
 }

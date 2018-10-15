@@ -208,35 +208,31 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xTL-wP-Pmm" userLabel="container view">
                                         <rect key="frame" x="112.5" y="81.5" width="150" height="60"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LlW-GI-dWU" userLabel="Google" customClass="GIDSignInButton">
-                                                <rect key="frame" x="102" y="0.0" width="48" height="48"/>
-                                                <color key="backgroundColor" red="1" green="0.35893791390000002" blue="0.26380079519999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bYQ-Iq-N6M">
+                                                <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                                <color key="backgroundColor" red="1" green="0.3271392937" blue="0.26151021229999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="48" id="6ie-ck-mRU"/>
-                                                    <constraint firstAttribute="height" constant="48" id="t2J-fw-lNc"/>
+                                                    <constraint firstAttribute="height" constant="60" id="5wq-lT-waO"/>
+                                                    <constraint firstAttribute="width" constant="60" id="d3j-6G-N25"/>
                                                 </constraints>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bYQ-Iq-N6M">
-                                                <rect key="frame" x="0.0" y="0.0" width="48" height="48"/>
-                                                <state key="normal" title="Button"/>
+                                                <state key="normal" image="Google"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                         <integer key="value" value="30"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="googleSgninBtnPressed:" destination="Irx-cF-g46" eventType="touchUpInside" id="aXV-sL-4FB"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.15474665260000001" green="0.52721262589999995" blue="0.96284105330000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="LlW-GI-dWU" secondAttribute="trailing" id="1rY-hG-dUv"/>
-                                            <constraint firstItem="bYQ-Iq-N6M" firstAttribute="top" secondItem="LlW-GI-dWU" secondAttribute="top" id="2Qy-Wb-Oiy"/>
-                                            <constraint firstItem="LlW-GI-dWU" firstAttribute="top" secondItem="xTL-wP-Pmm" secondAttribute="top" id="DJK-19-N3P"/>
-                                            <constraint firstItem="bYQ-Iq-N6M" firstAttribute="leading" secondItem="xTL-wP-Pmm" secondAttribute="leading" id="Foe-pR-Mfr"/>
+                                            <constraint firstItem="bYQ-Iq-N6M" firstAttribute="top" secondItem="xTL-wP-Pmm" secondAttribute="top" id="2cA-iB-IN5"/>
+                                            <constraint firstItem="bYQ-Iq-N6M" firstAttribute="leading" secondItem="xTL-wP-Pmm" secondAttribute="leading" id="6jW-Lb-Bej"/>
                                             <constraint firstAttribute="height" constant="60" id="OUN-2C-u6t"/>
                                             <constraint firstAttribute="width" constant="150" id="XJR-WZ-aLn"/>
-                                            <constraint firstItem="bYQ-Iq-N6M" firstAttribute="bottom" secondItem="LlW-GI-dWU" secondAttribute="bottom" id="d3J-as-nhC"/>
-                                            <constraint firstItem="LlW-GI-dWU" firstAttribute="leading" secondItem="bYQ-Iq-N6M" secondAttribute="trailing" constant="54" id="fuR-ve-zpN"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -267,7 +263,6 @@
                         <viewLayoutGuide key="safeArea" id="oTW-nf-HBU"/>
                     </view>
                     <connections>
-                        <outlet property="signInButton" destination="LlW-GI-dWU" id="3Jg-Ln-Kgz"/>
                         <outletCollection property="textFields" destination="ITq-6I-O9z" collectionClass="NSMutableArray" id="OZp-c2-Gog"/>
                         <outletCollection property="textFields" destination="7dh-0n-Gmz" collectionClass="NSMutableArray" id="k1M-UB-IbN"/>
                         <outletCollection property="textFields" destination="caC-mo-QxI" collectionClass="NSMutableArray" id="xqo-Kn-vrX"/>
@@ -280,6 +275,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Google" width="801" height="801"/>
         <image name="diceeLogo" width="147" height="96"/>
     </resources>
 </document>
