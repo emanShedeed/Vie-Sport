@@ -18,11 +18,14 @@ class SignUpVC: UIViewController ,GIDSignInUIDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        //loop through all textfields to set customize border
         for textfield in textFields{
             textfield.setBottomBorder()
         }
+        //To hide keyboard
         self.hideKeyboardWhenTappedAround()
-
+        
+        // Add observer To obtain google Data
         NotificationCenter.default.addObserver(self, selector: #selector(onDidReceiveGoogleUserInfo(_:)), name: .didReceiveGoogleData, object: nil)
     }
 
@@ -31,7 +34,7 @@ class SignUpVC: UIViewController ,GIDSignInUIDelegate {
         GIDSignIn.sharedInstance().uiDelegate=self
         GIDSignIn.sharedInstance().signIn()
     }
-    //MARK : - get Login Info
+    //MARK : - Get google Login Info
     @objc func onDidReceiveGoogleUserInfo(_ notification:NSNotification){
         if let data = notification.userInfo as? [String: String]
         {
