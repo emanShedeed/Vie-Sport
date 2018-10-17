@@ -10,10 +10,10 @@ import UIKit
 import GoogleSignIn
 import NotificationCenter
 import FBSDKLoginKit
+import SwiftyJSON
 class SignUpVC: UIViewController ,GIDSignInUIDelegate {
     //MARK : - Declare IBoutlet
     @IBOutlet var textFields: [UITextField]!
-    @IBOutlet weak var signInButton: GIDSignInButton!
     //MARK : - Notification center
    
     override func viewDidLoad() {
@@ -28,7 +28,9 @@ class SignUpVC: UIViewController ,GIDSignInUIDelegate {
         
         // Add observer To obtain google Data
         NotificationCenter.default.addObserver(self, selector: #selector(onDidReceiveGoogleUserInfo(_:)), name: .didReceiveGoogleData, object: nil)
-    }
+        //Add observer to get status of an API
+        NotificationCenter.default.addObserver(self, selector: #selector(onDidReceiveEmailStatus(_:)), name: .didCheckEmailStatus , object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(onDidSendConfirmationCode(_:)), name: .didSendConfirmationCode , object: nil)    }
 
     // MARK :- Google Login
     @IBAction func googleSgninBtnPressed(_ sender: Any) {
@@ -71,5 +73,54 @@ class SignUpVC: UIViewController ,GIDSignInUIDelegate {
                 }
             })
         }
+    }
+    //MARK :-
+    @IBAction func SignUpButtonPressed(_ sender: Any) {
+   APIsRequests().getStatus(from: "http://test100.revival.one/api/users/CheckEmail?", parameters: ["Email":"eman.shedeed2013@gmail.com"])
+        
+        //let result=APIsRequests().parseData(json: json)
+       // print("Final Result\(result)")
+    }
+   // @objc func onDidReceiveStatus
+    @objc func onDidReceiveEmailStatus(_ notification:NSNotification){
+        if let data = notification.userInfo as? [String: String]
+        {
+            print ("Final Result= \(data["Status"] ?? nil!)")
+            let status=data["Status"]
+            if (status=="Success"){
+                textFields.sort{$0.tag<$1.tag}
+                let mobileTextField=textFields[3]
+               // print(mobileTextField.text ?? "")
+                APIsRequests().getData(from: "http://test100.revival.one/api/OwnersBusiness/SendConfirmationCode?", parameters: ["Mobile":mobileTextField.text ?? ""])
+            }
+        }
+        
+    }
+    func parseData(json :JSON){
+       // print (json)
+        let Result = String(json[]["Status"].stringValue)
+        let Messge=String(json[]["Message"].stringValue)
+        NotificationCenter.default.post(name:.didSendConfirmationCode, object: self , userInfo: ["Status":Result,"Message":Messge] as [AnyHashable : Any])
+        
+    }
+   @objc func onDidSendConfirmationCode(_ notification:NSNotification){
+        if let data = notification.userInfo as? [String: String]
+        {
+            let status=data["Status"]
+            if (status=="Success"){
+                /*let messageAlert = UIAlertController.init(title: "", message: data["Message"], preferredStyle: .alert)
+                let action = UIAlertAction.init(title: "OK", style: .default, handler: nil)
+                messageAlert.addAction(action)
+                self.present(messageAlert,animated: true,completion: nil)*/
+                performSegue(withIdentifier: "goToConfirmationCodeVC", sender: self)
+               
+                
+            }
+        }
+        
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destinationVC=segue.destination as! ConfirmationCodeVC
+        destinationVC.mobile=textFields[3].text!
     }
 }
