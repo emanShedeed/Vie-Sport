@@ -26,6 +26,15 @@ extension UITextField {
         self.layer.shadowColor = UIColor.white.cgColor
         self.layer.shadowOffset = CGSize(width: 0.0, height: 1.0)
         self.layer.shadowOpacity = 1.0
+        
         self.layer.shadowRadius = 0.0
+    }
+    func setConfirmationTextFields(){
+       self.layer.masksToBounds = true
+        let color = UIColor(rgb: 0x15C29E)
+        self.layer.borderColor = color.cgColor
+        self.layer.borderWidth=2
+        self.layer.cornerRadius=15     // self.layer.shadowOffset = CGSize(width: 0.0, height: 1.0)
+       
     }
 }

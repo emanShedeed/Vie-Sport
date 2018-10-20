@@ -11,10 +11,14 @@ import GoogleSignIn
 import NotificationCenter
 import FBSDKLoginKit
 import SwiftyJSON
-class SignUpVC: UIViewController ,GIDSignInUIDelegate {
+class SignUpVC: UIViewController ,GIDSignInUIDelegate{
     //MARK : - Declare IBoutlet
     @IBOutlet var textFields: [UITextField]!
-    //MARK : - Notification center
+    
+    @IBOutlet var validationLabels: [UILabel]!
+    
+    // MARK : - Declare constants
+    var activeTextField=UITextField()
    
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,16 +26,23 @@ class SignUpVC: UIViewController ,GIDSignInUIDelegate {
         //loop through all textfields to set customize border
         for textfield in textFields{
             textfield.setBottomBorder()
+            textfield.delegate=self
         }
         //To hide keyboard
         self.hideKeyboardWhenTappedAround()
-        
+        //sort textfields by target id
+        textFields.sort{$0.tag<$1.tag}
+        //sort validationLabels by target id
+        validationLabels.sort{$0.tag<$1.tag}
         // Add observer To obtain google Data
         NotificationCenter.default.addObserver(self, selector: #selector(onDidReceiveGoogleUserInfo(_:)), name: .didReceiveGoogleData, object: nil)
         //Add observer to get status of an API
         NotificationCenter.default.addObserver(self, selector: #selector(onDidReceiveEmailStatus(_:)), name: .didCheckEmailStatus , object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(onDidSendConfirmationCode(_:)), name: .didSendConfirmationCode , object: nil)    }
-
+        NotificationCenter.default.addObserver(self, selector: #selector(onDidSendConfirmationCode(_:)), name: .didSendConfirmationCode , object: nil)
+        //change keyboard style ->from story board
+       // textFields[1].keyboardType=UIKeyboardType.emailAddress
+       // textFields[3].keyboardType=UIKeyboardType.phonePad
+    }
     // MARK :- Google Login
     @IBAction func googleSgninBtnPressed(_ sender: Any) {
         GIDSignIn.sharedInstance().uiDelegate=self
@@ -88,7 +99,7 @@ class SignUpVC: UIViewController ,GIDSignInUIDelegate {
             print ("Final Result= \(data["Status"] ?? nil!)")
             let status=data["Status"]
             if (status=="Success"){
-                textFields.sort{$0.tag<$1.tag}
+               
                 let mobileTextField=textFields[3]
                // print(mobileTextField.text ?? "")
                 APIsRequests().getData(from: "http://test100.revival.one/api/OwnersBusiness/SendConfirmationCode?", parameters: ["Mobile":mobileTextField.text ?? ""])
@@ -122,5 +133,88 @@ class SignUpVC: UIViewController ,GIDSignInUIDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destinationVC=segue.destination as! ConfirmationCodeVC
         destinationVC.mobile=textFields[3].text!
+    }
+}
+extension SignUpVC:UITextFieldDelegate{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        switch textField {
+        case textFields[0]:
+            let (valid, message) = validate(textField)
+            
+            if valid {
+                textFields[1].becomeFirstResponder()
+            }
+            
+            // Update Password Validation Label
+            validationLabels[0].text = message
+            
+            // Show/Hide Password Validation Label
+            UIView.animate(withDuration: 0.25, animations: {
+                self.validationLabels[0].isHidden = valid
+            })
+        case textFields[1]:
+            let (valid, message) = validate(textField)
+            
+            if valid {
+                textFields[2].becomeFirstResponder()
+            }
+            
+            // Update Password Validation Label
+            validationLabels[1].text = message
+            
+            // Show/Hide Password Validation Label
+            UIView.animate(withDuration: 0.25, animations: {
+                self.validationLabels[1].isHidden = valid
+            })
+            
+        case textFields[2]:
+            let (valid, message) = validate(textField)
+            
+            if valid {
+                textFields[3].becomeFirstResponder()
+            }
+            
+            // Update Password Validation Label
+            validationLabels[2].text = message
+            
+            // Show/Hide Password Validation Label
+            UIView.animate(withDuration: 0.25, animations: {
+                self.validationLabels[2].isHidden = valid
+            })
+            
+        default:
+            let (valid, message) = validate(textField)
+            
+            if valid {
+                textFields[3].resignFirstResponder()
+            }
+            
+            // Update Password Validation Label
+            validationLabels[3].text = message
+            
+            // Show/Hide Password Validation Label
+            UIView.animate(withDuration: 0.25, animations: {
+                self.validationLabels[3].isHidden = valid
+            })
+        }
+        return true
+    }
+    // MARK: - Helper Methods
+    
+    fileprivate func validate(_ textField: UITextField) -> (Bool, String?) {
+        guard let text = textField.text else {
+            return (false, nil)
+        }
+        
+        if textField == textFields[1] {
+            let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+            let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+            return ( emailTest.evaluate(with:textField.text), "Invalid Email Address.")
+        }
+        if textField == textFields[2] {
+            return (text.count >= 6, "Your password is too short.")
+        }
+        
+        return (text.count > 0, "This field cannot be empty.")
     }
 }

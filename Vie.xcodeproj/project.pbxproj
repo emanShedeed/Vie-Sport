@@ -15,6 +15,7 @@
 		C71383DD216E16AD00784CDC /* HideKeyboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71383DC216E16AD00784CDC /* HideKeyboardVC.swift */; };
 		E721A3AC21774D73002DE31E /* ConfirmationCodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721A3AB21774D73002DE31E /* ConfirmationCodeVC.swift */; };
 		E747A90D2176F5DB0075E015 /* APIsRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E747A90C2176F5DB0075E015 /* APIsRequests.swift */; };
+		E79379F9217837AB006D33F5 /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79379F8217837AB006D33F5 /* CustomColor.swift */; };
 		E7A857ED216C8009002683CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A857EC216C8009002683CD /* AppDelegate.swift */; };
 		E7A857EF216C8009002683CD /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A857EE216C8009002683CD /* MainVC.swift */; };
 		E7A857F2216C8009002683CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7A857F0216C8009002683CD /* Main.storyboard */; };
@@ -59,6 +60,7 @@
 		D690221753A2AFF740EFAB95 /* Pods-VieUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VieUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VieUITests/Pods-VieUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E721A3AB21774D73002DE31E /* ConfirmationCodeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationCodeVC.swift; sourceTree = "<group>"; };
 		E747A90C2176F5DB0075E015 /* APIsRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIsRequests.swift; sourceTree = "<group>"; };
+		E79379F8217837AB006D33F5 /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
 		E7A857E9216C8009002683CD /* Vie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7A857EC216C8009002683CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7A857EE216C8009002683CD /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 				C71383D2216E053700784CDC /* CustomUItextField.swift */,
 				C71383DC216E16AD00784CDC /* HideKeyboardVC.swift */,
 				E7CBD126217499D000072F03 /* NotificationNamesExtension.swift */,
+				E79379F8217837AB006D33F5 /* CustomColor.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -212,8 +215,8 @@
 			children = (
 				E7A857EE216C8009002683CD /* MainVC.swift */,
 				C71383D6216E0B1F00784CDC /* SignUpVC.swift */,
-				E7A857EC216C8009002683CD /* AppDelegate.swift */,
 				E721A3AB21774D73002DE31E /* ConfirmationCodeVC.swift */,
+				E7A857EC216C8009002683CD /* AppDelegate.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -475,6 +478,7 @@
 			files = (
 				C71383DD216E16AD00784CDC /* HideKeyboardVC.swift in Sources */,
 				E7CBD127217499D000072F03 /* NotificationNamesExtension.swift in Sources */,
+				E79379F9217837AB006D33F5 /* CustomColor.swift in Sources */,
 				C71383D7216E0B1F00784CDC /* SignUpVC.swift in Sources */,
 				E747A90D2176F5DB0075E015 /* APIsRequests.swift in Sources */,
 				C71383D3216E053700784CDC /* CustomUItextField.swift in Sources */,

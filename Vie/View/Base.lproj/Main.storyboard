@@ -36,12 +36,12 @@
                                     <constraint firstItem="Rha-xN-84a" firstAttribute="top" secondItem="xlh-ZB-Vik" secondAttribute="top" id="lqS-rW-RHV"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tk3-ca-opM" userLabel="bottom view">
+                            <view multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tk3-ca-opM" userLabel="bottom view">
                                 <rect key="frame" x="0.0" y="500.5" width="375" height="166.5"/>
                                 <subviews>
                                     <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="e6q-qZ-27h">
                                         <rect key="frame" x="96" y="24" width="183" height="37"/>
-                                        <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.043137254901960784" green="0.21176470588235294" blue="0.30588235294117649" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="37" id="RKI-rd-YVH"/>
                                             <constraint firstAttribute="width" constant="183" id="lun-TG-8PN"/>
@@ -65,7 +65,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.043137254901960784" green="0.21176470588235294" blue="0.30588235294117649" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="xiD-LO-mnx" secondAttribute="bottom" constant="20" id="Rxp-gj-MQB"/>
                                     <constraint firstItem="e6q-qZ-27h" firstAttribute="centerX" secondItem="tk3-ca-opM" secondAttribute="centerX" id="abH-d8-K3t"/>
@@ -116,7 +116,7 @@
                                         </constraints>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.15474665260000001" green="0.52721262589999995" blue="0.96284105330000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.043137254901960784" green="0.21176470588235294" blue="0.30588235294117649" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="O8p-7Q-ih8" firstAttribute="centerX" secondItem="qCy-m3-aPa" secondAttribute="centerX" id="ICf-jS-asf"/>
                                     <constraint firstAttribute="bottom" secondItem="O8p-7Q-ih8" secondAttribute="bottom" id="dt0-gO-X2x"/>
@@ -130,10 +130,11 @@
                                         <subviews>
                                             <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="اسم" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ITq-6I-O9z">
                                                 <rect key="frame" x="0.0" y="0.0" width="335" height="53"/>
-                                                <color key="backgroundColor" red="0.15474665260000001" green="0.52721262589999995" blue="0.96284105330000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" name="Avenir-BookOblique" family="Avenir" pointSize="20"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <color key="backgroundColor" red="0.043137254901960784" green="0.21176470588235294" blue="0.30588235294117649" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="tintColor" red="0.043137254901960784" green="0.21176470588235294" blue="0.30588235294117649" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
                                                         <color key="value" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -143,42 +144,69 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
+                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" tag="5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name Validation" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y88-ga-Ntp">
+                                                <rect key="frame" x="0.0" y="58" width="335" height="0.0"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="البريد الالكتروني" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7dh-0n-Gmz">
                                                 <rect key="frame" x="0.0" y="63" width="335" height="52.5"/>
-                                                <color key="backgroundColor" red="0.15474665260000001" green="0.52721262589999995" blue="0.96284105330000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <color key="backgroundColor" red="0.043137254901960784" green="0.21176470588235294" blue="0.30588235294117649" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="tintColor" red="0.043137254901960784" green="0.21176470588235294" blue="0.30588235294117649" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
                                                         <color key="value" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
+                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" tag="6" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email Validation" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N3m-hJ-pXR">
+                                                <rect key="frame" x="0.0" y="120.5" width="335" height="0.0"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <textField opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="كلمة المرور" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="caC-mo-QxI">
                                                 <rect key="frame" x="0.0" y="125.5" width="335" height="53"/>
-                                                <color key="backgroundColor" red="0.15474665260000001" green="0.52721262589999995" blue="0.96284105330000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <color key="backgroundColor" red="0.043137254901960784" green="0.21176470588235294" blue="0.30588235294117649" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="tintColor" red="0.043137254901960784" green="0.21176470588235294" blue="0.30588235294117649" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
                                                         <color key="value" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
+                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" tag="7" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password Validation" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bv9-ZU-Dq2">
+                                                <rect key="frame" x="0.0" y="183.5" width="335" height="0.0"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <textField opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="رقم الجوال" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PVm-vT-5Sb">
                                                 <rect key="frame" x="0.0" y="188.5" width="335" height="52.5"/>
-                                                <color key="backgroundColor" red="0.15474665260000001" green="0.52721262589999995" blue="0.96284105330000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <color key="backgroundColor" red="0.043137254901960784" green="0.21176470588235294" blue="0.30588235294117649" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="tintColor" red="0.043137254901960784" green="0.21176470588235294" blue="0.30588235294117649" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="phonePad"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
                                                         <color key="value" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
+                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" tag="8" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mobile Validation" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="agy-Md-Vtw">
+                                                <rect key="frame" x="0.0" y="246" width="335" height="0.0"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IG6-p2-vnC">
                                                 <rect key="frame" x="0.0" y="251" width="335" height="52.5"/>
                                                 <color key="backgroundColor" red="0.45009386540000001" green="0.98132258650000004" blue="0.4743030667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -195,7 +223,7 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.15474665260000001" green="0.52721262589999995" blue="0.96284105330000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.043137254901960784" green="0.21176470588235294" blue="0.30588235294117649" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="HcW-gg-cex" firstAttribute="top" secondItem="qej-1X-erc" secondAttribute="top" constant="20" id="60r-7y-vVw"/>
                                     <constraint firstItem="HcW-gg-cex" firstAttribute="leading" secondItem="qej-1X-erc" secondAttribute="leading" constant="20" id="7d3-z4-hFC"/>
@@ -211,7 +239,7 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bYQ-Iq-N6M" userLabel="Google Login">
                                                 <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
-                                                <color key="backgroundColor" red="1" green="0.3271392937" blue="0.26151021229999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" red="0.043137254899999998" green="0.21176470589999999" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="60" id="5wq-lT-waO"/>
                                                     <constraint firstAttribute="width" constant="60" id="d3j-6G-N25"/>
@@ -229,7 +257,7 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fs8-Im-fw0" userLabel="FB Login">
                                                 <rect key="frame" x="90" y="0.0" width="60" height="60"/>
-                                                <color key="backgroundColor" red="1" green="0.3271392937" blue="0.26151021229999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" red="0.043137254899999998" green="0.21176470589999999" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <state key="normal" title="Button" image="FB"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -242,7 +270,7 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.15474665260000001" green="0.52721262589999995" blue="0.96284105330000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.043137254901960784" green="0.21176470588235294" blue="0.30588235294117649" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstItem="bYQ-Iq-N6M" firstAttribute="top" secondItem="xTL-wP-Pmm" secondAttribute="top" id="2cA-iB-IN5"/>
                                             <constraint firstAttribute="trailing" secondItem="Fs8-Im-fw0" secondAttribute="trailing" id="3t4-oC-gcQ"/>
@@ -255,14 +283,14 @@
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" red="0.15474665260000001" green="0.52721262589999995" blue="0.96284105330000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.043137254901960784" green="0.21176470588235294" blue="0.30588235294117649" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="xTL-wP-Pmm" firstAttribute="centerY" secondItem="NGd-bh-nW9" secondAttribute="centerY" id="DkZ-pJ-dKN"/>
                                     <constraint firstItem="xTL-wP-Pmm" firstAttribute="centerX" secondItem="NGd-bh-nW9" secondAttribute="centerX" id="S51-dS-tra"/>
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.15474665264693885" green="0.52721262585435258" blue="0.96284105330000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.043137254901960784" green="0.21176470588235294" blue="0.30588235294117649" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="qCy-m3-aPa" firstAttribute="trailing" secondItem="oTW-nf-HBU" secondAttribute="trailing" id="1cs-1W-z8A"/>
                             <constraint firstItem="qCy-m3-aPa" firstAttribute="top" secondItem="yQ1-ED-HkG" secondAttribute="top" id="2Dp-bd-dxf"/>
@@ -286,6 +314,10 @@
                         <outletCollection property="textFields" destination="7dh-0n-Gmz" collectionClass="NSMutableArray" id="k1M-UB-IbN"/>
                         <outletCollection property="textFields" destination="caC-mo-QxI" collectionClass="NSMutableArray" id="xqo-Kn-vrX"/>
                         <outletCollection property="textFields" destination="PVm-vT-5Sb" collectionClass="NSMutableArray" id="L0v-sW-iRf"/>
+                        <outletCollection property="validationLabels" destination="Y88-ga-Ntp" collectionClass="NSMutableArray" id="28p-I6-pdA"/>
+                        <outletCollection property="validationLabels" destination="N3m-hJ-pXR" collectionClass="NSMutableArray" id="wM9-3b-tlR"/>
+                        <outletCollection property="validationLabels" destination="Bv9-ZU-Dq2" collectionClass="NSMutableArray" id="ab0-j5-okj"/>
+                        <outletCollection property="validationLabels" destination="agy-Md-Vtw" collectionClass="NSMutableArray" id="h1w-qk-pnO"/>
                         <segue destination="tne-SU-hlK" kind="show" identifier="goToConfirmationCodeVC" id="AqB-MZ-WnT"/>
                     </connections>
                 </viewController>
@@ -300,13 +332,114 @@
                     <view key="view" contentMode="scaleToFill" id="prC-AU-xjq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="كود التفعيل " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lul-Ue-8VZ">
+                                <rect key="frame" x="194.5" y="125" width="164.5" height="55"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="40"/>
+                                <color key="textColor" red="0.082352941176470587" green="0.76078431372549016" blue="0.61960784313725492" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="تم ارسال كود التفعيل لجوال رقم :" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S6g-8k-cVq">
+                                <rect key="frame" x="44" y="214" width="304" height="53"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="53" id="Gee-3O-Ulm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0569976080" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TmL-U9-b9t">
+                                <rect key="frame" x="194.5" y="275" width="153.5" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="kx8-NG-T9B"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleAspectFill" distribution="fillEqually" spacing="41" translatesAutoresizingMaskIntoConstraints="NO" id="Y9d-Gc-aUN">
+                                <rect key="frame" x="20" y="357" width="335" height="50"/>
+                                <subviews>
+                                    <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Zg-H3-EGn">
+                                        <rect key="frame" x="0.0" y="0.0" width="53" height="50"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hmk-Qw-96G">
+                                        <rect key="frame" x="94" y="0.0" width="53" height="50"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yux-th-1pk">
+                                        <rect key="frame" x="188" y="0.0" width="53" height="50"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="87H-jT-9ae">
+                                        <rect key="frame" x="282" y="0.0" width="53" height="50"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="CoB-kB-Rte"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleAspectFill" spacing="10" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="30K-zQ-5ZI">
+                                <rect key="frame" x="20" y="440" width="335" height="30.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="إضغط هنا" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1yd-eF-Pw2">
+                                        <rect key="frame" x="0.0" y="0.0" width="173" height="30.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="173" id="Jgp-4K-cfI"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="22"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="لم تستلم كود التفعيل ؟" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kLs-2c-P3H">
+                                        <rect key="frame" x="183" y="0.0" width="152" height="30.5"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.043137254901960784" green="0.21176470588235294" blue="0.30588235294117649" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="30K-zQ-5ZI" firstAttribute="leading" secondItem="pDm-fx-i9j" secondAttribute="leading" constant="20" id="0h2-fe-nsz"/>
+                            <constraint firstItem="lul-Ue-8VZ" firstAttribute="top" secondItem="pDm-fx-i9j" secondAttribute="top" constant="105" id="6ME-eG-obN"/>
+                            <constraint firstItem="S6g-8k-cVq" firstAttribute="top" secondItem="lul-Ue-8VZ" secondAttribute="bottom" constant="34" id="7po-RM-kZ6"/>
+                            <constraint firstItem="pDm-fx-i9j" firstAttribute="trailing" secondItem="Y9d-Gc-aUN" secondAttribute="trailing" constant="20" id="Cmr-Oo-UTd"/>
+                            <constraint firstItem="30K-zQ-5ZI" firstAttribute="top" secondItem="Y9d-Gc-aUN" secondAttribute="bottom" constant="33" id="WN1-b3-QzJ"/>
+                            <constraint firstItem="Y9d-Gc-aUN" firstAttribute="top" secondItem="TmL-U9-b9t" secondAttribute="bottom" constant="42" id="cQq-cG-4hD"/>
+                            <constraint firstItem="Y9d-Gc-aUN" firstAttribute="leading" secondItem="pDm-fx-i9j" secondAttribute="leading" constant="20" id="dxL-Ew-kwG"/>
+                            <constraint firstItem="TmL-U9-b9t" firstAttribute="top" secondItem="S6g-8k-cVq" secondAttribute="bottom" constant="8" symbolic="YES" id="esC-VG-aAG"/>
+                            <constraint firstItem="pDm-fx-i9j" firstAttribute="trailing" secondItem="S6g-8k-cVq" secondAttribute="trailing" constant="27" id="fe0-0a-B3S"/>
+                            <constraint firstItem="TmL-U9-b9t" firstAttribute="leading" secondItem="lul-Ue-8VZ" secondAttribute="leading" id="ggJ-4d-aNt"/>
+                            <constraint firstItem="TmL-U9-b9t" firstAttribute="trailing" secondItem="S6g-8k-cVq" secondAttribute="trailing" id="hdf-El-XXu"/>
+                            <constraint firstItem="lul-Ue-8VZ" firstAttribute="trailing" secondItem="prC-AU-xjq" secondAttribute="trailingMargin" id="jkx-cK-hrb"/>
+                            <constraint firstItem="pDm-fx-i9j" firstAttribute="trailing" secondItem="30K-zQ-5ZI" secondAttribute="trailing" constant="20" id="kGw-GI-2M7"/>
+                            <constraint firstItem="S6g-8k-cVq" firstAttribute="leading" secondItem="pDm-fx-i9j" secondAttribute="leading" constant="44" id="v7h-HU-ce1"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="pDm-fx-i9j"/>
                     </view>
+                    <connections>
+                        <outlet property="timerLabel" destination="1yd-eF-Pw2" id="bcL-N2-0b9"/>
+                        <outletCollection property="confirmationCodeTextFields" destination="9Zg-H3-EGn" collectionClass="NSMutableArray" id="diq-6g-qSS"/>
+                        <outletCollection property="confirmationCodeTextFields" destination="hmk-Qw-96G" collectionClass="NSMutableArray" id="Ks9-uF-8sD"/>
+                        <outletCollection property="confirmationCodeTextFields" destination="Yux-th-1pk" collectionClass="NSMutableArray" id="eKW-zi-wLR"/>
+                        <outletCollection property="confirmationCodeTextFields" destination="87H-jT-9ae" collectionClass="NSMutableArray" id="odW-bG-I8Y"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nJU-jg-vql" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1538" y="127"/>
+            <point key="canvasLocation" x="1536.8" y="126.38680659670166"/>
         </scene>
     </scenes>
     <resources>
