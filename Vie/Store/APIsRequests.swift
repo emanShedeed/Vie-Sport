@@ -42,7 +42,7 @@ class APIsRequests{
                     print( "Cann't get Data)")
                     return
                 }
-                SignUpVC().parseData(json: JSON( response.result.value!))
-        
+              //  SignUpVC().parseData(json: JSON( response.result.value!))
+                NotificationCenter.default.post(name:.didReceiveJsonData , object: self , userInfo: ["JSON":JSON( response.result.value!)] as [AnyHashable : Any])
         }
     }}

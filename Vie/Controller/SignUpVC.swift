@@ -38,7 +38,10 @@ class SignUpVC: UIViewController ,GIDSignInUIDelegate{
         NotificationCenter.default.addObserver(self, selector: #selector(onDidReceiveGoogleUserInfo(_:)), name: .didReceiveGoogleData, object: nil)
         //Add observer to get status of an API
         NotificationCenter.default.addObserver(self, selector: #selector(onDidReceiveEmailStatus(_:)), name: .didCheckEmailStatus , object: nil)
+        //add observer when send confirmation code
         NotificationCenter.default.addObserver(self, selector: #selector(onDidSendConfirmationCode(_:)), name: .didSendConfirmationCode , object: nil)
+        //add observer when send JSON Data
+        NotificationCenter.default.addObserver(self, selector: #selector(onDidReceiveJsonData(_:)), name: .didReceiveJsonData , object: nil)
         //change keyboard style ->from story board
        // textFields[1].keyboardType=UIKeyboardType.emailAddress
        // textFields[3].keyboardType=UIKeyboardType.phonePad
@@ -111,19 +114,23 @@ class SignUpVC: UIViewController ,GIDSignInUIDelegate{
             if (status=="Success"){
                
                 let mobileTextField=textFields[3]
-               // print(mobileTextField.text ?? "")
+               // if email is valid send confirmation code
                 APIsRequests().getData(from: "http://test100.revival.one/api/OwnersBusiness/SendConfirmationCode?", parameters: ["Mobile":mobileTextField.text ?? ""])
             }
         }
         
     }
-    func parseData(json :JSON){
-       // print (json)
-        let Result = String(json[]["Status"].stringValue)
-        let Messge=String(json[]["Message"].stringValue)
-        NotificationCenter.default.post(name:.didSendConfirmationCode, object: self , userInfo: ["Status":Result,"Message":Messge] as [AnyHashable : Any])
-        
+    @objc func onDidReceiveJsonData(_ notification:NSNotification){
+        if let data = notification.userInfo as? [String: JSON]{
+           if let jsonObj=data["JSON"]
+           {
+            let Result = String(jsonObj[]["Status"].stringValue)
+            let Messge=String(jsonObj[]["Message"].stringValue)
+            NotificationCenter.default.post(name:.didSendConfirmationCode, object: self , userInfo: ["Status":Result,"Message":Messge] as [AnyHashable : Any])
+            }
+        }
     }
+    
    @objc func onDidSendConfirmationCode(_ notification:NSNotification){
         if let data = notification.userInfo as? [String: String]
         {
@@ -225,17 +232,16 @@ extension SignUpVC:UITextFieldDelegate{
             return (text.count >= 6, "Your password is too short.")
         }
         if textField==textFields[3]{
-            var completedPhoneNumber=textField.text
             var PHONE_REGEX = "^\\d{3}\\d{3}\\d{4}$"
             var phoneTest = NSPredicate(format: "SELF MATCHES %@", PHONE_REGEX)
             let result =  phoneTest.evaluate(with: textField.text)
             if(result)
             {
-                 completedPhoneNumber="+966"+textField.text!
+                 textField.text="+966"+textField.text!
             }
              PHONE_REGEX = "^((\\+)|(00))[0-9]{6,14}$";
              phoneTest = NSPredicate(format: "SELF MATCHES %@", PHONE_REGEX)
-            return(phoneTest.evaluate(with: completedPhoneNumber ),"Invalid Mobile Number")
+            return(phoneTest.evaluate(with: textField.text ),"Invalid Mobile Number")
 
         }
         

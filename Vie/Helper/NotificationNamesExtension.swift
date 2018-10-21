@@ -7,7 +7,8 @@
 //
 import NotificationCenter
 extension Notification.Name {
-    static let didReceiveGoogleData = Notification.Name("didReceiveData")
+    static let didReceiveGoogleData = Notification.Name("didReceiveGoogleData")
     static let didCheckEmailStatus = Notification.Name("didCheckEmailStatus")
-    static let didSendConfirmationCode = Notification.Name("didSendConfirmationCode")   // static let completedLengthyDownload = Notification.Name("completedLengthyDownload")
+    static let didSendConfirmationCode = Notification.Name("didSendConfirmationCode")
+    static let didReceiveJsonData = Notification.Name("didReceiveJsonData")
 }
