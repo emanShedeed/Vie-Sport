@@ -87,10 +87,20 @@ class SignUpVC: UIViewController ,GIDSignInUIDelegate{
     }
     //MARK :-
     @IBAction func SignUpButtonPressed(_ sender: Any) {
-   APIsRequests().getStatus(from: "http://test100.revival.one/api/users/CheckEmail?", parameters: ["Email":"eman.shedeed2013@gmail.com"])
-        
-        //let result=APIsRequests().parseData(json: json)
-       // print("Final Result\(result)")
+        var isCompleted=true
+        for (index,textField) in textFields.enumerated(){
+            let (valid, message) = validate(textField)
+            validationLabels[index].isHidden=valid
+            validationLabels[index].text=message
+            if(!valid){
+                isCompleted=false
+                break
+            }
+
+        }
+        if isCompleted{
+        APIsRequests().getStatus(from: "http://test100.revival.one/api/users/CheckEmail?", parameters: ["Email":textFields[1].text!])
+        }
     }
    // @objc func onDidReceiveStatus
     @objc func onDidReceiveEmailStatus(_ notification:NSNotification){
@@ -213,6 +223,20 @@ extension SignUpVC:UITextFieldDelegate{
         }
         if textField == textFields[2] {
             return (text.count >= 6, "Your password is too short.")
+        }
+        if textField==textFields[3]{
+            var completedPhoneNumber=textField.text
+            var PHONE_REGEX = "^\\d{3}\\d{3}\\d{4}$"
+            var phoneTest = NSPredicate(format: "SELF MATCHES %@", PHONE_REGEX)
+            let result =  phoneTest.evaluate(with: textField.text)
+            if(result)
+            {
+                 completedPhoneNumber="+966"+textField.text!
+            }
+             PHONE_REGEX = "^((\\+)|(00))[0-9]{6,14}$";
+             phoneTest = NSPredicate(format: "SELF MATCHES %@", PHONE_REGEX)
+            return(phoneTest.evaluate(with: completedPhoneNumber ),"Invalid Mobile Number")
+
         }
         
         return (text.count > 0, "This field cannot be empty.")
