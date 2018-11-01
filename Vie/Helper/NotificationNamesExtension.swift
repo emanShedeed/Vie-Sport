@@ -11,4 +11,11 @@ extension Notification.Name {
     static let didCheckEmailStatus = Notification.Name("didCheckEmailStatus")
     static let didSendConfirmationCode = Notification.Name("didSendConfirmationCode")
     static let didReceiveJsonData = Notification.Name("didReceiveJsonData")
+  //  static let didReceiveJsonData2 = Notification.Name("didReceiveJsonData2")
+}
+extension NotificationCenter{
+    func setObserver(_ observer: AnyObject, selector: Selector, name: NSNotification.Name, object: AnyObject?) {
+        NotificationCenter.default.removeObserver(observer, name: name, object: object)
+        NotificationCenter.default.addObserver(observer, selector: selector, name: name, object: object)
+    }
 }

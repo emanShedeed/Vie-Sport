@@ -14,7 +14,10 @@
 		C71383D7216E0B1F00784CDC /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71383D6216E0B1F00784CDC /* SignUpVC.swift */; };
 		C71383DD216E16AD00784CDC /* HideKeyboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71383DC216E16AD00784CDC /* HideKeyboardVC.swift */; };
 		E721A3AC21774D73002DE31E /* ConfirmationCodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721A3AB21774D73002DE31E /* ConfirmationCodeVC.swift */; };
+		E7236BD0217EF59F00AAD25C /* SocialSignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7236BCF217EF59F00AAD25C /* SocialSignUpVC.swift */; };
 		E747A90D2176F5DB0075E015 /* APIsRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E747A90C2176F5DB0075E015 /* APIsRequests.swift */; };
+		E789996E218728FD0013BE4C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E789996D218728FD0013BE4C /* User.swift */; };
+		E789997121872C750013BE4C /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E789997021872C750013BE4C /* APIClient.swift */; };
 		E79379F9217837AB006D33F5 /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79379F8217837AB006D33F5 /* CustomColor.swift */; };
 		E7A857ED216C8009002683CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A857EC216C8009002683CD /* AppDelegate.swift */; };
 		E7A857EF216C8009002683CD /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A857EE216C8009002683CD /* MainVC.swift */; };
@@ -23,7 +26,11 @@
 		E7A857F7216C800B002683CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7A857F5216C800B002683CD /* LaunchScreen.storyboard */; };
 		E7A85802216C800B002683CD /* VieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A85801216C800B002683CD /* VieTests.swift */; };
 		E7A8580D216C800B002683CD /* VieUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A8580C216C800B002683CD /* VieUITests.swift */; };
+		E7B39810218B0EB500A1B365 /* OwnerBusinessEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B3980F218B0EB500A1B365 /* OwnerBusinessEndPoint.swift */; };
 		E7CBD127217499D000072F03 /* NotificationNamesExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7CBD126217499D000072F03 /* NotificationNamesExtension.swift */; };
+		E7DDF3B82185C11400C878DE /* UserEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DDF3B72185C11400C878DE /* UserEndPoint.swift */; };
+		E7DDF3BA2185CB5000C878DE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DDF3B92185CB5000C878DE /* Constants.swift */; };
+		E7EF722F21885572001AAD73 /* APIConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7EF722E21885572001AAD73 /* APIConfiguration.swift */; };
 		EA4503950D51C7407D588B0C /* Pods_Vie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C95FFA22EFCB907A77E36770 /* Pods_Vie.framework */; };
 /* End PBXBuildFile section */
 
@@ -59,7 +66,10 @@
 		CC69CECEDA1203139C64CF83 /* Pods-Vie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vie.release.xcconfig"; path = "Pods/Target Support Files/Pods-Vie/Pods-Vie.release.xcconfig"; sourceTree = "<group>"; };
 		D690221753A2AFF740EFAB95 /* Pods-VieUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VieUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VieUITests/Pods-VieUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E721A3AB21774D73002DE31E /* ConfirmationCodeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationCodeVC.swift; sourceTree = "<group>"; };
+		E7236BCF217EF59F00AAD25C /* SocialSignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialSignUpVC.swift; sourceTree = "<group>"; };
 		E747A90C2176F5DB0075E015 /* APIsRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIsRequests.swift; sourceTree = "<group>"; };
+		E789996D218728FD0013BE4C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E789997021872C750013BE4C /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		E79379F8217837AB006D33F5 /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
 		E7A857E9216C8009002683CD /* Vie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7A857EC216C8009002683CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -74,7 +84,11 @@
 		E7A85808216C800B002683CD /* VieUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VieUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7A8580C216C800B002683CD /* VieUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VieUITests.swift; sourceTree = "<group>"; };
 		E7A8580E216C800B002683CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E7B3980F218B0EB500A1B365 /* OwnerBusinessEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerBusinessEndPoint.swift; sourceTree = "<group>"; };
 		E7CBD126217499D000072F03 /* NotificationNamesExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationNamesExtension.swift; sourceTree = "<group>"; };
+		E7DDF3B72185C11400C878DE /* UserEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEndPoint.swift; sourceTree = "<group>"; };
+		E7DDF3B92185CB5000C878DE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		E7EF722E21885572001AAD73 /* APIConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfiguration.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +153,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E789996F21872C190013BE4C /* APIClient */ = {
+			isa = PBXGroup;
+			children = (
+				E789997021872C750013BE4C /* APIClient.swift */,
+			);
+			path = APIClient;
+			sourceTree = "<group>";
+		};
 		E7A857E0216C8009002683CD = {
 			isa = PBXGroup;
 			children = (
@@ -167,6 +189,7 @@
 				E7A8581A216C80B6002683CD /* Model */,
 				E7A8581B216C80C6002683CD /* View */,
 				E7A8581C216C80DC002683CD /* Controller */,
+				E7DDF3B52185BE1B00C878DE /* Networking */,
 				E7A8581D216C80F7002683CD /* Store */,
 				C71383CF216E04D500784CDC /* Helper */,
 				E7A857F3216C800B002683CD /* Assets.xcassets */,
@@ -198,6 +221,7 @@
 		E7A8581A216C80B6002683CD /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E789996D218728FD0013BE4C /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -217,6 +241,7 @@
 				C71383D6216E0B1F00784CDC /* SignUpVC.swift */,
 				E721A3AB21774D73002DE31E /* ConfirmationCodeVC.swift */,
 				E7A857EC216C8009002683CD /* AppDelegate.swift */,
+				E7236BCF217EF59F00AAD25C /* SocialSignUpVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -227,6 +252,26 @@
 				E747A90C2176F5DB0075E015 /* APIsRequests.swift */,
 			);
 			path = Store;
+			sourceTree = "<group>";
+		};
+		E7DDF3B52185BE1B00C878DE /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				E7DDF3B62185BE5500C878DE /* EndPoint */,
+				E789996F21872C190013BE4C /* APIClient */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		E7DDF3B62185BE5500C878DE /* EndPoint */ = {
+			isa = PBXGroup;
+			children = (
+				E7DDF3B72185C11400C878DE /* UserEndPoint.swift */,
+				E7B3980F218B0EB500A1B365 /* OwnerBusinessEndPoint.swift */,
+				E7DDF3B92185CB5000C878DE /* Constants.swift */,
+				E7EF722E21885572001AAD73 /* APIConfiguration.swift */,
+			);
+			path = EndPoint;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -476,15 +521,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E789996E218728FD0013BE4C /* User.swift in Sources */,
 				C71383DD216E16AD00784CDC /* HideKeyboardVC.swift in Sources */,
 				E7CBD127217499D000072F03 /* NotificationNamesExtension.swift in Sources */,
 				E79379F9217837AB006D33F5 /* CustomColor.swift in Sources */,
 				C71383D7216E0B1F00784CDC /* SignUpVC.swift in Sources */,
 				E747A90D2176F5DB0075E015 /* APIsRequests.swift in Sources */,
 				C71383D3216E053700784CDC /* CustomUItextField.swift in Sources */,
+				E7EF722F21885572001AAD73 /* APIConfiguration.swift in Sources */,
 				E721A3AC21774D73002DE31E /* ConfirmationCodeVC.swift in Sources */,
+				E7DDF3B82185C11400C878DE /* UserEndPoint.swift in Sources */,
 				E7A857EF216C8009002683CD /* MainVC.swift in Sources */,
 				E7A857ED216C8009002683CD /* AppDelegate.swift in Sources */,
+				E7236BD0217EF59F00AAD25C /* SocialSignUpVC.swift in Sources */,
+				E789997121872C750013BE4C /* APIClient.swift in Sources */,
+				E7B39810218B0EB500A1B365 /* OwnerBusinessEndPoint.swift in Sources */,
+				E7DDF3BA2185CB5000C878DE /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -661,6 +713,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KN53QSL78G;
 				INFOPLIST_FILE = Vie/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -680,6 +733,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KN53QSL78G;
 				INFOPLIST_FILE = Vie/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

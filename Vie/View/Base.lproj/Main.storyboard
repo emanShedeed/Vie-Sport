@@ -95,7 +95,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="127.28635682158921"/>
+            <point key="canvasLocation" x="316" y="-9"/>
         </scene>
         <!--Sign UpVC-->
         <scene sceneID="BKB-mz-p2W">
@@ -319,11 +319,12 @@
                         <outletCollection property="validationLabels" destination="Bv9-ZU-Dq2" collectionClass="NSMutableArray" id="ab0-j5-okj"/>
                         <outletCollection property="validationLabels" destination="agy-Md-Vtw" collectionClass="NSMutableArray" id="h1w-qk-pnO"/>
                         <segue destination="tne-SU-hlK" kind="show" identifier="goToConfirmationCodeVC" id="AqB-MZ-WnT"/>
+                        <segue destination="Jmw-mm-bfQ" kind="show" identifier="goToSocialSignUpVC" id="6jE-vN-o3e"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qvt-1s-sOs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="788" y="126.38680659670166"/>
+            <point key="canvasLocation" x="1033" y="-9"/>
         </scene>
         <!--Confirmation CodeVC-->
         <scene sceneID="CZS-lw-tQG">
@@ -439,7 +440,191 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nJU-jg-vql" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1536.8" y="126.38680659670166"/>
+            <point key="canvasLocation" x="1658" y="-9"/>
+        </scene>
+        <!--Social Sign UpVC-->
+        <scene sceneID="QCe-V7-bS9">
+            <objects>
+                <viewController id="Jmw-mm-bfQ" userLabel="Social Sign UpVC" customClass="SocialSignUpVC" customModule="Vie" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Jsu-Oc-mcc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vUa-s3-FAC" userLabel="Top View">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="140.5"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="diceeLogo" translatesAutoresizingMaskIntoConstraints="NO" id="mc9-Jm-TC2">
+                                        <rect key="frame" x="67.5" y="74.5" width="240" height="66"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="240" id="G12-aw-CvJ"/>
+                                            <constraint firstAttribute="height" constant="66" id="rSj-0X-fWV"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.043137254899999998" green="0.21176470589999999" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="mc9-Jm-TC2" firstAttribute="centerX" secondItem="vUa-s3-FAC" secondAttribute="centerX" id="pA0-n4-0jp"/>
+                                    <constraint firstAttribute="bottom" secondItem="mc9-Jm-TC2" secondAttribute="bottom" id="vXD-Fb-qO8"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CyV-FI-gzz" userLabel="Middle View">
+                                <rect key="frame" x="0.0" y="140.5" width="375" height="421"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Zic-sR-exQ">
+                                        <rect key="frame" x="20" y="20" width="335" height="391"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="اسم" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="58i-2g-0OP">
+                                                <rect key="frame" x="0.0" y="0.0" width="335" height="47"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="اسم" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g6i-Sg-nwC">
+                                                <rect key="frame" x="0.0" y="57" width="335" height="47.5"/>
+                                                <color key="backgroundColor" red="0.043137254899999998" green="0.21176470589999999" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="tintColor" red="0.043137254899999998" green="0.21176470589999999" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
+                                                        <color key="value" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderUIColor">
+                                                        <color key="value" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </textField>
+                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" tag="5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name Validation" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1l5-sM-KCo">
+                                                <rect key="frame" x="0.0" y="109.5" width="335" height="0.0"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="البريد الإلكتروني" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9jB-CI-006">
+                                                <rect key="frame" x="0.0" y="114.5" width="335" height="47.5"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="البريد الالكتروني" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P0Z-s4-hJj">
+                                                <rect key="frame" x="0.0" y="172" width="335" height="47"/>
+                                                <color key="backgroundColor" red="0.043137254899999998" green="0.21176470589999999" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="tintColor" red="0.043137254899999998" green="0.21176470589999999" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
+                                                        <color key="value" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </textField>
+                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" tag="6" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email Validation" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ebe-H9-zrL">
+                                                <rect key="frame" x="0.0" y="224" width="335" height="0.0"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="كلمة المرور" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h70-PZ-EF6">
+                                                <rect key="frame" x="0.0" y="229" width="335" height="47.5"/>
+                                                <color key="backgroundColor" red="0.043137254899999998" green="0.21176470589999999" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="tintColor" red="0.043137254899999998" green="0.21176470589999999" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
+                                                        <color key="value" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </textField>
+                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" tag="7" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password Validation" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x0c-qa-Dvu">
+                                                <rect key="frame" x="0.0" y="281.5" width="335" height="0.0"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="رقم الجوال" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f5B-YE-E4G">
+                                                <rect key="frame" x="0.0" y="286.5" width="335" height="47.5"/>
+                                                <color key="backgroundColor" red="0.043137254899999998" green="0.21176470589999999" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="tintColor" red="0.043137254899999998" green="0.21176470589999999" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="phonePad"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
+                                                        <color key="value" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </textField>
+                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" tag="8" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mobile Validation" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wZQ-eF-POV">
+                                                <rect key="frame" x="0.0" y="339" width="335" height="0.0"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4fp-AQ-KMI">
+                                                <rect key="frame" x="0.0" y="344" width="335" height="47"/>
+                                                <color key="backgroundColor" red="0.45009386540000001" green="0.98132258650000004" blue="0.4743030667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="25"/>
+                                                <state key="normal" title="تسجيل"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="15"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="LoginBtnClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="T7b-z6-TSm"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.043137254899999998" green="0.21176470589999999" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Zic-sR-exQ" secondAttribute="trailing" constant="20" id="3xy-aW-RaC"/>
+                                    <constraint firstItem="Zic-sR-exQ" firstAttribute="top" secondItem="CyV-FI-gzz" secondAttribute="top" constant="20" id="CO4-ak-e0D"/>
+                                    <constraint firstAttribute="bottom" secondItem="Zic-sR-exQ" secondAttribute="bottom" constant="10" id="EPu-u5-XOY"/>
+                                    <constraint firstItem="Zic-sR-exQ" firstAttribute="leading" secondItem="CyV-FI-gzz" secondAttribute="leading" constant="20" id="GhE-kj-Vwr"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sqt-N9-sb4" userLabel="Bottom View">
+                                <rect key="frame" x="0.0" y="561.5" width="375" height="105.5"/>
+                                <color key="backgroundColor" red="0.043137254899999998" green="0.21176470589999999" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.043137254899999998" green="0.21176470589999999" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="CyV-FI-gzz" firstAttribute="leading" secondItem="WuI-nP-NSO" secondAttribute="leading" id="0dv-78-SxZ"/>
+                            <constraint firstItem="vUa-s3-FAC" firstAttribute="trailing" secondItem="WuI-nP-NSO" secondAttribute="trailing" id="2Nk-xJ-ErC"/>
+                            <constraint firstItem="CyV-FI-gzz" firstAttribute="trailing" secondItem="WuI-nP-NSO" secondAttribute="trailing" id="T0x-kk-Dbr"/>
+                            <constraint firstItem="sqt-N9-sb4" firstAttribute="leading" secondItem="WuI-nP-NSO" secondAttribute="leading" id="UFK-Kg-jya"/>
+                            <constraint firstItem="vUa-s3-FAC" firstAttribute="top" secondItem="Jsu-Oc-mcc" secondAttribute="top" id="YQc-Qg-dgy"/>
+                            <constraint firstItem="vUa-s3-FAC" firstAttribute="leading" secondItem="WuI-nP-NSO" secondAttribute="leading" id="bA6-UU-Qqz"/>
+                            <constraint firstItem="CyV-FI-gzz" firstAttribute="height" secondItem="vUa-s3-FAC" secondAttribute="height" multiplier="3:1" id="bk0-hP-R7P"/>
+                            <constraint firstItem="sqt-N9-sb4" firstAttribute="top" secondItem="CyV-FI-gzz" secondAttribute="bottom" id="dlM-cZ-a2c"/>
+                            <constraint firstItem="sqt-N9-sb4" firstAttribute="trailing" secondItem="WuI-nP-NSO" secondAttribute="trailing" id="gGk-zv-lBy"/>
+                            <constraint firstItem="CyV-FI-gzz" firstAttribute="top" secondItem="vUa-s3-FAC" secondAttribute="bottom" id="hwY-lM-kt8"/>
+                            <constraint firstItem="sqt-N9-sb4" firstAttribute="bottom" secondItem="WuI-nP-NSO" secondAttribute="bottom" id="jlC-PF-tsD"/>
+                            <constraint firstItem="sqt-N9-sb4" firstAttribute="top" secondItem="CyV-FI-gzz" secondAttribute="bottom" id="tRe-gh-QoX"/>
+                            <constraint firstItem="CyV-FI-gzz" firstAttribute="top" secondItem="vUa-s3-FAC" secondAttribute="bottom" id="w33-IC-hCw"/>
+                            <constraint firstItem="sqt-N9-sb4" firstAttribute="height" secondItem="vUa-s3-FAC" secondAttribute="height" multiplier="1.5:2" id="y45-z1-s4H"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="WuI-nP-NSO"/>
+                    </view>
+                    <connections>
+                        <outletCollection property="socialSinUpTextFields" destination="g6i-Sg-nwC" collectionClass="NSMutableArray" id="gIP-Eo-6Ob"/>
+                        <outletCollection property="socialSinUpTextFields" destination="P0Z-s4-hJj" collectionClass="NSMutableArray" id="cZf-VF-VmU"/>
+                        <outletCollection property="socialSinUpTextFields" destination="h70-PZ-EF6" collectionClass="NSMutableArray" id="Pmq-Ky-kJD"/>
+                        <outletCollection property="socialSinUpTextFields" destination="f5B-YE-E4G" collectionClass="NSMutableArray" id="uVF-Wa-Iz9"/>
+                        <outletCollection property="validationLabels" destination="1l5-sM-KCo" collectionClass="NSMutableArray" id="rae-HY-8VJ"/>
+                        <outletCollection property="validationLabels" destination="ebe-H9-zrL" collectionClass="NSMutableArray" id="mGV-fb-wFn"/>
+                        <outletCollection property="validationLabels" destination="x0c-qa-Dvu" collectionClass="NSMutableArray" id="yF2-Sf-fQI"/>
+                        <outletCollection property="validationLabels" destination="wZQ-eF-POV" collectionClass="NSMutableArray" id="uys-8X-21U"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C1X-Nn-gGP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2372" y="-9"/>
         </scene>
     </scenes>
     <resources>

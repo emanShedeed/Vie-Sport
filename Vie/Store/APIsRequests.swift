@@ -32,17 +32,23 @@ class APIsRequests{
         NotificationCenter.default.post(name:.didCheckEmailStatus, object: self , userInfo: ["Status":Result,"Message":Messge] as [AnyHashable : Any])
         
     }
-    func getData(from url:String,parameters:[String:String]){
-        Alamofire.request(url,
+    func getData(from url:String, parameters:[String:String]){
+        
+        
+            Alamofire.request(url,
                           method: .get,
                           parameters:parameters)
             .validate()
             .responseJSON { response in
-                guard response.result.isSuccess else {
-                    print( "Cann't get Data)")
+                guard response.result.isSuccess  else {
+                    print("Cann't get data")
+                    print(response.result.error ?? "")
                     return
                 }
               //  SignUpVC().parseData(json: JSON( response.result.value!))
-                NotificationCenter.default.post(name:.didReceiveJsonData , object: self , userInfo: ["JSON":JSON( response.result.value!)] as [AnyHashable : Any])
+                NotificationCenter.default.post(name:.didReceiveJsonData, object: self , userInfo: ["JSON":JSON( response.result.value!)] as [AnyHashable : Any])
+ 
         }
-    }}
+    }
+    
+}
