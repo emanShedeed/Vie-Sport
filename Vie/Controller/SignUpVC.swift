@@ -18,6 +18,7 @@ class SignUpVC: UIViewController ,GIDSignInUIDelegate{
     @IBOutlet var validationLabels: [UILabel]!
     
     // MARK : - Declare constants
+    var fbLoginSuccess=false
     var activeTextField=UITextField()
     var socialData=[String:Any]()
     override func viewDidLoad() {
@@ -42,6 +43,12 @@ class SignUpVC: UIViewController ,GIDSignInUIDelegate{
     override func viewWillAppear(_ animated: Bool) {
         // Add observer To obtain google Data
         NotificationCenter.default.setObserver(self, selector: #selector(onDidReceiveGoogleUserInfo(_:)), name: .didReceiveGoogleData, object: nil)
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        if (FBSDKAccessToken.current() != nil && fbLoginSuccess == true)
+        {
+           performSegue(withIdentifier: "goToSocialSignUpVC", sender:self)
+        }
     }
     // MARK :- Google Login
     @IBAction func googleSgninBtnPressed(_ sender: Any) {
@@ -75,7 +82,7 @@ class SignUpVC: UIViewController ,GIDSignInUIDelegate{
                 if(fbloginresult.grantedPermissions.contains("email"))
                 {
                     self.getFBUserData()
-                   
+                    
                 }
             }
         }
@@ -90,6 +97,7 @@ class SignUpVC: UIViewController ,GIDSignInUIDelegate{
                     if let dict=result as? [String:Any]{
                         self.socialData=dict
                         self.socialData.updateValue("FB", forKey:"loginType")
+                        self.fbLoginSuccess=true
                     }
                 }
             })
