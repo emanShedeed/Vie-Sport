@@ -46,7 +46,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
                 let URL=user.profile.imageURL(withDimension: 100)
                 profileImageURL=URL?.absoluteString ?? ""
             }
-            let googleUserInfo = ["userId": userId,"idToken": idToken, "fullName": fullName,"givenName":givenName,"familyName":familyName,"email":email,"profileImageURL":profileImageURL]
+            let googleUserInfo = ["userId": userId,"idToken": idToken, "name": fullName,"givenName":givenName,"familyName":familyName,"email":email,"profileImageURL":profileImageURL]
             
             //NotificationCenter.default.postNotification(name: .didReceiveData, object: self, userInfo: googleUserInfo)
             NotificationCenter.default.post(name: .didReceiveGoogleData, object: self, userInfo: googleUserInfo as [AnyHashable : Any])

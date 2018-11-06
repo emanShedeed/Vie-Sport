@@ -92,12 +92,13 @@ class SignUpVC: UIViewController ,GIDSignInUIDelegate{
         if((FBSDKAccessToken.current()) != nil){
             FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, first_name, last_name, picture.type(large), email"]).start(completionHandler: { (connection, result, error) -> Void in
                 if (error == nil){
+                    self.fbLoginSuccess=true
                     //everything works print the user data
                     print("FB Login Data:\(result ?? "can not Get FB Data")")
                     if let dict=result as? [String:Any]{
                         self.socialData=dict
                         self.socialData.updateValue("FB", forKey:"loginType")
-                        self.fbLoginSuccess=true
+                        
                     }
                 }
             })

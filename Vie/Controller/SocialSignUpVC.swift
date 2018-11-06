@@ -10,28 +10,29 @@ import UIKit
 
 class SocialSignUpVC: UIViewController {
     
-    var socialData:[String:Any]?{
-        didSet{
-            
-        }
-    }
+    var socialData:[String:Any]?
     @IBOutlet var socialSinUpTextFields:[UITextField]!
     @IBOutlet var validationLabels:[UILabel]!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        socialSinUpTextFields.sort{$0.tag<$1.tag}
+        if let data=socialData{
+        displayData(dict: data)
+        }
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func displayData(dict:[String:Any]){
+            if let name=dict["name"] as? String{
+            socialSinUpTextFields[0].text=name
+        }
+        if let email=dict["email"] as? String{
+            socialSinUpTextFields[1].text=email
+        }
+        if let loginType=dict["loginType"]as? String{
+            socialSinUpTextFields[3].text=loginType
+        }
+        
     }
-    */
 
 }

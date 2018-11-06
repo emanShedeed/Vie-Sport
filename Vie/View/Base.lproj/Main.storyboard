@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -612,14 +612,14 @@
                         <viewLayoutGuide key="safeArea" id="WuI-nP-NSO"/>
                     </view>
                     <connections>
-                        <outletCollection property="socialSinUpTextFields" destination="g6i-Sg-nwC" collectionClass="NSMutableArray" id="gIP-Eo-6Ob"/>
-                        <outletCollection property="socialSinUpTextFields" destination="P0Z-s4-hJj" collectionClass="NSMutableArray" id="cZf-VF-VmU"/>
-                        <outletCollection property="socialSinUpTextFields" destination="h70-PZ-EF6" collectionClass="NSMutableArray" id="Pmq-Ky-kJD"/>
-                        <outletCollection property="socialSinUpTextFields" destination="f5B-YE-E4G" collectionClass="NSMutableArray" id="uVF-Wa-Iz9"/>
                         <outletCollection property="validationLabels" destination="1l5-sM-KCo" collectionClass="NSMutableArray" id="rae-HY-8VJ"/>
                         <outletCollection property="validationLabels" destination="ebe-H9-zrL" collectionClass="NSMutableArray" id="mGV-fb-wFn"/>
                         <outletCollection property="validationLabels" destination="x0c-qa-Dvu" collectionClass="NSMutableArray" id="yF2-Sf-fQI"/>
                         <outletCollection property="validationLabels" destination="wZQ-eF-POV" collectionClass="NSMutableArray" id="uys-8X-21U"/>
+                        <outletCollection property="socialSinUpTextFields" destination="g6i-Sg-nwC" collectionClass="NSMutableArray" id="fgW-wW-eQl"/>
+                        <outletCollection property="socialSinUpTextFields" destination="P0Z-s4-hJj" collectionClass="NSMutableArray" id="XQC-D2-qI7"/>
+                        <outletCollection property="socialSinUpTextFields" destination="h70-PZ-EF6" collectionClass="NSMutableArray" id="XeX-FV-j9V"/>
+                        <outletCollection property="socialSinUpTextFields" destination="f5B-YE-E4G" collectionClass="NSMutableArray" id="eJu-ut-GTC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C1X-Nn-gGP" userLabel="First Responder" sceneMemberID="firstResponder"/>
