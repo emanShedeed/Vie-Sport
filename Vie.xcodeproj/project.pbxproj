@@ -15,6 +15,7 @@
 		C71383DD216E16AD00784CDC /* HideKeyboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71383DC216E16AD00784CDC /* HideKeyboardVC.swift */; };
 		E721A3AC21774D73002DE31E /* ConfirmationCodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721A3AB21774D73002DE31E /* ConfirmationCodeVC.swift */; };
 		E73A7BDB21919CC900DBD0CB /* SocialSignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73A7BDA21919CC900DBD0CB /* SocialSignUpVC.swift */; };
+		E745A3EB2192F86F008B4E90 /* ValidateSignUpTextFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = E745A3EA2192F86F008B4E90 /* ValidateSignUpTextFields.swift */; };
 		E747A90D2176F5DB0075E015 /* APIsRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E747A90C2176F5DB0075E015 /* APIsRequests.swift */; };
 		E789996E218728FD0013BE4C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E789996D218728FD0013BE4C /* User.swift */; };
 		E789997121872C750013BE4C /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E789997021872C750013BE4C /* APIClient.swift */; };
@@ -67,6 +68,7 @@
 		D690221753A2AFF740EFAB95 /* Pods-VieUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VieUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VieUITests/Pods-VieUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E721A3AB21774D73002DE31E /* ConfirmationCodeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationCodeVC.swift; sourceTree = "<group>"; };
 		E73A7BDA21919CC900DBD0CB /* SocialSignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialSignUpVC.swift; sourceTree = "<group>"; };
+		E745A3EA2192F86F008B4E90 /* ValidateSignUpTextFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateSignUpTextFields.swift; sourceTree = "<group>"; };
 		E747A90C2176F5DB0075E015 /* APIsRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIsRequests.swift; sourceTree = "<group>"; };
 		E789996D218728FD0013BE4C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E789997021872C750013BE4C /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 				E721A3AB21774D73002DE31E /* ConfirmationCodeVC.swift */,
 				E73A7BDA21919CC900DBD0CB /* SocialSignUpVC.swift */,
 				E7A857EC216C8009002683CD /* AppDelegate.swift */,
+				E745A3EA2192F86F008B4E90 /* ValidateSignUpTextFields.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -521,6 +524,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E745A3EB2192F86F008B4E90 /* ValidateSignUpTextFields.swift in Sources */,
 				E789996E218728FD0013BE4C /* User.swift in Sources */,
 				C71383DD216E16AD00784CDC /* HideKeyboardVC.swift in Sources */,
 				E7CBD127217499D000072F03 /* NotificationNamesExtension.swift in Sources */,

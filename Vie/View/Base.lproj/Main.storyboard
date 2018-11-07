@@ -574,6 +574,7 @@
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="LoginBtnClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="T7b-z6-TSm"/>
+                                                    <action selector="SocialSignUpButtonPressed:" destination="Jmw-mm-bfQ" eventType="touchUpInside" id="Q41-7K-ukI"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -620,6 +621,7 @@
                         <outletCollection property="socialSinUpTextFields" destination="P0Z-s4-hJj" collectionClass="NSMutableArray" id="XQC-D2-qI7"/>
                         <outletCollection property="socialSinUpTextFields" destination="h70-PZ-EF6" collectionClass="NSMutableArray" id="XeX-FV-j9V"/>
                         <outletCollection property="socialSinUpTextFields" destination="f5B-YE-E4G" collectionClass="NSMutableArray" id="eJu-ut-GTC"/>
+                        <segue destination="tne-SU-hlK" kind="show" identifier="goToConfirmationCodeVC" id="ese-23-inY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C1X-Nn-gGP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -632,4 +634,7 @@
         <image name="Google" width="801" height="801"/>
         <image name="diceeLogo" width="147" height="96"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="ese-23-inY"/>
+    </inferredMetricsTieBreakers>
 </document>

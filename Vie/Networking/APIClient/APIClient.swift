@@ -37,22 +37,12 @@ class APIClient{
     private let baseUrl                                     :String =  "https://shaaer.app/api/"//"http://sha3er2.revival.one/api/"//"http://sha3er.revival.one/api/"
     
     #endif
-    private var afManager                                   :SessionManager!
+   
     
     //MARK: - Network Handler
     typealias requestCompletionHandler = (_ value: Any?, _ statusCode: Int,_ responseMessageStatus:ResponseMessageStatusEnum?, _ userMessage:String?) -> (Void)
    // typealias errorHandler = (_ value: Any?, _ statusCode: Int, _ responseMessageStatus:ResponseMessageStatusEnum?, _ userMessage:String?) -> Void
-    
-    init()
-    {
-        
-        self.afManager = Alamofire.SessionManager()
-        
-       // requestCompletionHandler = ({_,_,_  -> Void in})
-        
-       // errorHandler = ({_,_,_,_  -> Void in})
-        
-    }
+ 
     
     
     //MARK: - Request Function

@@ -8,18 +8,24 @@
 
 import UIKit
 
-class SocialSignUpVC: UIViewController {
+class SocialSignUpVC:ValidateSignUpTextFields{
     
     var socialData:[String:Any]?
+
     @IBOutlet var socialSinUpTextFields:[UITextField]!
     @IBOutlet var validationLabels:[UILabel]!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
         socialSinUpTextFields.sort{$0.tag<$1.tag}
+        //sort validationLabels by target id
+        validationLabels.sort{$0.tag<$1.tag}
         if let data=socialData{
         displayData(dict: data)
         }
         // Do any additional setup after loading the view.
+        initArrays(textFieldsArray: socialSinUpTextFields, validationlabelsArray: validationLabels, view: self as UITextFieldDelegate)
     }
     
     func displayData(dict:[String:Any]){
@@ -29,10 +35,22 @@ class SocialSignUpVC: UIViewController {
         if let email=dict["email"] as? String{
             socialSinUpTextFields[1].text=email
         }
-        if let loginType=dict["loginType"]as? String{
+        /*if let loginType=dict["loginType"]as? String{
             socialSinUpTextFields[3].text=loginType
+        }*/
+        
+    }
+    
+    @IBAction func SocialSignUpButtonPressed(_ sender: Any) {
+        validateEmail(textFields: socialSinUpTextFields, validationLabels: validationLabels) { (isConfirmationCodeSent) -> (Void) in
+            if(isConfirmationCodeSent ?? false){
+                self.performSegue(withIdentifier: "goToConfirmationCodeVC", sender: self)
+            }
         }
         
     }
-
-}
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destinationVC=segue.destination as! ConfirmationCodeVC
+            destinationVC.mobile=socialSinUpTextFields[3].text!
+        
+    }}

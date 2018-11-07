@@ -11,7 +11,7 @@ import GoogleSignIn
 import NotificationCenter
 import FBSDKLoginKit
 import SwiftyJSON
-class SignUpVC: UIViewController ,GIDSignInUIDelegate{
+class SignUpVC: ValidateSignUpTextFields ,GIDSignInUIDelegate{
     //MARK : - Declare IBoutlet
     @IBOutlet var textFields: [UITextField]!
     
@@ -24,18 +24,12 @@ class SignUpVC: UIViewController ,GIDSignInUIDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        //loop through all textfields to set customize border
-        for textfield in textFields{
-            textfield.setBottomBorder()
-            textfield.delegate=self
-        }
-        //To hide keyboard
-        self.hideKeyboardWhenTappedAround()
+      
         //sort textfields by target id
         textFields.sort{$0.tag<$1.tag}
         //sort validationLabels by target id
         validationLabels.sort{$0.tag<$1.tag}
-        
+        initArrays(textFieldsArray: textFields, validationlabelsArray: validationLabels, view: self as UITextFieldDelegate)
         //change keyboard style ->from story board
        // textFields[1].keyboardType=UIKeyboardType.emailAddress
        // textFields[3].keyboardType=UIKeyboardType.phonePad
@@ -106,55 +100,14 @@ class SignUpVC: UIViewController ,GIDSignInUIDelegate{
     }
     //MARK :-
     @IBAction func SignUpButtonPressed(_ sender: Any) {
-        var isCompleted=true
-        for (index,textField) in textFields.enumerated(){
-            let (valid, message) = validate(textField)
-            validationLabels[index].isHidden=valid
-            validationLabels[index].text=message
-            if(!valid){
-                isCompleted=false
-                break
+        validateEmail(textFields: textFields, validationLabels: validationLabels) { (isConfirmationCodeSent) -> (Void) in
+            if(isConfirmationCodeSent ?? false){
+                self.performSegue(withIdentifier: "goToConfirmationCodeVC", sender: self)
             }
-        }
-        if isCompleted{
-            // APIsRequests().getStatus(from: "http://test100.revival.one/api/users/CheckEmail?", parameters: ["Email":textFields[1].text!])
-            if let request = APIClient.CheckEmail(email: textFields[1].text!){
-                APIClient().jsonRequest(request: request, CompletionHandler: { (JSON: Any?, statusCode:Int,responseMessageStatus:ResponseMessageStatusEnum?,userMessage:String?) -> (Void) in
-                   
-                    if let  data = JSON as? [String: Any]{
-                        let status=data["Status"] as! String
-                        if (status=="Success"){
-                            let mobileTextField=self.textFields[3]
-                            // if email is valid send confirmation code
-                            self.SendConfirmationCode(mobile:mobileTextField.text!)
-                        }
-                    }
-                })
-            }
+            
         }
     }
-    func SendConfirmationCode(mobile:String){
-        //  APIsRequests().getData(from: "http://test100.revival.one/api/OwnersBusiness/SendConfirmationCode?", parameters: ["Mobile":mobileTextField.text ?? ""])
-        if let request = APIClient.SendConfirmationCode(mobile: mobile){
-            APIClient().jsonRequest(request: request, CompletionHandler: { (JSON: Any?,statusCode:Int,responseMessageStatus:ResponseMessageStatusEnum?,userMessage:String?) -> (Void) in
-              
-                    if let  data = JSON as? [String: Any]{
-                        print ("Final Result= \(String(describing: data["Status"] ))")
-                        let status=data["Status"] as? String
-                        if (status=="Success"){
-                            
-                            print("successfuly send Confirmation Code")
-                            /*let messageAlert = UIAlertController.init(title: "", message: data["Message"], preferredStyle: .alert)
-                             let action = UIAlertAction.init(title: "OK", style: .default, handler: nil)
-                             messageAlert.addAction(action)
-                             self.present(messageAlert,animated: true,completion: nil)*/
-                            self.performSegue(withIdentifier: "goToConfirmationCodeVC", sender: self)
-                        }
-                    }
-              
-            })
-        }
-    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier=="goToSocialSignUpVC")
         {
@@ -166,101 +119,4 @@ class SignUpVC: UIViewController ,GIDSignInUIDelegate{
         destinationVC.mobile=textFields[3].text!
         }
     }
-}
-extension SignUpVC:UITextFieldDelegate{
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        switch textField {
-        case textFields[0]:
-            let (valid, message) = validate(textField)
-            
-            if valid {
-                textFields[1].becomeFirstResponder()
-            }
-            
-            // Update Password Validation Label
-            validationLabels[0].text = message
-            
-            // Show/Hide Password Validation Label
-            UIView.animate(withDuration: 0.25, animations: {
-                self.validationLabels[0].isHidden = valid
-            })
-        case textFields[1]:
-            let (valid, message) = validate(textField)
-            
-            if valid {
-                textFields[2].becomeFirstResponder()
-            }
-            
-            // Update Password Validation Label
-            validationLabels[1].text = message
-            
-            // Show/Hide Password Validation Label
-            UIView.animate(withDuration: 0.25, animations: {
-                self.validationLabels[1].isHidden = valid
-            })
-            
-        case textFields[2]:
-            let (valid, message) = validate(textField)
-            
-            if valid {
-                textFields[3].becomeFirstResponder()
-            }
-            
-            // Update Password Validation Label
-            validationLabels[2].text = message
-            
-            // Show/Hide Password Validation Label
-            UIView.animate(withDuration: 0.25, animations: {
-                self.validationLabels[2].isHidden = valid
-            })
-            
-        default:
-            let (valid, message) = validate(textField)
-            
-            if valid {
-                textFields[3].resignFirstResponder()
-            }
-            
-            // Update Password Validation Label
-            validationLabels[3].text = message
-            
-            // Show/Hide Password Validation Label
-            UIView.animate(withDuration: 0.25, animations: {
-                self.validationLabels[3].isHidden = valid
-            })
-        }
-        return true
-    }
-    // MARK: - Helper Methods
-    
-    fileprivate func validate(_ textField: UITextField) -> (Bool, String?) {
-        guard let text = textField.text else {
-            return (false, nil)
-        }
-        
-        if textField == textFields[1] {
-            let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-            let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
-            return ( emailTest.evaluate(with:textField.text), "Invalid Email Address.")
-        }
-        if textField == textFields[2] {
-            return (text.count >= 6, "Your password is too short.")
-        }
-        if textField==textFields[3]{
-            var PHONE_REGEX = "^\\d{3}\\d{3}\\d{4}$"
-            var phoneTest = NSPredicate(format: "SELF MATCHES %@", PHONE_REGEX)
-            let result =  phoneTest.evaluate(with: textField.text)
-            if(result)
-            {
-                 textField.text="+966"+textField.text!
-            }
-             PHONE_REGEX = "^((\\+)|(00))[0-9]{6,14}$";
-             phoneTest = NSPredicate(format: "SELF MATCHES %@", PHONE_REGEX)
-            return(phoneTest.evaluate(with: textField.text ),"Invalid Mobile Number")
-
-        }
-        
-        return (text.count > 0, "This field cannot be empty.")
-    }
-
 }
