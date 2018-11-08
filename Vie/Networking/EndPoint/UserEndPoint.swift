@@ -3,38 +3,37 @@ enum UserEndPoint:APIConfiguration{
     
     
     case CheckEmail
-   // case posts
+    // case Add(email:String,password:String,fullName:String,mobile:String,socialType:String,socialUserID:String,deviceToken:String,imageLocation:String)
+    case Add(userObj:User)
    // case post(id: Int)
     
     // MARK: - HTTPMethod
-     var method:HTTPMethod {
+    var method:HTTPMethod {
         switch self {
-  //      case .login:
-  //          return .post
         case .CheckEmail:
             return .get
+        case .Add:
+            return .post
         }
     }
     
     // MARK: - Path
-     var path: String {
+    var path: String {
         switch self {
-       /* case .login:
-            return "/login"
-        case .posts:
-            return "/posts"*/
         case .CheckEmail:
             return "CheckEmail"
+        case .Add:
+            return "/Add"
         }
     }
     
     // MARK: - Parameters
-     var parameters: Parameters? {
+    var parameters: Parameters? {
         switch self {
-       /* case .login(let email, let password):
-            return [K.APIParameterKey.email: email, K.APIParameterKey.password: password]*/
         case .CheckEmail:
             return nil
+        case .Add(let userObj):
+            return [K.APIParameterKey.email:userObj.email,K.APIParameterKey.password:userObj.password,K.APIParameterKey.fullName:userObj.fullName,K.APIParameterKey.mobile:userObj.mobile,K.APIParameterKey.socialType:userObj.socialType,K.APIParameterKey.socialUserID:userObj.socialUserID,K.APIParameterKey.deviceToken:userObj.deviceToken,K.APIParameterKey.imageLocation:userObj.imageLocation,K.APIParameterKey.operatingSystem:userObj.operatingSystem]
         }
     }
     

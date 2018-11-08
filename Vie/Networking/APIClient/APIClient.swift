@@ -129,4 +129,12 @@ static func CheckEmail(email: String)->DataRequest? {
         catch{}
         return nil
     }
+    static func AddUser(userObj:User)->DataRequest?{
+        do{
+            let request = Alamofire.request(try UserEndPoint.Add(userObj: userObj).getURL()).validate(statusCode:200..<501)
+            return request
+        }
+        catch{}
+        return nil
+    }
 }

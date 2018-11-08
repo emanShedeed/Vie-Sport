@@ -65,10 +65,10 @@ class SignUpVC: UIViewController ,GIDSignInUIDelegate{
         {
             socialData=data
         socialData.updateValue("GO", forKey:"loginType")
-            /* for (title, value) in data
+            for (title, value) in data
             {
                 print("\(title) : \(value) ")
-            }*/
+            }
         }
         performSegue(withIdentifier: "goToSocialSignUpVC", sender:self)
     }
@@ -166,6 +166,7 @@ class SignUpVC: UIViewController ,GIDSignInUIDelegate{
         else if (segue.identifier=="goToConfirmationCodeVC"){
             let destinationVC=segue.destination as! ConfirmationCodeVC
             destinationVC.mobile=textFields[3].text!
+            destinationVC.UserObj=User(userEmail:textFields[1].text!, userPassword: textFields[2].text!, userFullName:textFields[0].text!, userMobile: textFields[3].text!, userOperatingSystem: "IOS", userSocialType: "", userSocialUserID: "", UserDeviceToken: "", userImageLocation: "")
         }
     }
 }

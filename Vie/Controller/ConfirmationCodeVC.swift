@@ -9,12 +9,13 @@
 import UIKit
 import SwiftyJSON
 class ConfirmationCodeVC: UIViewController {
+    
     var mobile:String!{
         didSet{
             print(mobile)
         }
     }
-    
+    var UserObj:User?
     //Timer
     var countdownTimer: Timer!
     var totalTime = 60
@@ -72,15 +73,30 @@ class ConfirmationCodeVC: UIViewController {
             APIClient().jsonRequest(request: urlRequest) { (Json:Any?,statusCode:Int,ResponseMessageStatus:ResponseMessageStatusEnum?, userMessage:String?) -> (Void) in
                 if let data = Json as? [String: Any]{
                     let status = data["Status"] as? String
-                    let messge=data["Message"] as? String
+                    if  status == "Success"{
+                        self.AddUser()
+                    }
+                    /*let messge=data["Message"] as? String
                     print(status as Any)
-                    print(messge as Any)
+                    print(messge as Any)*/
                 }
                 
             }
         }
     }
-    
+    func AddUser(){
+        if let  urlRequest=APIClient.AddUser(userObj: UserObj!){
+            APIClient().jsonRequest(request: urlRequest) { (Json:Any?, statusCode:Int, ResponseMessageStatus:ResponseMessageStatusEnum?, userMessage:String?) -> (Void) in
+                if let data=Json as? [String:Any]{
+                    let status = data["Status"] as? String
+                    let messge=data["Message"] as? String
+                     print("add user status=\(status as Any)")
+                    print(messge as Any)
+                }
+            }
+        }
+        
+    }
     
     //MARK : - Timer
     func startTimer() {

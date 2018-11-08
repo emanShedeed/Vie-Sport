@@ -8,8 +8,15 @@ struct K {
     }
     
     struct APIParameterKey {
-        //static let password = "password"
-        static let Email = "email"
+        static let email="UserName"
+        static let password="Password"
+        static let fullName="FullName"
+        static let mobile="Mobile"
+        static let operatingSystem="OS"
+        static let socialType="SocialType"
+        static let socialUserID="SocialUserID"
+        static let imageLocation="ImageLocation"
+        static let deviceToken="DeviceToken"
     }
 }
 
