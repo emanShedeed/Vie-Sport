@@ -99,6 +99,10 @@ class SignUpVC: UIViewController ,GIDSignInUIDelegate{
                     //everything works print the user data
                     print("FB Login Data:\(result ?? "can not Get FB Data")")
                     if let dict=result as? [String:Any]{
+                        for (title, value) in dict
+                        {
+                            print("\(title) : \(value) ")
+                        }
                         self.socialData=dict
                         self.socialData.updateValue("FB", forKey:"loginType")
                         

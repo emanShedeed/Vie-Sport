@@ -103,9 +103,24 @@ class SocialSignUpVC:UIViewController{
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destinationVC=segue.destination as! ConfirmationCodeVC
-            destinationVC.mobile=socialSinUpTextFields[3].text!
-        
-    }}
+        destinationVC.mobile=socialSinUpTextFields[3].text!
+        var url:String=""
+        if ((socialData!["loginType"] as! String) == "GO"){
+            url=socialData!["picture"] as! String
+        }
+        else{
+            if let picture = socialData!["picture"] as? NSDictionary {
+                if let data = picture["data"] as? NSDictionary{
+                    if let profilePicture = data["url"] as? String {
+                        print(profilePicture)
+                        url=profilePicture
+                    }
+                }
+            }
+        }
+        destinationVC.UserObj=User(userEmail:socialSinUpTextFields[1].text!, userPassword: socialSinUpTextFields[2].text!, userFullName:socialSinUpTextFields[0].text!, userMobile: socialSinUpTextFields[3].text!, userOperatingSystem: "IOS", userSocialType: socialData!["loginType"] as! String, userSocialUserID: socialData!["id"] as! String, UserDeviceToken:"", userImageLocation: url)
+    }
+}
 extension SocialSignUpVC:UITextFieldDelegate{
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         switch textField {
