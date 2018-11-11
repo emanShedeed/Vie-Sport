@@ -39,10 +39,6 @@ class ConfirmationCodeVC: UIViewController {
         startTimer()
         confirmationCodeTextFields.sort{$0.tag<$1.tag}
         //confirmationCodeTextFields[0].becomeFirstResponder()
-        //add observer when send JSON Data
-        NotificationCenter.default.setObserver(self, selector: #selector(onDidReceiveJsonData(_:)), name: .didReceiveJsonData
-            , object: nil)
-        
     }
     
    @objc func textFieldDidChange(textField:UITextField) {
@@ -75,6 +71,7 @@ class ConfirmationCodeVC: UIViewController {
                     let status = data["Status"] as? String
                     if  status == "Success"{
                         self.AddUser()
+                        self.performSegue(withIdentifier: "goToHomeVC", sender: self)
                     }
                     /*let messge=data["Message"] as? String
                     print(status as Any)
@@ -129,23 +126,33 @@ class ConfirmationCodeVC: UIViewController {
         //     let hours: Int = totalSeconds / 3600
         return String(format: "%02d:%02d", minutes, seconds)
     }
-    @objc func ResendConfirmationCode(){
+    /*@objc func ResendConfirmationCode(){
         APIsRequests().getData(from: "http://test100.revival.one/api/OwnersBusiness/SendConfirmationCode?", parameters: ["Mobile":mobile])
         totalTime = 60
         startTimer()
         
-    }
-    @objc func onDidReceiveJsonData(_ notification:NSNotification){
-        if let data = notification.userInfo as? [String: JSON]{
-            if let jsonObj=data["JSON"]
-            {
-                let Result = String(jsonObj[]["Status"].stringValue)
-                let Messge=String(jsonObj[]["Message"].stringValue)
-                print(Result)
-                print(Messge)
-            
-            }
+    }*/
+    @objc func ResendConfirmationCode(){
+        //  APIsRequests().getData(from: "http://test100.revival.one/api/OwnersBusiness/SendConfirmationCode?", parameters: ["Mobile":mobileTextField.text ?? ""])
+        if let request = APIClient.SendConfirmationCode(mobile: mobile){
+            APIClient().jsonRequest(request: request, CompletionHandler: { (JSON: Any?,statusCode:Int,responseMessageStatus:ResponseMessageStatusEnum?,userMessage:String?) -> (Void) in
+                
+                if let  data = JSON as? [String: Any]{
+                    let status=data["Status"] as? String
+                    if (status=="Success"){
+                        
+                        print("successfuly send Confirmation Code")
+                        /*let messageAlert = UIAlertController.init(title: "", message: data["Message"], preferredStyle: .alert)
+                         let action = UIAlertAction.init(title: "OK", style: .default, handler: nil)
+                         messageAlert.addAction(action)
+                         self.present(messageAlert,animated: true,completion: nil)*/
+                        //self.performSegue(withIdentifier: "goToConfirmationCodeVC", sender: self)
+                    }
+                }
+                
+            })
         }
-     }
-  
+        totalTime = 60
+        startTimer()
+    }
 }
