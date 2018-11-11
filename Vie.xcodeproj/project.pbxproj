@@ -13,9 +13,13 @@
 		C71383D3216E053700784CDC /* CustomUItextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71383D2216E053700784CDC /* CustomUItextField.swift */; };
 		C71383D7216E0B1F00784CDC /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71383D6216E0B1F00784CDC /* SignUpVC.swift */; };
 		C71383DD216E16AD00784CDC /* HideKeyboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71383DC216E16AD00784CDC /* HideKeyboardVC.swift */; };
+		E700E0CA21984A8100A0A899 /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E700E0C921984A8100A0A899 /* MapVC.swift */; };
+		E700E0CC21984B2200A0A899 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E700E0CB21984B2200A0A899 /* HomeVC.swift */; };
 		E721A3AC21774D73002DE31E /* ConfirmationCodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721A3AB21774D73002DE31E /* ConfirmationCodeVC.swift */; };
 		E721F63821982A9F003FE7B0 /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721F63721982A9F003FE7B0 /* TabBarVC.swift */; };
 		E73A7BDB21919CC900DBD0CB /* SocialSignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73A7BDA21919CC900DBD0CB /* SocialSignUpVC.swift */; };
+		E7790EA6219858E800A1D926 /* PlayGround.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7790EA5219858E800A1D926 /* PlayGround.swift */; };
+		E7790EA8219862E000A1D926 /* PlaygroundEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7790EA7219862E000A1D926 /* PlaygroundEndPoint.swift */; };
 		E789996E218728FD0013BE4C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E789996D218728FD0013BE4C /* User.swift */; };
 		E789997121872C750013BE4C /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E789997021872C750013BE4C /* APIClient.swift */; };
 		E79379F9217837AB006D33F5 /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79379F8217837AB006D33F5 /* CustomColor.swift */; };
@@ -65,9 +69,13 @@
 		C95FFA22EFCB907A77E36770 /* Pods_Vie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC69CECEDA1203139C64CF83 /* Pods-Vie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vie.release.xcconfig"; path = "Pods/Target Support Files/Pods-Vie/Pods-Vie.release.xcconfig"; sourceTree = "<group>"; };
 		D690221753A2AFF740EFAB95 /* Pods-VieUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VieUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VieUITests/Pods-VieUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		E700E0C921984A8100A0A899 /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
+		E700E0CB21984B2200A0A899 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		E721A3AB21774D73002DE31E /* ConfirmationCodeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationCodeVC.swift; sourceTree = "<group>"; };
 		E721F63721982A9F003FE7B0 /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
 		E73A7BDA21919CC900DBD0CB /* SocialSignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialSignUpVC.swift; sourceTree = "<group>"; };
+		E7790EA5219858E800A1D926 /* PlayGround.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayGround.swift; sourceTree = "<group>"; };
+		E7790EA7219862E000A1D926 /* PlaygroundEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaygroundEndPoint.swift; sourceTree = "<group>"; };
 		E789996D218728FD0013BE4C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E789997021872C750013BE4C /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		E79379F8217837AB006D33F5 /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
@@ -168,6 +176,8 @@
 			isa = PBXGroup;
 			children = (
 				E721F63721982A9F003FE7B0 /* TabBarVC.swift */,
+				E700E0C921984A8100A0A899 /* MapVC.swift */,
+				E700E0CB21984B2200A0A899 /* HomeVC.swift */,
 			);
 			path = "App Functionality";
 			sourceTree = "<group>";
@@ -240,6 +250,7 @@
 			isa = PBXGroup;
 			children = (
 				E789996D218728FD0013BE4C /* User.swift */,
+				E7790EA5219858E800A1D926 /* PlayGround.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -276,6 +287,7 @@
 			children = (
 				E7DDF3B72185C11400C878DE /* UserEndPoint.swift */,
 				E7B3980F218B0EB500A1B365 /* OwnerBusinessEndPoint.swift */,
+				E7790EA7219862E000A1D926 /* PlaygroundEndPoint.swift */,
 				E7DDF3B92185CB5000C878DE /* Constants.swift */,
 				E7EF722E21885572001AAD73 /* APIConfiguration.swift */,
 			);
@@ -425,10 +437,14 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Vie/Pods-Vie-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
 				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -529,6 +545,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E700E0CC21984B2200A0A899 /* HomeVC.swift in Sources */,
+				E7790EA8219862E000A1D926 /* PlaygroundEndPoint.swift in Sources */,
 				E789996E218728FD0013BE4C /* User.swift in Sources */,
 				C71383DD216E16AD00784CDC /* HideKeyboardVC.swift in Sources */,
 				E7CBD127217499D000072F03 /* NotificationNamesExtension.swift in Sources */,
@@ -539,12 +557,14 @@
 				E7EF722F21885572001AAD73 /* APIConfiguration.swift in Sources */,
 				E721A3AC21774D73002DE31E /* ConfirmationCodeVC.swift in Sources */,
 				E7DDF3B82185C11400C878DE /* UserEndPoint.swift in Sources */,
+				E700E0CA21984A8100A0A899 /* MapVC.swift in Sources */,
 				E7A857EF216C8009002683CD /* MainVC.swift in Sources */,
 				E7A857ED216C8009002683CD /* AppDelegate.swift in Sources */,
 				E789997121872C750013BE4C /* APIClient.swift in Sources */,
 				E7B39810218B0EB500A1B365 /* OwnerBusinessEndPoint.swift in Sources */,
 				E721F63821982A9F003FE7B0 /* TabBarVC.swift in Sources */,
 				E7DDF3BA2185CB5000C878DE /* Constants.swift in Sources */,
+				E7790EA6219858E800A1D926 /* PlayGround.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

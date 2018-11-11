@@ -137,4 +137,12 @@ static func CheckEmail(email: String)->DataRequest? {
         catch{}
         return nil
     }
+    static func GetPlayGrounds()->DataRequest?{
+        do{
+            let request=Alamofire.request(try playgroundEndPoint.get.getURL()).validate(statusCode: 200..<501)
+            return request
+        }
+        catch{}
+        return nil
+    }
 }

@@ -23,7 +23,7 @@ enum UserEndPoint:APIConfiguration{
         case .CheckEmail:
             return "CheckEmail"
         case .Add:
-            return "/Add"
+            return "Add"
         }
     }
     

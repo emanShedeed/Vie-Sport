@@ -5,6 +5,7 @@ struct K {
         static let baseURL = "http://test100.revival.one/api/"
         static let user="users/"
         static let OwnersBusiness="OwnersBusiness/"
+        static let PlayGround="PlayGrounds/"
     }
     
     struct APIParameterKey {

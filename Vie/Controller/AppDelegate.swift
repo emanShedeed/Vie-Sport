@@ -9,6 +9,7 @@
 import UIKit
 import GoogleSignIn
 import FBSDKCoreKit
+import GoogleMaps
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
 
@@ -21,6 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         GIDSignIn.sharedInstance().delegate = self
         //intialize FB Sign in
         FBSDKApplicationDelegate.sharedInstance()?.application(application, didFinishLaunchingWithOptions: launchOptions)
+        //intialize Google maps
+        GMSServices.provideAPIKey("AIzaSyCri6mjXWVBDBBYTPnPsL9GUded9kUuWNI")
         return true
     }
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
