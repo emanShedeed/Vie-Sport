@@ -153,6 +153,25 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E700E0C72198408200A0A899 /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				E7A857EE216C8009002683CD /* MainVC.swift */,
+				C71383D6216E0B1F00784CDC /* SignUpVC.swift */,
+				E721A3AB21774D73002DE31E /* ConfirmationCodeVC.swift */,
+				E73A7BDA21919CC900DBD0CB /* SocialSignUpVC.swift */,
+			);
+			path = Registration;
+			sourceTree = "<group>";
+		};
+		E700E0C8219840A800A0A899 /* App Functionality */ = {
+			isa = PBXGroup;
+			children = (
+				E721F63721982A9F003FE7B0 /* TabBarVC.swift */,
+			);
+			path = "App Functionality";
+			sourceTree = "<group>";
+		};
 		E789996F21872C190013BE4C /* APIClient */ = {
 			isa = PBXGroup;
 			children = (
@@ -236,11 +255,8 @@
 		E7A8581C216C80DC002683CD /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				E7A857EE216C8009002683CD /* MainVC.swift */,
-				C71383D6216E0B1F00784CDC /* SignUpVC.swift */,
-				E721A3AB21774D73002DE31E /* ConfirmationCodeVC.swift */,
-				E73A7BDA21919CC900DBD0CB /* SocialSignUpVC.swift */,
-				E721F63721982A9F003FE7B0 /* TabBarVC.swift */,
+				E700E0C72198408200A0A899 /* Registration */,
+				E700E0C8219840A800A0A899 /* App Functionality */,
 				E7A857EC216C8009002683CD /* AppDelegate.swift */,
 			);
 			path = Controller;

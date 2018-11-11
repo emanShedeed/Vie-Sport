@@ -629,10 +629,10 @@
             </objects>
             <point key="canvasLocation" x="2372" y="-9"/>
         </scene>
-        <!--View Controller-->
+        <!--Settings VC-->
         <scene sceneID="nnt-Xw-ddx">
             <objects>
-                <viewController id="EPC-sn-FIO" sceneMemberID="viewController">
+                <viewController id="EPC-sn-FIO" userLabel="Settings VC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1eL-2W-fnn" userLabel="Settings">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -645,26 +645,50 @@
             </objects>
             <point key="canvasLocation" x="3634" y="-830"/>
         </scene>
-        <!--Home-->
+        <!--Home VC-->
         <scene sceneID="bVj-VW-2GL">
             <objects>
-                <viewController id="8rV-Ax-Vhu" sceneMemberID="viewController">
+                <viewController id="8rV-Ax-Vhu" userLabel="Home VC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="590-cf-E5R" userLabel="Home View">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JR1-e0-6Le" userLabel="Map Container View">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                <connections>
+                                    <segue destination="Pjg-8t-r1o" kind="embed" id="EWK-as-B2B"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fQD-k5-4jG" userLabel="Colletion View Container View">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                <connections>
+                                    <segue destination="fqR-ee-pke" kind="embed" id="TDt-IW-tiF"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="JR1-e0-6Le" firstAttribute="leading" secondItem="gSo-DF-5Tb" secondAttribute="leading" id="4Yp-u1-pde"/>
+                            <constraint firstItem="JR1-e0-6Le" firstAttribute="bottom" secondItem="gSo-DF-5Tb" secondAttribute="bottom" id="4aO-im-atd"/>
+                            <constraint firstItem="JR1-e0-6Le" firstAttribute="top" secondItem="590-cf-E5R" secondAttribute="top" id="4pg-FN-A8h"/>
+                            <constraint firstItem="fQD-k5-4jG" firstAttribute="trailing" secondItem="gSo-DF-5Tb" secondAttribute="trailing" id="LHF-6I-XzK"/>
+                            <constraint firstItem="fQD-k5-4jG" firstAttribute="leading" secondItem="gSo-DF-5Tb" secondAttribute="leading" id="Wu4-w5-63q"/>
+                            <constraint firstItem="JR1-e0-6Le" firstAttribute="trailing" secondItem="gSo-DF-5Tb" secondAttribute="trailing" id="cVj-J9-kyc"/>
+                            <constraint firstItem="fQD-k5-4jG" firstAttribute="bottom" secondItem="gSo-DF-5Tb" secondAttribute="bottom" id="oUH-T2-1Co"/>
+                            <constraint firstItem="fQD-k5-4jG" firstAttribute="top" secondItem="590-cf-E5R" secondAttribute="top" id="vCT-xS-0Yo"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="gSo-DF-5Tb"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" id="pHE-7U-1HH"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ra1-Z5-Dho" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3727" y="-51"/>
+            <point key="canvasLocation" x="3722.4000000000001" y="935.08245877061472"/>
         </scene>
-        <!--View Controller-->
+        <!--Search VC-->
         <scene sceneID="7yY-fx-DOw">
             <objects>
-                <viewController id="HDH-BB-fjs" sceneMemberID="viewController">
+                <viewController id="HDH-BB-fjs" userLabel="Search VC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uwT-lm-v8Y" userLabel="Search View">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -677,10 +701,10 @@
             </objects>
             <point key="canvasLocation" x="4316" y="-831"/>
         </scene>
-        <!--View Controller-->
+        <!--Reservations VC-->
         <scene sceneID="A8g-HC-6iU">
             <objects>
-                <viewController id="ama-KY-M3E" sceneMemberID="viewController">
+                <viewController id="ama-KY-M3E" userLabel="Reservations VC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gRF-33-MUJ" userLabel="Reservations View">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -693,10 +717,10 @@
             </objects>
             <point key="canvasLocation" x="4505" y="-52"/>
         </scene>
-        <!--View Controller-->
+        <!--Profile VC-->
         <scene sceneID="Zpi-gb-PcZ">
             <objects>
-                <viewController id="F4j-Ha-gzh" sceneMemberID="viewController">
+                <viewController id="F4j-Ha-gzh" userLabel="Profile VC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NQd-4F-FlK" userLabel="Profile View">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -715,6 +739,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="jpy-TO-yuw" customClass="TabBarVC" customModule="Vie" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2lm-w5-6Gp">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -729,6 +754,32 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x3z-Ly-pot" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3116" y="-632"/>
+        </scene>
+        <!--MapVC-->
+        <scene sceneID="vbE-J3-Bgb">
+            <objects>
+                <viewController id="Pjg-8t-r1o" userLabel="MapVC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4Vg-rQ-dNB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I8z-L5-osw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+        <!--Map CollectionView VC-->
+        <scene sceneID="F9n-5Q-6Ph">
+            <objects>
+                <viewController id="fqR-ee-pke" userLabel="Map CollectionView VC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ihR-GM-VcL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pKa-zX-1PG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
         </scene>
     </scenes>
     <resources>
