@@ -20,7 +20,7 @@ class APIClient {
 //
 import Foundation
 import Alamofire
-
+import SwiftyJSON
 enum ResponseMessageStatusEnum:Int {
     case success = 1
     case failure = 2
@@ -40,7 +40,7 @@ class APIClient{
    
     
     //MARK: - Network Handler
-    typealias requestCompletionHandler = (_ value: Any?, _ statusCode: Int,_ responseMessageStatus:ResponseMessageStatusEnum?, _ userMessage:String?) -> (Void)
+    typealias requestCompletionHandler = (_ value: JSON?, _ statusCode: Int,_ responseMessageStatus:ResponseMessageStatusEnum?, _ userMessage:String?) -> (Void)
    // typealias errorHandler = (_ value: Any?, _ statusCode: Int, _ responseMessageStatus:ResponseMessageStatusEnum?, _ userMessage:String?) -> Void
  
     
@@ -49,16 +49,13 @@ class APIClient{
     func jsonRequest(request: DataRequest,CompletionHandler:@escaping requestCompletionHandler) -> Void {
         
         request.responseJSON { response in
-            
+           
             let statusCode = response.response?.statusCode
-            let value = response.result.value
+            var value=JSON(response.value!)
             var responseMessageStatus:ResponseMessageStatusEnum!
-            var userMessage:String!
-            if let reponseJSON = value as? [String:Any] {
-                if let message = reponseJSON["Message"] as? String {
-                    userMessage = message
-                }
-            }
+            let userMessage = value[]["Message"].stringValue
+
+
             
             print("\n*****\nrequest url: \(String(describing: response.request?.url))\n*****")
             print("\n*****request JSON response: \n\(String(describing: response.result.value))\n*****")
@@ -67,8 +64,7 @@ class APIClient{
                 return
             }
             
-            if let response = value as? [String:Any] {
-                if let status = response["Status"] as? String {
+            if let status = value[]["Status"].string{
                     
                     if status == "Success" {
                         responseMessageStatus = ResponseMessageStatusEnum.success
@@ -80,7 +76,7 @@ class APIClient{
                         responseMessageStatus = ResponseMessageStatusEnum.exception
                     }
                 }
-            }
+        
             CompletionHandler(value, statusCode!, responseMessageStatus, userMessage)
             }
     }

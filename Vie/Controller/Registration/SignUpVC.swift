@@ -161,6 +161,10 @@ class SignUpVC: UIViewController ,GIDSignInUIDelegate{
             })
         }
     }
+    
+    @IBAction func SkipButtonPressed(_ sender: Any?) {
+        performSegue(withIdentifier: "goToHomeVC", sender: self)
+    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier=="goToSocialSignUpVC")
         {

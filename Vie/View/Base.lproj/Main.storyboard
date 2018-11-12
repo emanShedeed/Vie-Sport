@@ -282,11 +282,25 @@
                                             <constraint firstItem="Fs8-Im-fw0" firstAttribute="leading" secondItem="bYQ-Iq-N6M" secondAttribute="trailing" constant="30" id="waU-B3-Cdc"/>
                                         </constraints>
                                     </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mbr-Nh-tVW">
+                                        <rect key="frame" x="140" y="148.5" width="95" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="120" id="lGg-FK-dMu"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                        <state key="normal" title="تخطي"/>
+                                        <connections>
+                                            <action selector="SkipButtonPressed:" destination="Irx-cF-g46" eventType="touchUpInside" id="TtS-KE-MNS"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.043137254901960784" green="0.21176470588235294" blue="0.30588235294117649" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstItem="Mbr-Nh-tVW" firstAttribute="top" secondItem="xTL-wP-Pmm" secondAttribute="bottom" constant="7" id="0JM-JP-1OC"/>
+                                    <constraint firstAttribute="bottom" secondItem="Mbr-Nh-tVW" secondAttribute="bottom" constant="14" id="3qN-YX-gXu"/>
                                     <constraint firstItem="xTL-wP-Pmm" firstAttribute="centerY" secondItem="NGd-bh-nW9" secondAttribute="centerY" id="DkZ-pJ-dKN"/>
                                     <constraint firstItem="xTL-wP-Pmm" firstAttribute="centerX" secondItem="NGd-bh-nW9" secondAttribute="centerX" id="S51-dS-tra"/>
+                                    <constraint firstItem="Mbr-Nh-tVW" firstAttribute="centerX" secondItem="NGd-bh-nW9" secondAttribute="centerX" id="rXe-4q-w3N"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -320,6 +334,7 @@
                         <outletCollection property="validationLabels" destination="agy-Md-Vtw" collectionClass="NSMutableArray" id="h1w-qk-pnO"/>
                         <segue destination="tne-SU-hlK" kind="show" identifier="goToConfirmationCodeVC" id="AqB-MZ-WnT"/>
                         <segue destination="Jmw-mm-bfQ" kind="show" identifier="goToSocialSignUpVC" id="6jE-vN-o3e"/>
+                        <segue destination="jpy-TO-yuw" kind="show" identifier="goToHomeVC" id="61L-TT-dd0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qvt-1s-sOs" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -441,7 +456,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nJU-jg-vql" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1658" y="-9"/>
+            <point key="canvasLocation" x="2105" y="869"/>
         </scene>
         <!--Social Sign UpVC-->
         <scene sceneID="QCe-V7-bS9">
@@ -788,15 +803,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Map Collection View" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="94R-s5-3U8">
-                                <rect key="frame" x="56" y="272" width="263" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Map Collection View" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="94R-s5-3U8">
+                                <rect key="frame" x="56" y="291" width="263" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="263" id="pZS-9q-irF"/>
+                                    <constraint firstAttribute="height" constant="36" id="vZa-0L-wMZ"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="94R-s5-3U8" firstAttribute="centerX" secondItem="ihR-GM-VcL" secondAttribute="centerX" id="q1N-Rg-sJ7"/>
+                            <constraint firstItem="94R-s5-3U8" firstAttribute="centerY" secondItem="ihR-GM-VcL" secondAttribute="centerY" id="yrY-KZ-gWY"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="a97-Bl-kLu"/>
                     </view>
                 </viewController>
@@ -829,6 +851,7 @@
         <image name="diceeLogo" width="147" height="96"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ese-23-inY"/>
+        <segue reference="61L-TT-dd0"/>
+        <segue reference="AqB-MZ-WnT"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -29,7 +29,7 @@ struct PlayGround{
     var Ml3byDiscountAmt:Int=0
     
     
-    init( _Bio:String,_PlayGroundIDHashed:String,_ContactNumber:String,_ImagesLocation:[String], _OwnerMobile:String,_OwnerMobile2:String, _Lat:String, _Lng:String, _PlayGroundID:Int,  _PlayGroundName:String,_DimensionName:String,_CityName:String,_RatingLevel:Int,
+    /*init( _Bio:String,_PlayGroundIDHashed:String,_ContactNumber:String,_ImagesLocation:[String], _OwnerMobile:String,_OwnerMobile2:String, _Lat:String, _Lng:String, _PlayGroundID:Int,  _PlayGroundName:String,_DimensionName:String,_CityName:String,_RatingLevel:Int,
           _PlayGroundTypeName:String,_IsFavorite:Bool,_Services:[PlaygrounServices],_IsSupportsReservations: Bool,_CashExtraFees:Int, _Ml3byDiscountAmt:Int=0) {
         Bio=_Bio
         PlayGroundIDHashed=_PlayGroundIDHashed
@@ -50,16 +50,16 @@ struct PlayGround{
         IsSupportsReservations=_IsSupportsReservations
         CashExtraFees=_CashExtraFees
         Ml3byDiscountAmt=_Ml3byDiscountAmt
-    }
+    }*/
 }
 struct PlaygrounServices{
     var ServiceID:Int=0
     var ServiceName:String=""
     var ActiveIcon:String=""
-    init(_ServiceID:Int,_ServiceName:String,_ActiveIcon:String) {
+    /*init(_ServiceID:Int,_ServiceName:String,_ActiveIcon:String) {
         ServiceID=_ServiceID
         ServiceName=_ServiceName
         ActiveIcon=_ActiveIcon
-    }
+    }*/
     
 }
