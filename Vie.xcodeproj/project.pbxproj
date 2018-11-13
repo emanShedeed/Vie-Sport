@@ -15,8 +15,11 @@
 		C71383DD216E16AD00784CDC /* HideKeyboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71383DC216E16AD00784CDC /* HideKeyboardVC.swift */; };
 		E700E0CA21984A8100A0A899 /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E700E0C921984A8100A0A899 /* MapVC.swift */; };
 		E700E0CC21984B2200A0A899 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E700E0CB21984B2200A0A899 /* HomeVC.swift */; };
+		E70C2079219ADDEB008DC545 /* PlayGroundcollectionViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70C2078219ADDEB008DC545 /* PlayGroundcollectionViewVC.swift */; };
 		E721A3AC21774D73002DE31E /* ConfirmationCodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721A3AB21774D73002DE31E /* ConfirmationCodeVC.swift */; };
 		E721F63821982A9F003FE7B0 /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721F63721982A9F003FE7B0 /* TabBarVC.swift */; };
+		E7241864219AACC3004FFF00 /* PlayGroundInfoWindowModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7241862219AACC3004FFF00 /* PlayGroundInfoWindowModel.swift */; };
+		E7241865219AACC3004FFF00 /* PlayGroundInfoWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7241863219AACC3004FFF00 /* PlayGroundInfoWindow.xib */; };
 		E73A7BDB21919CC900DBD0CB /* SocialSignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73A7BDA21919CC900DBD0CB /* SocialSignUpVC.swift */; };
 		E7790EA6219858E800A1D926 /* PlayGround.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7790EA5219858E800A1D926 /* PlayGround.swift */; };
 		E7790EA8219862E000A1D926 /* PlaygroundEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7790EA7219862E000A1D926 /* PlaygroundEndPoint.swift */; };
@@ -71,8 +74,11 @@
 		D690221753A2AFF740EFAB95 /* Pods-VieUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VieUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VieUITests/Pods-VieUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E700E0C921984A8100A0A899 /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
 		E700E0CB21984B2200A0A899 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		E70C2078219ADDEB008DC545 /* PlayGroundcollectionViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayGroundcollectionViewVC.swift; sourceTree = "<group>"; };
 		E721A3AB21774D73002DE31E /* ConfirmationCodeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationCodeVC.swift; sourceTree = "<group>"; };
 		E721F63721982A9F003FE7B0 /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
+		E7241862219AACC3004FFF00 /* PlayGroundInfoWindowModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayGroundInfoWindowModel.swift; sourceTree = "<group>"; };
+		E7241863219AACC3004FFF00 /* PlayGroundInfoWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayGroundInfoWindow.xib; sourceTree = "<group>"; };
 		E73A7BDA21919CC900DBD0CB /* SocialSignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialSignUpVC.swift; sourceTree = "<group>"; };
 		E7790EA5219858E800A1D926 /* PlayGround.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayGround.swift; sourceTree = "<group>"; };
 		E7790EA7219862E000A1D926 /* PlaygroundEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaygroundEndPoint.swift; sourceTree = "<group>"; };
@@ -178,8 +184,18 @@
 				E721F63721982A9F003FE7B0 /* TabBarVC.swift */,
 				E700E0C921984A8100A0A899 /* MapVC.swift */,
 				E700E0CB21984B2200A0A899 /* HomeVC.swift */,
+				E70C2078219ADDEB008DC545 /* PlayGroundcollectionViewVC.swift */,
 			);
 			path = "App Functionality";
+			sourceTree = "<group>";
+		};
+		E7241866219AACE0004FFF00 /* CustomCell */ = {
+			isa = PBXGroup;
+			children = (
+				E7241862219AACC3004FFF00 /* PlayGroundInfoWindowModel.swift */,
+				E7241863219AACC3004FFF00 /* PlayGroundInfoWindow.xib */,
+			);
+			path = CustomCell;
 			sourceTree = "<group>";
 		};
 		E789996F21872C190013BE4C /* APIClient */ = {
@@ -259,6 +275,7 @@
 			isa = PBXGroup;
 			children = (
 				E7A857F0216C8009002683CD /* Main.storyboard */,
+				E7241866219AACE0004FFF00 /* CustomCell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -409,6 +426,7 @@
 				E7A857F7216C800B002683CD /* LaunchScreen.storyboard in Resources */,
 				C71383CC216DEA3800784CDC /* credentials.plist in Resources */,
 				E7A857F4216C800B002683CD /* Assets.xcassets in Resources */,
+				E7241865219AACC3004FFF00 /* PlayGroundInfoWindow.xib in Resources */,
 				E7A857F2216C8009002683CD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -554,10 +572,12 @@
 				E73A7BDB21919CC900DBD0CB /* SocialSignUpVC.swift in Sources */,
 				C71383D7216E0B1F00784CDC /* SignUpVC.swift in Sources */,
 				C71383D3216E053700784CDC /* CustomUItextField.swift in Sources */,
+				E7241864219AACC3004FFF00 /* PlayGroundInfoWindowModel.swift in Sources */,
 				E7EF722F21885572001AAD73 /* APIConfiguration.swift in Sources */,
 				E721A3AC21774D73002DE31E /* ConfirmationCodeVC.swift in Sources */,
 				E7DDF3B82185C11400C878DE /* UserEndPoint.swift in Sources */,
 				E700E0CA21984A8100A0A899 /* MapVC.swift in Sources */,
+				E70C2079219ADDEB008DC545 /* PlayGroundcollectionViewVC.swift in Sources */,
 				E7A857EF216C8009002683CD /* MainVC.swift in Sources */,
 				E7A857ED216C8009002683CD /* AppDelegate.swift in Sources */,
 				E789997121872C750013BE4C /* APIClient.swift in Sources */,

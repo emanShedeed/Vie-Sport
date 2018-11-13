@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SwiftyJSON
 struct PlayGround{
     var Bio:String=""
     var PlayGroundIDHashed:String=""
@@ -28,29 +29,56 @@ struct PlayGround{
     var CashExtraFees:Int=0
     var Ml3byDiscountAmt:Int=0
     
-    
-    /*init( _Bio:String,_PlayGroundIDHashed:String,_ContactNumber:String,_ImagesLocation:[String], _OwnerMobile:String,_OwnerMobile2:String, _Lat:String, _Lng:String, _PlayGroundID:Int,  _PlayGroundName:String,_DimensionName:String,_CityName:String,_RatingLevel:Int,
-          _PlayGroundTypeName:String,_IsFavorite:Bool,_Services:[PlaygrounServices],_IsSupportsReservations: Bool,_CashExtraFees:Int, _Ml3byDiscountAmt:Int=0) {
-        Bio=_Bio
-        PlayGroundIDHashed=_PlayGroundIDHashed
-        ContactNumber=_ContactNumber
-        ImagesLocation=_ImagesLocation
-        OwnerMobile=_OwnerMobile
-        OwnerMobile2=_OwnerMobile2
-        Lat=_Lat
-        Lng=_Lng
-        PlayGroundID=_PlayGroundID
-        PlayGroundName=_PlayGroundName
-        DimensionName=_DimensionName
-        CityName=_CityName
-        RatingLevel=_RatingLevel
-        PlayGroundTypeName=_PlayGroundTypeName
-        IsFavorite=_IsFavorite
-        Services=_Services
-        IsSupportsReservations=_IsSupportsReservations
-        CashExtraFees=_CashExtraFees
-        Ml3byDiscountAmt=_Ml3byDiscountAmt
-    }*/
+   static func GetPlayGroundsData(completion:@escaping (_ playGroundarray:[PlayGround])->Void){
+        var playGrounds:[PlayGround]=[]
+        var playGroundObj:PlayGround=PlayGround()
+        var serviceObj:PlaygrounServices=PlaygrounServices()
+        if let  urlRequest=APIClient.GetPlayGrounds(){
+            APIClient().jsonRequest(request: urlRequest) { (Json:JSON?, statusCode:Int, ResponseMessageStatus:ResponseMessageStatusEnum?, userMessage:String?) -> (Void) in
+                if let data=Json {
+                    //let status = data["Status"] as? String
+                    // let messge=data["Message"] as? String
+                    print("get play grounds")
+                    //print(messge as Any)
+                    //playGrounds=data[""] as? [PlayGround] ?? []
+                    
+                    for (_,object) in data{
+                        playGroundObj=PlayGround()
+                        playGroundObj.Bio = object["Bio"].stringValue
+                        playGroundObj.PlayGroundIDHashed=object["PlayGroundIDHashed"].stringValue
+                        playGroundObj.ContactNumber=object["ContactNumber"].stringValue
+                        playGroundObj.ImagesLocation=object["ImagesLocation"].arrayObject as![String]
+                        playGroundObj.OwnerMobile=object["OwnerMobile"].stringValue
+                        playGroundObj.OwnerMobile2=object["OwnerMobile2"].stringValue
+                        playGroundObj.Lat=object["Lat"].stringValue
+                        playGroundObj.Lng=object["Lng"].stringValue
+                        playGroundObj.PlayGroundID=object["PlayGroundID"].intValue
+                        playGroundObj.PlayGroundName=object["PlayGroundName"].stringValue
+                        playGroundObj.DimensionName=object["DimensionName"].stringValue
+                        playGroundObj.CityName=object["CityName"].stringValue
+                        playGroundObj.RatingLevel=object["RatingLevel"].intValue
+                        playGroundObj.PlayGroundTypeName=object["PlayGroundTypeName"].stringValue
+                        playGroundObj.IsFavorite=object["IsFavorite"].boolValue
+                        for (_,service) in object["Services"]{
+                            serviceObj=PlaygrounServices()
+                            serviceObj.ServiceID=service["ServiceID"].intValue
+                            serviceObj.ServiceName=service["ServiceName"].stringValue
+                            serviceObj.ActiveIcon=service["ActiveIcon"].stringValue
+                            playGroundObj.Services.append(serviceObj)
+                        }
+                        playGroundObj.IsSupportsReservations=object["IsSupportReservations"].boolValue
+                        playGroundObj.CashExtraFees=object["CashExtraFees"].intValue
+                        playGroundObj.Ml3byDiscountAmt=object["Ml3byDiscountAmt"].intValue
+                        playGrounds.append(playGroundObj)
+                    }
+                    completion(playGrounds)
+                    //self.DisplayPlayGroundData(playGrounds: self.playGrounds)
+                    //self.performSegue(withIdentifier: "goToPlayGroundCollection", sender: self)
+                }
+            }
+            
+        }
+    }
 }
 struct PlaygrounServices{
     var ServiceID:Int=0

@@ -794,6 +794,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I8z-L5-osw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="669.60000000000002" y="94.452773613193415"/>
         </scene>
         <!--MapCollectionView VC-->
         <scene sceneID="F9n-5Q-6Ph">
@@ -813,9 +814,19 @@
                                 <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mqv-Vg-qBH">
+                                <rect key="frame" x="67" y="424" width="240" height="128"/>
+                                <connections>
+                                    <segue destination="gGX-4G-IPW" kind="embed" identifier="goToPlayGroundCollection" id="M7C-yi-DTi"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="mqv-Vg-qBH" firstAttribute="centerX" secondItem="94R-s5-3U8" secondAttribute="centerX" id="2qI-e7-SJr"/>
+                            <constraint firstItem="mqv-Vg-qBH" firstAttribute="top" secondItem="94R-s5-3U8" secondAttribute="bottom" constant="97" id="alK-aZ-dKI"/>
+                            <constraint firstItem="a97-Bl-kLu" firstAttribute="bottom" secondItem="mqv-Vg-qBH" secondAttribute="bottom" constant="66" id="iwm-rT-qev"/>
+                            <constraint firstItem="mqv-Vg-qBH" firstAttribute="leading" secondItem="a97-Bl-kLu" secondAttribute="leading" constant="67" id="ppR-Gd-yje"/>
                             <constraint firstItem="94R-s5-3U8" firstAttribute="centerX" secondItem="ihR-GM-VcL" secondAttribute="centerX" id="q1N-Rg-sJ7"/>
                             <constraint firstItem="94R-s5-3U8" firstAttribute="centerY" secondItem="ihR-GM-VcL" secondAttribute="centerY" id="yrY-KZ-gWY"/>
                         </constraints>
@@ -843,6 +854,70 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zmp-dW-7uF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3722.4000000000001" y="935.08245877061472"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="cip-zC-Mef">
+            <objects>
+                <viewController id="LNw-Ox-IXw" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8Yh-8N-jJH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="fnB-cD-u0D"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6R1-Th-QDm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+        <!--Play Groundcollection ViewVC-->
+        <scene sceneID="TCM-mS-oPX">
+            <objects>
+                <viewController id="gGX-4G-IPW" customClass="PlayGroundcollectionViewVC" customModule="Vie" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6GM-kZ-Hqh">
+                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4UG-Dd-dTA">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="FWM-bK-h0K">
+                                    <size key="itemSize" width="240" height="132"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PlayGroundInfoWindow" id="uo9-Df-aEM">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="132"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="132"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="gGX-4G-IPW" id="W1i-OF-jjb"/>
+                                    <outlet property="delegate" destination="gGX-4G-IPW" id="o2f-wu-Mbp"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="4UG-Dd-dTA" secondAttribute="bottom" id="3y6-96-n0d"/>
+                            <constraint firstItem="4UG-Dd-dTA" firstAttribute="leading" secondItem="6GM-kZ-Hqh" secondAttribute="leading" id="6OM-hM-yb0"/>
+                            <constraint firstItem="4UG-Dd-dTA" firstAttribute="top" secondItem="6GM-kZ-Hqh" secondAttribute="top" id="Cb2-HD-JtM"/>
+                            <constraint firstAttribute="trailing" secondItem="4UG-Dd-dTA" secondAttribute="trailing" id="wxE-bw-v2Q"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="bxc-tu-WYT"/>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="4UG-Dd-dTA" id="TrO-Ep-NkG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Js-6y-gqm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-420.80000000000001" y="518.14092953523243"/>
         </scene>
     </scenes>
     <resources>
