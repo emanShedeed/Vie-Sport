@@ -8,12 +8,12 @@
 
 import UIKit
 
-class PlayGroundcollectionViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate {
+class MapInfoWindowVC: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate {
     var playGrounds:[PlayGround]=[]
     @IBOutlet weak var collectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         PlayGround.GetPlayGroundsData { (playGroundArray) in
             self.playGrounds=playGroundArray
@@ -30,9 +30,10 @@ class PlayGroundcollectionViewVC: UIViewController,UICollectionViewDataSource,UI
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell=collectionView.dequeueReusableCell(withReuseIdentifier: "PlayGroundInfoWindow", for: indexPath) as! PlayGroundInfoWindowModel
         let playGroundObj=playGrounds[indexPath.row]
-        let url = URL(string: playGrounds[indexPath.row].ImagesLocation[0])
-        if let data = try? Data(contentsOf: url!) {//make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
+        if  let url = URL(string: playGrounds[indexPath.row].ImagesLocation[0]){
+        if let data = try? Data(contentsOf: url) {//make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
             cell.ImageView.image=UIImage(data: data)
+        }
         }
         cell.playGroundNameLabel.text=playGroundObj.PlayGroundName
         cell.playGroundTypeAndDimensionsLabel.text=playGroundObj.PlayGroundTypeName + "-" + playGroundObj.DimensionName
@@ -40,4 +41,5 @@ class PlayGroundcollectionViewVC: UIViewController,UICollectionViewDataSource,UI
         return cell
     }
     
+ 
 }
