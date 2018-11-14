@@ -22,5 +22,5 @@ class PlayGroundInfoWindowModel: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
+ 
 }

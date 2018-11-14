@@ -21,6 +21,7 @@
 		E7241864219AACC3004FFF00 /* PlayGroundInfoWindowModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7241862219AACC3004FFF00 /* PlayGroundInfoWindowModel.swift */; };
 		E7241865219AACC3004FFF00 /* PlayGroundInfoWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7241863219AACC3004FFF00 /* PlayGroundInfoWindow.xib */; };
 		E73A7BDB21919CC900DBD0CB /* SocialSignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73A7BDA21919CC900DBD0CB /* SocialSignUpVC.swift */; };
+		E7456610219C444D004D6F90 /* CollectionViewLayOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = E745660F219C444D004D6F90 /* CollectionViewLayOut.swift */; };
 		E7790EA6219858E800A1D926 /* PlayGround.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7790EA5219858E800A1D926 /* PlayGround.swift */; };
 		E7790EA8219862E000A1D926 /* PlaygroundEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7790EA7219862E000A1D926 /* PlaygroundEndPoint.swift */; };
 		E789996E218728FD0013BE4C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E789996D218728FD0013BE4C /* User.swift */; };
@@ -80,6 +81,7 @@
 		E7241862219AACC3004FFF00 /* PlayGroundInfoWindowModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayGroundInfoWindowModel.swift; sourceTree = "<group>"; };
 		E7241863219AACC3004FFF00 /* PlayGroundInfoWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayGroundInfoWindow.xib; sourceTree = "<group>"; };
 		E73A7BDA21919CC900DBD0CB /* SocialSignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialSignUpVC.swift; sourceTree = "<group>"; };
+		E745660F219C444D004D6F90 /* CollectionViewLayOut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewLayOut.swift; sourceTree = "<group>"; };
 		E7790EA5219858E800A1D926 /* PlayGround.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayGround.swift; sourceTree = "<group>"; };
 		E7790EA7219862E000A1D926 /* PlaygroundEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaygroundEndPoint.swift; sourceTree = "<group>"; };
 		E789996D218728FD0013BE4C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 				C71383DC216E16AD00784CDC /* HideKeyboardVC.swift */,
 				E7CBD126217499D000072F03 /* NotificationNamesExtension.swift */,
 				E79379F8217837AB006D33F5 /* CustomColor.swift */,
+				E745660F219C444D004D6F90 /* CollectionViewLayOut.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -585,6 +588,7 @@
 				E721F63821982A9F003FE7B0 /* TabBarVC.swift in Sources */,
 				E7DDF3BA2185CB5000C878DE /* Constants.swift in Sources */,
 				E7790EA6219858E800A1D926 /* PlayGround.swift in Sources */,
+				E7456610219C444D004D6F90 /* CollectionViewLayOut.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

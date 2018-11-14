@@ -21,7 +21,9 @@ class MapInfoWindowVC: UIViewController,UICollectionViewDataSource,UICollectionV
         }
         //TODO: Register your MessageCell.xib file here:
         collectionView.register(UINib(nibName: "PlayGroundInfoWindow", bundle: nil), forCellWithReuseIdentifier: "PlayGroundInfoWindow")
-    }
+        
+       
+        }
    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return playGrounds.count
