@@ -16,12 +16,12 @@
 		E700E0CA21984A8100A0A899 /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E700E0C921984A8100A0A899 /* MapVC.swift */; };
 		E700E0CC21984B2200A0A899 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E700E0CB21984B2200A0A899 /* HomeVC.swift */; };
 		E70C2079219ADDEB008DC545 /* MapInfoWindowVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70C2078219ADDEB008DC545 /* MapInfoWindowVC.swift */; };
+		E71C6F42219D6C4700E0D5A9 /* DictionaryKeyForValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71C6F41219D6C4700E0D5A9 /* DictionaryKeyForValue.swift */; };
 		E721A3AC21774D73002DE31E /* ConfirmationCodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721A3AB21774D73002DE31E /* ConfirmationCodeVC.swift */; };
 		E721F63821982A9F003FE7B0 /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721F63721982A9F003FE7B0 /* TabBarVC.swift */; };
 		E7241864219AACC3004FFF00 /* PlayGroundInfoWindowModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7241862219AACC3004FFF00 /* PlayGroundInfoWindowModel.swift */; };
 		E7241865219AACC3004FFF00 /* PlayGroundInfoWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7241863219AACC3004FFF00 /* PlayGroundInfoWindow.xib */; };
 		E73A7BDB21919CC900DBD0CB /* SocialSignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73A7BDA21919CC900DBD0CB /* SocialSignUpVC.swift */; };
-		E7456610219C444D004D6F90 /* CollectionViewLayOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = E745660F219C444D004D6F90 /* CollectionViewLayOut.swift */; };
 		E7790EA6219858E800A1D926 /* PlayGround.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7790EA5219858E800A1D926 /* PlayGround.swift */; };
 		E7790EA8219862E000A1D926 /* PlaygroundEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7790EA7219862E000A1D926 /* PlaygroundEndPoint.swift */; };
 		E789996E218728FD0013BE4C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E789996D218728FD0013BE4C /* User.swift */; };
@@ -76,12 +76,12 @@
 		E700E0C921984A8100A0A899 /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
 		E700E0CB21984B2200A0A899 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		E70C2078219ADDEB008DC545 /* MapInfoWindowVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapInfoWindowVC.swift; sourceTree = "<group>"; };
+		E71C6F41219D6C4700E0D5A9 /* DictionaryKeyForValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryKeyForValue.swift; sourceTree = "<group>"; };
 		E721A3AB21774D73002DE31E /* ConfirmationCodeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationCodeVC.swift; sourceTree = "<group>"; };
 		E721F63721982A9F003FE7B0 /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
 		E7241862219AACC3004FFF00 /* PlayGroundInfoWindowModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayGroundInfoWindowModel.swift; sourceTree = "<group>"; };
 		E7241863219AACC3004FFF00 /* PlayGroundInfoWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayGroundInfoWindow.xib; sourceTree = "<group>"; };
 		E73A7BDA21919CC900DBD0CB /* SocialSignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialSignUpVC.swift; sourceTree = "<group>"; };
-		E745660F219C444D004D6F90 /* CollectionViewLayOut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewLayOut.swift; sourceTree = "<group>"; };
 		E7790EA5219858E800A1D926 /* PlayGround.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayGround.swift; sourceTree = "<group>"; };
 		E7790EA7219862E000A1D926 /* PlaygroundEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaygroundEndPoint.swift; sourceTree = "<group>"; };
 		E789996D218728FD0013BE4C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -155,7 +155,7 @@
 				C71383DC216E16AD00784CDC /* HideKeyboardVC.swift */,
 				E7CBD126217499D000072F03 /* NotificationNamesExtension.swift */,
 				E79379F8217837AB006D33F5 /* CustomColor.swift */,
-				E745660F219C444D004D6F90 /* CollectionViewLayOut.swift */,
+				E71C6F41219D6C4700E0D5A9 /* DictionaryKeyForValue.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -586,9 +586,9 @@
 				E789997121872C750013BE4C /* APIClient.swift in Sources */,
 				E7B39810218B0EB500A1B365 /* OwnerBusinessEndPoint.swift in Sources */,
 				E721F63821982A9F003FE7B0 /* TabBarVC.swift in Sources */,
+				E71C6F42219D6C4700E0D5A9 /* DictionaryKeyForValue.swift in Sources */,
 				E7DDF3BA2185CB5000C878DE /* Constants.swift in Sources */,
 				E7790EA6219858E800A1D926 /* PlayGround.swift in Sources */,
-				E7456610219C444D004D6F90 /* CollectionViewLayOut.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
