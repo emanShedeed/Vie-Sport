@@ -12,14 +12,14 @@ import GoogleMaps
 class MapVC: UIViewController ,GMSMapViewDelegate{
 
     @IBOutlet weak var mapView: GMSMapView!
-    
     @IBOutlet weak var collectionView: UICollectionView!
-    
-    
     @IBOutlet weak var infoWindowView: UIView!
+    
+    
     var playGrounds:[PlayGround]=[]
     var markerDict: [Int: GMSMarker] = [:]
-    private var infoWindow=PlayGroundInfoWindowModel()
+    var  selectedMarker = GMSMarker()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -35,14 +35,18 @@ class MapVC: UIViewController ,GMSMapViewDelegate{
         }
         //TODO: Register your MessageCell.xib file here:
         collectionView.register(UINib(nibName: "PlayGroundInfoWindow", bundle: nil), forCellWithReuseIdentifier: "PlayGroundInfoWindow")
+        //
     }
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
         self.infoWindowView.isHidden=false
         /*let indexPath=IndexPath(row: playGrounds.firstIndex(where: { (obj) -> Bool in
             return (obj.PlayGroundName==marker.title)
          })!, section: 1)*/
-        let row=markerDict.someKey(forValue: marker)!
-        collectionView.scrollToItem(at: IndexPath(row: row, section: 0), at: .right, animated: false)
+        if let row=markerDict.someKey(forValue: marker){
+            collectionView.scrollToItem(at: IndexPath(row: row, section: 0), at: .right, animated: false)
+            selectedMarker.map=nil
+        }
+        
         return true
     }
    
@@ -80,6 +84,35 @@ extension MapVC: UICollectionViewDataSource,UICollectionViewDelegate {
         cell.playGrounOnlineReservation.text=playGroundObj.IsSupportsReservations ? "يدعم الحجز الألكترونس" :"يتوفر الحجز الألكتروني قريبا"
         return cell
     }
-    
-    
+  
+    /*func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selectedMarker.map=nil
+        selectedMarker=GMSMarker()
+        selectedMarker.icon=UIImage(named: "markerIcon")
+        let position=(Lat:Double((markerDict[indexPath.row]!.position.latitude)),Lng: Double(markerDict[indexPath.row]!.position.longitude))
+        selectedMarker.position = CLLocationCoordinate2D(latitude:position.0, longitude:position.1)
+        selectedMarker.map = self.mapView
+        let camera=GMSCameraPosition.camera(withLatitude: position.0, longitude: position.1, zoom: 6.0)
+        mapView.camera=camera
+        
+    }*/
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let visiblecells=collectionView.visibleCells
+        if let firstcell=visiblecells.first{
+            if let indexpath=collectionView.indexPath(for: firstcell ){
+                setSelectedMark(indexPath: indexpath)
+            }
+        }
+        
+    }
+    func setSelectedMark(indexPath:IndexPath)
+    {
+        selectedMarker.map=nil
+        selectedMarker=GMSMarker()
+        selectedMarker.icon=UIImage(named: "markerIcon")
+        let position=(Lat:Double((markerDict[indexPath.row]!.position.latitude)),Lng: Double(markerDict[indexPath.row]!.position.longitude))
+        selectedMarker.position = CLLocationCoordinate2D(latitude:position.0, longitude:position.1)
+        selectedMarker.map = self.mapView
+        let camera=GMSCameraPosition.camera(withLatitude: position.0, longitude: position.1, zoom: 6.0)
+        mapView.camera=camera    }
 }
