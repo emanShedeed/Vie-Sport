@@ -8,6 +8,7 @@
 
 import Foundation
 import SwiftyJSON
+import GoogleMaps
 struct PlayGround{
     var Bio:String=""
     var PlayGroundIDHashed:String=""
@@ -79,6 +80,30 @@ struct PlayGround{
             
         }
     }
+    //have tow uses
+    //1-check array of play grounds to get nerest to user location
+    //2-we can send the array as only one object to get the disatance from usser location
+    static func GetDistance(playGrounds: [PlayGround], userLocation: CLLocation) -> CLLocationDistance? {
+        if playGrounds.count == 0 {
+            return nil
+        }
+        
+        // var closestLocation: CLLocation?
+        var smallestDistance: CLLocationDistance?
+        var playGroundLocation : CLLocation
+        for obj in playGrounds {
+            playGroundLocation=CLLocation(latitude: Double(obj.Lat)!,longitude: Double(obj.Lng)!)
+            let distance = playGroundLocation.distance(from: userLocation)
+            if smallestDistance == nil || distance < smallestDistance ?? 0.0{
+                //      closestLocation = playGroundLocation
+                smallestDistance = distance
+            }
+        }
+        
+        // print("closestLocation: \(String(describing: closestLocation)), distance: \(String(describing: smallestDistance))")
+        return smallestDistance
+    }
+    
 }
 struct PlaygrounServices{
     var ServiceID:Int=0

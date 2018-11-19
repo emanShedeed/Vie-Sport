@@ -15,13 +15,14 @@
 		C71383DD216E16AD00784CDC /* HideKeyboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71383DC216E16AD00784CDC /* HideKeyboardVC.swift */; };
 		E700E0CA21984A8100A0A899 /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E700E0C921984A8100A0A899 /* MapVC.swift */; };
 		E700E0CC21984B2200A0A899 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E700E0CB21984B2200A0A899 /* HomeVC.swift */; };
-		E70C2079219ADDEB008DC545 /* MapInfoWindowVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70C2078219ADDEB008DC545 /* MapInfoWindowVC.swift */; };
 		E71C6F42219D6C4700E0D5A9 /* DictionaryKeyForValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71C6F41219D6C4700E0D5A9 /* DictionaryKeyForValue.swift */; };
 		E721A3AC21774D73002DE31E /* ConfirmationCodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721A3AB21774D73002DE31E /* ConfirmationCodeVC.swift */; };
 		E721F63821982A9F003FE7B0 /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721F63721982A9F003FE7B0 /* TabBarVC.swift */; };
 		E7241864219AACC3004FFF00 /* PlayGroundInfoWindowModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7241862219AACC3004FFF00 /* PlayGroundInfoWindowModel.swift */; };
 		E7241865219AACC3004FFF00 /* PlayGroundInfoWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7241863219AACC3004FFF00 /* PlayGroundInfoWindow.xib */; };
 		E73A7BDB21919CC900DBD0CB /* SocialSignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73A7BDA21919CC900DBD0CB /* SocialSignUpVC.swift */; };
+		E74155CE21A29CE20032FBAE /* MapCollectionViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74155CD21A29CE20032FBAE /* MapCollectionViewVC.swift */; };
+		E74155D021A2A19C0032FBAE /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74155CF21A2A19C0032FBAE /* CustomCell.swift */; };
 		E7790EA6219858E800A1D926 /* PlayGround.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7790EA5219858E800A1D926 /* PlayGround.swift */; };
 		E7790EA8219862E000A1D926 /* PlaygroundEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7790EA7219862E000A1D926 /* PlaygroundEndPoint.swift */; };
 		E789996E218728FD0013BE4C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E789996D218728FD0013BE4C /* User.swift */; };
@@ -75,13 +76,14 @@
 		D690221753A2AFF740EFAB95 /* Pods-VieUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VieUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VieUITests/Pods-VieUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E700E0C921984A8100A0A899 /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
 		E700E0CB21984B2200A0A899 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
-		E70C2078219ADDEB008DC545 /* MapInfoWindowVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapInfoWindowVC.swift; sourceTree = "<group>"; };
 		E71C6F41219D6C4700E0D5A9 /* DictionaryKeyForValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryKeyForValue.swift; sourceTree = "<group>"; };
 		E721A3AB21774D73002DE31E /* ConfirmationCodeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationCodeVC.swift; sourceTree = "<group>"; };
 		E721F63721982A9F003FE7B0 /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
 		E7241862219AACC3004FFF00 /* PlayGroundInfoWindowModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayGroundInfoWindowModel.swift; sourceTree = "<group>"; };
 		E7241863219AACC3004FFF00 /* PlayGroundInfoWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayGroundInfoWindow.xib; sourceTree = "<group>"; };
 		E73A7BDA21919CC900DBD0CB /* SocialSignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialSignUpVC.swift; sourceTree = "<group>"; };
+		E74155CD21A29CE20032FBAE /* MapCollectionViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCollectionViewVC.swift; sourceTree = "<group>"; };
+		E74155CF21A2A19C0032FBAE /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		E7790EA5219858E800A1D926 /* PlayGround.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayGround.swift; sourceTree = "<group>"; };
 		E7790EA7219862E000A1D926 /* PlaygroundEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaygroundEndPoint.swift; sourceTree = "<group>"; };
 		E789996D218728FD0013BE4C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -185,20 +187,28 @@
 			isa = PBXGroup;
 			children = (
 				E721F63721982A9F003FE7B0 /* TabBarVC.swift */,
-				E700E0C921984A8100A0A899 /* MapVC.swift */,
 				E700E0CB21984B2200A0A899 /* HomeVC.swift */,
-				E70C2078219ADDEB008DC545 /* MapInfoWindowVC.swift */,
+				E700E0C921984A8100A0A899 /* MapVC.swift */,
+				E74155CD21A29CE20032FBAE /* MapCollectionViewVC.swift */,
 			);
 			path = "App Functionality";
 			sourceTree = "<group>";
 		};
-		E7241866219AACE0004FFF00 /* CustomCell */ = {
+		E7241866219AACE0004FFF00 /* CustomCellForInfoMap */ = {
 			isa = PBXGroup;
 			children = (
 				E7241862219AACC3004FFF00 /* PlayGroundInfoWindowModel.swift */,
 				E7241863219AACC3004FFF00 /* PlayGroundInfoWindow.xib */,
 			);
-			path = CustomCell;
+			path = CustomCellForInfoMap;
+			sourceTree = "<group>";
+		};
+		E74155D121A2A1A20032FBAE /* MapCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				E74155CF21A2A19C0032FBAE /* CustomCell.swift */,
+			);
+			path = MapCollectionViewCell;
 			sourceTree = "<group>";
 		};
 		E789996F21872C190013BE4C /* APIClient */ = {
@@ -278,7 +288,8 @@
 			isa = PBXGroup;
 			children = (
 				E7A857F0216C8009002683CD /* Main.storyboard */,
-				E7241866219AACE0004FFF00 /* CustomCell */,
+				E7241866219AACE0004FFF00 /* CustomCellForInfoMap */,
+				E74155D121A2A1A20032FBAE /* MapCollectionViewCell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -568,6 +579,7 @@
 			files = (
 				E700E0CC21984B2200A0A899 /* HomeVC.swift in Sources */,
 				E7790EA8219862E000A1D926 /* PlaygroundEndPoint.swift in Sources */,
+				E74155D021A2A19C0032FBAE /* CustomCell.swift in Sources */,
 				E789996E218728FD0013BE4C /* User.swift in Sources */,
 				C71383DD216E16AD00784CDC /* HideKeyboardVC.swift in Sources */,
 				E7CBD127217499D000072F03 /* NotificationNamesExtension.swift in Sources */,
@@ -576,11 +588,11 @@
 				C71383D7216E0B1F00784CDC /* SignUpVC.swift in Sources */,
 				C71383D3216E053700784CDC /* CustomUItextField.swift in Sources */,
 				E7241864219AACC3004FFF00 /* PlayGroundInfoWindowModel.swift in Sources */,
+				E74155CE21A29CE20032FBAE /* MapCollectionViewVC.swift in Sources */,
 				E7EF722F21885572001AAD73 /* APIConfiguration.swift in Sources */,
 				E721A3AC21774D73002DE31E /* ConfirmationCodeVC.swift in Sources */,
 				E7DDF3B82185C11400C878DE /* UserEndPoint.swift in Sources */,
 				E700E0CA21984A8100A0A899 /* MapVC.swift in Sources */,
-				E70C2079219ADDEB008DC545 /* MapInfoWindowVC.swift in Sources */,
 				E7A857EF216C8009002683CD /* MainVC.swift in Sources */,
 				E7A857ED216C8009002683CD /* AppDelegate.swift in Sources */,
 				E789997121872C750013BE4C /* APIClient.swift in Sources */,

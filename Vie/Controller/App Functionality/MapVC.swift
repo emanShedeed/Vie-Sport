@@ -62,7 +62,13 @@ class MapVC: UIViewController ,GMSMapViewDelegate,CLLocationManagerDelegate{
                 locationManager.stopUpdatingLocation()
                 locationManager.delegate=nil
                 print("latitude=\(l.coordinate.latitude),longtiude=\(l.coordinate.longitude)")
-                let smallestDistance = GetNeraestLocation(locations: playGrounds, closestToLocation: l)
+                let smallestDistance = PlayGround.GetDistance(playGrounds: playGrounds, userLocation: l)
+                //save user location in user defaults
+                let lat = l.coordinate.latitude
+                let lon = l.coordinate.longitude
+                let dect:[String:Double]=["lat":lat,"long":lon]
+                UserDefaults.standard.set(dect, forKey: "userLocation")
+
                 print("distance=\(String(describing: smallestDistance))")
                 let camera=GMSCameraPosition.camera(withLatitude: l.coordinate.longitude, longitude: l.coordinate.longitude, zoom: 6.0)
                 mapView.camera=camera
@@ -81,29 +87,7 @@ class MapVC: UIViewController ,GMSMapViewDelegate,CLLocationManagerDelegate{
     }
     
     
-    
-    
-    
-    func GetNeraestLocation(locations: [PlayGround], closestToLocation userLocation: CLLocation) -> CLLocationDistance? {
-        if locations.count == 0 {
-            return nil
-        }
-        
-        var closestLocation: CLLocation?
-        var smallestDistance: CLLocationDistance?
-        var playGroundLocation : CLLocation
-        for obj in playGrounds {
-            playGroundLocation=CLLocation(latitude: Double(obj.Lat)!,longitude: Double(obj.Lng)!)
-            let distance = playGroundLocation.distance(from: userLocation)
-            if smallestDistance == nil || distance < smallestDistance ?? 0.0{
-                closestLocation = playGroundLocation
-                smallestDistance = distance
-            }
-        }
-        
-        print("closestLocation: \(String(describing: closestLocation)), distance: \(String(describing: smallestDistance))")
-        return smallestDistance
-    }
+
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
         self.infoWindowView.isHidden=false
         /*let indexPath=IndexPath(row: playGrounds.firstIndex(where: { (obj) -> Bool in
