@@ -156,7 +156,6 @@ extension MapVC: UICollectionViewDataSource,UICollectionViewDelegate,UICollectio
                 setSelectedMark(indexPath: indexpath)
             }
         }
-        
     }
     func setSelectedMark(indexPath:IndexPath)
     {
@@ -180,5 +179,15 @@ extension MapVC: UICollectionViewDataSource,UICollectionViewDelegate,UICollectio
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
-
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "goToPlayGroundDetailsVC", sender: self)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier=="goToPlayGroundDetailsVC"){
+            let destinationVC=segue.destination as! PlayGroundDetailsVC
+           // let cell=sender as! UICollectionViewCell
+            let indexPath=collectionView.indexPathsForSelectedItems?.first
+            destinationVC.playGroundobj=playGrounds[(indexPath?.row)!]
+        }
+    }
 }

@@ -40,6 +40,7 @@
 		E7DDF3B82185C11400C878DE /* UserEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DDF3B72185C11400C878DE /* UserEndPoint.swift */; };
 		E7DDF3BA2185CB5000C878DE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DDF3B92185CB5000C878DE /* Constants.swift */; };
 		E7EF722F21885572001AAD73 /* APIConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7EF722E21885572001AAD73 /* APIConfiguration.swift */; };
+		E7F2008721A2E47A009EE47A /* PlayGroundDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F2008621A2E47A009EE47A /* PlayGroundDetailsVC.swift */; };
 		EA4503950D51C7407D588B0C /* Pods_Vie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C95FFA22EFCB907A77E36770 /* Pods_Vie.framework */; };
 /* End PBXBuildFile section */
 
@@ -107,6 +108,7 @@
 		E7DDF3B72185C11400C878DE /* UserEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEndPoint.swift; sourceTree = "<group>"; };
 		E7DDF3B92185CB5000C878DE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E7EF722E21885572001AAD73 /* APIConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfiguration.swift; sourceTree = "<group>"; };
+		E7F2008621A2E47A009EE47A /* PlayGroundDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayGroundDetailsVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +192,7 @@
 				E700E0CB21984B2200A0A899 /* HomeVC.swift */,
 				E700E0C921984A8100A0A899 /* MapVC.swift */,
 				E74155CD21A29CE20032FBAE /* MapCollectionViewVC.swift */,
+				E7F2008621A2E47A009EE47A /* PlayGroundDetailsVC.swift */,
 			);
 			path = "App Functionality";
 			sourceTree = "<group>";
@@ -589,6 +592,7 @@
 				C71383D3216E053700784CDC /* CustomUItextField.swift in Sources */,
 				E7241864219AACC3004FFF00 /* PlayGroundInfoWindowModel.swift in Sources */,
 				E74155CE21A29CE20032FBAE /* MapCollectionViewVC.swift in Sources */,
+				E7F2008721A2E47A009EE47A /* PlayGroundDetailsVC.swift in Sources */,
 				E7EF722F21885572001AAD73 /* APIConfiguration.swift in Sources */,
 				E721A3AC21774D73002DE31E /* ConfirmationCodeVC.swift in Sources */,
 				E7DDF3B82185C11400C878DE /* UserEndPoint.swift in Sources */,

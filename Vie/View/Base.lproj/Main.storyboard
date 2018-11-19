@@ -781,6 +781,33 @@
             </objects>
             <point key="canvasLocation" x="3116" y="-632"/>
         </scene>
+        <!--PlayGroundDetailsVC-->
+        <scene sceneID="9Mn-DP-Dw3">
+            <objects>
+                <viewController id="j91-Ju-9bd" userLabel="PlayGroundDetailsVC" customClass="PlayGroundDetailsVC" customModule="Vie" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ye7-ro-ofT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" fixedFrame="YES" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9ot-0E-Jw9">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="236"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="j91-Ju-9bd" id="hXG-V1-g79"/>
+                                </connections>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="APv-TL-JVb"/>
+                    </view>
+                    <connections>
+                        <outlet property="scrollView" destination="9ot-0E-Jw9" id="y7L-On-fEb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gnn-WB-eh9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2183.1999999999998" y="-89.055472263868069"/>
+        </scene>
         <!--MapVC-->
         <scene sceneID="vbE-J3-Bgb">
             <objects>
@@ -851,6 +878,7 @@
                         <outlet property="collectionView" destination="dJL-GK-Lu3" id="cH7-E8-mmK"/>
                         <outlet property="infoWindowView" destination="rUh-ab-dsm" id="e8W-T2-nbz"/>
                         <outlet property="mapView" destination="lH8-4U-IpH" id="1za-eL-HqH"/>
+                        <segue destination="j91-Ju-9bd" kind="show" identifier="goToPlayGroundDetailsVC" id="m0Y-ET-qyP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I8z-L5-osw" userLabel="First Responder" sceneMemberID="firstResponder"/>
