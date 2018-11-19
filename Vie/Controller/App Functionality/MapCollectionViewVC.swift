@@ -27,6 +27,7 @@ class MapCollectionViewVC: UIViewController,UICollectionViewDataSource,UICollect
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        playGrounds[0].IsSupportsReservations=true
         var playGroundObj=playGrounds[indexPath.row]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "customCell", for: indexPath) as! CustomCell
         if let url=URL(string: playGroundObj.ImagesLocation[0]){
@@ -45,6 +46,10 @@ class MapCollectionViewVC: UIViewController,UICollectionViewDataSource,UICollect
             }
         }
         cell.playGroundplaceLabel.text=playGroundLocation
+        if playGroundObj.IsSupportsReservations{
+            cell.playGroundReservationLabel.isHidden=false
+        }
+        else{cell.playGroundReservationLabel.isHidden=true}
         return cell
     }
     /*
