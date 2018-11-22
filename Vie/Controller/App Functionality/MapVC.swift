@@ -27,6 +27,9 @@ class MapVC: UIViewController ,GMSMapViewDelegate,CLLocationManagerDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+     
+        self.navigationController?.navigationBar.topItem?.title = ""
+        ///////////
         infoWindowView.isHidden=true
        //let camera=GMSCameraPosition.camera(withLatitude: 23.8859, longitude: 45.0792, zoom: 6.0)
        //mapView.camera=camera
@@ -137,18 +140,6 @@ extension MapVC: UICollectionViewDataSource,UICollectionViewDelegate,UICollectio
         cell.playGrounOnlineReservation.text=playGroundObj.IsSupportsReservations ? "يدعم الحجز الألكترونس" :"يتوفر الحجز الألكتروني قريبا"
         return cell
     }
-  
-    /*func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        selectedMarker.map=nil
-        selectedMarker=GMSMarker()
-        selectedMarker.icon=UIImage(named: "markerIcon")
-        let position=(Lat:Double((markerDict[indexPath.row]!.position.latitude)),Lng: Double(markerDict[indexPath.row]!.position.longitude))
-        selectedMarker.position = CLLocationCoordinate2D(latitude:position.0, longitude:position.1)
-        selectedMarker.map = self.mapView
-        let camera=GMSCameraPosition.camera(withLatitude: position.0, longitude: position.1, zoom: 6.0)
-        mapView.camera=camera
-        
-    }*/
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let visiblecells=collectionView.visibleCells
         if let firstcell=visiblecells.first{
@@ -184,10 +175,11 @@ extension MapVC: UICollectionViewDataSource,UICollectionViewDelegate,UICollectio
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier=="goToPlayGroundDetailsVC"){
+            
             let destinationVC=segue.destination as! PlayGroundDetailsVC
-           // let cell=sender as! UICollectionViewCell
             let indexPath=collectionView.indexPathsForSelectedItems?.first
             destinationVC.playGroundobj=playGrounds[(indexPath?.row)!]
         }
     }
 }
+

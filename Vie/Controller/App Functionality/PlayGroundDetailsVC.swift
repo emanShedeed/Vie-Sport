@@ -13,14 +13,37 @@ class PlayGroundDetailsVC: UIViewController,UIScrollViewDelegate {
     var playGroundobj=PlayGround()
     var frame=CGRect(x: 0, y: 0, width: 0, height: 0)
     
+    // MAARK : - @IBOutlets
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var pageControl: UIPageControl!
+    @IBOutlet weak var playGroundName: UILabel!
+    @IBOutlet weak var playGroundTypeAndDimension: UILabel!
+    @IBOutlet weak var playGroundCity: UILabel!
+    @IBOutlet var ServicesImagesViews: [UIImageView]!
+    @IBOutlet weak var remainingServicesImagesCountLabel: UILabel!
     
-    @IBOutlet weak var imageView: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        InitView()
+        //
+        //self.scrollView.bringSubviewToFront(pageView)
+        //hide navigtion back button text
+        self.navigationController?.navigationBar.backIndicatorImage = UIImage(named: "back1")
+        self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(named: "back1")
+        
+        //add right navigation bar buttons
+       let add = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(shareButtonPressed(_:)))
+        let play = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(shareButtonPressed(_:)))
+        navigationItem.rightBarButtonItems = [add, play]
+        
+        //set navigation title
+        navigationItem.title=playGroundobj.PlayGroundName
+        
+        //configure scroll view and page control
         var images=playGroundobj.ImagesLocation
+        pageControl.numberOfPages=images.count
         for index in 0..<images.count
         {
             frame.origin.x=scrollView.frame.size.width*CGFloat(index)
@@ -36,8 +59,44 @@ class PlayGroundDetailsVC: UIViewController,UIScrollViewDelegate {
         scrollView.contentSize=CGSize(width: (scrollView.frame.size.width * CGFloat(images.count)), height: scrollView.frame.size.height)
         
     }
-    
-
-
-
+    // Mark :- ScrollView delegate methods
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let pageNumber=scrollView.contentOffset.x/scrollView.frame.size.width
+        pageControl.currentPage=Int(pageNumber)
+        
+    }
+    func InitView(){
+        playGroundName.text=playGroundobj.PlayGroundName
+        playGroundCity.text=playGroundobj.CityName
+        playGroundTypeAndDimension.text=playGroundobj.PlayGroundTypeName + " " + playGroundobj.DimensionName
+        let servicesImgesCount=playGroundobj.Services.count
+        ServicesImagesViews.sort{$0.tag < $1.tag}
+        remainingServicesImagesCountLabel.isHidden=(servicesImgesCount-4)<0
+        remainingServicesImagesCountLabel.text=String(servicesImgesCount-4) + "+"
+        var serviceObj:PlaygrounServices
+        let count = servicesImgesCount > 4 ? 4 :servicesImgesCount
+        for index in 0..<count{
+            serviceObj=playGroundobj.Services[index]
+            ServicesImagesViews[index].isHidden=true
+       
+            if let url=URL(string: serviceObj.ActiveIcon){
+                if let data=try? Data(contentsOf: url){
+                    ServicesImagesViews[index].isHidden=false
+                    ServicesImagesViews[index].image=UIImage(data: data)
+                }
+            }
+            
+            
+        }
+        
+    }
+    @objc func shareButtonPressed(_ sender: Any) {
+        let text = "This is the text...."
+        let image = UIImage(named: "playground")
+      // let myWebsite = NSURL(string:"https://stackoverflow.com/users/4600136/mr-javed-multani?tab=profile")
+        let shareAll = [text , image!] as [Any]
+        let activityViewController = UIActivityViewController(activityItems: shareAll, applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = self.view
+        present(activityViewController, animated: true, completion: nil)
+    }
 }
