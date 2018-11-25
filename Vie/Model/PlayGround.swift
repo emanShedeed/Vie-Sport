@@ -25,7 +25,7 @@ struct PlayGround{
     var RatingLevel:Int=0
     var PlayGroundTypeName:String=""
     var IsFavorite:Bool=false
-    var Services:[PlaygrounServices]=[]
+    var Services:[PlaygroundServices]=[]
     var IsSupportsReservations: Bool=false
     var CashExtraFees:Int=0
     var Ml3byDiscountAmt:Int=0
@@ -33,7 +33,7 @@ struct PlayGround{
    static func GetPlayGroundsData(completion:@escaping (_ playGroundarray:[PlayGround])->Void){
         var playGrounds:[PlayGround]=[]
         var playGroundObj:PlayGround=PlayGround()
-        var serviceObj:PlaygrounServices=PlaygrounServices()
+        var serviceObj:PlaygroundServices=PlaygroundServices()
         if let  urlRequest=APIClient.GetPlayGrounds(){
             APIClient().jsonRequest(request: urlRequest) { (Json:JSON?, statusCode:Int, ResponseMessageStatus:ResponseMessageStatusEnum?, userMessage:String?) -> (Void) in
                 if let data=Json {
@@ -61,7 +61,7 @@ struct PlayGround{
                         playGroundObj.PlayGroundTypeName=object["PlayGroundTypeName"].stringValue
                         playGroundObj.IsFavorite=object["IsFavorite"].boolValue
                         for (_,service) in object["Services"]{
-                            serviceObj=PlaygrounServices()
+                            serviceObj=PlaygroundServices()
                             serviceObj.ServiceID=service["ServiceID"].intValue
                             serviceObj.ServiceName=service["ServiceName"].stringValue
                             serviceObj.ActiveIcon=service["ActiveIcon"].stringValue
@@ -105,7 +105,7 @@ struct PlayGround{
     }
     
 }
-struct PlaygrounServices{
+struct PlaygroundServices{
     var ServiceID:Int=0
     var ServiceName:String=""
     var ActiveIcon:String=""

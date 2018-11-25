@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import GoogleMaps
 class PlayGroundDetailsVC: UIViewController,UIScrollViewDelegate {
     
     var playGroundobj=PlayGround()
@@ -21,6 +21,10 @@ class PlayGroundDetailsVC: UIViewController,UIScrollViewDelegate {
     @IBOutlet weak var playGroundCity: UILabel!
     @IBOutlet var ServicesImagesViews: [UIImageView]!
     @IBOutlet weak var remainingServicesImagesCountLabel: UILabel!
+    
+    @IBOutlet weak var servicesView: UIView!
+    
+    @IBOutlet weak var mapView: GMSMapView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +44,9 @@ class PlayGroundDetailsVC: UIViewController,UIScrollViewDelegate {
         
         //set navigation title
         navigationItem.title=playGroundobj.PlayGroundName
+        //add tap gesture
+        let tapGesture=UITapGestureRecognizer(target: self, action:#selector(ServicesViewTapped))
+        servicesView.addGestureRecognizer(tapGesture)
         
         //configure scroll view and page control
         var images=playGroundobj.ImagesLocation
@@ -65,6 +72,7 @@ class PlayGroundDetailsVC: UIViewController,UIScrollViewDelegate {
         pageControl.currentPage=Int(pageNumber)
         
     }
+    //MARK :- Init View
     func InitView(){
         playGroundName.text=playGroundobj.PlayGroundName
         playGroundCity.text=playGroundobj.CityName
@@ -73,7 +81,7 @@ class PlayGroundDetailsVC: UIViewController,UIScrollViewDelegate {
         ServicesImagesViews.sort{$0.tag < $1.tag}
         remainingServicesImagesCountLabel.isHidden=(servicesImgesCount-4)<0
         remainingServicesImagesCountLabel.text=String(servicesImgesCount-4) + "+"
-        var serviceObj:PlaygrounServices
+        var serviceObj:PlaygroundServices
         let count = servicesImgesCount > 4 ? 4 :servicesImgesCount
         for index in 0..<count{
             serviceObj=playGroundobj.Services[index]
@@ -88,8 +96,11 @@ class PlayGroundDetailsVC: UIViewController,UIScrollViewDelegate {
             
             
         }
+        let camera=GMSCameraPosition.camera(withLatitude:Double(playGroundobj.Lat)!, longitude: Double(playGroundobj.Lng)!, zoom: 10.0)
+        mapView.camera=camera
         
     }
+    //Mark :- share button
     @objc func shareButtonPressed(_ sender: Any) {
         let text = "This is the text...."
         let image = UIImage(named: "playground")
@@ -98,5 +109,17 @@ class PlayGroundDetailsVC: UIViewController,UIScrollViewDelegate {
         let activityViewController = UIActivityViewController(activityItems: shareAll, applicationActivities: nil)
         activityViewController.popoverPresentationController?.sourceView = self.view
         present(activityViewController, animated: true, completion: nil)
+    }
+
+    //Mark: tapGestture
+    @objc func ServicesViewTapped(){
+        performSegue(withIdentifier: "goToPlayGroundServices", sender: self)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier=="goToPlayGroundServices")
+        {
+            let destinationVC=segue.destination as! PlayGroundServicesVC
+            destinationVC.playGroundServices=playGroundobj.Services
+        }
     }
 }

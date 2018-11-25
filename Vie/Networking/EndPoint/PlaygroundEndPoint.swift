@@ -10,9 +10,12 @@ import Foundation
 import Alamofire
 enum playgroundEndPoint:APIConfiguration{
     case get
+    case GetSimilar
     var method: HTTPMethod{
         switch self {
         case .get:
+            return .get
+        case .GetSimilar:
             return .get
         }
     }
@@ -21,12 +24,14 @@ enum playgroundEndPoint:APIConfiguration{
         switch self {
         case .get:
             return "get"
+        case .GetSimilar:
+            return "GetSimilar"
         }
     }
     
     var parameters: Parameters?{
         switch self {
-        case .get:
+        case .get , .GetSimilar:
             return nil
       
         }
