@@ -8,7 +8,8 @@
 
 import UIKit
 import GoogleMaps
-class PlayGroundDetailsVC: UIViewController,UIScrollViewDelegate {
+class PlayGroundDetailsVC: UIViewController,UIScrollViewDelegate,UICollectionViewDataSource,UICollectionViewDelegate {
+
     
     var playGroundobj=PlayGround()
     var frame=CGRect(x: 0, y: 0, width: 0, height: 0)
@@ -122,4 +123,13 @@ class PlayGroundDetailsVC: UIViewController,UIScrollViewDelegate {
             destinationVC.playGroundServices=playGroundobj.Services
         }
     }
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SimilarPlayGroundCell", for: indexPath)
+        return cell
+    }
+    
 }
