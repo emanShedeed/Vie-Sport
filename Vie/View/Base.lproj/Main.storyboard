@@ -830,40 +830,22 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tAz-H2-pXV">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1060"/>
                                         <subviews>
-                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9ot-0E-Jw9">
+                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" ambiguous="YES" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9ot-0E-Jw9">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="233"/>
-                                                <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sib-U6-W3U" userLabel="PageControlView">
-                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="233"/>
-                                                        <subviews>
-                                                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="qvC-26-aae">
-                                                                <rect key="frame" x="114" y="188" width="147" height="37"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="width" constant="147" id="Dtx-4R-Gpc"/>
-                                                                    <constraint firstAttribute="height" constant="37" id="Nrr-uA-53D"/>
-                                                                </constraints>
-                                                            </pageControl>
-                                                        </subviews>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <constraints>
-                                                            <constraint firstItem="qvC-26-aae" firstAttribute="centerX" secondItem="Sib-U6-W3U" secondAttribute="centerX" id="Up0-iQ-Bws"/>
-                                                            <constraint firstAttribute="bottom" secondItem="qvC-26-aae" secondAttribute="bottom" constant="8" id="ba5-GE-RI6"/>
-                                                        </constraints>
-                                                    </view>
-                                                </subviews>
                                                 <constraints>
-                                                    <constraint firstAttribute="bottom" secondItem="Sib-U6-W3U" secondAttribute="bottom" id="Ig0-K7-wnF"/>
-                                                    <constraint firstItem="Sib-U6-W3U" firstAttribute="centerY" secondItem="9ot-0E-Jw9" secondAttribute="centerY" id="KtG-2x-96a"/>
-                                                    <constraint firstItem="Sib-U6-W3U" firstAttribute="top" secondItem="9ot-0E-Jw9" secondAttribute="top" id="Pky-2f-zNg"/>
-                                                    <constraint firstAttribute="trailing" secondItem="Sib-U6-W3U" secondAttribute="trailing" id="cCD-JW-ssf"/>
-                                                    <constraint firstItem="Sib-U6-W3U" firstAttribute="centerX" secondItem="9ot-0E-Jw9" secondAttribute="centerX" id="gWj-gP-7Xa"/>
-                                                    <constraint firstItem="Sib-U6-W3U" firstAttribute="leading" secondItem="9ot-0E-Jw9" secondAttribute="leading" id="md1-lp-zPz"/>
                                                     <constraint firstAttribute="width" secondItem="9ot-0E-Jw9" secondAttribute="height" multiplier="375:233" id="xp0-Hq-MwA"/>
                                                 </constraints>
                                                 <connections>
                                                     <outlet property="delegate" destination="j91-Ju-9bd" id="hXG-V1-g79"/>
                                                 </connections>
                                             </scrollView>
+                                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="60N-rg-k7N">
+                                                <rect key="frame" x="129" y="196" width="117" height="37"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="117" id="3tr-jY-cTH"/>
+                                                    <constraint firstAttribute="height" constant="37" id="RXC-h4-tef"/>
+                                                </constraints>
+                                            </pageControl>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PBW-2z-QkK" userLabel="playGround Details View">
                                                 <rect key="frame" x="0.0" y="233" width="375" height="105"/>
                                                 <subviews>
@@ -1104,10 +1086,12 @@
                                             <constraint firstItem="a3X-NN-APU" firstAttribute="leading" secondItem="tAz-H2-pXV" secondAttribute="leading" id="buM-88-TNz"/>
                                             <constraint firstAttribute="trailing" secondItem="CsX-6T-AKe" secondAttribute="trailing" constant="10" id="eoc-mo-bfa"/>
                                             <constraint firstItem="QAO-Pv-GBb" firstAttribute="top" secondItem="4Kl-ry-C4x" secondAttribute="bottom" id="fwM-no-ucK"/>
+                                            <constraint firstItem="60N-rg-k7N" firstAttribute="centerX" secondItem="9ot-0E-Jw9" secondAttribute="centerX" id="hOY-cz-jTH"/>
                                             <constraint firstItem="a3X-NN-APU" firstAttribute="top" secondItem="qHE-Fn-GzH" secondAttribute="bottom" id="hx9-DO-Eln"/>
                                             <constraint firstItem="j0E-Jl-AcQ" firstAttribute="leading" secondItem="tAz-H2-pXV" secondAttribute="leading" id="i6j-uF-2sV"/>
                                             <constraint firstItem="j0E-Jl-AcQ" firstAttribute="top" secondItem="QAO-Pv-GBb" secondAttribute="bottom" id="itO-bl-MLP"/>
                                             <constraint firstItem="9ot-0E-Jw9" firstAttribute="top" secondItem="tAz-H2-pXV" secondAttribute="top" id="jch-OW-gqH"/>
+                                            <constraint firstItem="60N-rg-k7N" firstAttribute="bottom" secondItem="9ot-0E-Jw9" secondAttribute="bottom" id="loz-oQ-YI1"/>
                                             <constraint firstAttribute="trailing" secondItem="PPh-gp-gMO" secondAttribute="trailing" id="n6e-4B-27J"/>
                                             <constraint firstItem="I3T-ZP-vVf" firstAttribute="leading" secondItem="tAz-H2-pXV" secondAttribute="leading" id="th8-qu-Tyd"/>
                                             <constraint firstItem="CsX-6T-AKe" firstAttribute="top" secondItem="PBW-2z-QkK" secondAttribute="bottom" id="vbV-yv-TN8"/>
@@ -1137,8 +1121,7 @@
                     <size key="freeformSize" width="375" height="1060"/>
                     <connections>
                         <outlet property="mapView" destination="4Kl-ry-C4x" id="SvE-ni-zea"/>
-                        <outlet property="pageControl" destination="qvC-26-aae" id="FJ2-V9-uup"/>
-                        <outlet property="pageControlview" destination="Sib-U6-W3U" id="vES-2t-KIc"/>
+                        <outlet property="pageControl" destination="60N-rg-k7N" id="MHF-kb-AlN"/>
                         <outlet property="playGroundCity" destination="EFd-Mi-uIK" id="Fwu-SY-ADl"/>
                         <outlet property="playGroundName" destination="Wng-BD-2Cd" id="N1L-gL-MYG"/>
                         <outlet property="playGroundTypeAndDimension" destination="wtF-ou-FqD" id="IbI-I2-HgJ"/>

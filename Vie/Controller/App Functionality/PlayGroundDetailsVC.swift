@@ -28,18 +28,12 @@ class PlayGroundDetailsVC: UIViewController,UIScrollViewDelegate,UICollectionVie
     
     @IBOutlet weak var mapView: GMSMapView!
     
-    @IBOutlet weak var pageControlview: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         InitView()
-        //
-        //self.scrollView.bringSubviewToFront(pageView)
-        //hide navigtion back button text
-       // self.navigationController?.navigationBar.backIndicatorImage = UIImage(named: "back1")
-      //  self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(named: "back1")
-        
         //add right navigation bar buttons
        let add = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(shareButtonPressed(_:)))
         let play = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(shareButtonPressed(_:)))
@@ -62,10 +56,11 @@ class PlayGroundDetailsVC: UIViewController,UIScrollViewDelegate,UICollectionVie
             if let url=URL(string: images[index]){
                imageView.kf.setImage(with: url)
             }
-            self.pageControlview.addSubview(imageView)
+            self.scrollView.addSubview(imageView)
         }
         
         scrollView.contentSize=CGSize(width: (scrollView.frame.size.width * CGFloat(images.count)), height: scrollView.frame.size.height)
+        
        // scrollView.bringSubviewToFront(pageControlview)
     }
     // Mark :- ScrollView delegate methods
