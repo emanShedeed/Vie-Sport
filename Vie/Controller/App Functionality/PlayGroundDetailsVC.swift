@@ -8,6 +8,7 @@
 
 import UIKit
 import GoogleMaps
+import Kingfisher
 class PlayGroundDetailsVC: UIViewController,UIScrollViewDelegate,UICollectionViewDataSource,UICollectionViewDelegate {
 
     
@@ -27,6 +28,7 @@ class PlayGroundDetailsVC: UIViewController,UIScrollViewDelegate,UICollectionVie
     
     @IBOutlet weak var mapView: GMSMapView!
     
+    @IBOutlet weak var pageControlview: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -58,14 +60,13 @@ class PlayGroundDetailsVC: UIViewController,UIScrollViewDelegate,UICollectionVie
             frame.size=scrollView.frame.size
             let imageView=UIImageView(frame:frame)
             if let url=URL(string: images[index]){
-                if let data=try? Data(contentsOf: url){
-                    imageView.image=UIImage(data: data)
-                }
+               imageView.kf.setImage(with: url)
             }
-            self.scrollView.addSubview(imageView)
+            self.pageControlview.addSubview(imageView)
         }
-        scrollView.contentSize=CGSize(width: (scrollView.frame.size.width * CGFloat(images.count)), height: scrollView.frame.size.height)
         
+        scrollView.contentSize=CGSize(width: (scrollView.frame.size.width * CGFloat(images.count)), height: scrollView.frame.size.height)
+       // scrollView.bringSubviewToFront(pageControlview)
     }
     // Mark :- ScrollView delegate methods
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
@@ -77,7 +78,7 @@ class PlayGroundDetailsVC: UIViewController,UIScrollViewDelegate,UICollectionVie
     func InitView(){
         playGroundName.text=playGroundobj.PlayGroundName
         playGroundCity.text=playGroundobj.CityName
-        playGroundTypeAndDimension.text=playGroundobj.PlayGroundTypeName + " " + playGroundobj.DimensionName
+        playGroundTypeAndDimension.text=playGroundobj.PlayGroundTypeName + "\n" + playGroundobj.DimensionName
         let servicesImgesCount=playGroundobj.Services.count
         ServicesImagesViews.sort{$0.tag < $1.tag}
         remainingServicesImagesCountLabel.isHidden=(servicesImgesCount-4)<0
@@ -89,10 +90,8 @@ class PlayGroundDetailsVC: UIViewController,UIScrollViewDelegate,UICollectionVie
             ServicesImagesViews[index].isHidden=true
        
             if let url=URL(string: serviceObj.ActiveIcon){
-                if let data=try? Data(contentsOf: url){
                     ServicesImagesViews[index].isHidden=false
-                    ServicesImagesViews[index].image=UIImage(data: data)
-                }
+                    ServicesImagesViews[index].kf.setImage(with: url)
             }
             
             
