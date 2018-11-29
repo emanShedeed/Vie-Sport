@@ -37,8 +37,8 @@ class PlayGroundDetailsVC: UIViewController,UIScrollViewDelegate,UICollectionVie
         //
         //self.scrollView.bringSubviewToFront(pageView)
         //hide navigtion back button text
-        self.navigationController?.navigationBar.backIndicatorImage = UIImage(named: "back1")
-        self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(named: "back1")
+       // self.navigationController?.navigationBar.backIndicatorImage = UIImage(named: "back1")
+      //  self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(named: "back1")
         
         //add right navigation bar buttons
        let add = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(shareButtonPressed(_:)))

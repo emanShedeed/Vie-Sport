@@ -695,6 +695,7 @@
                         <viewLayoutGuide key="safeArea" id="gSo-DF-5Tb"/>
                     </view>
                     <navigationItem key="navigationItem" id="Mnu-Zu-WQk">
+                        <barButtonItem key="backBarButtonItem" title=" " id="z72-WT-2Be"/>
                         <barButtonItem key="leftBarButtonItem" systemItem="search" id="yKg-4I-tPh"/>
                         <barButtonItem key="rightBarButtonItem" tag="1" systemItem="organize" id="GIX-vS-Uwi">
                             <connections>
