@@ -126,16 +126,18 @@ class SignUpVC: UIViewController ,GIDSignInUIDelegate{
         if isCompleted{
             // APIsRequests().getStatus(from: "http://test100.revival.one/api/users/CheckEmail?", parameters: ["Email":textFields[1].text!])
             if let request = APIClient.CheckEmail(email: textFields[1].text!){
-                APIClient().jsonRequest(request: request, CompletionHandler: { (JSON: Any?, statusCode:Int,responseMessageStatus:ResponseMessageStatusEnum?,userMessage:String?) -> (Void) in
+              
+                APIClient().jsonRequest(request: request, CompletionHandler: { (JsonValue: JSON?, statusCode:Int,responseMessageStatus:ResponseMessageStatusEnum?,userMessage:String?) -> (Void) in
                     
-                    if let  data = JSON as? [String: Any]{
-                        let status=data["Status"] as! String
+                    if let  data = JsonValue{
+                        let status=data["Status"]
                         if (status=="Success"){
                             let mobileTextField=self.textFields[3]
                             // if email is valid send confirmation code
                             self.SendConfirmationCode(mobile: mobileTextField.text!)
                         }
                     }
+                  
                 })
             }
         }
@@ -143,10 +145,10 @@ class SignUpVC: UIViewController ,GIDSignInUIDelegate{
     func SendConfirmationCode(mobile:String){
         //  APIsRequests().getData(from: "http://test100.revival.one/api/OwnersBusiness/SendConfirmationCode?", parameters: ["Mobile":mobileTextField.text ?? ""])
         if let request = APIClient.SendConfirmationCode(mobile: mobile){
-            APIClient().jsonRequest(request: request, CompletionHandler: { (JSON: Any?,statusCode:Int,responseMessageStatus:ResponseMessageStatusEnum?,userMessage:String?) -> (Void) in
+            APIClient().jsonRequest(request: request, CompletionHandler: { (JsonValue: JSON?,statusCode:Int,responseMessageStatus:ResponseMessageStatusEnum?,userMessage:String?) -> (Void) in
                 
-                if let  data = JSON as? [String: Any]{
-                    let status=data["Status"] as? String
+                if let  data = JsonValue{
+                    let status=data["Status"]
                     if (status=="Success"){
                         
                         print("successfuly send Confirmation Code")

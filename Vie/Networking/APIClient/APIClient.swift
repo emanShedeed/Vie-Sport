@@ -141,4 +141,18 @@ static func CheckEmail(email: String)->DataRequest? {
         catch{}
         return nil
     }
+    static func GetSimilarPlayGrounds(userID:String,PlayGroundID:String)->DataRequest?{
+        do{
+            var urlRequest = try playgroundEndPoint.GetSimilar.getURL()
+            var urlcomponents=URLComponents(string: (urlRequest.url?.absoluteString)!)
+            urlcomponents?.queryItems=[URLQueryItem(name:"PlayGroundID", value: PlayGroundID),URLQueryItem(name: "UserID", value: userID)]
+            urlRequest.url=urlcomponents?.url
+            let request=Alamofire.request(try playgroundEndPoint.GetSimilar.getURL()).validate(statusCode: 200..<501)
+            return request
+        }
+        catch{}
+        return nil
+            
+    }
+    
 }

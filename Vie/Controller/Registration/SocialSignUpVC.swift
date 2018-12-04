@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import SwiftyJSON
 class SocialSignUpVC:UIViewController{
     
     var socialData:[String:Any]?
@@ -66,10 +66,10 @@ class SocialSignUpVC:UIViewController{
         if isCompleted{
             // APIsRequests().getStatus(from: "http://test100.revival.one/api/users/CheckEmail?", parameters: ["Email":socialSinUpTextFields[1].text!])
             if let request = APIClient.CheckEmail(email: socialSinUpTextFields[1].text!){
-                APIClient().jsonRequest(request: request, CompletionHandler: { (JSON: Any?, statusCode:Int,responseMessageStatus:ResponseMessageStatusEnum?,userMessage:String?) -> (Void) in
+                APIClient().jsonRequest(request: request, CompletionHandler: { (JsonValue: JSON?, statusCode:Int,responseMessageStatus:ResponseMessageStatusEnum?,userMessage:String?) -> (Void) in
                     
-                    if let  data = JSON as? [String: Any]{
-                        let status=data["Status"] as! String
+                    if let  data = JsonValue{
+                        let status=data["Status"]
                         if (status=="Success"){
                             let mobileTextField=self.socialSinUpTextFields[3]
                             // if email is valid send confirmation code
@@ -83,10 +83,10 @@ class SocialSignUpVC:UIViewController{
     func SendConfirmationCode(mobile:String){
         //  APIsRequests().getData(from: "http://test100.revival.one/api/OwnersBusiness/SendConfirmationCode?", parameters: ["Mobile":mobileTextField.text ?? ""])
         if let request = APIClient.SendConfirmationCode(mobile: mobile){
-            APIClient().jsonRequest(request: request, CompletionHandler: { (JSON: Any?,statusCode:Int,responseMessageStatus:ResponseMessageStatusEnum?,userMessage:String?) -> (Void) in
+            APIClient().jsonRequest(request: request, CompletionHandler: { (JsonValue: JSON?,statusCode:Int,responseMessageStatus:ResponseMessageStatusEnum?,userMessage:String?) -> (Void) in
                 
-                if let  data = JSON as? [String: Any]{
-                    let status=data["Status"] as? String
+                if let  data = JsonValue {
+                    let status=data["Status"]
                     if (status=="Success"){
                         
                         print("successfuly send Confirmation Code")

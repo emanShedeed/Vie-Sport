@@ -66,9 +66,9 @@ class ConfirmationCodeVC: UIViewController {
     }
     func ConfirmCode(mobile:String,code:String){
         if let urlRequest = APIClient.Confirmcode(mobile: mobile, code: code){
-            APIClient().jsonRequest(request: urlRequest) { (Json:Any?,statusCode:Int,ResponseMessageStatus:ResponseMessageStatusEnum?, userMessage:String?) -> (Void) in
-                if let data = Json as? [String: Any]{
-                    let status = data["Status"] as? String
+            APIClient().jsonRequest(request: urlRequest) { (JsonValue:JSON?,statusCode:Int,ResponseMessageStatus:ResponseMessageStatusEnum?, userMessage:String?) -> (Void) in
+                if let data = JsonValue{
+                    let status = data["Status"]
                     if  status == "Success"{
                         self.AddUser()
                         self.performSegue(withIdentifier: "goToHomeVC", sender: self)
@@ -83,11 +83,14 @@ class ConfirmationCodeVC: UIViewController {
     }
     func AddUser(){
         if let  urlRequest=APIClient.AddUser(userObj: UserObj!){
-            APIClient().jsonRequest(request: urlRequest) { (Json:Any?, statusCode:Int, ResponseMessageStatus:ResponseMessageStatusEnum?, userMessage:String?) -> (Void) in
-                if let data=Json as? [String:Any]{
-                    let status = data["Status"] as? String
-                    let messge=data["Message"] as? String
+            APIClient().jsonRequest(request: urlRequest) { (JsonValue:JSON?, statusCode:Int, ResponseMessageStatus:ResponseMessageStatusEnum?, userMessage:String?) -> (Void) in
+                if let data=JsonValue{
+                    let status = data["Status"]
+                    let messge=data["Message"]
                      print("add user status=\(status as Any)")
+                    let UserData=data["Data"]
+                    print(UserData as Any)
+                    
                     print(messge as Any)
                 }
             }
@@ -135,10 +138,10 @@ class ConfirmationCodeVC: UIViewController {
     @objc func ResendConfirmationCode(){
         //  APIsRequests().getData(from: "http://test100.revival.one/api/OwnersBusiness/SendConfirmationCode?", parameters: ["Mobile":mobileTextField.text ?? ""])
         if let request = APIClient.SendConfirmationCode(mobile: mobile){
-            APIClient().jsonRequest(request: request, CompletionHandler: { (JSON: Any?,statusCode:Int,responseMessageStatus:ResponseMessageStatusEnum?,userMessage:String?) -> (Void) in
+            APIClient().jsonRequest(request: request, CompletionHandler: { (JsonValue: JSON?,statusCode:Int,responseMessageStatus:ResponseMessageStatusEnum?,userMessage:String?) -> (Void) in
                 
-                if let  data = JSON as? [String: Any]{
-                    let status=data["Status"] as? String
+                if let  data = JsonValue{
+                    let status=data["Status"]
                     if (status=="Success"){
                         
                         print("successfuly send Confirmation Code")
