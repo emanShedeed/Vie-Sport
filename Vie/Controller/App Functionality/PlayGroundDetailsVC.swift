@@ -10,8 +10,6 @@ import UIKit
 import GoogleMaps
 import Kingfisher
 class PlayGroundDetailsVC: UIViewController,UIScrollViewDelegate,UICollectionViewDataSource,UICollectionViewDelegate {
-
-    
     var playGroundobj=PlayGround()
     var frame=CGRect(x: 0, y: 0, width: 0, height: 0)
     
@@ -28,10 +26,11 @@ class PlayGroundDetailsVC: UIViewController,UIScrollViewDelegate,UICollectionVie
     
     @IBOutlet weak var mapView: GMSMapView!
     
+    @IBOutlet weak var contentView: UIView!
     
+    @IBOutlet weak var contentViewWidth: NSLayoutConstraint!
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
         InitView()
         //add right navigation bar buttons
@@ -60,8 +59,7 @@ class PlayGroundDetailsVC: UIViewController,UIScrollViewDelegate,UICollectionVie
         }
         
         scrollView.contentSize=CGSize(width: (scrollView.frame.size.width * CGFloat(images.count)), height: scrollView.frame.size.height)
-        
-       // scrollView.bringSubviewToFront(pageControlview)
+      contentViewWidth.constant=scrollView.contentSize.width
     }
     // Mark :- ScrollView delegate methods
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
@@ -88,12 +86,12 @@ class PlayGroundDetailsVC: UIViewController,UIScrollViewDelegate,UICollectionVie
                     ServicesImagesViews[index].isHidden=false
                     ServicesImagesViews[index].kf.setImage(with: url)
             }
-            
-            
         }
         let camera=GMSCameraPosition.camera(withLatitude:Double(playGroundobj.Lat)!, longitude: Double(playGroundobj.Lng)!, zoom: 10.0)
         mapView.camera=camera
-        
+        let marker=GMSMarker()
+        marker.position=CLLocationCoordinate2D(latitude:Double(playGroundobj.Lat)!, longitude:Double(playGroundobj.Lng)!)
+        marker.map=mapView
     }
     //Mark :- share button
     @objc func shareButtonPressed(_ sender: Any) {

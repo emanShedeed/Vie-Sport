@@ -19,29 +19,29 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="79.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="دورة مياه" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uZp-IA-FE3">
-                        <rect key="frame" x="184" y="29.5" width="126" height="21"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GPl-yQ-Mf4">
+                        <rect key="frame" x="10" y="25" width="30" height="29.5"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="21" id="2gE-we-Ydh"/>
-                            <constraint firstAttribute="width" constant="126" id="Jzf-UD-Xwa"/>
+                            <constraint firstAttribute="width" constant="30" id="n5e-QH-y9B"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="دورة مياه" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uZp-IA-FE3">
+                        <rect key="frame" x="41" y="28" width="269" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="24" id="mZk-YD-bdV"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GPl-yQ-Mf4">
-                        <rect key="frame" x="10" y="10" width="60" height="60"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="60" id="JfT-KO-NSR"/>
-                            <constraint firstAttribute="height" constant="60" id="cm6-Hn-fOa"/>
-                        </constraints>
-                    </imageView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="GPl-yQ-Mf4" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="1qb-S4-auv"/>
-                    <constraint firstItem="uZp-IA-FE3" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="89H-3y-IPo"/>
-                    <constraint firstAttribute="trailing" secondItem="uZp-IA-FE3" secondAttribute="trailing" constant="10" id="Jg5-Sc-607"/>
-                    <constraint firstItem="GPl-yQ-Mf4" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="egb-nb-MLj"/>
+                    <constraint firstAttribute="trailing" secondItem="uZp-IA-FE3" secondAttribute="trailing" constant="10" id="7EK-Fc-M6t"/>
+                    <constraint firstItem="GPl-yQ-Mf4" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-6" id="7bA-Fr-x5f"/>
+                    <constraint firstItem="GPl-yQ-Mf4" firstAttribute="centerY" secondItem="uZp-IA-FE3" secondAttribute="centerY" id="Uaa-Re-2fd"/>
+                    <constraint firstItem="uZp-IA-FE3" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="UqU-Hg-ovq"/>
+                    <constraint firstItem="GPl-yQ-Mf4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="14" id="aLB-Gy-Q9o"/>
+                    <constraint firstItem="uZp-IA-FE3" firstAttribute="leading" secondItem="GPl-yQ-Mf4" secondAttribute="trailing" constant="1" id="bUy-Gs-2Xj"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
