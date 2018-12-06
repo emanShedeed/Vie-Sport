@@ -31,6 +31,7 @@
 		E789996E218728FD0013BE4C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E789996D218728FD0013BE4C /* User.swift */; };
 		E789997121872C750013BE4C /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E789997021872C750013BE4C /* APIClient.swift */; };
 		E79379F9217837AB006D33F5 /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79379F8217837AB006D33F5 /* CustomColor.swift */; };
+		E79D3B1921B7CEE30043D643 /* SimilarPlayGroundCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79D3B1821B7CEE30043D643 /* SimilarPlayGroundCell.swift */; };
 		E7A857ED216C8009002683CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A857EC216C8009002683CD /* AppDelegate.swift */; };
 		E7A857EF216C8009002683CD /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A857EE216C8009002683CD /* MainVC.swift */; };
 		E7A857F2216C8009002683CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7A857F0216C8009002683CD /* Main.storyboard */; };
@@ -39,6 +40,7 @@
 		E7A85802216C800B002683CD /* VieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A85801216C800B002683CD /* VieTests.swift */; };
 		E7A8580D216C800B002683CD /* VieUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A8580C216C800B002683CD /* VieUITests.swift */; };
 		E7B39810218B0EB500A1B365 /* OwnerBusinessEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B3980F218B0EB500A1B365 /* OwnerBusinessEndPoint.swift */; };
+		E7B68CD921B92B7300DDE71A /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B68CD821B92B7300DDE71A /* UIViewExtension.swift */; };
 		E7CBD127217499D000072F03 /* NotificationNamesExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7CBD126217499D000072F03 /* NotificationNamesExtension.swift */; };
 		E7DDF3B82185C11400C878DE /* UserEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DDF3B72185C11400C878DE /* UserEndPoint.swift */; };
 		E7DDF3BA2185CB5000C878DE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DDF3B92185CB5000C878DE /* Constants.swift */; };
@@ -96,6 +98,7 @@
 		E789996D218728FD0013BE4C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E789997021872C750013BE4C /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		E79379F8217837AB006D33F5 /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
+		E79D3B1821B7CEE30043D643 /* SimilarPlayGroundCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimilarPlayGroundCell.swift; sourceTree = "<group>"; };
 		E7A857E9216C8009002683CD /* Vie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7A857EC216C8009002683CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7A857EE216C8009002683CD /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
@@ -110,6 +113,7 @@
 		E7A8580C216C800B002683CD /* VieUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VieUITests.swift; sourceTree = "<group>"; };
 		E7A8580E216C800B002683CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E7B3980F218B0EB500A1B365 /* OwnerBusinessEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerBusinessEndPoint.swift; sourceTree = "<group>"; };
+		E7B68CD821B92B7300DDE71A /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		E7CBD126217499D000072F03 /* NotificationNamesExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationNamesExtension.swift; sourceTree = "<group>"; };
 		E7DDF3B72185C11400C878DE /* UserEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEndPoint.swift; sourceTree = "<group>"; };
 		E7DDF3B92185CB5000C878DE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -238,6 +242,14 @@
 			path = APIClient;
 			sourceTree = "<group>";
 		};
+		E79D3B1721B7CE8B0043D643 /* Similar playGround Cell */ = {
+			isa = PBXGroup;
+			children = (
+				E79D3B1821B7CEE30043D643 /* SimilarPlayGroundCell.swift */,
+			);
+			path = "Similar playGround Cell";
+			sourceTree = "<group>";
+		};
 		E7A857E0216C8009002683CD = {
 			isa = PBXGroup;
 			children = (
@@ -263,6 +275,7 @@
 		E7A857EB216C8009002683CD /* Vie */ = {
 			isa = PBXGroup;
 			children = (
+				E7B68CD721B92B5200DDE71A /* Extensions */,
 				E7A8581A216C80B6002683CD /* Model */,
 				E7A8581B216C80C6002683CD /* View */,
 				E7A8581C216C80DC002683CD /* Controller */,
@@ -306,6 +319,7 @@
 		E7A8581B216C80C6002683CD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E79D3B1721B7CE8B0043D643 /* Similar playGround Cell */,
 				E70ED96E21AA74CA00000AAE /* Service Cell */,
 				E7A857F0216C8009002683CD /* Main.storyboard */,
 				E7241866219AACE0004FFF00 /* CustomCellForInfoMap */,
@@ -322,6 +336,14 @@
 				E7A857EC216C8009002683CD /* AppDelegate.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		E7B68CD721B92B5200DDE71A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E7B68CD821B92B7300DDE71A /* UIViewExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		E7DDF3B52185BE1B00C878DE /* Networking */ = {
@@ -600,6 +622,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E79D3B1921B7CEE30043D643 /* SimilarPlayGroundCell.swift in Sources */,
 				E700E0CC21984B2200A0A899 /* HomeVC.swift in Sources */,
 				E7790EA8219862E000A1D926 /* PlaygroundEndPoint.swift in Sources */,
 				E74155D021A2A19C0032FBAE /* CustomCell.swift in Sources */,
@@ -623,6 +646,7 @@
 				E7A857ED216C8009002683CD /* AppDelegate.swift in Sources */,
 				E789997121872C750013BE4C /* APIClient.swift in Sources */,
 				E7B39810218B0EB500A1B365 /* OwnerBusinessEndPoint.swift in Sources */,
+				E7B68CD921B92B7300DDE71A /* UIViewExtension.swift in Sources */,
 				E721F63821982A9F003FE7B0 /* TabBarVC.swift in Sources */,
 				E71C6F42219D6C4700E0D5A9 /* DictionaryKeyForValue.swift in Sources */,
 				E7DDF3BA2185CB5000C878DE /* Constants.swift in Sources */,
@@ -804,7 +828,10 @@
 				DEVELOPMENT_TEAM = KN53QSL78G;
 				INFOPLIST_FILE = Vie/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.revival.Vie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -821,7 +848,10 @@
 				DEVELOPMENT_TEAM = KN53QSL78G;
 				INFOPLIST_FILE = Vie/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.revival.Vie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -838,7 +868,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KN53QSL78G;
 				INFOPLIST_FILE = VieTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.revival.VieTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -856,7 +890,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KN53QSL78G;
 				INFOPLIST_FILE = VieTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.revival.VieTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -873,7 +911,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KN53QSL78G;
 				INFOPLIST_FILE = VieUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.revival.VieUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -890,7 +932,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KN53QSL78G;
 				INFOPLIST_FILE = VieUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.revival.VieUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;

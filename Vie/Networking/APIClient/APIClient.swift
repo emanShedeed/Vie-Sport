@@ -145,9 +145,16 @@ static func CheckEmail(email: String)->DataRequest? {
         do{
             var urlRequest = try playgroundEndPoint.GetSimilar.getURL()
             var urlcomponents=URLComponents(string: (urlRequest.url?.absoluteString)!)
-            urlcomponents?.queryItems=[URLQueryItem(name:"PlayGroundID", value: PlayGroundID),URLQueryItem(name: "UserID", value: userID)]
+            if userID != ""{
+                urlcomponents?.queryItems=[URLQueryItem(name:"PlayGroundID", value: PlayGroundID),URLQueryItem(name: "UserID", value: userID)]
+            }
+            else{
+                urlcomponents?.queryItems=[URLQueryItem(name:"PlayGroundID", value: PlayGroundID)]
+            }
+            
             urlRequest.url=urlcomponents?.url
-            let request=Alamofire.request(try playgroundEndPoint.GetSimilar.getURL()).validate(statusCode: 200..<501)
+            let request=Alamofire.request(urlRequest
+                ).validate(statusCode: 200..<501)
             return request
         }
         catch{}

@@ -89,8 +89,8 @@ class ConfirmationCodeVC: UIViewController {
                     let messge=data["Message"]
                      print("add user status=\(status as Any)")
                     let UserData=data["Data"]
-                    print(UserData as Any)
-                    
+                    print(UserData)
+                    UserDefaults.standard.set(UserData["UserID"], forKey:"UserID")
                     print(messge as Any)
                 }
             }
