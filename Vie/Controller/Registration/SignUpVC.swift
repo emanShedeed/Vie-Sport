@@ -24,6 +24,7 @@ class SignUpVC: UIViewController ,GIDSignInUIDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        self.navigationController?.isNavigationBarHidden=true
       
         //sort textfields by target id
         textFields.sort{$0.tag<$1.tag}

@@ -787,11 +787,11 @@
             <objects>
                 <viewController id="xWy-So-ddw" userLabel="ServicesVC" customClass="PlayGroundServicesVC" customModule="Vie" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wAX-iu-eFL">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Yta-Nl-J1E">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="xWy-So-ddw" id="c0e-6v-zGu"/>
@@ -1247,6 +1247,7 @@
                         <outletCollection property="ServicesImagesViews" destination="dCR-6S-Sg7" collectionClass="NSMutableArray" id="qt1-6W-FyQ"/>
                         <segue destination="xWy-So-ddw" kind="show" identifier="goToPlayGroundServices" id="GO6-QB-w7e"/>
                         <segue destination="pgt-dR-rzr" kind="show" identifier="goToPlayGroundReservationVC" id="2Cu-Ix-aQk"/>
+                        <segue destination="Irx-cF-g46" kind="show" identifier="goToSignUpVC" id="fQB-gO-izj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gnn-WB-eh9" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1504,6 +1505,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="61L-TT-dd0"/>
-        <segue reference="ese-23-inY"/>
+        <segue reference="AqB-MZ-WnT"/>
+        <segue reference="fQB-gO-izj"/>
     </inferredMetricsTieBreakers>
 </document>

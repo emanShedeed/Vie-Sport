@@ -40,6 +40,7 @@
 		E7A85802216C800B002683CD /* VieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A85801216C800B002683CD /* VieTests.swift */; };
 		E7A8580D216C800B002683CD /* VieUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A8580C216C800B002683CD /* VieUITests.swift */; };
 		E7AF32DF21BD12FB009B5244 /* PlayGroundReservationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AF32DE21BD12FB009B5244 /* PlayGroundReservationVC.swift */; };
+		E7AF32E121BD1D0C009B5244 /* FavoriteEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AF32E021BD1D0C009B5244 /* FavoriteEndPoint.swift */; };
 		E7B39810218B0EB500A1B365 /* OwnerBusinessEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B3980F218B0EB500A1B365 /* OwnerBusinessEndPoint.swift */; };
 		E7B68CD921B92B7300DDE71A /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B68CD821B92B7300DDE71A /* UIViewExtension.swift */; };
 		E7CBD127217499D000072F03 /* NotificationNamesExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7CBD126217499D000072F03 /* NotificationNamesExtension.swift */; };
@@ -114,6 +115,7 @@
 		E7A8580C216C800B002683CD /* VieUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VieUITests.swift; sourceTree = "<group>"; };
 		E7A8580E216C800B002683CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E7AF32DE21BD12FB009B5244 /* PlayGroundReservationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayGroundReservationVC.swift; sourceTree = "<group>"; };
+		E7AF32E021BD1D0C009B5244 /* FavoriteEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteEndPoint.swift; sourceTree = "<group>"; };
 		E7B3980F218B0EB500A1B365 /* OwnerBusinessEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerBusinessEndPoint.swift; sourceTree = "<group>"; };
 		E7B68CD821B92B7300DDE71A /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		E7CBD126217499D000072F03 /* NotificationNamesExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationNamesExtension.swift; sourceTree = "<group>"; };
@@ -364,6 +366,7 @@
 				E7DDF3B72185C11400C878DE /* UserEndPoint.swift */,
 				E7B3980F218B0EB500A1B365 /* OwnerBusinessEndPoint.swift */,
 				E7790EA7219862E000A1D926 /* PlaygroundEndPoint.swift */,
+				E7AF32E021BD1D0C009B5244 /* FavoriteEndPoint.swift */,
 				E7DDF3B92185CB5000C878DE /* Constants.swift */,
 				E7EF722E21885572001AAD73 /* APIConfiguration.swift */,
 			);
@@ -631,6 +634,7 @@
 				E74155D021A2A19C0032FBAE /* CustomCell.swift in Sources */,
 				E789996E218728FD0013BE4C /* User.swift in Sources */,
 				C71383DD216E16AD00784CDC /* HideKeyboardVC.swift in Sources */,
+				E7AF32E121BD1D0C009B5244 /* FavoriteEndPoint.swift in Sources */,
 				E7AF32DF21BD12FB009B5244 /* PlayGroundReservationVC.swift in Sources */,
 				E70ED96D21AA728900000AAE /* PlayGroundServicesVC.swift in Sources */,
 				E7CBD127217499D000072F03 /* NotificationNamesExtension.swift in Sources */,

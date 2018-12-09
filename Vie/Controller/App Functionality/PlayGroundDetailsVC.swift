@@ -58,9 +58,9 @@ class PlayGroundDetailsVC: UIViewController,UIScrollViewDelegate,UICollectionVie
     func InitNavBar()
     {
         //add right navigation bar buttons
-        let add = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(shareButtonPressed(_:)))
-        let play = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(shareButtonPressed(_:)))
-        navigationItem.rightBarButtonItems = [add, play]
+        let Share = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(shareButtonPressed))
+        let addToFavorite = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(AddToFavoritesButtonPressed))
+        navigationItem.rightBarButtonItems = [Share, addToFavorite]
         
         //set navigation title
         navigationItem.title=playGroundobj.PlayGroundName
@@ -120,7 +120,7 @@ class PlayGroundDetailsVC: UIViewController,UIScrollViewDelegate,UICollectionVie
         
     }
     //Mark :- share button
-    @objc func shareButtonPressed(_ sender: Any) {
+    @objc func shareButtonPressed() {
         let text = "This is the text...."
         let image = UIImage(named: "playground")
       // let myWebsite = NSURL(string:"https://stackoverflow.com/users/4600136/mr-javed-multani?tab=profile")
@@ -129,7 +129,32 @@ class PlayGroundDetailsVC: UIViewController,UIScrollViewDelegate,UICollectionVie
         activityViewController.popoverPresentationController?.sourceView = self.view
         present(activityViewController, animated: true, completion: nil)
     }
-
+    @objc func AddToFavoritesButtonPressed(){
+        if(IsKeyPresentInUserDefaults(key: "UserID"))
+        {
+            let userID=UserDefaults.standard.integer(forKey: "UserID")
+            if let request = APIClient.AddPlayGroundToFavorites(userID:String(userID), PlayGroundID:String( playGroundobj.PlayGroundID)){
+                APIClient().jsonRequest(request: request, CompletionHandler: { (JsonValue: JSON?,statusCode:Int,responseMessageStatus:ResponseMessageStatusEnum?,userMessage:String?) -> (Void) in
+                    
+                    if let  data = JsonValue{
+                        let status=data["Status"]
+                        if (status=="Success"){
+                            print("successfuly AddedToFavorities")
+                        }
+                    }
+                    
+                })
+            }
+        }
+        else{
+            let alert=UIAlertController(title: "", message: "من فضلك قم بالتسجيل أولا", preferredStyle: .alert)
+            let action=UIAlertAction(title: "موافق", style: .default) { (OKaction) in
+                self.performSegue(withIdentifier: "goToSignUpVC", sender: self)
+            }
+            alert.addAction(action)
+            self.present(alert, animated: true)
+        }
+    }
     //Mark: tapGestture
     @objc func ServicesViewTapped(){
         performSegue(withIdentifier: "goToPlayGroundServices", sender: self)
