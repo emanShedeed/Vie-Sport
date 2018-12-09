@@ -17,8 +17,7 @@ class HomeVC: UIViewController {
         // Do any additional setup after loading the view.
         collectionViewContainerView.isHidden=true
         mapContainerView.isHidden=false
-       
-    }
+           }
 
    
     @IBAction func ToggleButtonPressed(_ sender: UIBarButtonItem) {

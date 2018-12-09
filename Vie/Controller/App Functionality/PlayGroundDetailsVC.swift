@@ -34,11 +34,20 @@ class PlayGroundDetailsVC: UIViewController,UIScrollViewDelegate,UICollectionVie
     @IBOutlet weak var contentViewWidth: NSLayoutConstraint!
     
     @IBOutlet weak var similarPlayGroundView: UIView!
+    @IBOutlet weak var ReservationView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        //Add tapgesture to reervation view
+        let tap=UITapGestureRecognizer(target: self, action: #selector(AddPlayGroundReservation))
+        ReservationView.addGestureRecognizer(tap)
+        // display reservation view if playgroun has online reservation
+        if playGroundobj.IsSupportsReservations == false{
+            ReservationView.isHidden=true
+        }
         collectionView.dataSource=self
         collectionView.delegate=self
+        self.tabBarController?.tabBar.isHidden=true
         InitPlayGroundData()
         InitScrollView()
         InitNavBar()
@@ -131,6 +140,12 @@ class PlayGroundDetailsVC: UIViewController,UIScrollViewDelegate,UICollectionVie
             let destinationVC=segue.destination as! PlayGroundServicesVC
             destinationVC.playGroundServices=playGroundobj.Services
         }
+        else if(segue.identifier=="goToPlayGroundReservationVC"){
+            
+            let destinationVC=segue.destination as! PlayGroundReservationVC
+            //let indexPath=collectionView.indexPathsForSelectedItems?.first
+            destinationVC.playGroundobj=playGroundobj
+        }
     }
     func IsKeyPresentInUserDefaults(key:String)->Bool{
         return UserDefaults.standard.object(forKey: key) != nil
@@ -180,5 +195,8 @@ class PlayGroundDetailsVC: UIViewController,UIScrollViewDelegate,UICollectionVie
         }
         return cell
     }
-    
+    @objc func AddPlayGroundReservation(){
+     performSegue(withIdentifier: "goToPlayGroundReservationVC", sender: self)
+    }
+  
 }
