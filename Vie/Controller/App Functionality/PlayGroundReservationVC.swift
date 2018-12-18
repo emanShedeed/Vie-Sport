@@ -8,10 +8,12 @@
 
 import UIKit
 import SwiftyJSON
-class PlayGroundReservationVC: UIViewController ,UICollectionViewDelegate,UICollectionViewDataSource,UITableViewDataSource,UITableViewDelegate{
+class PlayGroundReservationVC: UIViewController {
  
     var playGroundobj=PlayGround()
-    var dates=[String]()
+    var displayeddates=[String]()
+    var dates=[Date]()
+    
     var periods=[Period]()
     
     @IBOutlet weak var tableView: UITableView!
@@ -20,6 +22,7 @@ class PlayGroundReservationVC: UIViewController ,UICollectionViewDelegate,UIColl
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        tableView.separatorEffect = .none
         //Remove Extra Celss
         tableView.tableFooterView=UIView()
         //Init Date Array
@@ -27,28 +30,20 @@ class PlayGroundReservationVC: UIViewController ,UICollectionViewDelegate,UIColl
         dateFormatter.dateFormat="dd \n MMM"
         let dayFormatter=DateFormatter()
         dayFormatter.dateFormat="EEEE"
-        for i in 1...15{
+        for i in 0...15{
             let date=Calendar.current.date(byAdding: .day, value: i, to: Date())
             let dateMonthAndYear=dateFormatter.string(from:date!)
             let dayInWeek=dayFormatter.string(from: date!)
-            dates.append(dayInWeek.prefix(3) + " \n " + dateMonthAndYear)
+            dates.append(date!)
+            displayeddates.append(dayInWeek.prefix(3) + " \n " + dateMonthAndYear)
             
         }
         ///
-        setScrollIndicatorColor(color: UIColor.red)
-        let dateFormatters=DateFormatter()
-        dateFormatters.dateFormat="yyyy-MM-dd"
-        GetPeriodsForDate(date:dateFormatters.string(from: Date()) )
+      // setScrollIndicatorColor(color: UIColor.red)
+       
+        GetPeriodsForDate(date:Date())
     }
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return dates.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell=collectionView.dequeueReusableCell(withReuseIdentifier: "DayCell", for: indexPath) as! DayCell
-        cell.DayLabel.text=dates[indexPath.row]
-        return cell
-    }
+   
     func setScrollIndicatorColor(color: UIColor) {
         for view in self.dateCollectionView.subviews {
             if view.isKind(of: UIImageView.self),
@@ -62,18 +57,32 @@ class PlayGroundReservationVC: UIViewController ,UICollectionViewDelegate,UIColl
         
         self.dateCollectionView.flashScrollIndicators()
     }
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return periods.count
+    func IsKeyPresentInUserDefaults(key:String)->Bool{
+        return UserDefaults.standard.object(forKey: key) != nil
     }
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 5
+    func GetPeriodsForDate(date:Date){
+        let dateFormatters=DateFormatter()
+        dateFormatters.dateFormat="yyyy-MM-dd"
+        let apiDateFormate=dateFormatters.string(from: date)
+        if(IsKeyPresentInUserDefaults(key: "AccessToken"))
+        {
+            Period.GetPeriods(date: apiDateFormate, PlayGroundIDHashed: playGroundobj.PlayGroundIDHashed) { (periodsarray) in
+                self.periods=periodsarray
+                self.tableView.reloadData()
+            }
+        }
     }
+    
+ 
+    
+}
+extension PlayGroundReservationVC:UITableViewDataSource,UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return periods.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let periodObj=periods[indexPath.section]
+        let periodObj=periods[indexPath.row]
         let x = (periodObj.Ml3byPrice==periodObj.Price)
         //price label
         let mutableAttripuatedString=NSMutableAttributedString()
@@ -98,23 +107,32 @@ class PlayGroundReservationVC: UIViewController ,UICollectionViewDelegate,UIColl
         if(x){
             cell.periodPriceLabel.textColor = periodObj.IsReserved ? UIColor.white :UIColor.green
         }
-        cell.backgroundColor=periodObj.IsReserved ? UIColor.red : UIColor.white
-       // cell.view.frame=cell.frame.offsetBy(dx: 10, dy: 10)
+        cell.view.backgroundColor=periodObj.IsReserved ? UIColor.red : UIColor.white
+        // cell.view.frame=cell.frame.offsetBy(dx: 10, dy: 10)
         return cell
     }
-    func IsKeyPresentInUserDefaults(key:String)->Bool{
-        return UserDefaults.standard.object(forKey: key) != nil
-    }
-    func GetPeriodsForDate(date:String){
-        if(IsKeyPresentInUserDefaults(key: "AccessToken"))
-        {
-            Period.GetPeriods(date: date, PlayGroundIDHashed: playGroundobj.PlayGroundIDHashed) { (periodsarray) in
-                self.periods=periodsarray
-                self.tableView.reloadData()
-            }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let alert = UIAlertController(title: "هل ترغب في الحجز؟", message: "في حالة الحجز سيت إرسال رقم هاتفك المسجل في تطبيق Vie إلى صاحب الملعب ليتواصل معك بخصوص الحجز.", preferredStyle: .alert)
+        let okAction=UIAlertAction(title: "احجز الملعب", style: .default) { (action) in
+            self.performSegue(withIdentifier: "goToReservationInfoVC", sender: self)
         }
+        let cancelAction=UIAlertAction(title: "لا،شكرا", style: .cancel, handler: nil)
+        alert.addAction(okAction)
+        alert.addAction(cancelAction)
+        self.present(alert,animated: true)
+    }
+}
+extension PlayGroundReservationVC:UICollectionViewDataSource,UICollectionViewDelegate{
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        GetPeriodsForDate(date: dates[indexPath.row])
+        tableView.reloadData()
+    }
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return displayeddates.count
     }
     
- 
-    
-}
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell=collectionView.dequeueReusableCell(withReuseIdentifier: "DayCell", for: indexPath) as! DayCell
+        cell.DayLabel.text=displayeddates[indexPath.row]
+        return cell
+    }}

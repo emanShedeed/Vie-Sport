@@ -24,9 +24,9 @@ class PeriodCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-   /* override func layoutSubviews() {
+    override func layoutSubviews() {
         super.layoutSubviews()
-        view.frame=view.frame.inset(by: UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10))
-    }*/
+        view.frame=view.frame.inset(by: UIEdgeInsets(top: 5, left: 10, bottom: 0, right: 10))
+    }
  
 }

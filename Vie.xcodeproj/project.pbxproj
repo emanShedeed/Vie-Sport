@@ -32,6 +32,7 @@
 		E74155D021A2A19C0032FBAE /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74155CF21A2A19C0032FBAE /* CustomCell.swift */; };
 		E7790EA6219858E800A1D926 /* PlayGround.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7790EA5219858E800A1D926 /* PlayGround.swift */; };
 		E7790EA8219862E000A1D926 /* PlaygroundEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7790EA7219862E000A1D926 /* PlaygroundEndPoint.swift */; };
+		E78860ED21C90F0A00B5DC8C /* ReservationInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78860EC21C90F0A00B5DC8C /* ReservationInfoVC.swift */; };
 		E789996E218728FD0013BE4C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E789996D218728FD0013BE4C /* User.swift */; };
 		E789997121872C750013BE4C /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E789997021872C750013BE4C /* APIClient.swift */; };
 		E79379F9217837AB006D33F5 /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79379F8217837AB006D33F5 /* CustomColor.swift */; };
@@ -105,6 +106,7 @@
 		E74155CF21A2A19C0032FBAE /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		E7790EA5219858E800A1D926 /* PlayGround.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayGround.swift; sourceTree = "<group>"; };
 		E7790EA7219862E000A1D926 /* PlaygroundEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaygroundEndPoint.swift; sourceTree = "<group>"; };
+		E78860EC21C90F0A00B5DC8C /* ReservationInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationInfoVC.swift; sourceTree = "<group>"; };
 		E789996D218728FD0013BE4C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E789997021872C750013BE4C /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		E79379F8217837AB006D33F5 /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 				E7F2008621A2E47A009EE47A /* PlayGroundDetailsVC.swift */,
 				E70ED96C21AA728900000AAE /* PlayGroundServicesVC.swift */,
 				E7AF32DE21BD12FB009B5244 /* PlayGroundReservationVC.swift */,
+				E78860EC21C90F0A00B5DC8C /* ReservationInfoVC.swift */,
 			);
 			path = "App Functionality";
 			sourceTree = "<group>";
@@ -673,6 +676,7 @@
 				C71383D3216E053700784CDC /* CustomUItextField.swift in Sources */,
 				E7241864219AACC3004FFF00 /* PlayGroundInfoWindowModel.swift in Sources */,
 				E74155CE21A29CE20032FBAE /* MapCollectionViewVC.swift in Sources */,
+				E78860ED21C90F0A00B5DC8C /* ReservationInfoVC.swift in Sources */,
 				E7F2008721A2E47A009EE47A /* PlayGroundDetailsVC.swift in Sources */,
 				E7EF722F21885572001AAD73 /* APIConfiguration.swift in Sources */,
 				E721A3AC21774D73002DE31E /* ConfirmationCodeVC.swift in Sources */,
