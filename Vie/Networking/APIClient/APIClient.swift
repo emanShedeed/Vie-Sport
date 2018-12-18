@@ -179,4 +179,18 @@ static func CheckEmail(email: String)->DataRequest? {
         return nil
         
     }
+    static func GetPeriods(AccessToken:String,PlayGroundID:String,Date:String)->DataRequest?{
+        do{
+            var urlRequest = try PeriodEndPoint.get.getURL()
+            var urlcomponents=URLComponents(string: (urlRequest.url?.absoluteString)!)
+            urlcomponents?.queryItems=[URLQueryItem(name:"PlayGroundID", value: PlayGroundID),URLQueryItem(name: "AccessToken", value: AccessToken),URLQueryItem(name: "Date", value: Date)]
+            urlRequest.url=urlcomponents?.url
+            let request=Alamofire.request(urlRequest
+                ).validate(statusCode: 200..<501)
+            return request
+        }
+        catch{}
+        return nil
+        
+    }
 }

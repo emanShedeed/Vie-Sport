@@ -61,7 +61,7 @@ struct PlayGround{
                             serviceObj.ActiveIcon=service["ActiveIcon"].stringValue
                             playGroundObj.Services.append(serviceObj)
                         }
-                        playGroundObj.IsSupportsReservations=object["IsSupportReservations"].boolValue
+                        playGroundObj.IsSupportsReservations=object["IsSupportsReservations"].boolValue
                         playGroundObj.CashExtraFees=object["CashExtraFees"].intValue
                         playGroundObj.Ml3byDiscountAmt=object["Ml3byDiscountAmt"].intValue
                         playGrounds.append(playGroundObj)
@@ -106,7 +106,7 @@ struct PlayGround{
                             serviceObj.ActiveIcon=service["ActiveIcon"].stringValue
                             playGroundObj.Services.append(serviceObj)
                         }
-                        playGroundObj.IsSupportsReservations=object["IsSupportReservations"].boolValue
+                        playGroundObj.IsSupportsReservations=object["IsSupportsReservations"].boolValue
                         playGroundObj.CashExtraFees=object["CashExtraFees"].intValue
                         playGroundObj.Ml3byDiscountAmt=object["Ml3byDiscountAmt"].intValue
                         similarPlayGrounds.append(playGroundObj)

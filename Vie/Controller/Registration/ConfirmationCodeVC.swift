@@ -91,7 +91,9 @@ class ConfirmationCodeVC: UIViewController {
                     let UserData=data["Data"]
                     print(UserData)
                     let userID=UserData["UserID"].intValue
+                    let AccessToken=UserData["AccessToken"].stringValue
                     UserDefaults.standard.set(userID,forKey:"UserID")
+                    UserDefaults.standard.set(AccessToken,forKey:"AccessToken")
                     print(messge as Any)
                 }
             }

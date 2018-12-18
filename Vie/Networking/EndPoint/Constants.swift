@@ -6,6 +6,7 @@ struct K {
         static let user="users/"
         static let OwnersBusiness="OwnersBusiness/"
         static let PlayGround="PlayGrounds/"
+        static let Period="Periods/"
     }
     
     struct APIParameterKey {

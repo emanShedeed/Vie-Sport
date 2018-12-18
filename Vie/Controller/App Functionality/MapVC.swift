@@ -107,7 +107,7 @@ class MapVC: UIViewController ,GMSMapViewDelegate,CLLocationManagerDelegate{
     }
    
     func DisplayPlayGroundData(playGrounds:[PlayGround]){
-        DispatchQueue.main.async {
+       // DispatchQueue.main.async {
             
             for (index,playGround )in playGrounds.enumerated() {
                 let playGround_marker = GMSMarker()
@@ -117,7 +117,7 @@ class MapVC: UIViewController ,GMSMapViewDelegate,CLLocationManagerDelegate{
                 playGround_marker.map = self.mapView
                 playGround_marker.userData=playGround
                 self.markerDict[index] = playGround_marker
-            }
+           // }
         }
     }
     
@@ -137,7 +137,7 @@ extension MapVC: UICollectionViewDataSource,UICollectionViewDelegate,UICollectio
         }
         cell.playGroundNameLabel.text=playGroundObj.PlayGroundName
         cell.playGroundTypeAndDimensionsLabel.text=playGroundObj.PlayGroundTypeName + "-" + playGroundObj.DimensionName
-        cell.playGrounOnlineReservation.text=playGroundObj.IsSupportsReservations ? "يدعم الحجز الألكترونس" :"يتوفر الحجز الألكتروني قريبا"
+        cell.playGrounOnlineReservation.text=playGroundObj.IsSupportsReservations ? "يدعم الحجز الألكتروني" :"يتوفر الحجز الألكتروني قريبا"
         return cell
     }
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
