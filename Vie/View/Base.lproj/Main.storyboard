@@ -1266,28 +1266,28 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="tpg-y6-Z7R" userLabel="ContentView">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="118"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="tUw-HN-LiI">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="118"/>
                                             <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="MHt-Wn-lIe">
-                                                <size key="itemSize" width="85" height="80"/>
+                                                <size key="itemSize" width="85" height="90"/>
                                                 <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                 <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                 <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                             </collectionViewFlowLayout>
                                             <cells>
                                                 <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DayCell" id="JqG-G5-E11" customClass="DayCell" customModule="Vie" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="85" height="80"/>
+                                                    <rect key="frame" x="0.0" y="14" width="85" height="90"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                                        <rect key="frame" x="0.0" y="0.0" width="85" height="80"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="85" height="90"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pjX-5l-6ft">
-                                                                <rect key="frame" x="19" y="0.0" width="47" height="80"/>
+                                                                <rect key="frame" x="19" y="0.0" width="47" height="90"/>
                                                                 <string key="text">Sun
 09
 Dec</string>
@@ -1295,6 +1295,11 @@ Dec</string>
                                                                 <color key="textColor" red="0.45009386540000001" green="0.98132258650000004" blue="0.4743030667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
+                                                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lt4-aV-fSi" userLabel="SelectedView">
+                                                                <rect key="frame" x="0.0" y="81" width="85" height="9"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <color key="backgroundColor" red="0.10728572140000001" green="0.72842639590000002" blue="0.52679817520000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </view>
                                                         </subviews>
                                                     </view>
                                                     <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1306,6 +1311,7 @@ Dec</string>
                                                     </constraints>
                                                     <connections>
                                                         <outlet property="DayLabel" destination="pjX-5l-6ft" id="IwW-07-yat"/>
+                                                        <outlet property="selectedView" destination="lt4-aV-fSi" id="JT8-5G-N18"/>
                                                     </connections>
                                                 </collectionViewCell>
                                             </cells>
@@ -1325,7 +1331,7 @@ Dec</string>
                                 </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PeriodCell" rowHeight="81" id="FCj-Lz-LIf" customClass="PeriodCell" customModule="Vie" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="108" width="375" height="81"/>
+                                        <rect key="frame" x="0.0" y="146" width="375" height="81"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FCj-Lz-LIf" id="OAm-vN-cH9">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="80.5"/>
@@ -1406,7 +1412,7 @@ Dec</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kZ5-Ir-Ajs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2551.1999999999998" y="386.35682158920542"/>
+            <point key="canvasLocation" x="-2551.1999999999998" y="385.90704647676165"/>
         </scene>
         <!--ReservationInfoVC-->
         <scene sceneID="63U-60-ePi">
@@ -1422,7 +1428,10 @@ Dec</string>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="shn-vi-los" userLabel="تم عمل حجز مبدئي للملعب  يمكنك التواصل مع إدارة الملعب  لتفادي الإلغاء على الرقم: 0557439816">
                                         <rect key="frame" x="8" y="30.5" width="319" height="119.5"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                        <string key="text">تم عمل حجز مبدئي للملعب يمكنك التواصل مع إدارة الملعب لتفادي الإلغاء على الرقم:0557439816</string>
+                                        <string key="text">تم عمل حجز مبدئي للملعب 
+يمكنك التواصل مع إدارة الملعب 
+لتفادي الإلغاء على الرقم:
+0557439816</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -1553,6 +1562,10 @@ Dec</string>
                     </view>
                     <connections>
                         <outlet property="mapView" destination="FYo-Yh-XEc" id="hQL-jC-BeJ"/>
+                        <outlet property="periodDate" destination="SRE-lf-94n" id="Dlr-Ed-wHe"/>
+                        <outlet property="periodMl3byPrice" destination="Tpp-0n-Aim" id="s8a-46-j6N"/>
+                        <outlet property="periodTime" destination="4o9-62-1dN" id="5Bp-lp-HcO"/>
+                        <outlet property="playGrounName" destination="GyZ-nV-dK4" id="FFA-oA-8we"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="glV-DM-Fp3" userLabel="First Responder" sceneMemberID="firstResponder"/>

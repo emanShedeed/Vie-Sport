@@ -11,7 +11,7 @@ import SwiftyJSON
 class PlayGroundReservationVC: UIViewController {
  
     var playGroundobj=PlayGround()
-    var displayeddates=[String]()
+    var displayeddates=[(String,Bool)]()
     var dates=[Date]()
     
     var periods=[Period]()
@@ -22,6 +22,8 @@ class PlayGroundReservationVC: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+      
+        //
         tableView.separatorEffect = .none
         //Remove Extra Celss
         tableView.tableFooterView=UIView()
@@ -35,15 +37,19 @@ class PlayGroundReservationVC: UIViewController {
             let dateMonthAndYear=dateFormatter.string(from:date!)
             let dayInWeek=dayFormatter.string(from: date!)
             dates.append(date!)
-            displayeddates.append(dayInWeek.prefix(3) + " \n " + dateMonthAndYear)
+            displayeddates.append((dayInWeek.prefix(3) + " \n " + dateMonthAndYear,true))
             
         }
+        displayeddates[0].1=false
         ///
       // setScrollIndicatorColor(color: UIColor.red)
        
         GetPeriodsForDate(date:Date())
     }
-   
+    override func viewWillAppear(_ animated: Bool) {
+        let indexPath=IndexPath(row: 0, section: 0)
+        dateCollectionView.selectItem(at: indexPath, animated: true, scrollPosition:[] )
+    }
     func setScrollIndicatorColor(color: UIColor) {
         for view in self.dateCollectionView.subviews {
             if view.isKind(of: UIImageView.self),
@@ -97,6 +103,7 @@ extension PlayGroundReservationVC:UITableViewDataSource,UITableViewDelegate{
         mutableAttripuatedString.append(ml3byPriceAttributeString)
         
         let cell=tableView.dequeueReusableCell(withIdentifier: "PeriodCell", for: indexPath) as! PeriodCell
+        cell.selectionStyle = .none
         cell.periodTimeLabel.text=periodObj.StartTime + " - " + periodObj.EndTime
         
         cell.periodPriceLabel.attributedText=x ? NSAttributedString(string: String(periodObj.Price)) : mutableAttripuatedString
@@ -112,6 +119,7 @@ extension PlayGroundReservationVC:UITableViewDataSource,UITableViewDelegate{
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if(periods[indexPath.row].IsReserved == false){
         let alert = UIAlertController(title: "هل ترغب في الحجز؟", message: "في حالة الحجز سيت إرسال رقم هاتفك المسجل في تطبيق Vie إلى صاحب الملعب ليتواصل معك بخصوص الحجز.", preferredStyle: .alert)
         let okAction=UIAlertAction(title: "احجز الملعب", style: .default) { (action) in
             self.performSegue(withIdentifier: "goToReservationInfoVC", sender: self)
@@ -120,11 +128,31 @@ extension PlayGroundReservationVC:UITableViewDataSource,UITableViewDelegate{
         alert.addAction(okAction)
         alert.addAction(cancelAction)
         self.present(alert,animated: true)
+        }
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier=="goToReservationInfoVC"){
+            let destinationVC=segue.destination as! ReservationInfoVC
+            destinationVC.playGroundObj=playGroundobj
+         
+            let tableViewSelectedIndex=tableView.indexPathForSelectedRow
+            destinationVC.periodObj=periods[tableViewSelectedIndex!.row]
+            let collectionViewSelectedIndex=dateCollectionView.indexPathsForSelectedItems?.first
+            let dateFormatters=DateFormatter()
+            dateFormatters.dateFormat="yyyy-MM-dd"
+            destinationVC.date = dateFormatters.string(from: dates[collectionViewSelectedIndex!.row])
+        }
     }
 }
 extension PlayGroundReservationVC:UICollectionViewDataSource,UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         GetPeriodsForDate(date: dates[indexPath.row])
+        for index in 0..<displayeddates.count{
+            displayeddates[index].1=true
+        }
+        displayeddates[indexPath.row].1=false
+         dateCollectionView.reloadData()
+        collectionView.selectItem(at: indexPath, animated: false, scrollPosition: [])
         tableView.reloadData()
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -133,6 +161,7 @@ extension PlayGroundReservationVC:UICollectionViewDataSource,UICollectionViewDel
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell=collectionView.dequeueReusableCell(withReuseIdentifier: "DayCell", for: indexPath) as! DayCell
-        cell.DayLabel.text=displayeddates[indexPath.row]
+        cell.DayLabel.text=displayeddates[indexPath.row].0
+        cell.selectedView.isHidden=displayeddates[indexPath.row].1
         return cell
     }}

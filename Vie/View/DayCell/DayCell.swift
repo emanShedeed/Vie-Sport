@@ -10,5 +10,5 @@ import UIKit
 
 class DayCell: UICollectionViewCell {
     @IBOutlet weak var DayLabel:UILabel!
-    
+    @IBOutlet weak var selectedView:UIView!
 }

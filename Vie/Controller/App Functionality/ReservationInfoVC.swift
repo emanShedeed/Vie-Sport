@@ -9,24 +9,34 @@
 import UIKit
 import GoogleMaps
 class ReservationInfoVC: UIViewController {
+    var playGroundObj=PlayGround()
+    var date=String()
+    var periodObj=Period()
+    
+    @IBOutlet weak var playGrounName: UILabel!
+    @IBOutlet weak var periodDate: UILabel!
+    @IBOutlet weak var periodTime: UILabel!
+    @IBOutlet weak var periodMl3byPrice: UILabel!
     @IBOutlet weak var mapView: GMSMapView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        let camera=GMSCameraPosition.camera(withLatitude: 30.0444 , longitude: 31.2357 , zoom: 6.0)
+    
+        playGrounName.text=playGroundObj.PlayGroundName
+        periodDate.text=date
+        periodTime.text=periodObj.StartTime + " - " + periodObj.EndTime
+        periodMl3byPrice.text=String(periodObj.Ml3byPrice)+" ريال"
+        let position=(Lat:Double(playGroundObj.Lat)!,Lng: Double(playGroundObj.Lng)!)
+        let camera=GMSCameraPosition.camera(withLatitude: position.0 , longitude: position.1 , zoom: 9.0)
         mapView.camera=camera
+        let marker=GMSMarker()
+        marker.position = CLLocationCoordinate2D(latitude:position.0, longitude:position.1)
+        marker.map = self.mapView
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
 
 }
