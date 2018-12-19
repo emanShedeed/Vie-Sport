@@ -49,6 +49,7 @@ class PlayGroundReservationVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         let indexPath=IndexPath(row: 0, section: 0)
         dateCollectionView.selectItem(at: indexPath, animated: true, scrollPosition:[] )
+        tableView.reloadData()
     }
     func setScrollIndicatorColor(color: UIColor) {
         for view in self.dateCollectionView.subviews {
@@ -78,8 +79,26 @@ class PlayGroundReservationVC: UIViewController {
             }
         }
     }
-    
- 
+
+    func AddReservation(periodID:Int){
+        //  APIsRequests().getData(from: "http://test100.revival.one/api/OwnersBusiness/SendConfirmationCode?", parameters: ["Mobile":mobileTextField.text ?? ""])
+        if(IsKeyPresentInUserDefaults(key: "AccessToken"))
+        {
+            if let request = APIClient.AddReservation(AccessToken: UserDefaults.standard.string(forKey: "AccessToken")!, PeriodID: periodID){
+            APIClient().jsonRequest(request: request, CompletionHandler: { (JsonValue: JSON?,statusCode:Int,responseMessageStatus:ResponseMessageStatusEnum?,userMessage:String?) -> (Void) in
+                
+                if let  data = JsonValue{
+                    let status=data["Status"]
+                    if (status=="Success"||status=="Exception"){
+                        print("successfuly add reservations")
+                        self.performSegue(withIdentifier: "goToReservationInfoVC", sender: self)
+                    }
+                }
+                
+            })
+        }
+    }
+    }
     
 }
 extension PlayGroundReservationVC:UITableViewDataSource,UITableViewDelegate{
@@ -121,8 +140,9 @@ extension PlayGroundReservationVC:UITableViewDataSource,UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if(periods[indexPath.row].IsReserved == false){
         let alert = UIAlertController(title: "هل ترغب في الحجز؟", message: "في حالة الحجز سيت إرسال رقم هاتفك المسجل في تطبيق Vie إلى صاحب الملعب ليتواصل معك بخصوص الحجز.", preferredStyle: .alert)
-        let okAction=UIAlertAction(title: "احجز الملعب", style: .default) { (action) in
-            self.performSegue(withIdentifier: "goToReservationInfoVC", sender: self)
+            let okAction=UIAlertAction(title: "احجز الملعب", style: .default) { (action) in
+                self.AddReservation(periodID:self.periods[indexPath.row].PeriodID)
+                
         }
         let cancelAction=UIAlertAction(title: "لا،شكرا", style: .cancel, handler: nil)
         alert.addAction(okAction)

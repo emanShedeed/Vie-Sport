@@ -193,4 +193,18 @@ static func CheckEmail(email: String)->DataRequest? {
         return nil
         
     }
-}
+    static func AddReservation(AccessToken:String,PeriodID:Int)->DataRequest?{
+        do{
+            var urlRequest = try ReservationEndPoint.Add(periodID: PeriodID).getURL()
+            var urlcomponents=URLComponents(string: (urlRequest.url?.absoluteString)!)
+            
+            urlcomponents?.queryItems=[URLQueryItem(name:"AccessToken", value: AccessToken)]
+            urlRequest.url=urlcomponents?.url
+            let request=Alamofire.request(urlRequest
+                ).validate(statusCode: 200..<501)
+            return request
+        }
+        catch{}
+        return nil
+        
+    }}
