@@ -34,13 +34,19 @@ class MapVC: UIViewController ,GMSMapViewDelegate,CLLocationManagerDelegate{
        //let camera=GMSCameraPosition.camera(withLatitude: 23.8859, longitude: 45.0792, zoom: 6.0)
        //mapView.camera=camera
         mapView.delegate=self
-      self.mapView.bringSubviewToFront(infoWindowView)
-        PlayGround.GetPlayGroundsData { (playGroundArray) in
+        self.mapView.bringSubviewToFront(infoWindowView)
+        var userID = -1
+        if(IsKeyPresentInUserDefaults(key: "UserID"))
+        {
+            userID=UserDefaults.standard.integer(forKey: "UserID")
+        }
+        PlayGround.GetPlayGroundsData(userID: userID) { (playGroundArray) in
             self.playGrounds=playGroundArray
             self.DisplayPlayGroundData(playGrounds: self.playGrounds)
             self.collectionView.reloadData()
             self.locationManager.startUpdatingLocation()
         }
+
         //TODO: Register your MessageCell.xib file here:
         collectionView.register(UINib(nibName: "PlayGroundInfoWindow", bundle: nil), forCellWithReuseIdentifier: "PlayGroundInfoWindow")
         
@@ -50,7 +56,9 @@ class MapVC: UIViewController ,GMSMapViewDelegate,CLLocationManagerDelegate{
         locationManager.requestWhenInUseAuthorization()
         
     }
-    //MARK: - Location Manager Delegate Methods
+    func IsKeyPresentInUserDefaults(key:String)->Bool{
+        return UserDefaults.standard.object(forKey: key) != nil
+    }    //MARK: - Location Manager Delegate Methods
     /***************************************************************/
     
     

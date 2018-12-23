@@ -17,10 +17,16 @@ class MapCollectionViewVC: UIViewController,UICollectionViewDataSource,UICollect
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        PlayGround.GetPlayGroundsData { (playGroundArray) in
+        var userID = -1
+        if(IsKeyPresentInUserDefaults(key: "UserID"))
+        {
+            userID=UserDefaults.standard.integer(forKey: "UserID")
+        }
+        PlayGround.GetPlayGroundsData(userID: userID) { (playGroundArray) in
             self.playGrounds=playGroundArray
             self.collectionView.reloadData()
         }
+
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return playGrounds.count
@@ -61,5 +67,7 @@ class MapCollectionViewVC: UIViewController,UICollectionViewDataSource,UICollect
         // Pass the selected object to the new view controller.
     }
     */
-
+    func IsKeyPresentInUserDefaults(key:String)->Bool{
+        return UserDefaults.standard.object(forKey: key) != nil
+    }
 }

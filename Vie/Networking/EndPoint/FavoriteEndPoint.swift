@@ -10,13 +10,14 @@ import Foundation
 import Alamofire
 enum FavoriteEndPoint:APIConfiguration{
     // case Add(email:String,password:String,fullName:String,mobile:String,socialType:String,socialUserID:String,deviceToken:String,imageLocation:String)
-    case Add
-
-    
+    case Add(userID:Int,playGroundID:Int)
+    case delete(userID:Int,playGroundID:Int)
     // MARK: - HTTPMethod
     var method:HTTPMethod {
         switch self {
         case .Add:
+            return .post
+        case .delete:
             return .post
         }
     }
@@ -26,6 +27,8 @@ enum FavoriteEndPoint:APIConfiguration{
         switch self {
         case .Add:
             return "Add"
+        case .delete:
+            return"Delete"
         }
     }
     
@@ -33,15 +36,17 @@ enum FavoriteEndPoint:APIConfiguration{
     var parameters: Parameters? {
         switch self {
       
-        case .Add:
-            return nil
+        case .Add(let userID, let playgroundID) :
+        return [K.APIParameterKey.userID:userID,K.APIParameterKey.playGroundID:playgroundID]
+        case .delete(let userID, let playGroundID):
+            return [K.APIParameterKey.userID:userID,K.APIParameterKey.playGroundID:playGroundID]
         }
     }
     
     // MARK: - URLRequestConvertible
     func getURL() throws -> URLRequest {
         let url = try K.ProductionServer.baseURL.asURL()
-        let completePath = K.ProductionServer.user + path
+        let completePath = K.ProductionServer.Favorites + path
         var urlRequest = URLRequest(url: url.appendingPathComponent(completePath))
         // HTTP Method
         urlRequest.httpMethod = method.rawValue

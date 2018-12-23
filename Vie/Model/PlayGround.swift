@@ -29,12 +29,15 @@ struct PlayGround{
     var IsSupportsReservations: Bool=false
     var CashExtraFees:Int=0
     var Ml3byDiscountAmt:Int=0
-    
-   static func GetPlayGroundsData(completion:@escaping (_ playGroundarray:[PlayGround])->Void){
+    static func IsKeyPresentInUserDefaults(key:String)->Bool{
+        return UserDefaults.standard.object(forKey: key) != nil
+    }
+    static func GetPlayGroundsData(userID:Int,completion:@escaping (_ playGroundarray:[PlayGround])->Void){
         var playGrounds:[PlayGround]=[]
         var playGroundObj:PlayGround=PlayGround()
         var serviceObj:PlaygroundServices=PlaygroundServices()
-        if let  urlRequest=APIClient.GetPlayGrounds(){
+  
+    if let  urlRequest=APIClient.GetPlayGrounds(userID: userID){
             APIClient().jsonRequest(request: urlRequest) { (Json:JSON?, statusCode:Int, ResponseMessageStatus:ResponseMessageStatusEnum?, userMessage:String?) -> (Void) in
                 if let data=Json {
                     for (_,object) in data{

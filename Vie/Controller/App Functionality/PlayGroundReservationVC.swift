@@ -43,13 +43,16 @@ class PlayGroundReservationVC: UIViewController {
         displayeddates[0].1=false
         ///
       // setScrollIndicatorColor(color: UIColor.red)
-       
-        GetPeriodsForDate(date:Date())
-    }
-    override func viewWillAppear(_ animated: Bool) {
         let indexPath=IndexPath(row: 0, section: 0)
         dateCollectionView.selectItem(at: indexPath, animated: true, scrollPosition:[] )
         tableView.reloadData()
+        GetPeriodsForDate(date:Date())
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        let indexPath=dateCollectionView.indexPathsForSelectedItems?.first
+        GetPeriodsForDate(date: dates[indexPath!.row])
+        tableView.reloadData()
+        
     }
     func setScrollIndicatorColor(color: UIColor) {
         for view in self.dateCollectionView.subviews {

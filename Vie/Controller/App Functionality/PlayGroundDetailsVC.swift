@@ -14,7 +14,9 @@ class PlayGroundDetailsVC: UIViewController,UIScrollViewDelegate,UICollectionVie
     var playGroundobj=PlayGround()
     var similarPlayGrounds=[PlayGround]()
     var frame=CGRect(x: 0, y: 0, width: 0, height: 0)
-    
+    var Share = UIBarButtonItem()
+    var FavoriteButtonOn = UIBarButtonItem()
+    var FavoriteButtonOff = UIBarButtonItem()
     // MAARK : - @IBOutlets
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var pageControl: UIPageControl!
@@ -39,6 +41,9 @@ class PlayGroundDetailsVC: UIViewController,UIScrollViewDelegate,UICollectionVie
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         //Add tapgesture to reervation view
+        //add tap gesture
+        let tapGesture=UITapGestureRecognizer(target: self, action:#selector(ServicesViewTapped))
+        servicesView.addGestureRecognizer(tapGesture)
         let tap=UITapGestureRecognizer(target: self, action: #selector(AddPlayGroundReservation))
         ReservationView.addGestureRecognizer(tap)
         // display reservation view if playgroun has online reservation
@@ -58,15 +63,21 @@ class PlayGroundDetailsVC: UIViewController,UIScrollViewDelegate,UICollectionVie
     func InitNavBar()
     {
         //add right navigation bar buttons
-        let Share = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(shareButtonPressed))
-        let addToFavorite = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(AddToFavoritesButtonPressed))
-        navigationItem.rightBarButtonItems = [Share, addToFavorite]
+         Share = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(shareButtonPressed))
+         FavoriteButtonOn = UIBarButtonItem(barButtonSystemItem: .cancel , target: self, action: #selector(AddORRemoveFromFavoritesButtonPressed))
+         FavoriteButtonOff = UIBarButtonItem(barButtonSystemItem: .compose , target: self, action: #selector(AddORRemoveFromFavoritesButtonPressed))
+        if(playGroundobj.IsFavorite==true)
+        {
+            navigationItem.rightBarButtonItems = [Share, FavoriteButtonOn]
+        }
+        else{
+            navigationItem.rightBarButtonItems=[Share,FavoriteButtonOff]
+        }
         
         //set navigation title
         navigationItem.title=playGroundobj.PlayGroundName
-        //add tap gesture
-        let tapGesture=UITapGestureRecognizer(target: self, action:#selector(ServicesViewTapped))
-        servicesView.addGestureRecognizer(tapGesture)    }
+        
+    }
     func InitScrollView(){
         //configure scroll view and page control
         var images=playGroundobj.ImagesLocation
@@ -129,21 +140,41 @@ class PlayGroundDetailsVC: UIViewController,UIScrollViewDelegate,UICollectionVie
         activityViewController.popoverPresentationController?.sourceView = self.view
         present(activityViewController, animated: true, completion: nil)
     }
-    @objc func AddToFavoritesButtonPressed(){
+    @objc func AddORRemoveFromFavoritesButtonPressed(){
         if(IsKeyPresentInUserDefaults(key: "UserID"))
         {
             let userID=UserDefaults.standard.integer(forKey: "UserID")
-            if let request = APIClient.AddPlayGroundToFavorites(userID:String(userID), PlayGroundID:String( playGroundobj.PlayGroundID)){
-                APIClient().jsonRequest(request: request, CompletionHandler: { (JsonValue: JSON?,statusCode:Int,responseMessageStatus:ResponseMessageStatusEnum?,userMessage:String?) -> (Void) in
-                    
-                    if let  data = JsonValue{
-                        let status=data["Status"]
-                        if (status=="Success"){
-                            print("successfuly AddedToFavorities")
+            if(playGroundobj.IsFavorite == false)
+            {
+                if let request = APIClient.AddPlayGroundToFavorites(userID:userID, PlayGroundID:playGroundobj.PlayGroundID){
+                    APIClient().jsonRequest(request: request, CompletionHandler: { (JsonValue: JSON?,statusCode:Int,responseMessageStatus:ResponseMessageStatusEnum?,userMessage:String?) -> (Void) in
+                        
+                        if let  data = JsonValue{
+                            let status=data["Status"]
+                            if (status=="Success"){
+                                print("successfuly AddedToFavorities")
+                                self.navigationItem.setLeftBarButtonItems([self.Share, self.FavoriteButtonOn], animated: false)
+                                
+                            }
                         }
-                    }
-                    
-                })
+                        
+                    })
+                }
+            }
+            else{
+                
+                if let request = APIClient.DeletePlayGroundFromFavorites(userID:userID, PlayGroundID:playGroundobj.PlayGroundID){
+                    APIClient().jsonRequest(request: request, CompletionHandler: { (JsonValue: JSON?,statusCode:Int,responseMessageStatus:ResponseMessageStatusEnum?,userMessage:String?) -> (Void) in
+                        if let  data = JsonValue{
+                            let status=data["Status"]
+                            if (status=="Success"){
+                                print("successfuly Removed from Favorities")
+                                self.navigationItem.setLeftBarButtonItems([self.Share, self.FavoriteButtonOff], animated: false)  
+                            }
+                        }
+                        
+                    })
+                }
             }
         }
         else{

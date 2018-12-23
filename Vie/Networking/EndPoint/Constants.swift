@@ -8,6 +8,7 @@ struct K {
         static let PlayGround="PlayGrounds/"
         static let Period="Periods/"
         static let Reservation="Reservations/"
+        static let Favorites="Favorites/"
     }
     
     struct APIParameterKey {
@@ -21,6 +22,8 @@ struct K {
         static let imageLocation="ImageLocation"
         static let deviceToken="DeviceToken"
         static let periodID="PeriodID"
+        static let userID="UserID"
+        static let playGroundID="PlayGroundID"
     }
 }
 

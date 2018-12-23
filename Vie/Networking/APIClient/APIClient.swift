@@ -133,9 +133,14 @@ static func CheckEmail(email: String)->DataRequest? {
         catch{}
         return nil
     }
-    static func GetPlayGrounds()->DataRequest?{
+    static func GetPlayGrounds(userID:Int)->DataRequest?{
         do{
-            let request=Alamofire.request(try playgroundEndPoint.get.getURL()).validate(statusCode: 200..<501)
+            var urlRequest = try playgroundEndPoint.get.getURL()
+            var urlcomponents=URLComponents(string: (urlRequest.url?.absoluteString)!)
+            urlcomponents?.queryItems=[URLQueryItem(name: "UserID", value:String(userID))]
+        urlRequest.url=urlcomponents?.url
+            let request=Alamofire.request(urlRequest
+                ).validate(statusCode: 200..<501)
             return request
         }
         catch{}
@@ -162,17 +167,18 @@ static func CheckEmail(email: String)->DataRequest? {
             
     }
     
-    static func AddPlayGroundToFavorites(userID:String,PlayGroundID:String)->DataRequest?{
+    static func AddPlayGroundToFavorites(userID:Int,PlayGroundID:Int)->DataRequest?{
         do{
-            var urlRequest = try playgroundEndPoint.GetSimilar.getURL()
-            var urlcomponents=URLComponents(string: (urlRequest.url?.absoluteString)!)
-            
-            urlcomponents?.queryItems=[URLQueryItem(name:"PlayGroundID", value: PlayGroundID),URLQueryItem(name: "UserID", value: userID)]
-           
-            
-            urlRequest.url=urlcomponents?.url
-            let request=Alamofire.request(urlRequest
-                ).validate(statusCode: 200..<501)
+            let request=Alamofire.request(try FavoriteEndPoint.Add(userID: userID, playGroundID: PlayGroundID).getURL()).validate(statusCode: 200..<501)
+            return request
+        }
+        catch{}
+        return nil
+        
+    }
+    static func DeletePlayGroundFromFavorites(userID:Int,PlayGroundID:Int)->DataRequest?{
+        do{
+            let request=Alamofire.request(try FavoriteEndPoint.delete(userID: userID, playGroundID: PlayGroundID).getURL()).validate(statusCode: 200..<501)
             return request
         }
         catch{}
