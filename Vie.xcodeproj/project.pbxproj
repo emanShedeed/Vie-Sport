@@ -30,6 +30,9 @@
 		E73A7BDB21919CC900DBD0CB /* SocialSignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73A7BDA21919CC900DBD0CB /* SocialSignUpVC.swift */; };
 		E74155CE21A29CE20032FBAE /* MapCollectionViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74155CD21A29CE20032FBAE /* MapCollectionViewVC.swift */; };
 		E74155D021A2A19C0032FBAE /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74155CF21A2A19C0032FBAE /* CustomCell.swift */; };
+		E756A70021D0E3F7001CDE1A /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E756A6FF21D0E3F7001CDE1A /* ProfileVC.swift */; };
+		E756A70821D10488001CDE1A /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E756A70721D10488001CDE1A /* UIViewExtension.swift */; };
+		E756A70B21D10D75001CDE1A /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E756A70A21D10D75001CDE1A /* ProfileCell.swift */; };
 		E76CD74221CA65F70044C2C3 /* ReservationEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76CD74121CA65F70044C2C3 /* ReservationEndPoint.swift */; };
 		E7790EA6219858E800A1D926 /* PlayGround.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7790EA5219858E800A1D926 /* PlayGround.swift */; };
 		E7790EA8219862E000A1D926 /* PlaygroundEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7790EA7219862E000A1D926 /* PlaygroundEndPoint.swift */; };
@@ -48,7 +51,6 @@
 		E7AF32DF21BD12FB009B5244 /* PlayGroundReservationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AF32DE21BD12FB009B5244 /* PlayGroundReservationVC.swift */; };
 		E7AF32E121BD1D0C009B5244 /* FavoriteEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AF32E021BD1D0C009B5244 /* FavoriteEndPoint.swift */; };
 		E7B39810218B0EB500A1B365 /* OwnerBusinessEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B3980F218B0EB500A1B365 /* OwnerBusinessEndPoint.swift */; };
-		E7B68CD921B92B7300DDE71A /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B68CD821B92B7300DDE71A /* UIViewExtension.swift */; };
 		E7CBD127217499D000072F03 /* NotificationNamesExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7CBD126217499D000072F03 /* NotificationNamesExtension.swift */; };
 		E7DDF3B82185C11400C878DE /* UserEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DDF3B72185C11400C878DE /* UserEndPoint.swift */; };
 		E7DDF3BA2185CB5000C878DE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DDF3B92185CB5000C878DE /* Constants.swift */; };
@@ -105,6 +107,9 @@
 		E73A7BDA21919CC900DBD0CB /* SocialSignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialSignUpVC.swift; sourceTree = "<group>"; };
 		E74155CD21A29CE20032FBAE /* MapCollectionViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCollectionViewVC.swift; sourceTree = "<group>"; };
 		E74155CF21A2A19C0032FBAE /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		E756A6FF21D0E3F7001CDE1A /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		E756A70721D10488001CDE1A /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		E756A70A21D10D75001CDE1A /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
 		E76CD74121CA65F70044C2C3 /* ReservationEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationEndPoint.swift; sourceTree = "<group>"; };
 		E7790EA5219858E800A1D926 /* PlayGround.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayGround.swift; sourceTree = "<group>"; };
 		E7790EA7219862E000A1D926 /* PlaygroundEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaygroundEndPoint.swift; sourceTree = "<group>"; };
@@ -129,7 +134,6 @@
 		E7AF32DE21BD12FB009B5244 /* PlayGroundReservationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayGroundReservationVC.swift; sourceTree = "<group>"; };
 		E7AF32E021BD1D0C009B5244 /* FavoriteEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteEndPoint.swift; sourceTree = "<group>"; };
 		E7B3980F218B0EB500A1B365 /* OwnerBusinessEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerBusinessEndPoint.swift; sourceTree = "<group>"; };
-		E7B68CD821B92B7300DDE71A /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		E7CBD126217499D000072F03 /* NotificationNamesExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationNamesExtension.swift; sourceTree = "<group>"; };
 		E7DDF3B72185C11400C878DE /* UserEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEndPoint.swift; sourceTree = "<group>"; };
 		E7DDF3B92185CB5000C878DE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -222,6 +226,7 @@
 				E70ED96C21AA728900000AAE /* PlayGroundServicesVC.swift */,
 				E7AF32DE21BD12FB009B5244 /* PlayGroundReservationVC.swift */,
 				E78860EC21C90F0A00B5DC8C /* ReservationInfoVC.swift */,
+				E756A6FF21D0E3F7001CDE1A /* ProfileVC.swift */,
 			);
 			path = "App Functionality";
 			sourceTree = "<group>";
@@ -266,6 +271,14 @@
 				E74155CF21A2A19C0032FBAE /* CustomCell.swift */,
 			);
 			path = MapCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		E756A70921D10D44001CDE1A /* Profile Cell */ = {
+			isa = PBXGroup;
+			children = (
+				E756A70A21D10D75001CDE1A /* ProfileCell.swift */,
+			);
+			path = "Profile Cell";
 			sourceTree = "<group>";
 		};
 		E789996F21872C190013BE4C /* APIClient */ = {
@@ -354,6 +367,7 @@
 		E7A8581B216C80C6002683CD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E756A70921D10D44001CDE1A /* Profile Cell */,
 				E70FAE3621BE7DA700FB9EF3 /* Reservation Period Cell */,
 				E70FAE3321BE64EC00FB9EF3 /* DayCell */,
 				E79D3B1721B7CE8B0043D643 /* Similar playGround Cell */,
@@ -378,7 +392,7 @@
 		E7B68CD721B92B5200DDE71A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				E7B68CD821B92B7300DDE71A /* UIViewExtension.swift */,
+				E756A70721D10488001CDE1A /* UIViewExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -662,6 +676,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E756A70B21D10D75001CDE1A /* ProfileCell.swift in Sources */,
 				E79D3B1921B7CEE30043D643 /* SimilarPlayGroundCell.swift in Sources */,
 				E700E0CC21984B2200A0A899 /* HomeVC.swift in Sources */,
 				E7790EA8219862E000A1D926 /* PlaygroundEndPoint.swift in Sources */,
@@ -684,6 +699,7 @@
 				E7F2008721A2E47A009EE47A /* PlayGroundDetailsVC.swift in Sources */,
 				E7EF722F21885572001AAD73 /* APIConfiguration.swift in Sources */,
 				E721A3AC21774D73002DE31E /* ConfirmationCodeVC.swift in Sources */,
+				E756A70021D0E3F7001CDE1A /* ProfileVC.swift in Sources */,
 				E70FAE3C21BE89FE00FB9EF3 /* Period.swift in Sources */,
 				E7DDF3B82185C11400C878DE /* UserEndPoint.swift in Sources */,
 				E700E0CA21984A8100A0A899 /* MapVC.swift in Sources */,
@@ -693,7 +709,7 @@
 				E7A857ED216C8009002683CD /* AppDelegate.swift in Sources */,
 				E789997121872C750013BE4C /* APIClient.swift in Sources */,
 				E7B39810218B0EB500A1B365 /* OwnerBusinessEndPoint.swift in Sources */,
-				E7B68CD921B92B7300DDE71A /* UIViewExtension.swift in Sources */,
+				E756A70821D10488001CDE1A /* UIViewExtension.swift in Sources */,
 				E70FAE3821BE7DD900FB9EF3 /* PeriodCell.swift in Sources */,
 				E721F63821982A9F003FE7B0 /* TabBarVC.swift in Sources */,
 				E71C6F42219D6C4700E0D5A9 /* DictionaryKeyForValue.swift in Sources */,

@@ -58,6 +58,16 @@ class MapCollectionViewVC: UIViewController,UICollectionViewDataSource,UICollect
         else{cell.playGroundReservationLabel.isHidden=true}
         return cell
     }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "goToPlayGroundDetailesVC", sender: self)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier=="goToPlayGroundDetailesVC"){
+            let destinationVC=segue.destination as! PlayGroundDetailsVC
+            let indexPath=collectionView.indexPathsForSelectedItems?.first
+            destinationVC.playGroundobj=playGrounds[(indexPath?.row)!]
+        }
+    }
     /*
     // MARK: - Navigation
 
