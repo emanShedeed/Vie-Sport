@@ -15,8 +15,8 @@ class PlayGroundDetailsVC: UIViewController,UIScrollViewDelegate,UICollectionVie
     var similarPlayGrounds=[PlayGround]()
     var frame=CGRect(x: 0, y: 0, width: 0, height: 0)
     var Share = UIBarButtonItem()
-    var FavoriteButtonOn = UIBarButtonItem()
-    var FavoriteButtonOff = UIBarButtonItem()
+    var FavoriteButtonOn : UIBarButtonItem!
+    var FavoriteButtonOff : UIBarButtonItem!
     // MAARK : - @IBOutlets
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var pageControl: UIPageControl!
@@ -144,7 +144,7 @@ class PlayGroundDetailsVC: UIViewController,UIScrollViewDelegate,UICollectionVie
         if(IsKeyPresentInUserDefaults(key: "UserID"))
         {
             let userID=UserDefaults.standard.integer(forKey: "UserID")
-            if(playGroundobj.IsFavorite == false)
+            if((navigationItem.rightBarButtonItems?.contains(FavoriteButtonOff))! )//playGroundobj.IsFavorite == false
             {
                 if let request = APIClient.AddPlayGroundToFavorites(userID:userID, PlayGroundID:playGroundobj.PlayGroundID){
                     APIClient().jsonRequest(request: request, CompletionHandler: { (JsonValue: JSON?,statusCode:Int,responseMessageStatus:ResponseMessageStatusEnum?,userMessage:String?) -> (Void) in
@@ -153,7 +153,7 @@ class PlayGroundDetailsVC: UIViewController,UIScrollViewDelegate,UICollectionVie
                             let status=data["Status"]
                             if (status=="Success"){
                                 print("successfuly AddedToFavorities")
-                                self.navigationItem.setLeftBarButtonItems([self.Share, self.FavoriteButtonOn], animated: false)
+                                self.navigationItem.setRightBarButtonItems([self.Share, self.FavoriteButtonOn], animated: false)
                                 
                             }
                         }
@@ -169,7 +169,7 @@ class PlayGroundDetailsVC: UIViewController,UIScrollViewDelegate,UICollectionVie
                             let status=data["Status"]
                             if (status=="Success"){
                                 print("successfuly Removed from Favorities")
-                                self.navigationItem.setLeftBarButtonItems([self.Share, self.FavoriteButtonOff], animated: false)  
+                                self.navigationItem.setRightBarButtonItems([self.Share, self.FavoriteButtonOff], animated: false)
                             }
                         }
                         

@@ -23,7 +23,6 @@ class MapVC: UIViewController ,GMSMapViewDelegate,CLLocationManagerDelegate{
     var playGrounds:[PlayGround]=[]
     var markerDict: [Int: GMSMarker] = [:]
     var  selectedMarker = GMSMarker()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -55,6 +54,9 @@ class MapVC: UIViewController ,GMSMapViewDelegate,CLLocationManagerDelegate{
         locationManager.desiredAccuracy=kCLLocationAccuracyHundredMeters
         locationManager.requestWhenInUseAuthorization()
         
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden=false
     }
     func IsKeyPresentInUserDefaults(key:String)->Bool{
         return UserDefaults.standard.object(forKey: key) != nil
