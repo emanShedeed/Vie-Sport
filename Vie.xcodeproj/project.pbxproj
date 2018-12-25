@@ -27,6 +27,8 @@
 		E721F63821982A9F003FE7B0 /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721F63721982A9F003FE7B0 /* TabBarVC.swift */; };
 		E7241864219AACC3004FFF00 /* PlayGroundInfoWindowModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7241862219AACC3004FFF00 /* PlayGroundInfoWindowModel.swift */; };
 		E7241865219AACC3004FFF00 /* PlayGroundInfoWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7241863219AACC3004FFF00 /* PlayGroundInfoWindow.xib */; };
+		E727900821D2202600AE201F /* ProfilePersonalInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E727900721D2202600AE201F /* ProfilePersonalInfoVC.swift */; };
+		E727900A21D24B4B00AE201F /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E727900921D24B4B00AE201F /* UIImageExtension.swift */; };
 		E73A7BDB21919CC900DBD0CB /* SocialSignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73A7BDA21919CC900DBD0CB /* SocialSignUpVC.swift */; };
 		E74155CE21A29CE20032FBAE /* MapCollectionViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74155CD21A29CE20032FBAE /* MapCollectionViewVC.swift */; };
 		E74155D021A2A19C0032FBAE /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74155CF21A2A19C0032FBAE /* CustomCell.swift */; };
@@ -104,6 +106,8 @@
 		E721F63721982A9F003FE7B0 /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
 		E7241862219AACC3004FFF00 /* PlayGroundInfoWindowModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayGroundInfoWindowModel.swift; sourceTree = "<group>"; };
 		E7241863219AACC3004FFF00 /* PlayGroundInfoWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayGroundInfoWindow.xib; sourceTree = "<group>"; };
+		E727900721D2202600AE201F /* ProfilePersonalInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePersonalInfoVC.swift; sourceTree = "<group>"; };
+		E727900921D24B4B00AE201F /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		E73A7BDA21919CC900DBD0CB /* SocialSignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialSignUpVC.swift; sourceTree = "<group>"; };
 		E74155CD21A29CE20032FBAE /* MapCollectionViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCollectionViewVC.swift; sourceTree = "<group>"; };
 		E74155CF21A2A19C0032FBAE /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
@@ -227,6 +231,7 @@
 				E7AF32DE21BD12FB009B5244 /* PlayGroundReservationVC.swift */,
 				E78860EC21C90F0A00B5DC8C /* ReservationInfoVC.swift */,
 				E756A6FF21D0E3F7001CDE1A /* ProfileVC.swift */,
+				E727900721D2202600AE201F /* ProfilePersonalInfoVC.swift */,
 			);
 			path = "App Functionality";
 			sourceTree = "<group>";
@@ -393,6 +398,7 @@
 			isa = PBXGroup;
 			children = (
 				E756A70721D10488001CDE1A /* UIViewExtension.swift */,
+				E727900921D24B4B00AE201F /* UIImageExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -680,10 +686,12 @@
 				E79D3B1921B7CEE30043D643 /* SimilarPlayGroundCell.swift in Sources */,
 				E700E0CC21984B2200A0A899 /* HomeVC.swift in Sources */,
 				E7790EA8219862E000A1D926 /* PlaygroundEndPoint.swift in Sources */,
+				E727900A21D24B4B00AE201F /* UIImageExtension.swift in Sources */,
 				E76CD74221CA65F70044C2C3 /* ReservationEndPoint.swift in Sources */,
 				E74155D021A2A19C0032FBAE /* CustomCell.swift in Sources */,
 				E789996E218728FD0013BE4C /* User.swift in Sources */,
 				C71383DD216E16AD00784CDC /* HideKeyboardVC.swift in Sources */,
+				E727900821D2202600AE201F /* ProfilePersonalInfoVC.swift in Sources */,
 				E70FAE3521BE651900FB9EF3 /* DayCell.swift in Sources */,
 				E7AF32E121BD1D0C009B5244 /* FavoriteEndPoint.swift in Sources */,
 				E7AF32DF21BD12FB009B5244 /* PlayGroundReservationVC.swift in Sources */,

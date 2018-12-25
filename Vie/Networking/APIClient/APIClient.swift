@@ -65,7 +65,6 @@ class APIClient{
             }
             
             if let status = value[]["Status"].string{
-                    
                     if status == "Success" {
                         responseMessageStatus = ResponseMessageStatusEnum.success
                     }
@@ -213,4 +212,18 @@ static func CheckEmail(email: String)->DataRequest? {
         catch{}
         return nil
         
-    }}
+    }
+    static func ChangePersonalImage(userID:Int,fileName:String,image:String)->DataRequest?{
+        do{
+            var urlRequest = try UserEndPoint.ChangeImage.getURL()
+            var urlcomponents=URLComponents(string: (urlRequest.url?.absoluteString)!)
+            urlcomponents?.queryItems=[URLQueryItem(name:"UserID", value: String(userID)),URLQueryItem(name: "FileName", value: fileName),URLQueryItem(name: "Image", value: image)]
+            urlRequest.url=urlcomponents?.url
+            let request=Alamofire.request(urlRequest
+                ).validate(statusCode: 200..<501)
+            return request
+        }
+        catch{}
+        return nil
+    }
+}

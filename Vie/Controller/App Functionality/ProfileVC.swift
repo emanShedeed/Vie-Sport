@@ -10,9 +10,14 @@ import UIKit
 
 class ProfileVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
  
+    @IBOutlet weak var tableView: UITableView!
+    var personalKeyWords=["المعلومات الشخصية","كلمة المرور","المفضلة"]
+   
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        tableView.tableFooterView=UIView()
+        tableView.isScrollEnabled=false
+        self.navigationController?.navigationBar.isHidden=true
         // Do any additional setup after loading the view.
     }
     
@@ -28,13 +33,20 @@ class ProfileVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
      */
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return personalKeyWords.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        let cell=tableView.dequeueReusableCell(withIdentifier: "ProfileCell", for: indexPath) as! ProfileCell
+        cell.personalInfoLbl.text=personalKeyWords[indexPath.row]
+        cell.indicatorLbl.text="<"
+        return cell
     }
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if(indexPath.row==0){
+            self.performSegue(withIdentifier: "goToProfilePersonalInfoVC", sender: self)
+        }
+    }
     
     
     

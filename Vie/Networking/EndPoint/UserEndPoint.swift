@@ -5,6 +5,7 @@ enum UserEndPoint:APIConfiguration{
     case CheckEmail
     // case Add(email:String,password:String,fullName:String,mobile:String,socialType:String,socialUserID:String,deviceToken:String,imageLocation:String)
     case Add(userObj:User)
+    case ChangeImage
    // case post(id: Int)
     
     // MARK: - HTTPMethod
@@ -12,7 +13,7 @@ enum UserEndPoint:APIConfiguration{
         switch self {
         case .CheckEmail:
             return .get
-        case .Add:
+        case .Add,.ChangeImage:
             return .post
         }
     }
@@ -24,13 +25,15 @@ enum UserEndPoint:APIConfiguration{
             return "CheckEmail"
         case .Add:
             return "Add"
+        case .ChangeImage:
+            return"ChangeImage"
         }
     }
     
     // MARK: - Parameters
     var parameters: Parameters? {
         switch self {
-        case .CheckEmail:
+        case .CheckEmail,.ChangeImage:
             return nil
         case .Add(let userObj):
             return [K.APIParameterKey.email:userObj.email,K.APIParameterKey.password:userObj.password,K.APIParameterKey.fullName:userObj.fullName,K.APIParameterKey.mobile:userObj.mobile,K.APIParameterKey.socialType:userObj.socialType,K.APIParameterKey.socialUserID:userObj.socialUserID,K.APIParameterKey.deviceToken:userObj.deviceToken,K.APIParameterKey.imageLocation:userObj.imageLocation,K.APIParameterKey.operatingSystem:userObj.operatingSystem]
