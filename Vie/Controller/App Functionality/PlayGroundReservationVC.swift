@@ -67,14 +67,12 @@ class PlayGroundReservationVC: UIViewController {
         
         self.dateCollectionView.flashScrollIndicators()
     }
-    func IsKeyPresentInUserDefaults(key:String)->Bool{
-        return UserDefaults.standard.object(forKey: key) != nil
-    }
+  
     func GetPeriodsForDate(date:Date){
         let dateFormatters=DateFormatter()
         dateFormatters.dateFormat="yyyy-MM-dd"
         let apiDateFormate=dateFormatters.string(from: date)
-        if(IsKeyPresentInUserDefaults(key: "AccessToken"))
+        if(HelperMethods.IsKeyPresentInUserDefaults(key: "AccessToken"))
         {
             Period.GetPeriods(date: apiDateFormate, PlayGroundIDHashed: playGroundobj.PlayGroundIDHashed) { (periodsarray) in
                 self.periods=periodsarray
@@ -85,7 +83,7 @@ class PlayGroundReservationVC: UIViewController {
 
     func AddReservation(periodID:Int){
         //  APIsRequests().getData(from: "http://test100.revival.one/api/OwnersBusiness/SendConfirmationCode?", parameters: ["Mobile":mobileTextField.text ?? ""])
-        if(IsKeyPresentInUserDefaults(key: "AccessToken"))
+        if(HelperMethods.IsKeyPresentInUserDefaults(key: "AccessToken"))
         {
             if let request = APIClient.AddReservation(AccessToken: UserDefaults.standard.string(forKey: "AccessToken")!, PeriodID: periodID){
             APIClient().jsonRequest(request: request, CompletionHandler: { (JsonValue: JSON?,statusCode:Int,responseMessageStatus:ResponseMessageStatusEnum?,userMessage:String?) -> (Void) in

@@ -215,12 +215,33 @@ static func CheckEmail(email: String)->DataRequest? {
     }
     static func ChangePersonalImage(userID:Int,fileName:String,image:String)->DataRequest?{
         do{
-            var urlRequest = try UserEndPoint.ChangeImage.getURL()
+            let request=Alamofire.request(try UserEndPoint.ChangeImage(userID:String(userID), fileName: fileName, image: image).getURL()).validate(statusCode: 200..<501)
+            return request
+        }
+        catch{}
+        return nil
+    }
+    static func GetUserDetails(userID:Int,deviceToken:String)->DataRequest?{
+        do{
+            var urlRequest = try UserEndPoint.GetUsersDetails.getURL()
             var urlcomponents=URLComponents(string: (urlRequest.url?.absoluteString)!)
-            urlcomponents?.queryItems=[URLQueryItem(name:"UserID", value: String(userID)),URLQueryItem(name: "FileName", value: fileName),URLQueryItem(name: "Image", value: image)]
+            urlcomponents?.queryItems=[URLQueryItem(name:"UserID", value: String(userID)),URLQueryItem(name: "DeviceToken", value: deviceToken)]
             urlRequest.url=urlcomponents?.url
             let request=Alamofire.request(urlRequest
                 ).validate(statusCode: 200..<501)
+            return request
+        }
+        catch{}
+        return nil
+        
+    }
+    static func UpdateUserData(accessToken:String,userName:String,fullName:String,city:String,deviceToken:String,mobile:String)->DataRequest?{
+        do{
+            var urlRequest=try UserEndPoint.Update(userName: userName, fullName: fullName, city: city, operatingSystem: "IOS", deviceToken: deviceToken, mobile: mobile).getURL()
+            var urlcomponents=URLComponents(string: (urlRequest.url?.absoluteString)!)
+            urlcomponents?.queryItems=[URLQueryItem(name:"AccessToken", value: accessToken)]
+            urlRequest.url=urlcomponents?.url
+            let request=Alamofire.request(urlRequest).validate(statusCode: 200..<501)
             return request
         }
         catch{}

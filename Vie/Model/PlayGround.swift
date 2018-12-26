@@ -29,9 +29,7 @@ struct PlayGround{
     var IsSupportsReservations: Bool=false
     var CashExtraFees:Int=0
     var Ml3byDiscountAmt:Int=0
-    static func IsKeyPresentInUserDefaults(key:String)->Bool{
-        return UserDefaults.standard.object(forKey: key) != nil
-    }
+  
     static func GetPlayGroundsData(userID:Int,completion:@escaping (_ playGroundarray:[PlayGround])->Void){
         var playGrounds:[PlayGround]=[]
         var playGroundObj:PlayGround=PlayGround()

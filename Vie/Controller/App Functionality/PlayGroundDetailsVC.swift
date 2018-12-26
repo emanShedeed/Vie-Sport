@@ -141,7 +141,7 @@ class PlayGroundDetailsVC: UIViewController,UIScrollViewDelegate,UICollectionVie
         present(activityViewController, animated: true, completion: nil)
     }
     @objc func AddORRemoveFromFavoritesButtonPressed(){
-        if(IsKeyPresentInUserDefaults(key: "UserID"))
+        if(HelperMethods.IsKeyPresentInUserDefaults(key: "UserID"))
         {
             let userID=UserDefaults.standard.integer(forKey: "UserID")
             if((navigationItem.rightBarButtonItems?.contains(FavoriteButtonOff))! )//playGroundobj.IsFavorite == false
@@ -203,12 +203,10 @@ class PlayGroundDetailsVC: UIViewController,UIScrollViewDelegate,UICollectionVie
             destinationVC.playGroundobj=playGroundobj
         }
     }
-    func IsKeyPresentInUserDefaults(key:String)->Bool{
-        return UserDefaults.standard.object(forKey: key) != nil
-    }
+   
     func GetSimilarPlayGrounds(){
         var userID=""
-        if(IsKeyPresentInUserDefaults(key: "UserID"))
+        if(HelperMethods.IsKeyPresentInUserDefaults(key: "UserID"))
         {
          userID=String(UserDefaults.standard.integer(forKey: "UserID"))
         }

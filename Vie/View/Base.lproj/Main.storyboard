@@ -898,7 +898,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="aVT-Ij-AFT"/>
                     <connections>
+                        <outlet property="profileImageView" destination="vLr-Ps-tkc" id="GOo-M7-UyK"/>
                         <outlet property="tableView" destination="IN6-PO-YPt" id="E5z-Vh-Wia"/>
+                        <outlet property="userEmailLbl" destination="ZHc-6X-4Pd" id="GrK-QF-UQR"/>
+                        <outlet property="userNameLbl" destination="ODC-50-jQ6" id="oXa-TJ-9Dq"/>
                         <segue destination="yEb-bS-Rn0" kind="show" identifier="goToProfilePersonalInfoVC" id="0dE-QT-ai6"/>
                     </connections>
                 </viewController>
@@ -1405,11 +1408,11 @@
             <objects>
                 <viewController id="pgt-dR-rzr" customClass="PlayGroundReservationVC" customModule="Vie" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="58x-y2-jbL">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NFH-oi-0p5">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="tpg-y6-Z7R" userLabel="ContentView">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="118"/>
@@ -1565,7 +1568,7 @@ Dec</string>
             <objects>
                 <viewController id="57D-01-1tN" userLabel="ReservationInfoVC" customClass="ReservationInfoVC" customModule="Vie" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Kx0-zK-xrw">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mJ3-Ys-8IK" userLabel="Message View">
@@ -1687,7 +1690,7 @@ Dec</string>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FYo-Yh-XEc" userLabel="Map View" customClass="GMSMapView">
-                                <rect key="frame" x="0.0" y="415" width="375" height="203"/>
+                                <rect key="frame" x="0.0" y="415" width="375" height="252"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
@@ -1956,18 +1959,6 @@ Dec</string>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LYS-OB-WGw" userLabel="Bottom View">
                                 <rect key="frame" x="0.0" y="156" width="375" height="511"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mohamed Hassan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yGU-08-7Rc">
-                                        <rect key="frame" x="118.5" y="75" width="138" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.043137254899999998" green="0.21176470589999999" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="m.hassan@revival.sa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kqL-dc-42P">
-                                        <rect key="frame" x="107.5" y="104" width="160" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Mohamed Hasan" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yWb-My-fgy">
                                         <rect key="frame" x="0.0" y="190" width="375" height="30"/>
                                         <nil key="textColor"/>
@@ -2010,24 +2001,20 @@ Dec</string>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="YCt-yH-8P6" firstAttribute="top" secondItem="zgm-qP-pxc" secondAttribute="bottom" constant="38" id="0fv-Eq-Zws"/>
-                                    <constraint firstAttribute="trailing" secondItem="ljE-Y9-klR" secondAttribute="trailing" id="7T2-cq-PRl"/>
-                                    <constraint firstItem="ynd-tu-kUf" firstAttribute="leading" secondItem="LYS-OB-WGw" secondAttribute="leading" id="Dhe-ig-cRu"/>
-                                    <constraint firstItem="kqL-dc-42P" firstAttribute="centerX" secondItem="LYS-OB-WGw" secondAttribute="centerX" id="EzB-xW-yFe"/>
-                                    <constraint firstItem="yGU-08-7Rc" firstAttribute="centerX" secondItem="LYS-OB-WGw" secondAttribute="centerX" id="FBS-7X-QT2"/>
-                                    <constraint firstItem="ljE-Y9-klR" firstAttribute="top" secondItem="ynd-tu-kUf" secondAttribute="bottom" id="HUN-Fk-8Vm"/>
-                                    <constraint firstAttribute="trailing" secondItem="YCt-yH-8P6" secondAttribute="trailing" constant="8" id="Hcg-rO-iIm"/>
-                                    <constraint firstItem="kqL-dc-42P" firstAttribute="top" secondItem="yGU-08-7Rc" secondAttribute="bottom" constant="8" id="JQb-GE-J8Q"/>
-                                    <constraint firstAttribute="trailing" secondItem="ynd-tu-kUf" secondAttribute="trailing" id="K6l-su-WaJ"/>
-                                    <constraint firstItem="zgm-qP-pxc" firstAttribute="leading" secondItem="LYS-OB-WGw" secondAttribute="leading" id="La5-cz-iYB"/>
-                                    <constraint firstItem="YCt-yH-8P6" firstAttribute="leading" secondItem="LYS-OB-WGw" secondAttribute="leading" constant="8" id="OOo-Vw-LWD"/>
-                                    <constraint firstItem="zgm-qP-pxc" firstAttribute="top" secondItem="ljE-Y9-klR" secondAttribute="bottom" id="ZkO-Ea-jYS"/>
-                                    <constraint firstItem="yWb-My-fgy" firstAttribute="top" secondItem="kqL-dc-42P" secondAttribute="bottom" constant="65" id="b8N-D6-WxW"/>
-                                    <constraint firstAttribute="trailing" secondItem="yWb-My-fgy" secondAttribute="trailing" id="bE0-0c-fge"/>
-                                    <constraint firstItem="ljE-Y9-klR" firstAttribute="leading" secondItem="LYS-OB-WGw" secondAttribute="leading" id="cQ3-4V-aKi"/>
-                                    <constraint firstAttribute="trailing" secondItem="zgm-qP-pxc" secondAttribute="trailing" id="f93-Fp-6Fa"/>
-                                    <constraint firstItem="yWb-My-fgy" firstAttribute="leading" secondItem="LYS-OB-WGw" secondAttribute="leading" id="mzG-4j-oaZ"/>
-                                    <constraint firstItem="ynd-tu-kUf" firstAttribute="top" secondItem="yWb-My-fgy" secondAttribute="bottom" id="yn3-0U-vg4"/>
+                                    <constraint firstItem="YCt-yH-8P6" firstAttribute="top" secondItem="zgm-qP-pxc" secondAttribute="bottom" constant="38" id="4VQ-QY-cDg"/>
+                                    <constraint firstItem="ljE-Y9-klR" firstAttribute="leading" secondItem="LYS-OB-WGw" secondAttribute="leading" id="Fbs-fy-I8C"/>
+                                    <constraint firstItem="ynd-tu-kUf" firstAttribute="leading" secondItem="LYS-OB-WGw" secondAttribute="leading" id="Nzk-KI-1W6"/>
+                                    <constraint firstItem="ynd-tu-kUf" firstAttribute="top" secondItem="yWb-My-fgy" secondAttribute="bottom" id="PyG-ws-Z1G"/>
+                                    <constraint firstItem="YCt-yH-8P6" firstAttribute="leading" secondItem="LYS-OB-WGw" secondAttribute="leading" constant="8" id="Qeo-jb-LFX"/>
+                                    <constraint firstItem="zgm-qP-pxc" firstAttribute="leading" secondItem="LYS-OB-WGw" secondAttribute="leading" id="VmO-gV-xT1"/>
+                                    <constraint firstItem="ljE-Y9-klR" firstAttribute="top" secondItem="ynd-tu-kUf" secondAttribute="bottom" id="dDt-Bn-mUM"/>
+                                    <constraint firstItem="zgm-qP-pxc" firstAttribute="top" secondItem="ljE-Y9-klR" secondAttribute="bottom" id="fhH-Gj-GgE"/>
+                                    <constraint firstAttribute="trailing" secondItem="ljE-Y9-klR" secondAttribute="trailing" id="hp3-SE-Bqx"/>
+                                    <constraint firstAttribute="trailing" secondItem="zgm-qP-pxc" secondAttribute="trailing" id="jUy-nl-eil"/>
+                                    <constraint firstAttribute="trailing" secondItem="ynd-tu-kUf" secondAttribute="trailing" id="lGC-rB-668"/>
+                                    <constraint firstItem="yWb-My-fgy" firstAttribute="leading" secondItem="LYS-OB-WGw" secondAttribute="leading" id="rgT-qb-jZr"/>
+                                    <constraint firstAttribute="trailing" secondItem="YCt-yH-8P6" secondAttribute="trailing" constant="8" id="sIo-0D-jE4"/>
+                                    <constraint firstAttribute="trailing" secondItem="yWb-My-fgy" secondAttribute="trailing" id="yL8-ML-Yab"/>
                                 </constraints>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="e2N-k0-gYc" userLabel="2">
@@ -2056,10 +2043,10 @@ Dec</string>
                             <constraint firstItem="Cbd-3d-mbl" firstAttribute="leading" secondItem="KAF-vs-Kyx" secondAttribute="leading" id="GeW-qA-Q1R"/>
                             <constraint firstItem="Cbd-3d-mbl" firstAttribute="top" secondItem="9pk-DC-2xF" secondAttribute="top" id="KWp-tV-5Qk"/>
                             <constraint firstAttribute="bottom" secondItem="LYS-OB-WGw" secondAttribute="bottom" id="LM1-YY-MJr"/>
-                            <constraint firstItem="yGU-08-7Rc" firstAttribute="top" secondItem="e2N-k0-gYc" secondAttribute="bottom" constant="25" id="McK-lI-4N1"/>
                             <constraint firstItem="LYS-OB-WGw" firstAttribute="leading" secondItem="Cbd-3d-mbl" secondAttribute="leading" id="Rdu-Tz-sDm"/>
                             <constraint firstItem="e2N-k0-gYc" firstAttribute="top" secondItem="S4h-iJ-LcG" secondAttribute="bottom" constant="10" id="Zkm-FO-dkE"/>
                             <constraint firstItem="e2N-k0-gYc" firstAttribute="top" secondItem="Cbd-3d-mbl" secondAttribute="bottom" constant="-50" id="hap-e1-gq9"/>
+                            <constraint firstItem="yWb-My-fgy" firstAttribute="top" secondItem="e2N-k0-gYc" secondAttribute="bottom" constant="140" id="peJ-pt-0EO"/>
                             <constraint firstItem="Cbd-3d-mbl" firstAttribute="trailing" secondItem="KAF-vs-Kyx" secondAttribute="trailing" id="r65-nY-clB"/>
                             <constraint firstItem="LYS-OB-WGw" firstAttribute="top" secondItem="Cbd-3d-mbl" secondAttribute="bottom" id="xO0-Dq-MoU"/>
                         </constraints>
@@ -2067,8 +2054,11 @@ Dec</string>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="contacts" id="SN9-g2-N3l"/>
                     <connections>
+                        <outlet property="FullNametxt" destination="yWb-My-fgy" id="giI-4I-FJO"/>
+                        <outlet property="Mobiletxt" destination="ljE-Y9-klR" id="jYB-L7-amz"/>
+                        <outlet property="emailTxt" destination="ynd-tu-kUf" id="3yh-8t-wCW"/>
                         <outlet property="personalImageTxt" destination="zgm-qP-pxc" id="ytb-1P-SZf"/>
-                        <outlet property="personalImageView" destination="e2N-k0-gYc" id="Shf-a4-Bxg"/>
+                        <outlet property="profileImageView" destination="e2N-k0-gYc" id="Shf-a4-Bxg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z4h-HP-501" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2107,6 +2097,6 @@ Dec</string>
         <segue reference="eLM-CH-GEJ"/>
         <segue reference="61L-TT-dd0"/>
         <segue reference="AqB-MZ-WnT"/>
-        <segue reference="UZM-HT-Wq8"/>
+        <segue reference="fQB-gO-izj"/>
     </inferredMetricsTieBreakers>
 </document>

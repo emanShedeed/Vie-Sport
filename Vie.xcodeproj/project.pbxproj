@@ -15,6 +15,7 @@
 		C71383DD216E16AD00784CDC /* HideKeyboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71383DC216E16AD00784CDC /* HideKeyboardVC.swift */; };
 		E700E0CA21984A8100A0A899 /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E700E0C921984A8100A0A899 /* MapVC.swift */; };
 		E700E0CC21984B2200A0A899 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E700E0CB21984B2200A0A899 /* HomeVC.swift */; };
+		E70C3A0B21D3703400A0D968 /* HelperMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70C3A0A21D3703400A0D968 /* HelperMethods.swift */; };
 		E70ED96D21AA728900000AAE /* PlayGroundServicesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70ED96C21AA728900000AAE /* PlayGroundServicesVC.swift */; };
 		E70ED97521AA7BBE00000AAE /* ServiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70ED97321AA7BBE00000AAE /* ServiceCell.swift */; };
 		E70ED97621AA7BBE00000AAE /* ServiceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E70ED97421AA7BBE00000AAE /* ServiceCell.xib */; };
@@ -94,6 +95,7 @@
 		D690221753A2AFF740EFAB95 /* Pods-VieUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VieUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VieUITests/Pods-VieUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E700E0C921984A8100A0A899 /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
 		E700E0CB21984B2200A0A899 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		E70C3A0A21D3703400A0D968 /* HelperMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperMethods.swift; sourceTree = "<group>"; };
 		E70ED96C21AA728900000AAE /* PlayGroundServicesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayGroundServicesVC.swift; sourceTree = "<group>"; };
 		E70ED97321AA7BBE00000AAE /* ServiceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCell.swift; sourceTree = "<group>"; };
 		E70ED97421AA7BBE00000AAE /* ServiceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ServiceCell.xib; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 		C71383CF216E04D500784CDC /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				E70C3A0A21D3703400A0D968 /* HelperMethods.swift */,
 				C71383D2216E053700784CDC /* CustomUItextField.swift */,
 				C71383DC216E16AD00784CDC /* HideKeyboardVC.swift */,
 				E7CBD126217499D000072F03 /* NotificationNamesExtension.swift */,
@@ -720,6 +723,7 @@
 				E756A70821D10488001CDE1A /* UIViewExtension.swift in Sources */,
 				E70FAE3821BE7DD900FB9EF3 /* PeriodCell.swift in Sources */,
 				E721F63821982A9F003FE7B0 /* TabBarVC.swift in Sources */,
+				E70C3A0B21D3703400A0D968 /* HelperMethods.swift in Sources */,
 				E71C6F42219D6C4700E0D5A9 /* DictionaryKeyForValue.swift in Sources */,
 				E7DDF3BA2185CB5000C878DE /* Constants.swift in Sources */,
 				E7790EA6219858E800A1D926 /* PlayGround.swift in Sources */,

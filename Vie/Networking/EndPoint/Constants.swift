@@ -2,7 +2,7 @@ import Foundation
 
 struct K {
     struct ProductionServer {
-        static let baseURL = "http://test100.revival.one/api/"
+        static let baseURL = "http://test100.revival.one/api/ios/v2/"
         static let user="users/"
         static let OwnersBusiness="OwnersBusiness/"
         static let PlayGround="PlayGrounds/"
@@ -24,6 +24,10 @@ struct K {
         static let periodID="PeriodID"
         static let userID="UserID"
         static let playGroundID="PlayGroundID"
+        static let fileName="FileName"
+        static let image="Image"
+        static let userName="UserName"
+        static let city="City"
     }
 }
 

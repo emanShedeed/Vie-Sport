@@ -35,7 +35,7 @@ class MapVC: UIViewController ,GMSMapViewDelegate,CLLocationManagerDelegate{
         mapView.delegate=self
         self.mapView.bringSubviewToFront(infoWindowView)
         var userID = -1
-        if(IsKeyPresentInUserDefaults(key: "UserID"))
+        if(HelperMethods.IsKeyPresentInUserDefaults(key: "UserID"))
         {
             userID=UserDefaults.standard.integer(forKey: "UserID")
         }
@@ -58,9 +58,7 @@ class MapVC: UIViewController ,GMSMapViewDelegate,CLLocationManagerDelegate{
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden=false
     }
-    func IsKeyPresentInUserDefaults(key:String)->Bool{
-        return UserDefaults.standard.object(forKey: key) != nil
-    }    //MARK: - Location Manager Delegate Methods
+       //MARK: - Location Manager Delegate Methods
     /***************************************************************/
     
     

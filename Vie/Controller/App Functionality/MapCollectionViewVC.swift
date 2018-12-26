@@ -18,7 +18,7 @@ class MapCollectionViewVC: UIViewController,UICollectionViewDataSource,UICollect
 
         // Do any additional setup after loading the view.
         var userID = -1
-        if(IsKeyPresentInUserDefaults(key: "UserID"))
+        if(HelperMethods.IsKeyPresentInUserDefaults(key: "UserID"))
         {
             userID=UserDefaults.standard.integer(forKey: "UserID")
         }
@@ -77,7 +77,5 @@ class MapCollectionViewVC: UIViewController,UICollectionViewDataSource,UICollect
         // Pass the selected object to the new view controller.
     }
     */
-    func IsKeyPresentInUserDefaults(key:String)->Bool{
-        return UserDefaults.standard.object(forKey: key) != nil
-    }
+    
 }

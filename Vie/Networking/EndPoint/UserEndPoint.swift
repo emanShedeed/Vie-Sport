@@ -5,16 +5,19 @@ enum UserEndPoint:APIConfiguration{
     case CheckEmail
     // case Add(email:String,password:String,fullName:String,mobile:String,socialType:String,socialUserID:String,deviceToken:String,imageLocation:String)
     case Add(userObj:User)
-    case ChangeImage
+    case ChangeImage(userID:String,fileName:String,image:String)
+    case GetUsersDetails
+    case Update(userName:String,fullName:String,city:String,operatingSystem:String,deviceToken:String,mobile:String)
    // case post(id: Int)
     
     // MARK: - HTTPMethod
     var method:HTTPMethod {
         switch self {
-        case .CheckEmail:
+        case .CheckEmail,.GetUsersDetails:
             return .get
-        case .Add,.ChangeImage:
+        case .Add,.ChangeImage,.Update:
             return .post
+        
         }
     }
     
@@ -27,16 +30,24 @@ enum UserEndPoint:APIConfiguration{
             return "Add"
         case .ChangeImage:
             return"ChangeImage"
+        case .GetUsersDetails:
+            return"GetUserDetails"
+        case .Update:
+            return"Update"
         }
     }
     
     // MARK: - Parameters
     var parameters: Parameters? {
         switch self {
-        case .CheckEmail,.ChangeImage:
+        case .CheckEmail,.GetUsersDetails:
             return nil
         case .Add(let userObj):
             return [K.APIParameterKey.email:userObj.email,K.APIParameterKey.password:userObj.password,K.APIParameterKey.fullName:userObj.fullName,K.APIParameterKey.mobile:userObj.mobile,K.APIParameterKey.socialType:userObj.socialType,K.APIParameterKey.socialUserID:userObj.socialUserID,K.APIParameterKey.deviceToken:userObj.deviceToken,K.APIParameterKey.imageLocation:userObj.imageLocation,K.APIParameterKey.operatingSystem:userObj.operatingSystem]
+        case .ChangeImage(let userID, let fileName,let image):
+            return [K.APIParameterKey.userID:userID,K.APIParameterKey.fileName:fileName,K.APIParameterKey.image:image]
+        case .Update(let userName, let fullName,let city, let operatingSystem,let deviceToken, let mobile):
+            return [K.APIParameterKey.userName:userName,K.APIParameterKey.fullName:fullName,K.APIParameterKey.city:city,K.APIParameterKey.operatingSystem:operatingSystem,K.APIParameterKey.deviceToken:deviceToken,K.APIParameterKey.mobile:mobile]
         }
     }
     
