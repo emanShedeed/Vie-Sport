@@ -54,7 +54,8 @@ class ProfileVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
                                 UserDefaults.standard.set(imageLocation, forKey: "ProfileImage")
                                 if let url=URL(string: imageLocation){
                                     self.profileImageView.kf.setImage(with: url)
-                                }                            }
+                                }
+                            }
                             if let userName=data["Data"]["UserName"].string{
                                 UserDefaults.standard.set(userName, forKey: "Email")
                                 self.userEmailLbl.text=userName

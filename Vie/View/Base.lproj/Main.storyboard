@@ -936,11 +936,11 @@
             <objects>
                 <viewController id="xWy-So-ddw" userLabel="ServicesVC" customClass="PlayGroundServicesVC" customModule="Vie" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wAX-iu-eFL">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Yta-Nl-J1E">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="xWy-So-ddw" id="c0e-6v-zGu"/>
@@ -1998,11 +1998,18 @@ Dec</string>
                                             <action selector="SaveButtonPressed:" destination="yEb-bS-Rn0" eventType="touchUpInside" id="6Dy-R9-inF"/>
                                         </connections>
                                     </button>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R2a-Eb-hrO">
+                                        <rect key="frame" x="0.0" y="318" width="375" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="YCt-yH-8P6" firstAttribute="top" secondItem="zgm-qP-pxc" secondAttribute="bottom" constant="38" id="4VQ-QY-cDg"/>
                                     <constraint firstItem="ljE-Y9-klR" firstAttribute="leading" secondItem="LYS-OB-WGw" secondAttribute="leading" id="Fbs-fy-I8C"/>
+                                    <constraint firstAttribute="trailing" secondItem="R2a-Eb-hrO" secondAttribute="trailing" id="Kfc-nM-d4o"/>
                                     <constraint firstItem="ynd-tu-kUf" firstAttribute="leading" secondItem="LYS-OB-WGw" secondAttribute="leading" id="Nzk-KI-1W6"/>
                                     <constraint firstItem="ynd-tu-kUf" firstAttribute="top" secondItem="yWb-My-fgy" secondAttribute="bottom" id="PyG-ws-Z1G"/>
                                     <constraint firstItem="YCt-yH-8P6" firstAttribute="leading" secondItem="LYS-OB-WGw" secondAttribute="leading" constant="8" id="Qeo-jb-LFX"/>
@@ -2012,8 +2019,10 @@ Dec</string>
                                     <constraint firstAttribute="trailing" secondItem="ljE-Y9-klR" secondAttribute="trailing" id="hp3-SE-Bqx"/>
                                     <constraint firstAttribute="trailing" secondItem="zgm-qP-pxc" secondAttribute="trailing" id="jUy-nl-eil"/>
                                     <constraint firstAttribute="trailing" secondItem="ynd-tu-kUf" secondAttribute="trailing" id="lGC-rB-668"/>
+                                    <constraint firstItem="R2a-Eb-hrO" firstAttribute="top" secondItem="zgm-qP-pxc" secondAttribute="bottom" constant="8" id="qz0-1b-5Vu"/>
                                     <constraint firstItem="yWb-My-fgy" firstAttribute="leading" secondItem="LYS-OB-WGw" secondAttribute="leading" id="rgT-qb-jZr"/>
                                     <constraint firstAttribute="trailing" secondItem="YCt-yH-8P6" secondAttribute="trailing" constant="8" id="sIo-0D-jE4"/>
+                                    <constraint firstItem="R2a-Eb-hrO" firstAttribute="leading" secondItem="LYS-OB-WGw" secondAttribute="leading" id="wRq-tP-09B"/>
                                     <constraint firstAttribute="trailing" secondItem="yWb-My-fgy" secondAttribute="trailing" id="yL8-ML-Yab"/>
                                 </constraints>
                             </view>
@@ -2057,6 +2066,7 @@ Dec</string>
                         <outlet property="FullNametxt" destination="yWb-My-fgy" id="giI-4I-FJO"/>
                         <outlet property="Mobiletxt" destination="ljE-Y9-klR" id="jYB-L7-amz"/>
                         <outlet property="emailTxt" destination="ynd-tu-kUf" id="3yh-8t-wCW"/>
+                        <outlet property="errorLbl" destination="R2a-Eb-hrO" id="jt8-bR-xvJ"/>
                         <outlet property="personalImageTxt" destination="zgm-qP-pxc" id="ytb-1P-SZf"/>
                         <outlet property="profileImageView" destination="e2N-k0-gYc" id="Shf-a4-Bxg"/>
                     </connections>
