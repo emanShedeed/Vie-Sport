@@ -7,6 +7,7 @@ enum UserEndPoint:APIConfiguration{
     case Add(userObj:User)
     case ChangeImage(userID:String,fileName:String,image:String)
     case GetUsersDetails
+    case ChangePassword(userID:String,oldPassword:String,newPassword:String)
     case Update(userName:String,fullName:String,city:String,operatingSystem:String,deviceToken:String,mobile:String)
    // case post(id: Int)
     
@@ -15,7 +16,7 @@ enum UserEndPoint:APIConfiguration{
         switch self {
         case .CheckEmail,.GetUsersDetails:
             return .get
-        case .Add,.ChangeImage,.Update:
+        case .Add,.ChangeImage,.Update,.ChangePassword:
             return .post
         
         }
@@ -34,6 +35,8 @@ enum UserEndPoint:APIConfiguration{
             return"GetUserDetails"
         case .Update:
             return"Update"
+        case .ChangePassword:
+            return"ChangePassword"
         }
     }
     
@@ -48,6 +51,9 @@ enum UserEndPoint:APIConfiguration{
             return [K.APIParameterKey.userID:userID,K.APIParameterKey.fileName:fileName,K.APIParameterKey.image:image]
         case .Update(let userName, let fullName,let city, let operatingSystem,let deviceToken, let mobile):
             return [K.APIParameterKey.userName:userName,K.APIParameterKey.fullName:fullName,K.APIParameterKey.city:city,K.APIParameterKey.operatingSystem:operatingSystem,K.APIParameterKey.deviceToken:deviceToken,K.APIParameterKey.mobile:mobile]
+        case .ChangePassword(let userID,let oldPassword,let newPassword):
+            return [K.APIParameterKey.userID:userID,K.APIParameterKey.oldPassword:oldPassword,K.APIParameterKey.newPassword:newPassword]
+            
         }
     }
     

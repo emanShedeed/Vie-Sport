@@ -28,6 +28,8 @@ struct K {
         static let image="Image"
         static let userName="UserName"
         static let city="City"
+        static let oldPassword="OldPassword"
+        static let newPassword="NewPassword"
     }
 }
 

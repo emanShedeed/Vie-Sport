@@ -247,4 +247,11 @@ static func CheckEmail(email: String)->DataRequest? {
         catch{}
         return nil
     }
-}
+    static func ChangePassword(userID:Int,oldPassword:String,newPassword:String)->DataRequest?{
+        do{
+            let request=Alamofire.request(try UserEndPoint.ChangePassword(userID: String(userID), oldPassword: oldPassword, newPassword: newPassword).getURL()).validate(statusCode: 200..<501)
+            return request
+        }
+        catch{}
+        return nil
+    }}

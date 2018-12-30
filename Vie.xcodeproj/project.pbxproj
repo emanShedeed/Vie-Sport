@@ -43,6 +43,8 @@
 		E789996E218728FD0013BE4C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E789996D218728FD0013BE4C /* User.swift */; };
 		E789997121872C750013BE4C /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E789997021872C750013BE4C /* APIClient.swift */; };
 		E79379F9217837AB006D33F5 /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79379F8217837AB006D33F5 /* CustomColor.swift */; };
+		E79C2FFA21D8F22B00601B43 /* ChangePasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79C2FF921D8F22B00601B43 /* ChangePasswordVC.swift */; };
+		E79C2FFC21D8FA4100601B43 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79C2FFB21D8FA4100601B43 /* UITextFieldExtension.swift */; };
 		E79D3B1921B7CEE30043D643 /* SimilarPlayGroundCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79D3B1821B7CEE30043D643 /* SimilarPlayGroundCell.swift */; };
 		E7A857ED216C8009002683CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A857EC216C8009002683CD /* AppDelegate.swift */; };
 		E7A857EF216C8009002683CD /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A857EE216C8009002683CD /* MainVC.swift */; };
@@ -123,6 +125,8 @@
 		E789996D218728FD0013BE4C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E789997021872C750013BE4C /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		E79379F8217837AB006D33F5 /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
+		E79C2FF921D8F22B00601B43 /* ChangePasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordVC.swift; sourceTree = "<group>"; };
+		E79C2FFB21D8FA4100601B43 /* UITextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
 		E79D3B1821B7CEE30043D643 /* SimilarPlayGroundCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimilarPlayGroundCell.swift; sourceTree = "<group>"; };
 		E7A857E9216C8009002683CD /* Vie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7A857EC216C8009002683CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -235,6 +239,7 @@
 				E78860EC21C90F0A00B5DC8C /* ReservationInfoVC.swift */,
 				E756A6FF21D0E3F7001CDE1A /* ProfileVC.swift */,
 				E727900721D2202600AE201F /* ProfilePersonalInfoVC.swift */,
+				E79C2FF921D8F22B00601B43 /* ChangePasswordVC.swift */,
 			);
 			path = "App Functionality";
 			sourceTree = "<group>";
@@ -402,6 +407,7 @@
 			children = (
 				E756A70721D10488001CDE1A /* UIViewExtension.swift */,
 				E727900921D24B4B00AE201F /* UIImageExtension.swift */,
+				E79C2FFB21D8FA4100601B43 /* UITextFieldExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -690,6 +696,7 @@
 				E700E0CC21984B2200A0A899 /* HomeVC.swift in Sources */,
 				E7790EA8219862E000A1D926 /* PlaygroundEndPoint.swift in Sources */,
 				E727900A21D24B4B00AE201F /* UIImageExtension.swift in Sources */,
+				E79C2FFC21D8FA4100601B43 /* UITextFieldExtension.swift in Sources */,
 				E76CD74221CA65F70044C2C3 /* ReservationEndPoint.swift in Sources */,
 				E74155D021A2A19C0032FBAE /* CustomCell.swift in Sources */,
 				E789996E218728FD0013BE4C /* User.swift in Sources */,
@@ -698,6 +705,7 @@
 				E70FAE3521BE651900FB9EF3 /* DayCell.swift in Sources */,
 				E7AF32E121BD1D0C009B5244 /* FavoriteEndPoint.swift in Sources */,
 				E7AF32DF21BD12FB009B5244 /* PlayGroundReservationVC.swift in Sources */,
+				E79C2FFA21D8F22B00601B43 /* ChangePasswordVC.swift in Sources */,
 				E70ED96D21AA728900000AAE /* PlayGroundServicesVC.swift in Sources */,
 				E7CBD127217499D000072F03 /* NotificationNamesExtension.swift in Sources */,
 				E79379F9217837AB006D33F5 /* CustomColor.swift in Sources */,

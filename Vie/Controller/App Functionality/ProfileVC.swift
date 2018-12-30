@@ -101,6 +101,9 @@ class ProfileVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         if(indexPath.row==0){
             self.performSegue(withIdentifier: "goToProfilePersonalInfoVC", sender: self)
         }
+        if(indexPath.row==1){
+            self.performSegue(withIdentifier: "goTochangePasswordVC", sender: self)
+        }
     }
     
     
