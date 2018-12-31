@@ -13,12 +13,15 @@ enum ReservationEndPoint:APIConfiguration{
     
   
     case Add(periodID:Int)
+    case getReservations
     
     // MARK: - HTTPMethod
     var method:HTTPMethod {
         switch self {
         case .Add:
             return .post
+        case .getReservations:
+            return .get
         }
     }
     
@@ -27,6 +30,8 @@ enum ReservationEndPoint:APIConfiguration{
         switch self {
         case .Add:
             return "Add"
+        case .getReservations:
+            return "Get"
         }
     }
     
@@ -35,7 +40,10 @@ enum ReservationEndPoint:APIConfiguration{
         switch self {
         case .Add(let periodID):
             return ["\(K.APIParameterKey.periodID)":periodID]
+        case .getReservations:
+            return nil
         }
+       
     }
     
     // MARK: - URLRequestConvertible

@@ -35,7 +35,7 @@ struct PlayGround{
         var playGroundObj:PlayGround=PlayGround()
         var serviceObj:PlaygroundServices=PlaygroundServices()
   
-    if let  urlRequest=APIClient.GetPlayGrounds(userID: userID){
+        if let  urlRequest=APIClient.GetPlayGrounds(userID: userID) {
             APIClient().jsonRequest(request: urlRequest) { (Json:JSON?, statusCode:Int, ResponseMessageStatus:ResponseMessageStatusEnum?, userMessage:String?) -> (Void) in
                 if let data=Json {
                     for (_,object) in data{
@@ -114,6 +114,51 @@ struct PlayGround{
                     }
                     completion(similarPlayGrounds)
                  
+                }
+            }
+            
+        }
+    }
+    static func GetFavoritesPlayGround(accessToken:String,completion:@escaping (_ playGroundarray:[PlayGround])->Void){
+        var playGrounds:[PlayGround]=[]
+        var playGroundObj:PlayGround=PlayGround()
+        var serviceObj:PlaygroundServices=PlaygroundServices()
+        
+        if let  urlRequest=APIClient.GetFavoritesPlayGrounds(accessToken: accessToken) {
+            APIClient().jsonRequest(request: urlRequest) { (Json:JSON?, statusCode:Int, ResponseMessageStatus:ResponseMessageStatusEnum?, userMessage:String?) -> (Void) in
+                if let data=Json {
+                    for (_,object) in data["Data"]{
+                        playGroundObj=PlayGround()
+                        playGroundObj.Bio = object["Bio"].stringValue
+                        playGroundObj.PlayGroundIDHashed=object["PlayGroundIDHashed"].stringValue
+                        playGroundObj.ContactNumber=object["ContactNumber"].stringValue
+                        playGroundObj.ImagesLocation=object["ImagesLocation"].arrayObject as![String]
+                        playGroundObj.OwnerMobile=object["OwnerMobile"].stringValue
+                        playGroundObj.OwnerMobile2=object["OwnerMobile2"].stringValue
+                        playGroundObj.Lat=object["Lat"].stringValue
+                        playGroundObj.Lng=object["Lng"].stringValue
+                        playGroundObj.PlayGroundID=object["PlayGroundID"].intValue
+                        playGroundObj.PlayGroundName=object["PlayGroundName"].stringValue
+                        playGroundObj.DimensionName=object["DimensionName"].stringValue
+                        playGroundObj.CityName=object["CityName"].stringValue
+                        playGroundObj.RatingLevel=object["RatingLevel"].intValue
+                        playGroundObj.PlayGroundTypeName=object["PlayGroundTypeName"].stringValue
+                        playGroundObj.IsFavorite=object["IsFavorite"].boolValue
+                        for (_,service) in object["Services"]{
+                            serviceObj=PlaygroundServices()
+                            serviceObj.ServiceID=service["ServiceID"].intValue
+                            serviceObj.ServiceName=service["ServiceName"].stringValue
+                            serviceObj.ActiveIcon=service["ActiveIcon"].stringValue
+                            playGroundObj.Services.append(serviceObj)
+                        }
+                        playGroundObj.IsSupportsReservations=object["IsSupportsReservations"].boolValue
+                        playGroundObj.CashExtraFees=object["CashExtraFees"].intValue
+                        playGroundObj.Ml3byDiscountAmt=object["Ml3byDiscountAmt"].intValue
+                        playGrounds.append(playGroundObj)
+                    }
+                    completion(playGrounds)
+                    //self.DisplayPlayGroundData(playGrounds: self.playGrounds)
+                    //self.performSegue(withIdentifier: "goToPlayGroundCollection", sender: self)
                 }
             }
             

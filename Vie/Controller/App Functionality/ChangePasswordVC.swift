@@ -20,13 +20,16 @@ class ChangePasswordVC: UIViewController,UITextFieldDelegate {
     var textFields=[UITextField]()
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.isHidden=true
+        // Do any additional setup after loading the view.
         validationLabels.sort{$0.tag<$1.tag}
         self.hideKeyboardWhenTappedAround()
         textFields=[currentPasswordTxt,newPasswordTxt,confirmPasswordTxt]
-        // Do any additional setup after loading the view.
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden=true
+    }
     
     @IBAction func SaveButtonPressed(_ sender: Any) {
         var isCompleted=true

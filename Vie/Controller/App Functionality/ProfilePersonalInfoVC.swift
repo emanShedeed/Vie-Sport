@@ -25,11 +25,15 @@ class ProfilePersonalInfoVC: UIViewController,UITextFieldDelegate {
         super.viewDidLoad()
         hideKeyboardWhenTappedAround()
         personalImageTxt.delegate=self
+    
         textFields=[FullNametxt,emailTxt,Mobiletxt]
         UpdateUI()
+        
       //  personalImageTxt.addGestureRecognizer(tap)
     }
     override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        self.tabBarController?.tabBar.isHidden=false
         if(HelperMethods.IsKeyPresentInUserDefaults(key: "ProfileImage"))
         {
             let profileImage=UserDefaults.standard.value(forKey: "ProfileImage") as! String

@@ -254,4 +254,27 @@ static func CheckEmail(email: String)->DataRequest? {
         }
         catch{}
         return nil
-    }}
+    }
+    static func GetFavoritesPlayGrounds(accessToken:String)->DataRequest?{
+        do{
+            var urlRequest = try FavoriteEndPoint.getFavorites.getURL()
+            var urlcomponents=URLComponents(string: (urlRequest.url?.absoluteString)!)
+            urlcomponents?.queryItems=[URLQueryItem(name:"AccessToken", value: accessToken)]
+            urlRequest.url=urlcomponents?.url
+            let request=Alamofire.request(urlRequest
+                ).validate(statusCode: 200..<501)
+            return request
+        }
+        catch{}
+        return nil
+        
+    }
+    static func GetReservations(accessToken:String)->DataRequest?{
+        do{
+            let request=Alamofire.request(try ReservationEndPoint.getReservations.getURL()).validate(statusCode: 200..<501)
+            return request
+        }
+        catch{}
+        return nil
+    }
+}

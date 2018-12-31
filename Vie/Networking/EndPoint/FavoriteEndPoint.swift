@@ -12,6 +12,7 @@ enum FavoriteEndPoint:APIConfiguration{
     // case Add(email:String,password:String,fullName:String,mobile:String,socialType:String,socialUserID:String,deviceToken:String,imageLocation:String)
     case Add(userID:Int,playGroundID:Int)
     case delete(userID:Int,playGroundID:Int)
+    case getFavorites
     // MARK: - HTTPMethod
     var method:HTTPMethod {
         switch self {
@@ -19,6 +20,9 @@ enum FavoriteEndPoint:APIConfiguration{
             return .post
         case .delete:
             return .post
+        case .getFavorites
+            :
+            return .get
         }
     }
     
@@ -29,17 +33,20 @@ enum FavoriteEndPoint:APIConfiguration{
             return "Add"
         case .delete:
             return"Delete"
+        case .getFavorites:
+            return"Get"
         }
     }
     
     // MARK: - Parameters
     var parameters: Parameters? {
         switch self {
-      
         case .Add(let userID, let playgroundID) :
         return [K.APIParameterKey.userID:userID,K.APIParameterKey.playGroundID:playgroundID]
         case .delete(let userID, let playGroundID):
             return [K.APIParameterKey.userID:userID,K.APIParameterKey.playGroundID:playGroundID]
+        case .getFavorites:
+            return nil
         }
     }
     

@@ -26,10 +26,13 @@ class ProfileVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         // Do any additional setup after loading the view.
         tableView.tableFooterView=UIView()
         tableView.isScrollEnabled=false
-        self.navigationController?.navigationBar.isHidden=true
+        
+       
         GetProfileInfo()
     }
     override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden=false
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
         UpdateUI()
     }
     func GetProfileInfo()
@@ -104,8 +107,13 @@ class ProfileVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         if(indexPath.row==1){
             self.performSegue(withIdentifier: "goTochangePasswordVC", sender: self)
         }
+        if(indexPath.row==2){
+            self.performSegue(withIdentifier: "goToFavoritesVC", sender: self)
+        }
     }
     
-    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+    }
     
 }

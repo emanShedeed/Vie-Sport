@@ -33,6 +33,10 @@
 		E73A7BDB21919CC900DBD0CB /* SocialSignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73A7BDA21919CC900DBD0CB /* SocialSignUpVC.swift */; };
 		E74155CE21A29CE20032FBAE /* MapCollectionViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74155CD21A29CE20032FBAE /* MapCollectionViewVC.swift */; };
 		E74155D021A2A19C0032FBAE /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74155CF21A2A19C0032FBAE /* CustomCell.swift */; };
+		E756A5A121DA05CD000F1023 /* FavoritesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E756A5A021DA05CD000F1023 /* FavoritesVC.swift */; };
+		E756A5A321DA39F7000F1023 /* ReservationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E756A5A221DA39F7000F1023 /* ReservationVC.swift */; };
+		E756A5A621DA3AA1000F1023 /* ReservationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E756A5A521DA3AA1000F1023 /* ReservationCell.swift */; };
+		E756A5A821DA41C9000F1023 /* Reservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E756A5A721DA41C9000F1023 /* Reservation.swift */; };
 		E756A70021D0E3F7001CDE1A /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E756A6FF21D0E3F7001CDE1A /* ProfileVC.swift */; };
 		E756A70821D10488001CDE1A /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E756A70721D10488001CDE1A /* UIViewExtension.swift */; };
 		E756A70B21D10D75001CDE1A /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E756A70A21D10D75001CDE1A /* ProfileCell.swift */; };
@@ -115,6 +119,10 @@
 		E73A7BDA21919CC900DBD0CB /* SocialSignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialSignUpVC.swift; sourceTree = "<group>"; };
 		E74155CD21A29CE20032FBAE /* MapCollectionViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCollectionViewVC.swift; sourceTree = "<group>"; };
 		E74155CF21A2A19C0032FBAE /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		E756A5A021DA05CD000F1023 /* FavoritesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesVC.swift; sourceTree = "<group>"; };
+		E756A5A221DA39F7000F1023 /* ReservationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationVC.swift; sourceTree = "<group>"; };
+		E756A5A521DA3AA1000F1023 /* ReservationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationCell.swift; sourceTree = "<group>"; };
+		E756A5A721DA41C9000F1023 /* Reservation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reservation.swift; sourceTree = "<group>"; };
 		E756A6FF21D0E3F7001CDE1A /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		E756A70721D10488001CDE1A /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		E756A70A21D10D75001CDE1A /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
@@ -240,6 +248,8 @@
 				E756A6FF21D0E3F7001CDE1A /* ProfileVC.swift */,
 				E727900721D2202600AE201F /* ProfilePersonalInfoVC.swift */,
 				E79C2FF921D8F22B00601B43 /* ChangePasswordVC.swift */,
+				E756A5A021DA05CD000F1023 /* FavoritesVC.swift */,
+				E756A5A221DA39F7000F1023 /* ReservationVC.swift */,
 			);
 			path = "App Functionality";
 			sourceTree = "<group>";
@@ -284,6 +294,14 @@
 				E74155CF21A2A19C0032FBAE /* CustomCell.swift */,
 			);
 			path = MapCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		E756A5A421DA3A40000F1023 /* Reservation Cell */ = {
+			isa = PBXGroup;
+			children = (
+				E756A5A521DA3AA1000F1023 /* ReservationCell.swift */,
+			);
+			path = "Reservation Cell";
 			sourceTree = "<group>";
 		};
 		E756A70921D10D44001CDE1A /* Profile Cell */ = {
@@ -373,6 +391,7 @@
 				E789996D218728FD0013BE4C /* User.swift */,
 				E7790EA5219858E800A1D926 /* PlayGround.swift */,
 				E70FAE3B21BE89FE00FB9EF3 /* Period.swift */,
+				E756A5A721DA41C9000F1023 /* Reservation.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -380,6 +399,7 @@
 		E7A8581B216C80C6002683CD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E756A5A421DA3A40000F1023 /* Reservation Cell */,
 				E756A70921D10D44001CDE1A /* Profile Cell */,
 				E70FAE3621BE7DA700FB9EF3 /* Reservation Period Cell */,
 				E70FAE3321BE64EC00FB9EF3 /* DayCell */,
@@ -696,6 +716,8 @@
 				E700E0CC21984B2200A0A899 /* HomeVC.swift in Sources */,
 				E7790EA8219862E000A1D926 /* PlaygroundEndPoint.swift in Sources */,
 				E727900A21D24B4B00AE201F /* UIImageExtension.swift in Sources */,
+				E756A5A321DA39F7000F1023 /* ReservationVC.swift in Sources */,
+				E756A5A121DA05CD000F1023 /* FavoritesVC.swift in Sources */,
 				E79C2FFC21D8FA4100601B43 /* UITextFieldExtension.swift in Sources */,
 				E76CD74221CA65F70044C2C3 /* ReservationEndPoint.swift in Sources */,
 				E74155D021A2A19C0032FBAE /* CustomCell.swift in Sources */,
@@ -703,6 +725,7 @@
 				C71383DD216E16AD00784CDC /* HideKeyboardVC.swift in Sources */,
 				E727900821D2202600AE201F /* ProfilePersonalInfoVC.swift in Sources */,
 				E70FAE3521BE651900FB9EF3 /* DayCell.swift in Sources */,
+				E756A5A821DA41C9000F1023 /* Reservation.swift in Sources */,
 				E7AF32E121BD1D0C009B5244 /* FavoriteEndPoint.swift in Sources */,
 				E7AF32DF21BD12FB009B5244 /* PlayGroundReservationVC.swift in Sources */,
 				E79C2FFA21D8F22B00601B43 /* ChangePasswordVC.swift in Sources */,
@@ -723,6 +746,7 @@
 				E7DDF3B82185C11400C878DE /* UserEndPoint.swift in Sources */,
 				E700E0CA21984A8100A0A899 /* MapVC.swift in Sources */,
 				E7A857EF216C8009002683CD /* MainVC.swift in Sources */,
+				E756A5A621DA3AA1000F1023 /* ReservationCell.swift in Sources */,
 				E70FAE3A21BE7F4400FB9EF3 /* PeriodEndPoint.swift in Sources */,
 				E70ED97521AA7BBE00000AAE /* ServiceCell.swift in Sources */,
 				E7A857ED216C8009002683CD /* AppDelegate.swift in Sources */,

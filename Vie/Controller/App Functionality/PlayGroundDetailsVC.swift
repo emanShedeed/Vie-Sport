@@ -40,6 +40,7 @@ class PlayGroundDetailsVC: UIViewController,UIScrollViewDelegate,UICollectionVie
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        self.navigationController?.navigationBar.isHidden=false
         //Add tapgesture to reervation view
         //add tap gesture
         let tapGesture=UITapGestureRecognizer(target: self, action:#selector(ServicesViewTapped))
