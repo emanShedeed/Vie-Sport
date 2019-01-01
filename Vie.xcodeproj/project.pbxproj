@@ -34,6 +34,7 @@
 		E74155CE21A29CE20032FBAE /* MapCollectionViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74155CD21A29CE20032FBAE /* MapCollectionViewVC.swift */; };
 		E74155D021A2A19C0032FBAE /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74155CF21A2A19C0032FBAE /* CustomCell.swift */; };
 		E7442ACC21DB61EF0059CBE6 /* ReservationCellHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7442ACB21DB61EF0059CBE6 /* ReservationCellHeaderCollectionReusableView.swift */; };
+		E7442ACE21DB888A0059CBE6 /* MyReservationDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7442ACD21DB888A0059CBE6 /* MyReservationDetailsVC.swift */; };
 		E756A5A121DA05CD000F1023 /* FavoritesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E756A5A021DA05CD000F1023 /* FavoritesVC.swift */; };
 		E756A5A321DA39F7000F1023 /* ReservationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E756A5A221DA39F7000F1023 /* ReservationVC.swift */; };
 		E756A5A621DA3AA1000F1023 /* ReservationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E756A5A521DA3AA1000F1023 /* ReservationCell.swift */; };
@@ -121,6 +122,7 @@
 		E74155CD21A29CE20032FBAE /* MapCollectionViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCollectionViewVC.swift; sourceTree = "<group>"; };
 		E74155CF21A2A19C0032FBAE /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		E7442ACB21DB61EF0059CBE6 /* ReservationCellHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationCellHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
+		E7442ACD21DB888A0059CBE6 /* MyReservationDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReservationDetailsVC.swift; sourceTree = "<group>"; };
 		E756A5A021DA05CD000F1023 /* FavoritesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesVC.swift; sourceTree = "<group>"; };
 		E756A5A221DA39F7000F1023 /* ReservationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationVC.swift; sourceTree = "<group>"; };
 		E756A5A521DA3AA1000F1023 /* ReservationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationCell.swift; sourceTree = "<group>"; };
@@ -252,6 +254,7 @@
 				E79C2FF921D8F22B00601B43 /* ChangePasswordVC.swift */,
 				E756A5A021DA05CD000F1023 /* FavoritesVC.swift */,
 				E756A5A221DA39F7000F1023 /* ReservationVC.swift */,
+				E7442ACD21DB888A0059CBE6 /* MyReservationDetailsVC.swift */,
 			);
 			path = "App Functionality";
 			sourceTree = "<group>";
@@ -744,6 +747,7 @@
 				E7F2008721A2E47A009EE47A /* PlayGroundDetailsVC.swift in Sources */,
 				E7442ACC21DB61EF0059CBE6 /* ReservationCellHeaderCollectionReusableView.swift in Sources */,
 				E7EF722F21885572001AAD73 /* APIConfiguration.swift in Sources */,
+				E7442ACE21DB888A0059CBE6 /* MyReservationDetailsVC.swift in Sources */,
 				E721A3AC21774D73002DE31E /* ConfirmationCodeVC.swift in Sources */,
 				E756A70021D0E3F7001CDE1A /* ProfileVC.swift in Sources */,
 				E70FAE3C21BE89FE00FB9EF3 /* Period.swift in Sources */,
