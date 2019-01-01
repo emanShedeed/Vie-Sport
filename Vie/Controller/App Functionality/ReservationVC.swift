@@ -8,15 +8,25 @@
 
 import UIKit
 import SwiftyJSON
-class ReservationVC: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate {
-    var currentReservation=[String]()
+import Kingfisher
+class ReservationVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource {
+    
+    @IBOutlet weak var collextionView: UICollectionView!
+    var currentReservations=[(PlayGround,Reservation)]()
     var previousReservations=[String]()
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        if(HelperMethods.IsKeyPresentInUserDefaults(key: "AccessToken")){
+            let accessToken=UserDefaults.standard.value(forKey: "AccessToken") as! String
+            GetCurrentReservations(accessToken: accessToken) { (currentReservationArray) in
+                self.currentReservations = currentReservationArray
+                self.collextionView.reloadData()
+            }
+        }
+        
         // Do any additional setup after loading the view.
     }
-    static func GetCurrentReservations(accessToken:String,completion:@escaping (_ currecntReservationsarray:[(PlayGround,Reservation)])->Void){
+    func GetCurrentReservations(accessToken:String,completion:@escaping (_ currecntReservationsarray:[(PlayGround,Reservation)])->Void){
         var currecntReservationsarray:[(PlayGround,Reservation)]=[]
         var playGroundObj:PlayGround=PlayGround()
         var reservationObj:Reservation=Reservation()
@@ -79,7 +89,7 @@ class ReservationVC: UIViewController,UICollectionViewDataSource,UICollectionVie
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if(section==0){
-           return currentReservation.count
+            return currentReservations.count
         }
         else{
             return previousReservations.count
@@ -87,7 +97,21 @@ class ReservationVC: UIViewController,UICollectionViewDataSource,UICollectionVie
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        <#code#>
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ReservationCell", for: indexPath) as! ReservationCell
+        if(indexPath.section==0){
+            let currentReservationObj=currentReservations[indexPath.row]
+            cell.playGroundName.text=currentReservationObj.0.PlayGroundName
+            if(currentReservationObj.0.ImagesLocation.count>1)
+            {
+                if let url=URL(string: currentReservationObj.0.ImagesLocation[0]){
+                    cell.playGroundImage.kf.setImage(with: url)
+                }
+            }
+            cell.date.text=currentReservationObj.1.Date
+            cell.period.text=currentReservationObj.1.StartTime + " - " + currentReservationObj.1.EndTime
+        }
+        return cell
+
     }
     
 }

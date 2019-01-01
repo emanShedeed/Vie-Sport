@@ -8,7 +8,7 @@
 
 import UIKit
 import GoogleMaps
-import Kingfisher
+//import Kingfisher
 import SwiftyJSON
 class PlayGroundDetailsVC: UIViewController,UIScrollViewDelegate,UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout {
     var playGroundobj=PlayGround()
