@@ -742,13 +742,13 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="pgp-gx-S4U">
                                     <size key="itemSize" width="375" height="127"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="headerReferenceSize" width="50" height="55"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ReservationCell" id="7Yw-xU-FHu" customClass="ReservationCell" customModule="Vie" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="127"/>
+                                        <rect key="frame" x="0.0" y="55" width="375" height="127"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="127"/>
@@ -821,6 +821,37 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="sectionHeader" id="SiV-OA-p05" customClass="ReservationCellHeaderCollectionReusableView" customModule="Vie" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="55"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pCU-CU-mFV">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="حجوزات حالية" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yKh-tx-nRo">
+                                                    <rect key="frame" x="139.5" y="14.5" width="96" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="yKh-tx-nRo" firstAttribute="centerY" secondItem="pCU-CU-mFV" secondAttribute="centerY" id="gX3-lW-VdO"/>
+                                                <constraint firstItem="yKh-tx-nRo" firstAttribute="centerX" secondItem="pCU-CU-mFV" secondAttribute="centerX" id="xiV-7J-3bC"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="pCU-CU-mFV" secondAttribute="trailing" id="4xb-vP-Yd4"/>
+                                        <constraint firstItem="pCU-CU-mFV" firstAttribute="top" secondItem="SiV-OA-p05" secondAttribute="top" id="8AB-j1-WPx"/>
+                                        <constraint firstAttribute="bottom" secondItem="pCU-CU-mFV" secondAttribute="bottom" constant="5" id="lou-ln-HXW"/>
+                                        <constraint firstItem="pCU-CU-mFV" firstAttribute="leading" secondItem="SiV-OA-p05" secondAttribute="leading" id="xlW-Ez-Jg2"/>
+                                    </constraints>
+                                    <connections>
+                                        <outlet property="sectionHeaderLbl" destination="yKh-tx-nRo" id="v2K-QU-Cfm"/>
+                                    </connections>
+                                </collectionReusableView>
                                 <connections>
                                     <outlet property="dataSource" destination="ama-KY-M3E" id="Yih-uK-OEv"/>
                                     <outlet property="delegate" destination="ama-KY-M3E" id="mD5-HV-N89"/>

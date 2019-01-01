@@ -14,9 +14,16 @@ import GoogleMaps
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
 
     var window: UIWindow?
+    //Mark status bar
+    func setStatusBarBackGroundColor(color:UIColor){
+        guard let statusBar=UIApplication.shared.value(forKeyPath: "statusBarWindow.statusBar") as? UIView else {return}
+        statusBar.backgroundColor=color
+    }
     // MARK :- Google Login
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        //set status bar background
+        setStatusBarBackGroundColor(color: UIColor.white)
         // Initialize  Google sign-in
         GIDSignIn.sharedInstance().clientID = "675308227558-mkip3tknssqppf3o825pjdq4r2ni9qol.apps.googleusercontent.com"
         GIDSignIn.sharedInstance().delegate = self
