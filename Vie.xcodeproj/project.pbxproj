@@ -36,7 +36,7 @@
 		E7442ACC21DB61EF0059CBE6 /* ReservationCellHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7442ACB21DB61EF0059CBE6 /* ReservationCellHeaderCollectionReusableView.swift */; };
 		E7442ACE21DB888A0059CBE6 /* MyReservationDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7442ACD21DB888A0059CBE6 /* MyReservationDetailsVC.swift */; };
 		E756A5A121DA05CD000F1023 /* FavoritesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E756A5A021DA05CD000F1023 /* FavoritesVC.swift */; };
-		E756A5A321DA39F7000F1023 /* ReservationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E756A5A221DA39F7000F1023 /* ReservationVC.swift */; };
+		E756A5A321DA39F7000F1023 /* MyReservationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E756A5A221DA39F7000F1023 /* MyReservationsVC.swift */; };
 		E756A5A621DA3AA1000F1023 /* ReservationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E756A5A521DA3AA1000F1023 /* ReservationCell.swift */; };
 		E756A5A821DA41C9000F1023 /* Reservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E756A5A721DA41C9000F1023 /* Reservation.swift */; };
 		E756A70021D0E3F7001CDE1A /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E756A6FF21D0E3F7001CDE1A /* ProfileVC.swift */; };
@@ -124,7 +124,7 @@
 		E7442ACB21DB61EF0059CBE6 /* ReservationCellHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationCellHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		E7442ACD21DB888A0059CBE6 /* MyReservationDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReservationDetailsVC.swift; sourceTree = "<group>"; };
 		E756A5A021DA05CD000F1023 /* FavoritesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesVC.swift; sourceTree = "<group>"; };
-		E756A5A221DA39F7000F1023 /* ReservationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationVC.swift; sourceTree = "<group>"; };
+		E756A5A221DA39F7000F1023 /* MyReservationsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReservationsVC.swift; sourceTree = "<group>"; };
 		E756A5A521DA3AA1000F1023 /* ReservationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationCell.swift; sourceTree = "<group>"; };
 		E756A5A721DA41C9000F1023 /* Reservation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reservation.swift; sourceTree = "<group>"; };
 		E756A6FF21D0E3F7001CDE1A /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
@@ -253,8 +253,9 @@
 				E727900721D2202600AE201F /* ProfilePersonalInfoVC.swift */,
 				E79C2FF921D8F22B00601B43 /* ChangePasswordVC.swift */,
 				E756A5A021DA05CD000F1023 /* FavoritesVC.swift */,
-				E756A5A221DA39F7000F1023 /* ReservationVC.swift */,
+				E756A5A221DA39F7000F1023 /* MyReservationsVC.swift */,
 				E7442ACD21DB888A0059CBE6 /* MyReservationDetailsVC.swift */,
+				E7A857EC216C8009002683CD /* AppDelegate.swift */,
 			);
 			path = "App Functionality";
 			sourceTree = "<group>";
@@ -423,7 +424,6 @@
 			children = (
 				E700E0C72198408200A0A899 /* Registration */,
 				E700E0C8219840A800A0A899 /* App Functionality */,
-				E7A857EC216C8009002683CD /* AppDelegate.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -722,7 +722,7 @@
 				E700E0CC21984B2200A0A899 /* HomeVC.swift in Sources */,
 				E7790EA8219862E000A1D926 /* PlaygroundEndPoint.swift in Sources */,
 				E727900A21D24B4B00AE201F /* UIImageExtension.swift in Sources */,
-				E756A5A321DA39F7000F1023 /* ReservationVC.swift in Sources */,
+				E756A5A321DA39F7000F1023 /* MyReservationsVC.swift in Sources */,
 				E756A5A121DA05CD000F1023 /* FavoritesVC.swift in Sources */,
 				E79C2FFC21D8FA4100601B43 /* UITextFieldExtension.swift in Sources */,
 				E76CD74221CA65F70044C2C3 /* ReservationEndPoint.swift in Sources */,

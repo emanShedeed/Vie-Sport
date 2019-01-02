@@ -9,7 +9,7 @@
 import UIKit
 import SwiftyJSON
 import Kingfisher
-class ReservationVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource {
+class MyReservationsVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource {
     
     @IBOutlet weak var collextionView: UICollectionView!
     var currentReservations=[(PlayGround,Reservation)]()
@@ -32,6 +32,13 @@ class ReservationVC: UIViewController,UICollectionViewDelegate,UICollectionViewD
         }
         
         
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        self.tabBarController?.tabBar.isHidden=false
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
     }
     func GetAllReservations(accessToken:String,completion:@escaping (_ currecntReservationsarray:[(PlayGround,Reservation)],_ oldReservationsarray:[(PlayGround,Reservation)])->Void){
         var currecntReservationsarray:[(PlayGround,Reservation)]=[]
@@ -180,5 +187,16 @@ class ReservationVC: UIViewController,UICollectionViewDelegate,UICollectionViewD
             sectionHeader.sectionHeaderLbl.text = "الحجوزات السابقة"
         }
         return sectionHeader
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+            performSegue(withIdentifier: "goToMyReservationDetailsVC", sender: self)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier=="goToMyReservationDetailsVC"){
+            let destinationVC=segue.destination as! MyReservationDetailsVC
+            let indexPath=collextionView.indexPathsForSelectedItems?.first
+            destinationVC.playGroundReservationObj = currentReservations[indexPath!.row]
+            destinationVC.isCurrenetReservation=indexPath?.section == 0 ? true : false
+        }
     }
 }

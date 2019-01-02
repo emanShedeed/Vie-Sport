@@ -95,7 +95,8 @@ class PlayGroundDetailsVC: UIViewController,UIScrollViewDelegate,UICollectionVie
         }
         
         scrollView.contentSize=CGSize(width: (scrollView.frame.size.width * CGFloat(images.count)), height: scrollView.frame.size.height)
-        contentViewWidth.constant=scrollView.contentSize.width    }
+        contentViewWidth.constant=scrollView.contentSize.width
+    }
     func InitPlayGroundData(){
         playGroundName.text=playGroundobj.PlayGroundName
         playGroundCity.text=playGroundobj.CityName
