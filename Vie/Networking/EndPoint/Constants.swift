@@ -30,6 +30,7 @@ struct K {
         static let city="City"
         static let oldPassword="OldPassword"
         static let newPassword="NewPassword"
+        static let reservationID="ReservationID"
     }
 }
 

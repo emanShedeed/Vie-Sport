@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 import GoogleMaps
 class MyReservationDetailsVC: UIViewController,UITableViewDelegate {
     var playGroundReservationObj = (PlayGround(),Reservation())
@@ -28,14 +29,13 @@ class MyReservationDetailsVC: UIViewController,UITableViewDelegate {
     @IBOutlet weak var servicesView: UIView!
     @IBOutlet weak var mapView: GMSMapView!
     @IBOutlet weak var contentView: UIView!
-  //  @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var contentViewWidth: NSLayoutConstraint!
+   @IBOutlet weak var imagesCollectionView: UICollectionView!
+    
     // @IBOutlet weak var similarPlayGroundView: UIView!
     @IBOutlet weak var ReservationView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.isHidden=false
-        self.navigationItem.title="تفاصيل الحجز"
+       self.navigationItem.title="تفاصيل الحجز"
         // Do any additional setup after loading the view.
         // Do any additional setup after loading the view.
         self.navigationController?.navigationBar.isHidden=false
@@ -43,7 +43,7 @@ class MyReservationDetailsVC: UIViewController,UITableViewDelegate {
         //add tap gesture
         let tapGesture=UITapGestureRecognizer(target: self, action:#selector(ServicesViewTapped))
         servicesView.addGestureRecognizer(tapGesture)
-        let tap=UITapGestureRecognizer(target: self, action: #selector(AddPlayGroundReservation))
+        let tap=UITapGestureRecognizer(target: self, action: #selector(CancelPlayGroundReservation))
         ReservationView.addGestureRecognizer(tap)
         InitPlayGroundData()
         InitReservationData()
@@ -76,24 +76,7 @@ class MyReservationDetailsVC: UIViewController,UITableViewDelegate {
         periodTime.text=playGroundReservationObj.1.StartTime + " - " + playGroundReservationObj.1.EndTime
         periodMl3byPrice.text=String(playGroundReservationObj.1.Price)+" ريال"
     }
-    func InitScrollView(){
-        //configure scroll view and page control
-        var images=playGroundReservationObj.0.ImagesLocation
-        pageControl.numberOfPages=images.count
-        for index in 0..<images.count
-        {
-            frame.origin.x=scrollView.frame.size.width*CGFloat(index)
-            frame.size=scrollView.frame.size
-            let imageView=UIImageView(frame:frame)
-            if let url=URL(string: images[index]){
-                imageView.kf.setImage(with: url)
-            }
-            self.scrollView.addSubview(imageView)
-        }
-        
-        scrollView.contentSize=CGSize(width: (scrollView.frame.size.width * CGFloat(images.count)), height: scrollView.frame.size.height)
-        contentViewWidth.constant=scrollView.contentSize.width
-    }
+   
     func InitMap(){
         let camera=GMSCameraPosition.camera(withLatitude:Double(playGroundReservationObj.0.Lat)!, longitude: Double(playGroundReservationObj.0.Lng)!, zoom: 10.0)
         mapView.camera=camera
@@ -108,12 +91,11 @@ class MyReservationDetailsVC: UIViewController,UITableViewDelegate {
         pageControl.currentPage=Int(pageNumber)
         
     }
+   
     override func viewWillAppear(_ animated: Bool) {
         if(isCurrenetReservation==false){
             ReservationView.isHidden=true
         }
-        InitScrollView()
-//
     }
     //Mark: tapGestture
     @objc func ServicesViewTapped(){
@@ -126,7 +108,49 @@ class MyReservationDetailsVC: UIViewController,UITableViewDelegate {
             destinationVC.playGroundServices=playGroundReservationObj.0.Services
         }
     }
-    @objc func AddPlayGroundReservation(){
-        performSegue(withIdentifier: "goToPlayGroundReservationVC", sender: self)
+    @objc func CancelPlayGroundReservation(){
+        if(HelperMethods.IsKeyPresentInUserDefaults(key: "AccessToken")){
+            let accessToken=UserDefaults.standard.value(forKey: "AccessToken") as! String
+            if let request=APIClient.CancelReservation(accessToken: accessToken, reservaionID: playGroundReservationObj.1.ReservationID){
+                APIClient().jsonRequest(request: request) { (JsonValue:JSON?, statusCode:Int, responseMessageStatus:ResponseMessageStatusEnum?,userMessage:String?) -> (Void) in
+                    if let  data = JsonValue{
+                        let status=data["Status"]
+                        if (status=="Success"){
+                            print("successfuly cancel reservation")
+                        }
+                        else if(status=="Error"){
+                            let alert=UIAlertController(title: "", message: data["Message"].stringValue, preferredStyle:.alert)
+                            let action=UIAlertAction(title: "Ok", style: .default , handler: nil)
+                            alert.addAction(action)
+                            self.present(alert,animated: true,completion: nil)
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+extension MyReservationDetailsVC:UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+       return playGroundReservationObj.0.ImagesLocation.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell=collectionView.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath) as! ImageCell
+        if let url=URL(string: playGroundReservationObj.0.ImagesLocation[indexPath.row]){
+           cell.imageView.kf.setImage(with: url)
+        }
+        return cell
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        //return CGSize(collectionView.bounds.size.width,CGFloat(233))
+        return CGSize(width: collectionView.bounds.size.width, height: CGFloat(233))
     }
 }

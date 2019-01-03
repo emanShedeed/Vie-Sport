@@ -28,6 +28,7 @@
 		E721F63821982A9F003FE7B0 /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721F63721982A9F003FE7B0 /* TabBarVC.swift */; };
 		E7241864219AACC3004FFF00 /* PlayGroundInfoWindowModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7241862219AACC3004FFF00 /* PlayGroundInfoWindowModel.swift */; };
 		E7241865219AACC3004FFF00 /* PlayGroundInfoWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7241863219AACC3004FFF00 /* PlayGroundInfoWindow.xib */; };
+		E7268E7B21DCE7AB009EB206 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7268E7A21DCE7AB009EB206 /* ImageCell.swift */; };
 		E727900821D2202600AE201F /* ProfilePersonalInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E727900721D2202600AE201F /* ProfilePersonalInfoVC.swift */; };
 		E727900A21D24B4B00AE201F /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E727900921D24B4B00AE201F /* UIImageExtension.swift */; };
 		E73A7BDB21919CC900DBD0CB /* SocialSignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73A7BDA21919CC900DBD0CB /* SocialSignUpVC.swift */; };
@@ -116,6 +117,7 @@
 		E721F63721982A9F003FE7B0 /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
 		E7241862219AACC3004FFF00 /* PlayGroundInfoWindowModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayGroundInfoWindowModel.swift; sourceTree = "<group>"; };
 		E7241863219AACC3004FFF00 /* PlayGroundInfoWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayGroundInfoWindow.xib; sourceTree = "<group>"; };
+		E7268E7A21DCE7AB009EB206 /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 		E727900721D2202600AE201F /* ProfilePersonalInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePersonalInfoVC.swift; sourceTree = "<group>"; };
 		E727900921D24B4B00AE201F /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		E73A7BDA21919CC900DBD0CB /* SocialSignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialSignUpVC.swift; sourceTree = "<group>"; };
@@ -294,6 +296,14 @@
 			path = CustomCellForInfoMap;
 			sourceTree = "<group>";
 		};
+		E7268E7921DCE780009EB206 /* ImageCell */ = {
+			isa = PBXGroup;
+			children = (
+				E7268E7A21DCE7AB009EB206 /* ImageCell.swift */,
+			);
+			path = ImageCell;
+			sourceTree = "<group>";
+		};
 		E74155D121A2A1A20032FBAE /* MapCollectionViewCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -406,6 +416,7 @@
 		E7A8581B216C80C6002683CD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E7268E7921DCE780009EB206 /* ImageCell */,
 				E756A5A421DA3A40000F1023 /* Reservation Cell */,
 				E756A70921D10D44001CDE1A /* Profile Cell */,
 				E70FAE3621BE7DA700FB9EF3 /* Reservation Period Cell */,
@@ -740,6 +751,7 @@
 				E79379F9217837AB006D33F5 /* CustomColor.swift in Sources */,
 				E73A7BDB21919CC900DBD0CB /* SocialSignUpVC.swift in Sources */,
 				C71383D7216E0B1F00784CDC /* SignUpVC.swift in Sources */,
+				E7268E7B21DCE7AB009EB206 /* ImageCell.swift in Sources */,
 				C71383D3216E053700784CDC /* CustomUItextField.swift in Sources */,
 				E7241864219AACC3004FFF00 /* PlayGroundInfoWindowModel.swift in Sources */,
 				E74155CE21A29CE20032FBAE /* MapCollectionViewVC.swift in Sources */,

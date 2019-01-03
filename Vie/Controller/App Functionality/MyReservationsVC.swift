@@ -21,6 +21,10 @@ class MyReservationsVC: UIViewController,UICollectionViewDelegate,UICollectionVi
         if let layout=collextionView.collectionViewLayout as? UICollectionViewFlowLayout{
             layout.sectionHeadersPinToVisibleBounds = true
         }
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        self.tabBarController?.tabBar.isHidden=false
         if(HelperMethods.IsKeyPresentInUserDefaults(key: "AccessToken")){
             let accessToken=UserDefaults.standard.value(forKey: "AccessToken") as! String
             GetAllReservations(accessToken: accessToken) { (currentReservationArray, oldReservationsArray) in
@@ -28,14 +32,8 @@ class MyReservationsVC: UIViewController,UICollectionViewDelegate,UICollectionVi
                 self.oldReservations=oldReservationsArray
                 self.collextionView.reloadData()
             }
-          
+            
         }
-        
-        
-    }
-    override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
-        self.tabBarController?.tabBar.isHidden=false
     }
     override func viewWillDisappear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(false, animated: false)
@@ -195,8 +193,15 @@ class MyReservationsVC: UIViewController,UICollectionViewDelegate,UICollectionVi
         if(segue.identifier=="goToMyReservationDetailsVC"){
             let destinationVC=segue.destination as! MyReservationDetailsVC
             let indexPath=collextionView.indexPathsForSelectedItems?.first
-            destinationVC.playGroundReservationObj = currentReservations[indexPath!.row]
-            destinationVC.isCurrenetReservation=indexPath?.section == 0 ? true : false
+            if(indexPath?.section==0){
+                
+                destinationVC.playGroundReservationObj = currentReservations[indexPath!.row]
+                destinationVC.isCurrenetReservation=true
+            }
+            else{
+                destinationVC.playGroundReservationObj = oldReservations[indexPath!.row]
+                destinationVC.isCurrenetReservation=false
+            }
         }
     }
 }

@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         //set status bar background
-     //   setStatusBarBackGroundColor(color: UIColor.white)
+        setStatusBarBackGroundColor(color: UIColor.white)
         // Initialize  Google sign-in
         GIDSignIn.sharedInstance().clientID = "675308227558-mkip3tknssqppf3o825pjdq4r2ni9qol.apps.googleusercontent.com"
         GIDSignIn.sharedInstance().delegate = self
