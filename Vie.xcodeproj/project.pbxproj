@@ -43,6 +43,7 @@
 		E756A70021D0E3F7001CDE1A /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E756A6FF21D0E3F7001CDE1A /* ProfileVC.swift */; };
 		E756A70821D10488001CDE1A /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E756A70721D10488001CDE1A /* UIViewExtension.swift */; };
 		E756A70B21D10D75001CDE1A /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E756A70A21D10D75001CDE1A /* ProfileCell.swift */; };
+		E757CAB321DDFB0D000EA78B /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E757CAB221DDFB0D000EA78B /* SearchVC.swift */; };
 		E76CD74221CA65F70044C2C3 /* ReservationEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76CD74121CA65F70044C2C3 /* ReservationEndPoint.swift */; };
 		E7790EA6219858E800A1D926 /* PlayGround.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7790EA5219858E800A1D926 /* PlayGround.swift */; };
 		E7790EA8219862E000A1D926 /* PlaygroundEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7790EA7219862E000A1D926 /* PlaygroundEndPoint.swift */; };
@@ -132,6 +133,7 @@
 		E756A6FF21D0E3F7001CDE1A /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		E756A70721D10488001CDE1A /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		E756A70A21D10D75001CDE1A /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
+		E757CAB221DDFB0D000EA78B /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		E76CD74121CA65F70044C2C3 /* ReservationEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationEndPoint.swift; sourceTree = "<group>"; };
 		E7790EA5219858E800A1D926 /* PlayGround.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayGround.swift; sourceTree = "<group>"; };
 		E7790EA7219862E000A1D926 /* PlaygroundEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaygroundEndPoint.swift; sourceTree = "<group>"; };
@@ -257,6 +259,7 @@
 				E756A5A021DA05CD000F1023 /* FavoritesVC.swift */,
 				E756A5A221DA39F7000F1023 /* MyReservationsVC.swift */,
 				E7442ACD21DB888A0059CBE6 /* MyReservationDetailsVC.swift */,
+				E757CAB221DDFB0D000EA78B /* SearchVC.swift */,
 				E7A857EC216C8009002683CD /* AppDelegate.swift */,
 			);
 			path = "App Functionality";
@@ -647,6 +650,7 @@
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
@@ -659,6 +663,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
@@ -764,6 +769,7 @@
 				E756A70021D0E3F7001CDE1A /* ProfileVC.swift in Sources */,
 				E70FAE3C21BE89FE00FB9EF3 /* Period.swift in Sources */,
 				E7DDF3B82185C11400C878DE /* UserEndPoint.swift in Sources */,
+				E757CAB321DDFB0D000EA78B /* SearchVC.swift in Sources */,
 				E700E0CA21984A8100A0A899 /* MapVC.swift in Sources */,
 				E7A857EF216C8009002683CD /* MainVC.swift in Sources */,
 				E756A5A621DA3AA1000F1023 /* ReservationCell.swift in Sources */,

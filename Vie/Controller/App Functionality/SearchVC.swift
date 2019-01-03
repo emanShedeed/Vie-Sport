@@ -1,32 +1,33 @@
 //
-//  MapCollectionViewVC.swift
+//  SearchVC.swift
 //  Vie
 //
-//  Created by user137691 on 11/19/18.
-//  Copyright © 2018 user137691. All rights reserved.
+//  Created by user137691 on 1/3/19.
+//  Copyright © 2019 user137691. All rights reserved.
 //
 
 import UIKit
 import GoogleMaps
-class MapCollectionViewVC: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate {
-  
+import SwiftyJSON
+import  IQKeyboardManager
+class SearchVC: UIViewController ,UICollectionViewDataSource,UICollectionViewDelegate,UISearchBarDelegate{
+
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var collectionView: UICollectionView!
     var playGrounds:[PlayGround]=[]
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        var userID = -1
-        if(HelperMethods.IsKeyPresentInUserDefaults(key: "UserID"))
-        {
-            userID=UserDefaults.standard.integer(forKey: "UserID")
-        }
-        PlayGround.GetPlayGroundsData(userID: userID , searchKey: "") { (playGroundArray) in
-            self.playGrounds=playGroundArray
-            self.collectionView.reloadData()
-        }
-
+        searchBar.showsCancelButton=true
+    }
+    override func viewWillAppear(_ animated: Bool) {
+     
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        self.tabBarController?.tabBar.isHidden=false
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return playGrounds.count
@@ -68,5 +69,18 @@ class MapCollectionViewVC: UIViewController,UICollectionViewDataSource,UICollect
             destinationVC.playGroundobj=playGrounds[(indexPath?.row)!]
         }
     }
-
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
+        view.endEditing(true)
+        var userID = -1
+        if(HelperMethods.IsKeyPresentInUserDefaults(key: "UserID"))
+        {
+            userID=UserDefaults.standard.integer(forKey: "UserID")
+        }
+        PlayGround.GetPlayGroundsData(userID: userID, searchKey: searchBar.text ?? "") { (playGroundArray) in
+            self.playGrounds=playGroundArray
+            self.collectionView.reloadData()
+        }
+    }
+ 
 }

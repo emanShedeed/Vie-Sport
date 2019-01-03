@@ -39,7 +39,7 @@ class MapVC: UIViewController ,GMSMapViewDelegate,CLLocationManagerDelegate{
         {
             userID=UserDefaults.standard.integer(forKey: "UserID")
         }
-        PlayGround.GetPlayGroundsData(userID: userID) { (playGroundArray) in
+        PlayGround.GetPlayGroundsData(userID: userID, searchKey: "") { (playGroundArray) in
             self.playGrounds=playGroundArray
             self.DisplayPlayGroundData(playGrounds: self.playGrounds)
             self.collectionView.reloadData()

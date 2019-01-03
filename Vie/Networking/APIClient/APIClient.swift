@@ -132,11 +132,11 @@ static func CheckEmail(email: String)->DataRequest? {
         catch{}
         return nil
     }
-    static func GetPlayGrounds(userID:Int)->DataRequest?{
+    static func GetPlayGrounds(userID:Int,searchKey:String)->DataRequest?{
         do{
             var urlRequest = try playgroundEndPoint.get.getURL()
             var urlcomponents=URLComponents(string: (urlRequest.url?.absoluteString)!)
-            urlcomponents?.queryItems=[URLQueryItem(name: "UserID", value:String(userID))]
+            urlcomponents?.queryItems=[URLQueryItem(name: "UserID", value:String(userID)),URLQueryItem(name: "SearchKey", value:searchKey)]
         urlRequest.url=urlcomponents?.url
             let request=Alamofire.request(urlRequest
                 ).validate(statusCode: 200..<501)

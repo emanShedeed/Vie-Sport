@@ -30,12 +30,12 @@ struct PlayGround{
     var CashExtraFees:Int=0
     var Ml3byDiscountAmt:Int=0
   
-    static func GetPlayGroundsData(userID:Int,completion:@escaping (_ playGroundarray:[PlayGround])->Void){
+    static func GetPlayGroundsData(userID:Int,searchKey:String,completion:@escaping (_ playGroundarray:[PlayGround])->Void){
         var playGrounds:[PlayGround]=[]
         var playGroundObj:PlayGround=PlayGround()
         var serviceObj:PlaygroundServices=PlaygroundServices()
   
-        if let  urlRequest=APIClient.GetPlayGrounds(userID: userID) {
+        if let  urlRequest=APIClient.GetPlayGrounds(userID: userID,searchKey: searchKey) {
             APIClient().jsonRequest(request: urlRequest) { (Json:JSON?, statusCode:Int, ResponseMessageStatus:ResponseMessageStatusEnum?, userMessage:String?) -> (Void) in
                 if let data=Json {
                     for (_,object) in data{
