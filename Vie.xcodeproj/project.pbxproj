@@ -15,6 +15,7 @@
 		C71383DD216E16AD00784CDC /* HideKeyboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71383DC216E16AD00784CDC /* HideKeyboardVC.swift */; };
 		E700E0CA21984A8100A0A899 /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E700E0C921984A8100A0A899 /* MapVC.swift */; };
 		E700E0CC21984B2200A0A899 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E700E0CB21984B2200A0A899 /* HomeVC.swift */; };
+		E70BD01821DE1F1000DE0988 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70BD01721DE1F1000DE0988 /* SettingsVC.swift */; };
 		E70C3A0B21D3703400A0D968 /* HelperMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70C3A0A21D3703400A0D968 /* HelperMethods.swift */; };
 		E70ED96D21AA728900000AAE /* PlayGroundServicesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70ED96C21AA728900000AAE /* PlayGroundServicesVC.swift */; };
 		E70ED97521AA7BBE00000AAE /* ServiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70ED97321AA7BBE00000AAE /* ServiceCell.swift */; };
@@ -65,6 +66,8 @@
 		E7AF32E121BD1D0C009B5244 /* FavoriteEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AF32E021BD1D0C009B5244 /* FavoriteEndPoint.swift */; };
 		E7B39810218B0EB500A1B365 /* OwnerBusinessEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B3980F218B0EB500A1B365 /* OwnerBusinessEndPoint.swift */; };
 		E7CBD127217499D000072F03 /* NotificationNamesExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7CBD126217499D000072F03 /* NotificationNamesExtension.swift */; };
+		E7D1D73121E1FFAF00E448FD /* AddingPlayGround_2VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D1D73021E1FFAF00E448FD /* AddingPlayGround_2VC.swift */; };
+		E7D8C84A21DE3B7100F9646C /* AddingPlayGround_Location1VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D8C84921DE3B7100F9646C /* AddingPlayGround_Location1VC.swift */; };
 		E7DDF3B82185C11400C878DE /* UserEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DDF3B72185C11400C878DE /* UserEndPoint.swift */; };
 		E7DDF3BA2185CB5000C878DE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DDF3B92185CB5000C878DE /* Constants.swift */; };
 		E7EF722F21885572001AAD73 /* APIConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7EF722E21885572001AAD73 /* APIConfiguration.swift */; };
@@ -105,6 +108,7 @@
 		D690221753A2AFF740EFAB95 /* Pods-VieUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VieUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VieUITests/Pods-VieUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E700E0C921984A8100A0A899 /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
 		E700E0CB21984B2200A0A899 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		E70BD01721DE1F1000DE0988 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		E70C3A0A21D3703400A0D968 /* HelperMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperMethods.swift; sourceTree = "<group>"; };
 		E70ED96C21AA728900000AAE /* PlayGroundServicesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayGroundServicesVC.swift; sourceTree = "<group>"; };
 		E70ED97321AA7BBE00000AAE /* ServiceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCell.swift; sourceTree = "<group>"; };
@@ -161,6 +165,8 @@
 		E7AF32E021BD1D0C009B5244 /* FavoriteEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteEndPoint.swift; sourceTree = "<group>"; };
 		E7B3980F218B0EB500A1B365 /* OwnerBusinessEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerBusinessEndPoint.swift; sourceTree = "<group>"; };
 		E7CBD126217499D000072F03 /* NotificationNamesExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationNamesExtension.swift; sourceTree = "<group>"; };
+		E7D1D73021E1FFAF00E448FD /* AddingPlayGround_2VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingPlayGround_2VC.swift; sourceTree = "<group>"; };
+		E7D8C84921DE3B7100F9646C /* AddingPlayGround_Location1VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingPlayGround_Location1VC.swift; sourceTree = "<group>"; };
 		E7DDF3B72185C11400C878DE /* UserEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEndPoint.swift; sourceTree = "<group>"; };
 		E7DDF3B92185CB5000C878DE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E7EF722E21885572001AAD73 /* APIConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfiguration.swift; sourceTree = "<group>"; };
@@ -260,6 +266,9 @@
 				E756A5A221DA39F7000F1023 /* MyReservationsVC.swift */,
 				E7442ACD21DB888A0059CBE6 /* MyReservationDetailsVC.swift */,
 				E757CAB221DDFB0D000EA78B /* SearchVC.swift */,
+				E70BD01721DE1F1000DE0988 /* SettingsVC.swift */,
+				E7D8C84921DE3B7100F9646C /* AddingPlayGround_Location1VC.swift */,
+				E7D1D73021E1FFAF00E448FD /* AddingPlayGround_2VC.swift */,
 				E7A857EC216C8009002683CD /* AppDelegate.swift */,
 			);
 			path = "App Functionality";
@@ -757,6 +766,7 @@
 				E73A7BDB21919CC900DBD0CB /* SocialSignUpVC.swift in Sources */,
 				C71383D7216E0B1F00784CDC /* SignUpVC.swift in Sources */,
 				E7268E7B21DCE7AB009EB206 /* ImageCell.swift in Sources */,
+				E7D1D73121E1FFAF00E448FD /* AddingPlayGround_2VC.swift in Sources */,
 				C71383D3216E053700784CDC /* CustomUItextField.swift in Sources */,
 				E7241864219AACC3004FFF00 /* PlayGroundInfoWindowModel.swift in Sources */,
 				E74155CE21A29CE20032FBAE /* MapCollectionViewVC.swift in Sources */,
@@ -766,6 +776,7 @@
 				E7EF722F21885572001AAD73 /* APIConfiguration.swift in Sources */,
 				E7442ACE21DB888A0059CBE6 /* MyReservationDetailsVC.swift in Sources */,
 				E721A3AC21774D73002DE31E /* ConfirmationCodeVC.swift in Sources */,
+				E70BD01821DE1F1000DE0988 /* SettingsVC.swift in Sources */,
 				E756A70021D0E3F7001CDE1A /* ProfileVC.swift in Sources */,
 				E70FAE3C21BE89FE00FB9EF3 /* Period.swift in Sources */,
 				E7DDF3B82185C11400C878DE /* UserEndPoint.swift in Sources */,
@@ -776,6 +787,7 @@
 				E70FAE3A21BE7F4400FB9EF3 /* PeriodEndPoint.swift in Sources */,
 				E70ED97521AA7BBE00000AAE /* ServiceCell.swift in Sources */,
 				E7A857ED216C8009002683CD /* AppDelegate.swift in Sources */,
+				E7D8C84A21DE3B7100F9646C /* AddingPlayGround_Location1VC.swift in Sources */,
 				E789997121872C750013BE4C /* APIClient.swift in Sources */,
 				E7B39810218B0EB500A1B365 /* OwnerBusinessEndPoint.swift in Sources */,
 				E756A70821D10488001CDE1A /* UIViewExtension.swift in Sources */,

@@ -7,10 +7,10 @@
 //
 
 import UIKit
-
 class ProfileCell: UITableViewCell {
     @IBOutlet weak var personalInfoLbl:UILabel!
     @IBOutlet weak var indicatorLbl:UILabel!
+    @IBOutlet weak var switchButton:UISwitch!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
