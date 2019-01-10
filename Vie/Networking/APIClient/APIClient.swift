@@ -46,7 +46,7 @@ class APIClient{
     
     
     //MARK: - Request Function
-    func jsonRequest(request: DataRequest,CompletionHandler:@escaping requestCompletionHandler) -> Void {
+    func jsonRequest(request: DataRequest,CompletionHandler: @escaping requestCompletionHandler) -> Void {
         
         request.responseJSON { response in
            
@@ -295,5 +295,17 @@ static func CheckEmail(email: String)->DataRequest? {
         catch{}
         return nil
     }
-
+    static func getDataForAddPlayGround(accessToken:String)->DataRequest?{
+        do{
+            var urlRequest = try SettingEndPoint.getForAddPlayGround.getURL()
+            var urlcomponents=URLComponents(string: (urlRequest.url?.absoluteString)!)
+            urlcomponents?.queryItems=[URLQueryItem(name:"AccessToken", value: accessToken)]
+            urlRequest.url=urlcomponents?.url
+            let request=Alamofire.request(urlRequest
+                ).validate(statusCode: 200..<501)
+            return request
+        }
+        catch{}
+        return nil
+    }
 }

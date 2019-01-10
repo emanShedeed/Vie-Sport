@@ -9,6 +9,7 @@ struct K {
         static let Period="Periods/"
         static let Reservation="Reservations/"
         static let Favorites="Favorites/"
+        static let Setting="Settings/"
     }
     
     struct APIParameterKey {

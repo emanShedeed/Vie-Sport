@@ -70,8 +70,11 @@
 		E7D8C84A21DE3B7100F9646C /* AddingPlayGround_Location1VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D8C84921DE3B7100F9646C /* AddingPlayGround_Location1VC.swift */; };
 		E7DDF3B82185C11400C878DE /* UserEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DDF3B72185C11400C878DE /* UserEndPoint.swift */; };
 		E7DDF3BA2185CB5000C878DE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DDF3B92185CB5000C878DE /* Constants.swift */; };
+		E7E66B9821E76B9F00E44C74 /* SettingEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E66B9721E76B9F00E44C74 /* SettingEndPoint.swift */; };
 		E7EF722F21885572001AAD73 /* APIConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7EF722E21885572001AAD73 /* APIConfiguration.swift */; };
 		E7F2008721A2E47A009EE47A /* PlayGroundDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F2008621A2E47A009EE47A /* PlayGroundDetailsVC.swift */; };
+		E7FFAFE321E4BC5200C5F392 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FFAFE121E4BC5200C5F392 /* ViewController.swift */; };
+		E7FFAFE421E4BC5200C5F392 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7FFAFE221E4BC5200C5F392 /* ViewController.xib */; };
 		EA4503950D51C7407D588B0C /* Pods_Vie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C95FFA22EFCB907A77E36770 /* Pods_Vie.framework */; };
 /* End PBXBuildFile section */
 
@@ -169,8 +172,11 @@
 		E7D8C84921DE3B7100F9646C /* AddingPlayGround_Location1VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingPlayGround_Location1VC.swift; sourceTree = "<group>"; };
 		E7DDF3B72185C11400C878DE /* UserEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEndPoint.swift; sourceTree = "<group>"; };
 		E7DDF3B92185CB5000C878DE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		E7E66B9721E76B9F00E44C74 /* SettingEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingEndPoint.swift; sourceTree = "<group>"; };
 		E7EF722E21885572001AAD73 /* APIConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfiguration.swift; sourceTree = "<group>"; };
 		E7F2008621A2E47A009EE47A /* PlayGroundDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayGroundDetailsVC.swift; sourceTree = "<group>"; };
+		E7FFAFE121E4BC5200C5F392 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E7FFAFE221E4BC5200C5F392 /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -428,6 +434,7 @@
 		E7A8581B216C80C6002683CD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E7FFAFE021E4BC3200C5F392 /* PickerView */,
 				E7268E7921DCE780009EB206 /* ImageCell */,
 				E756A5A421DA3A40000F1023 /* Reservation Cell */,
 				E756A70921D10D44001CDE1A /* Profile Cell */,
@@ -480,9 +487,19 @@
 				E70FAE3921BE7F4400FB9EF3 /* PeriodEndPoint.swift */,
 				E76CD74121CA65F70044C2C3 /* ReservationEndPoint.swift */,
 				E7DDF3B92185CB5000C878DE /* Constants.swift */,
+				E7E66B9721E76B9F00E44C74 /* SettingEndPoint.swift */,
 				E7EF722E21885572001AAD73 /* APIConfiguration.swift */,
 			);
 			path = EndPoint;
+			sourceTree = "<group>";
+		};
+		E7FFAFE021E4BC3200C5F392 /* PickerView */ = {
+			isa = PBXGroup;
+			children = (
+				E7FFAFE121E4BC5200C5F392 /* ViewController.swift */,
+				E7FFAFE221E4BC5200C5F392 /* ViewController.xib */,
+			);
+			path = PickerView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -597,6 +614,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7FFAFE421E4BC5200C5F392 /* ViewController.xib in Resources */,
 				E7A857F7216C800B002683CD /* LaunchScreen.storyboard in Resources */,
 				C71383CC216DEA3800784CDC /* credentials.plist in Resources */,
 				E70ED97621AA7BBE00000AAE /* ServiceCell.xib in Resources */,
@@ -760,6 +778,7 @@
 				E7AF32E121BD1D0C009B5244 /* FavoriteEndPoint.swift in Sources */,
 				E7AF32DF21BD12FB009B5244 /* PlayGroundReservationVC.swift in Sources */,
 				E79C2FFA21D8F22B00601B43 /* ChangePasswordVC.swift in Sources */,
+				E7E66B9821E76B9F00E44C74 /* SettingEndPoint.swift in Sources */,
 				E70ED96D21AA728900000AAE /* PlayGroundServicesVC.swift in Sources */,
 				E7CBD127217499D000072F03 /* NotificationNamesExtension.swift in Sources */,
 				E79379F9217837AB006D33F5 /* CustomColor.swift in Sources */,
@@ -788,6 +807,7 @@
 				E70ED97521AA7BBE00000AAE /* ServiceCell.swift in Sources */,
 				E7A857ED216C8009002683CD /* AppDelegate.swift in Sources */,
 				E7D8C84A21DE3B7100F9646C /* AddingPlayGround_Location1VC.swift in Sources */,
+				E7FFAFE321E4BC5200C5F392 /* ViewController.swift in Sources */,
 				E789997121872C750013BE4C /* APIClient.swift in Sources */,
 				E7B39810218B0EB500A1B365 /* OwnerBusinessEndPoint.swift in Sources */,
 				E756A70821D10488001CDE1A /* UIViewExtension.swift in Sources */,
