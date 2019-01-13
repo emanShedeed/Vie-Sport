@@ -10,23 +10,27 @@ import UIKit
 import IQKeyboardManager
 import SwiftyJSON
 
-class AddingPlayGround_2VC: UIViewController,UITextFieldDelegate {
+class AddingPlayGround2_InfoVC: UIViewController,UITextFieldDelegate {
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet var playGoundInfoTextFields: [UITextField]!
     @IBOutlet weak var customPickerView: UIView!
     @IBOutlet weak var pickerTitle: UILabel!
-    
     @IBOutlet weak var downButton: UIButton!
     @IBOutlet weak var upButton: UIButton!
-    var playGroundObj=PlayGround()
-    var textFieldTag=0
+    
+    @IBOutlet weak var inMaintainaceSegmentedControl: UISegmentedControl!
+    
+    var playGroundObj = PlayGround()
+    var playGroundInfoDict = [String:[String]]()
+    var textFieldTag = 0
     var citiesDistrictsDict = [String:[String]]()
     var cityArray=[String]()
     var districtArray=[String]()
     var playGroundSizeArray=[String]()
     var playGroundTypeArray=[String]()
     var reservationTypeArray=["ساعة","ساعة ونصف","ساعتين"]
-    typealias requestCompletionHandler =  (_ cityDistrictsDict:[String:[String]],_ typeArray:[String],_ sizeArray:[String]) -> (Void)
+    var serviceArray=[(String,Bool)]()
+    typealias requestCompletionHandler =  (_ cityDistrictsDict:[String:[String]],_ typeArray:[String],_ sizeArray:[String],_ serviceArray:[(String,Bool)]) -> (Void)
     var pickerData:[String]?
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,11 +41,12 @@ class AddingPlayGround_2VC: UIViewController,UITextFieldDelegate {
             textField.delegate=self
         }
         upButton.isEnabled=false
-        InitData { (dict, typeArray, sizeArray) -> (Void) in
+        InitData { (dict, typeArray, sizeArray,services) -> (Void) in
             self.citiesDistrictsDict=dict
             self.cityArray=Array(dict.keys)
             self.playGroundTypeArray=typeArray
             self.playGroundSizeArray=sizeArray
+            self.serviceArray=services
         }
     }
     func InitData(CompletionHandler: @escaping requestCompletionHandler){
@@ -86,7 +91,14 @@ class AddingPlayGround_2VC: UIViewController,UITextFieldDelegate {
                                 sizeName=playGroundSizeObj["DimensionName"].stringValue
                                 sizesArray.append(sizeName)
                             }
-                            CompletionHandler(dict,typesArray,sizesArray)
+                            let services=data["Data"]["ServicesList"]
+                            var servicesArray=[(String,Bool)]()
+                            var serviceName=""
+                            for(_,serviceObject)in services{
+                                serviceName = serviceObject["ServiceName"].stringValue
+                                servicesArray.append((serviceName,false))
+                            }
+                            CompletionHandler(dict,typesArray,sizesArray,servicesArray)
                         }
                     }
                 })
@@ -157,8 +169,27 @@ class AddingPlayGround_2VC: UIViewController,UITextFieldDelegate {
         let index = textFieldTag-1
         let _ = textFieldShouldBeginEditing(playGoundInfoTextFields[index+1])
     }
+    
+    @IBAction func NextButtonPressed(_ sender: Any) {
+        //playGroundObj.CityName=playGoundInfoTextFields[0].text!
+      //  playGroundObj.DimensionName=playGoundInfoTextFields[2].text!
+        playGroundInfoDict["CityName"] = [playGoundInfoTextFields[0].text!]
+        playGroundInfoDict["DistrictName"] = [playGoundInfoTextFields[1].text!]
+        playGroundInfoDict["DimensionName"] = [playGoundInfoTextFields[2].text!]
+        playGroundInfoDict["PlayGroundType"] = [playGoundInfoTextFields[3].text!]
+        playGroundInfoDict["ReservationType"] = [playGoundInfoTextFields[4].text!]
+        playGroundInfoDict["InMaintainace"] = inMaintainaceSegmentedControl.selectedSegmentIndex == 0 ?["false"] : ["true"]
+        performSegue(withIdentifier: "goToAddingPlayGround3_ServicesVC", sender: self)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier=="goToAddingPlayGround3_ServicesVC"){
+            let destinationVC = segue.destination as! AddingPlayGround3_ServicesVC
+            destinationVC.playGroundInfoDict = playGroundInfoDict
+            destinationVC.servicesArray=serviceArray
+        }
+    }
 }
-extension AddingPlayGround_2VC:UIPickerViewDelegate,UIPickerViewDataSource{
+extension AddingPlayGround2_InfoVC:UIPickerViewDelegate,UIPickerViewDataSource{
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }

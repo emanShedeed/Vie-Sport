@@ -20,7 +20,6 @@
 		E70ED96D21AA728900000AAE /* PlayGroundServicesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70ED96C21AA728900000AAE /* PlayGroundServicesVC.swift */; };
 		E70ED97521AA7BBE00000AAE /* ServiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70ED97321AA7BBE00000AAE /* ServiceCell.swift */; };
 		E70ED97621AA7BBE00000AAE /* ServiceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E70ED97421AA7BBE00000AAE /* ServiceCell.xib */; };
-		E70FAE3521BE651900FB9EF3 /* DayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70FAE3421BE651900FB9EF3 /* DayCell.swift */; };
 		E70FAE3821BE7DD900FB9EF3 /* PeriodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70FAE3721BE7DD900FB9EF3 /* PeriodCell.swift */; };
 		E70FAE3A21BE7F4400FB9EF3 /* PeriodEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70FAE3921BE7F4400FB9EF3 /* PeriodEndPoint.swift */; };
 		E70FAE3C21BE89FE00FB9EF3 /* Period.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70FAE3B21BE89FE00FB9EF3 /* Period.swift */; };
@@ -45,6 +44,12 @@
 		E756A70821D10488001CDE1A /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E756A70721D10488001CDE1A /* UIViewExtension.swift */; };
 		E756A70B21D10D75001CDE1A /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E756A70A21D10D75001CDE1A /* ProfileCell.swift */; };
 		E757CAB321DDFB0D000EA78B /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E757CAB221DDFB0D000EA78B /* SearchVC.swift */; };
+		E76B486F21EB551400679D35 /* AddingPlayGround3_ServicesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76B486B21EB551300679D35 /* AddingPlayGround3_ServicesVC.swift */; };
+		E76B487021EB551400679D35 /* AddingPlayGround4_WorkdaysVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76B486C21EB551300679D35 /* AddingPlayGround4_WorkdaysVC.swift */; };
+		E76B487121EB551400679D35 /* AddingPlayGround2_InfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76B486D21EB551400679D35 /* AddingPlayGround2_InfoVC.swift */; };
+		E76B487221EB551400679D35 /* AddingPlayGround1_LocationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76B486E21EB551400679D35 /* AddingPlayGround1_LocationVC.swift */; };
+		E76B487C21EB5ED100679D35 /* DayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76B487B21EB5ED100679D35 /* DayCell.swift */; };
+		E76B487F21EB5F2F00679D35 /* TimeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76B487E21EB5F2F00679D35 /* TimeCell.swift */; };
 		E76CD74221CA65F70044C2C3 /* ReservationEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76CD74121CA65F70044C2C3 /* ReservationEndPoint.swift */; };
 		E7790EA6219858E800A1D926 /* PlayGround.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7790EA5219858E800A1D926 /* PlayGround.swift */; };
 		E7790EA8219862E000A1D926 /* PlaygroundEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7790EA7219862E000A1D926 /* PlaygroundEndPoint.swift */; };
@@ -66,8 +71,6 @@
 		E7AF32E121BD1D0C009B5244 /* FavoriteEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AF32E021BD1D0C009B5244 /* FavoriteEndPoint.swift */; };
 		E7B39810218B0EB500A1B365 /* OwnerBusinessEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B3980F218B0EB500A1B365 /* OwnerBusinessEndPoint.swift */; };
 		E7CBD127217499D000072F03 /* NotificationNamesExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7CBD126217499D000072F03 /* NotificationNamesExtension.swift */; };
-		E7D1D73121E1FFAF00E448FD /* AddingPlayGround_2VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D1D73021E1FFAF00E448FD /* AddingPlayGround_2VC.swift */; };
-		E7D8C84A21DE3B7100F9646C /* AddingPlayGround_Location1VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D8C84921DE3B7100F9646C /* AddingPlayGround_Location1VC.swift */; };
 		E7DDF3B82185C11400C878DE /* UserEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DDF3B72185C11400C878DE /* UserEndPoint.swift */; };
 		E7DDF3BA2185CB5000C878DE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DDF3B92185CB5000C878DE /* Constants.swift */; };
 		E7E66B9821E76B9F00E44C74 /* SettingEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E66B9721E76B9F00E44C74 /* SettingEndPoint.swift */; };
@@ -116,7 +119,6 @@
 		E70ED96C21AA728900000AAE /* PlayGroundServicesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayGroundServicesVC.swift; sourceTree = "<group>"; };
 		E70ED97321AA7BBE00000AAE /* ServiceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCell.swift; sourceTree = "<group>"; };
 		E70ED97421AA7BBE00000AAE /* ServiceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ServiceCell.xib; sourceTree = "<group>"; };
-		E70FAE3421BE651900FB9EF3 /* DayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCell.swift; sourceTree = "<group>"; };
 		E70FAE3721BE7DD900FB9EF3 /* PeriodCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodCell.swift; sourceTree = "<group>"; };
 		E70FAE3921BE7F4400FB9EF3 /* PeriodEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodEndPoint.swift; sourceTree = "<group>"; };
 		E70FAE3B21BE89FE00FB9EF3 /* Period.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Period.swift; sourceTree = "<group>"; };
@@ -141,6 +143,12 @@
 		E756A70721D10488001CDE1A /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		E756A70A21D10D75001CDE1A /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
 		E757CAB221DDFB0D000EA78B /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
+		E76B486B21EB551300679D35 /* AddingPlayGround3_ServicesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddingPlayGround3_ServicesVC.swift; sourceTree = "<group>"; };
+		E76B486C21EB551300679D35 /* AddingPlayGround4_WorkdaysVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddingPlayGround4_WorkdaysVC.swift; sourceTree = "<group>"; };
+		E76B486D21EB551400679D35 /* AddingPlayGround2_InfoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddingPlayGround2_InfoVC.swift; sourceTree = "<group>"; };
+		E76B486E21EB551400679D35 /* AddingPlayGround1_LocationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddingPlayGround1_LocationVC.swift; path = "../../../../Vie/Vie/Controller/App Functionality/AddingPlayGround1_LocationVC.swift"; sourceTree = "<group>"; };
+		E76B487B21EB5ED100679D35 /* DayCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayCell.swift; sourceTree = "<group>"; };
+		E76B487E21EB5F2F00679D35 /* TimeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeCell.swift; sourceTree = "<group>"; };
 		E76CD74121CA65F70044C2C3 /* ReservationEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationEndPoint.swift; sourceTree = "<group>"; };
 		E7790EA5219858E800A1D926 /* PlayGround.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayGround.swift; sourceTree = "<group>"; };
 		E7790EA7219862E000A1D926 /* PlaygroundEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaygroundEndPoint.swift; sourceTree = "<group>"; };
@@ -168,8 +176,6 @@
 		E7AF32E021BD1D0C009B5244 /* FavoriteEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteEndPoint.swift; sourceTree = "<group>"; };
 		E7B3980F218B0EB500A1B365 /* OwnerBusinessEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerBusinessEndPoint.swift; sourceTree = "<group>"; };
 		E7CBD126217499D000072F03 /* NotificationNamesExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationNamesExtension.swift; sourceTree = "<group>"; };
-		E7D1D73021E1FFAF00E448FD /* AddingPlayGround_2VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingPlayGround_2VC.swift; sourceTree = "<group>"; };
-		E7D8C84921DE3B7100F9646C /* AddingPlayGround_Location1VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingPlayGround_Location1VC.swift; sourceTree = "<group>"; };
 		E7DDF3B72185C11400C878DE /* UserEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEndPoint.swift; sourceTree = "<group>"; };
 		E7DDF3B92185CB5000C878DE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E7E66B9721E76B9F00E44C74 /* SettingEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingEndPoint.swift; sourceTree = "<group>"; };
@@ -273,8 +279,10 @@
 				E7442ACD21DB888A0059CBE6 /* MyReservationDetailsVC.swift */,
 				E757CAB221DDFB0D000EA78B /* SearchVC.swift */,
 				E70BD01721DE1F1000DE0988 /* SettingsVC.swift */,
-				E7D8C84921DE3B7100F9646C /* AddingPlayGround_Location1VC.swift */,
-				E7D1D73021E1FFAF00E448FD /* AddingPlayGround_2VC.swift */,
+				E76B486E21EB551400679D35 /* AddingPlayGround1_LocationVC.swift */,
+				E76B486D21EB551400679D35 /* AddingPlayGround2_InfoVC.swift */,
+				E76B486B21EB551300679D35 /* AddingPlayGround3_ServicesVC.swift */,
+				E76B486C21EB551300679D35 /* AddingPlayGround4_WorkdaysVC.swift */,
 				E7A857EC216C8009002683CD /* AppDelegate.swift */,
 			);
 			path = "App Functionality";
@@ -292,7 +300,7 @@
 		E70FAE3321BE64EC00FB9EF3 /* DayCell */ = {
 			isa = PBXGroup;
 			children = (
-				E70FAE3421BE651900FB9EF3 /* DayCell.swift */,
+				E76B487B21EB5ED100679D35 /* DayCell.swift */,
 			);
 			path = DayCell;
 			sourceTree = "<group>";
@@ -345,6 +353,14 @@
 				E756A70A21D10D75001CDE1A /* ProfileCell.swift */,
 			);
 			path = "Profile Cell";
+			sourceTree = "<group>";
+		};
+		E76B487D21EB5F1400679D35 /* TimeCell */ = {
+			isa = PBXGroup;
+			children = (
+				E76B487E21EB5F2F00679D35 /* TimeCell.swift */,
+			);
+			path = TimeCell;
 			sourceTree = "<group>";
 		};
 		E789996F21872C190013BE4C /* APIClient */ = {
@@ -434,6 +450,7 @@
 		E7A8581B216C80C6002683CD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E76B487D21EB5F1400679D35 /* TimeCell */,
 				E7FFAFE021E4BC3200C5F392 /* PickerView */,
 				E7268E7921DCE780009EB206 /* ImageCell */,
 				E756A5A421DA3A40000F1023 /* Reservation Cell */,
@@ -760,7 +777,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E76B486F21EB551400679D35 /* AddingPlayGround3_ServicesVC.swift in Sources */,
 				E756A70B21D10D75001CDE1A /* ProfileCell.swift in Sources */,
+				E76B487221EB551400679D35 /* AddingPlayGround1_LocationVC.swift in Sources */,
 				E79D3B1921B7CEE30043D643 /* SimilarPlayGroundCell.swift in Sources */,
 				E700E0CC21984B2200A0A899 /* HomeVC.swift in Sources */,
 				E7790EA8219862E000A1D926 /* PlaygroundEndPoint.swift in Sources */,
@@ -773,19 +792,19 @@
 				E789996E218728FD0013BE4C /* User.swift in Sources */,
 				C71383DD216E16AD00784CDC /* HideKeyboardVC.swift in Sources */,
 				E727900821D2202600AE201F /* ProfilePersonalInfoVC.swift in Sources */,
-				E70FAE3521BE651900FB9EF3 /* DayCell.swift in Sources */,
 				E756A5A821DA41C9000F1023 /* Reservation.swift in Sources */,
 				E7AF32E121BD1D0C009B5244 /* FavoriteEndPoint.swift in Sources */,
+				E76B487121EB551400679D35 /* AddingPlayGround2_InfoVC.swift in Sources */,
 				E7AF32DF21BD12FB009B5244 /* PlayGroundReservationVC.swift in Sources */,
 				E79C2FFA21D8F22B00601B43 /* ChangePasswordVC.swift in Sources */,
 				E7E66B9821E76B9F00E44C74 /* SettingEndPoint.swift in Sources */,
 				E70ED96D21AA728900000AAE /* PlayGroundServicesVC.swift in Sources */,
+				E76B487C21EB5ED100679D35 /* DayCell.swift in Sources */,
 				E7CBD127217499D000072F03 /* NotificationNamesExtension.swift in Sources */,
 				E79379F9217837AB006D33F5 /* CustomColor.swift in Sources */,
 				E73A7BDB21919CC900DBD0CB /* SocialSignUpVC.swift in Sources */,
 				C71383D7216E0B1F00784CDC /* SignUpVC.swift in Sources */,
 				E7268E7B21DCE7AB009EB206 /* ImageCell.swift in Sources */,
-				E7D1D73121E1FFAF00E448FD /* AddingPlayGround_2VC.swift in Sources */,
 				C71383D3216E053700784CDC /* CustomUItextField.swift in Sources */,
 				E7241864219AACC3004FFF00 /* PlayGroundInfoWindowModel.swift in Sources */,
 				E74155CE21A29CE20032FBAE /* MapCollectionViewVC.swift in Sources */,
@@ -806,7 +825,8 @@
 				E70FAE3A21BE7F4400FB9EF3 /* PeriodEndPoint.swift in Sources */,
 				E70ED97521AA7BBE00000AAE /* ServiceCell.swift in Sources */,
 				E7A857ED216C8009002683CD /* AppDelegate.swift in Sources */,
-				E7D8C84A21DE3B7100F9646C /* AddingPlayGround_Location1VC.swift in Sources */,
+				E76B487F21EB5F2F00679D35 /* TimeCell.swift in Sources */,
+				E76B487021EB551400679D35 /* AddingPlayGround4_WorkdaysVC.swift in Sources */,
 				E7FFAFE321E4BC5200C5F392 /* ViewController.swift in Sources */,
 				E789997121872C750013BE4C /* APIClient.swift in Sources */,
 				E7B39810218B0EB500A1B365 /* OwnerBusinessEndPoint.swift in Sources */,
