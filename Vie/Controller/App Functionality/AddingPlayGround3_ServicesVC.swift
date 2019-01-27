@@ -12,11 +12,12 @@ class AddingPlayGround3_ServicesVC: UIViewController,UITableViewDelegate,UITable
 
     @IBOutlet weak var tableView: UITableView!
     
-    var playGroundInfoDict=[String:[String]]()
-    var servicesArray:[(String,Bool)]?
+    var playGroundInfoDict=[String:Any]()
+    var servicesArray:[(String,Bool,Int)]?
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        tableView.isScrollEnabled=false
         tableView.tableFooterView=UIView()
         tableView.register(UINib(nibName: "ServiceCell", bundle: nil)  , forCellReuseIdentifier: "ServiceCell")
     }
@@ -52,19 +53,19 @@ class AddingPlayGround3_ServicesVC: UIViewController,UITableViewDelegate,UITable
     
 
     @IBAction func NextButtonPressed(_ sender: Any) {
-        var services=[String]()///
+        var services=[[String:Int]]()///
         if let array=servicesArray{
-        for(serviceName,status)in array {
+        for(_,status,id)in array {
             if(status == true){
-                services.append(serviceName)
+                services.append(["serviceID": id])
             }
             }
-            playGroundInfoDict["Services"]=services
-            performSegue(withIdentifier: "goTo AddingPlayGround4_WorkdaysVC", sender: self)
+            playGroundInfoDict["DraftPlayGroundServices"]=services
+            performSegue(withIdentifier: "goToAddingPlayGround4_WorkdaysVC", sender: self)
         }
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if(segue.identifier=="goTo AddingPlayGround4_WorkdaysVC"){
+        if(segue.identifier=="goToAddingPlayGround4_WorkdaysVC"){
             let destinationVC=segue.destination as! AddingPlayGround4_WorkdaysVC
             destinationVC.playGroundInfoDict=playGroundInfoDict
         }

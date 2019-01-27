@@ -11,12 +11,15 @@ import Alamofire
 enum playgroundEndPoint:APIConfiguration{
     case get
     case GetSimilar
+    case AddByApp(playGroundInfoDict:[String:Any])
     var method: HTTPMethod{
         switch self {
         case .get:
             return .get
         case .GetSimilar:
             return .get
+        case .AddByApp:
+            return .post
         }
     }
     
@@ -26,6 +29,8 @@ enum playgroundEndPoint:APIConfiguration{
             return "get"
         case .GetSimilar:
             return "GetSimilar"
+        case .AddByApp:
+            return"AddByApp"
         }
     }
     
@@ -33,7 +38,23 @@ enum playgroundEndPoint:APIConfiguration{
         switch self {
         case .get , .GetSimilar:
             return nil
-      
+        case .AddByApp(let dict):
+            return [
+                K.APIParameterKey.DistrictNameByGM:dict["DistrictNameByGM"] as Any,
+                K.APIParameterKey.CityNameByGM:dict["CityNameByGM"] as Any,
+                K.APIParameterKey.DistrictID:dict["DistrictID"] as Any,
+                K.APIParameterKey.DimensionID:dict["DimensionID"]as Any,
+                K.APIParameterKey.PlayGroundTypeID:dict["PlayGroundTypeID"] as Any,
+                K.APIParameterKey.ReservationTypeID:dict["ReservationTypeID"] as Any,
+                K.APIParameterKey.IsMaintance:dict["IsMaintance"] as Any,
+                K.APIParameterKey.DraftPlayGroundServices:dict["DraftPlayGroundServices"] as Any,
+                K.APIParameterKey.DraftPlayGroundDays:dict["DraftPlayGroundDays"] as Any,
+                K.APIParameterKey.PlayGroundName:dict["PlayGroundName"] as Any,
+                K.APIParameterKey.ResbonsibleName:dict["ResbonsibleName"] as Any,
+                K.APIParameterKey.ContactNumber:dict["ContactNumber"] as Any,
+                K.APIParameterKey.Price:dict["Price"] as Any,
+                K.APIParameterKey.Remarks:dict["Remarks"] as Any
+            ]
         }
     }
     

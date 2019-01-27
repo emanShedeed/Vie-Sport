@@ -33,7 +33,7 @@ class SignUpVC: UIViewController ,GIDSignInUIDelegate{
         
         //loop through all textfields to set customize border
         for textfield in textFields{
-            textfield.setBottomBorder()
+            textfield.setBottomBorder(color: UIColor.white)
             textfield.delegate=self
         }
         

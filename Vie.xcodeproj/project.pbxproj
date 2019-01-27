@@ -15,6 +15,7 @@
 		C71383DD216E16AD00784CDC /* HideKeyboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71383DC216E16AD00784CDC /* HideKeyboardVC.swift */; };
 		E700E0CA21984A8100A0A899 /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E700E0C921984A8100A0A899 /* MapVC.swift */; };
 		E700E0CC21984B2200A0A899 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E700E0CB21984B2200A0A899 /* HomeVC.swift */; };
+		E70A845621EB67BE00D4331F /* AddingPlayGround1_LocationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70A845521EB67BE00D4331F /* AddingPlayGround1_LocationVC.swift */; };
 		E70BD01821DE1F1000DE0988 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70BD01721DE1F1000DE0988 /* SettingsVC.swift */; };
 		E70C3A0B21D3703400A0D968 /* HelperMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70C3A0A21D3703400A0D968 /* HelperMethods.swift */; };
 		E70ED96D21AA728900000AAE /* PlayGroundServicesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70ED96C21AA728900000AAE /* PlayGroundServicesVC.swift */; };
@@ -36,6 +37,7 @@
 		E74155D021A2A19C0032FBAE /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74155CF21A2A19C0032FBAE /* CustomCell.swift */; };
 		E7442ACC21DB61EF0059CBE6 /* ReservationCellHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7442ACB21DB61EF0059CBE6 /* ReservationCellHeaderCollectionReusableView.swift */; };
 		E7442ACE21DB888A0059CBE6 /* MyReservationDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7442ACD21DB888A0059CBE6 /* MyReservationDetailsVC.swift */; };
+		E752C3CA21F7396400C458D2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E752C3C921F7396400C458D2 /* GoogleService-Info.plist */; };
 		E756A5A121DA05CD000F1023 /* FavoritesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E756A5A021DA05CD000F1023 /* FavoritesVC.swift */; };
 		E756A5A321DA39F7000F1023 /* MyReservationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E756A5A221DA39F7000F1023 /* MyReservationsVC.swift */; };
 		E756A5A621DA3AA1000F1023 /* ReservationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E756A5A521DA3AA1000F1023 /* ReservationCell.swift */; };
@@ -47,10 +49,10 @@
 		E76B486F21EB551400679D35 /* AddingPlayGround3_ServicesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76B486B21EB551300679D35 /* AddingPlayGround3_ServicesVC.swift */; };
 		E76B487021EB551400679D35 /* AddingPlayGround4_WorkdaysVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76B486C21EB551300679D35 /* AddingPlayGround4_WorkdaysVC.swift */; };
 		E76B487121EB551400679D35 /* AddingPlayGround2_InfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76B486D21EB551400679D35 /* AddingPlayGround2_InfoVC.swift */; };
-		E76B487221EB551400679D35 /* AddingPlayGround1_LocationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76B486E21EB551400679D35 /* AddingPlayGround1_LocationVC.swift */; };
 		E76B487C21EB5ED100679D35 /* DayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76B487B21EB5ED100679D35 /* DayCell.swift */; };
 		E76B487F21EB5F2F00679D35 /* TimeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76B487E21EB5F2F00679D35 /* TimeCell.swift */; };
 		E76CD74221CA65F70044C2C3 /* ReservationEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76CD74121CA65F70044C2C3 /* ReservationEndPoint.swift */; };
+		E7709A4221EC8E6F00359D0F /* AddingPlayGround5_InfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7709A4121EC8E6F00359D0F /* AddingPlayGround5_InfoVC.swift */; };
 		E7790EA6219858E800A1D926 /* PlayGround.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7790EA5219858E800A1D926 /* PlayGround.swift */; };
 		E7790EA8219862E000A1D926 /* PlaygroundEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7790EA7219862E000A1D926 /* PlaygroundEndPoint.swift */; };
 		E78860ED21C90F0A00B5DC8C /* ReservationInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78860EC21C90F0A00B5DC8C /* ReservationInfoVC.swift */; };
@@ -114,6 +116,7 @@
 		D690221753A2AFF740EFAB95 /* Pods-VieUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VieUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VieUITests/Pods-VieUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E700E0C921984A8100A0A899 /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
 		E700E0CB21984B2200A0A899 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		E70A845521EB67BE00D4331F /* AddingPlayGround1_LocationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddingPlayGround1_LocationVC.swift; path = "../../../../Vie/Vie/Controller/App Functionality/AddingPlayGround1_LocationVC.swift"; sourceTree = "<group>"; };
 		E70BD01721DE1F1000DE0988 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		E70C3A0A21D3703400A0D968 /* HelperMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperMethods.swift; sourceTree = "<group>"; };
 		E70ED96C21AA728900000AAE /* PlayGroundServicesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayGroundServicesVC.swift; sourceTree = "<group>"; };
@@ -130,11 +133,13 @@
 		E7268E7A21DCE7AB009EB206 /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 		E727900721D2202600AE201F /* ProfilePersonalInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePersonalInfoVC.swift; sourceTree = "<group>"; };
 		E727900921D24B4B00AE201F /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
+		E737C54321F462A6003CD361 /* Vie.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Vie.entitlements; sourceTree = "<group>"; };
 		E73A7BDA21919CC900DBD0CB /* SocialSignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialSignUpVC.swift; sourceTree = "<group>"; };
 		E74155CD21A29CE20032FBAE /* MapCollectionViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCollectionViewVC.swift; sourceTree = "<group>"; };
 		E74155CF21A2A19C0032FBAE /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		E7442ACB21DB61EF0059CBE6 /* ReservationCellHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationCellHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		E7442ACD21DB888A0059CBE6 /* MyReservationDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReservationDetailsVC.swift; sourceTree = "<group>"; };
+		E752C3C921F7396400C458D2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E756A5A021DA05CD000F1023 /* FavoritesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesVC.swift; sourceTree = "<group>"; };
 		E756A5A221DA39F7000F1023 /* MyReservationsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReservationsVC.swift; sourceTree = "<group>"; };
 		E756A5A521DA3AA1000F1023 /* ReservationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationCell.swift; sourceTree = "<group>"; };
@@ -146,10 +151,10 @@
 		E76B486B21EB551300679D35 /* AddingPlayGround3_ServicesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddingPlayGround3_ServicesVC.swift; sourceTree = "<group>"; };
 		E76B486C21EB551300679D35 /* AddingPlayGround4_WorkdaysVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddingPlayGround4_WorkdaysVC.swift; sourceTree = "<group>"; };
 		E76B486D21EB551400679D35 /* AddingPlayGround2_InfoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddingPlayGround2_InfoVC.swift; sourceTree = "<group>"; };
-		E76B486E21EB551400679D35 /* AddingPlayGround1_LocationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddingPlayGround1_LocationVC.swift; path = "../../../../Vie/Vie/Controller/App Functionality/AddingPlayGround1_LocationVC.swift"; sourceTree = "<group>"; };
 		E76B487B21EB5ED100679D35 /* DayCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayCell.swift; sourceTree = "<group>"; };
 		E76B487E21EB5F2F00679D35 /* TimeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeCell.swift; sourceTree = "<group>"; };
 		E76CD74121CA65F70044C2C3 /* ReservationEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationEndPoint.swift; sourceTree = "<group>"; };
+		E7709A4121EC8E6F00359D0F /* AddingPlayGround5_InfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingPlayGround5_InfoVC.swift; sourceTree = "<group>"; };
 		E7790EA5219858E800A1D926 /* PlayGround.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayGround.swift; sourceTree = "<group>"; };
 		E7790EA7219862E000A1D926 /* PlaygroundEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaygroundEndPoint.swift; sourceTree = "<group>"; };
 		E78860EC21C90F0A00B5DC8C /* ReservationInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationInfoVC.swift; sourceTree = "<group>"; };
@@ -279,10 +284,11 @@
 				E7442ACD21DB888A0059CBE6 /* MyReservationDetailsVC.swift */,
 				E757CAB221DDFB0D000EA78B /* SearchVC.swift */,
 				E70BD01721DE1F1000DE0988 /* SettingsVC.swift */,
-				E76B486E21EB551400679D35 /* AddingPlayGround1_LocationVC.swift */,
+				E70A845521EB67BE00D4331F /* AddingPlayGround1_LocationVC.swift */,
 				E76B486D21EB551400679D35 /* AddingPlayGround2_InfoVC.swift */,
 				E76B486B21EB551300679D35 /* AddingPlayGround3_ServicesVC.swift */,
 				E76B486C21EB551300679D35 /* AddingPlayGround4_WorkdaysVC.swift */,
+				E7709A4121EC8E6F00359D0F /* AddingPlayGround5_InfoVC.swift */,
 				E7A857EC216C8009002683CD /* AppDelegate.swift */,
 			);
 			path = "App Functionality";
@@ -404,6 +410,7 @@
 		E7A857EB216C8009002683CD /* Vie */ = {
 			isa = PBXGroup;
 			children = (
+				E737C54321F462A6003CD361 /* Vie.entitlements */,
 				E7B68CD721B92B5200DDE71A /* Extensions */,
 				E7A8581A216C80B6002683CD /* Model */,
 				E7A8581B216C80C6002683CD /* View */,
@@ -412,6 +419,7 @@
 				C71383CF216E04D500784CDC /* Helper */,
 				E7A857F3216C800B002683CD /* Assets.xcassets */,
 				E7A857F5216C800B002683CD /* LaunchScreen.storyboard */,
+				E752C3C921F7396400C458D2 /* GoogleService-Info.plist */,
 				E7A857F8216C800B002683CD /* Info.plist */,
 				C71383CB216DEA3700784CDC /* credentials.plist */,
 			);
@@ -593,6 +601,17 @@
 					E7A857E8216C8009002683CD = {
 						CreatedOnToolsVersion = 9.4.1;
 						LastSwiftMigration = 1000;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.HotspotConfiguration = {
+								enabled = 0;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					E7A857FC216C800B002683CD = {
 						CreatedOnToolsVersion = 9.4.1;
@@ -632,6 +651,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7FFAFE421E4BC5200C5F392 /* ViewController.xib in Resources */,
+				E752C3CA21F7396400C458D2 /* GoogleService-Info.plist in Resources */,
 				E7A857F7216C800B002683CD /* LaunchScreen.storyboard in Resources */,
 				C71383CC216DEA3800784CDC /* credentials.plist in Resources */,
 				E70ED97621AA7BBE00000AAE /* ServiceCell.xib in Resources */,
@@ -694,9 +714,12 @@
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -707,9 +730,12 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -779,7 +805,6 @@
 			files = (
 				E76B486F21EB551400679D35 /* AddingPlayGround3_ServicesVC.swift in Sources */,
 				E756A70B21D10D75001CDE1A /* ProfileCell.swift in Sources */,
-				E76B487221EB551400679D35 /* AddingPlayGround1_LocationVC.swift in Sources */,
 				E79D3B1921B7CEE30043D643 /* SimilarPlayGroundCell.swift in Sources */,
 				E700E0CC21984B2200A0A899 /* HomeVC.swift in Sources */,
 				E7790EA8219862E000A1D926 /* PlaygroundEndPoint.swift in Sources */,
@@ -793,10 +818,12 @@
 				C71383DD216E16AD00784CDC /* HideKeyboardVC.swift in Sources */,
 				E727900821D2202600AE201F /* ProfilePersonalInfoVC.swift in Sources */,
 				E756A5A821DA41C9000F1023 /* Reservation.swift in Sources */,
+				E7709A4221EC8E6F00359D0F /* AddingPlayGround5_InfoVC.swift in Sources */,
 				E7AF32E121BD1D0C009B5244 /* FavoriteEndPoint.swift in Sources */,
 				E76B487121EB551400679D35 /* AddingPlayGround2_InfoVC.swift in Sources */,
 				E7AF32DF21BD12FB009B5244 /* PlayGroundReservationVC.swift in Sources */,
 				E79C2FFA21D8F22B00601B43 /* ChangePasswordVC.swift in Sources */,
+				E70A845621EB67BE00D4331F /* AddingPlayGround1_LocationVC.swift in Sources */,
 				E7E66B9821E76B9F00E44C74 /* SettingEndPoint.swift in Sources */,
 				E70ED96D21AA728900000AAE /* PlayGroundServicesVC.swift in Sources */,
 				E76B487C21EB5ED100679D35 /* DayCell.swift in Sources */,
@@ -1010,15 +1037,16 @@
 			baseConfigurationReference = 67A7FFB919536A63A723A155 /* Pods-Vie.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Vie/Vie.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KN53QSL78G;
+				DEVELOPMENT_TEAM = FK7QZYWXVD;
 				INFOPLIST_FILE = Vie/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.revival.Vie;
+				PRODUCT_BUNDLE_IDENTIFIER = com.revival.Vie1675;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1030,15 +1058,16 @@
 			baseConfigurationReference = CC69CECEDA1203139C64CF83 /* Pods-Vie.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Vie/Vie.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KN53QSL78G;
+				DEVELOPMENT_TEAM = FK7QZYWXVD;
 				INFOPLIST_FILE = Vie/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.revival.Vie;
+				PRODUCT_BUNDLE_IDENTIFIER = com.revival.Vie1675;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1052,7 +1081,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KN53QSL78G;
+				DEVELOPMENT_TEAM = FK7QZYWXVD;
 				INFOPLIST_FILE = VieTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1074,7 +1103,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KN53QSL78G;
+				DEVELOPMENT_TEAM = FK7QZYWXVD;
 				INFOPLIST_FILE = VieTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1095,7 +1124,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KN53QSL78G;
+				DEVELOPMENT_TEAM = FK7QZYWXVD;
 				INFOPLIST_FILE = VieUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1116,7 +1145,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KN53QSL78G;
+				DEVELOPMENT_TEAM = FK7QZYWXVD;
 				INFOPLIST_FILE = VieUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

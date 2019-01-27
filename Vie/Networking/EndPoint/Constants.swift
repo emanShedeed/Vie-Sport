@@ -32,6 +32,20 @@ struct K {
         static let oldPassword="OldPassword"
         static let newPassword="NewPassword"
         static let reservationID="ReservationID"
+        static let DistrictNameByGM="DistrictNameByGM"
+        static let CityNameByGM="CityNameByGM"
+        static let DistrictID="DistrictID"
+        static let DimensionID="DimensionID"
+        static let PlayGroundTypeID="PlayGroundTypeID"
+        static let ReservationTypeID="ReservationTypeID"
+        static let IsMaintance="IsMaintance"
+        static let DraftPlayGroundServices="DraftPlayGroundServices"
+        static let DraftPlayGroundDays="DraftPlayGroundDays"
+        static let PlayGroundName="PlayGroundName"
+        static let ResbonsibleName="ResbonsibleName"
+        static let ContactNumber="ContactNumber"
+        static let Price="Price"
+        static let Remarks="Remarks"
     }
 }
 

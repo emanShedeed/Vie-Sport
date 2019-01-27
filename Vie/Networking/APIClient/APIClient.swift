@@ -308,4 +308,16 @@ static func CheckEmail(email: String)->DataRequest? {
         catch{}
         return nil
     }
-}
+    static func AddPlayGround(accessToken:String,dict:[String:Any])->DataRequest?{
+        do{
+            var urlRequest = try playgroundEndPoint.AddByApp(playGroundInfoDict: dict).getURL()
+            var urlcomponents=URLComponents(string: (urlRequest.url?.absoluteString)!)
+            urlcomponents?.queryItems=[URLQueryItem(name:"AccessToken", value: accessToken)]
+            urlRequest.url=urlcomponents?.url
+            let request=Alamofire.request(urlRequest
+                ).validate(statusCode: 200..<501)
+            return request
+        }
+        catch{}
+        return nil
+    }}

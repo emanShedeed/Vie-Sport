@@ -60,6 +60,17 @@ class SettingsVC: UIViewController ,UITableViewDelegate,UITableViewDataSource {
             present(activityViewController, animated: true, completion: nil)
             
         }
+        if(indexPath.row==5){
+            let email = "info@vie-sport.com"
+            let coded="mailto:\(email)?subject=تطبيق Vie".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+            if let url = URL(string: coded!) {
+                if #available(iOS 10.0, *) {
+                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                } else {
+                    UIApplication.shared.openURL(url)
+                }
+            }
+        }
     }
     override func viewWillDisappear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(false, animated: false)
