@@ -11,7 +11,6 @@ struct K {
         static let Favorites="Favorites/"
         static let Setting="Settings/"
     }
-    
     struct APIParameterKey {
         static let email="UserName"
         static let password="Password"
