@@ -2,7 +2,7 @@ import Foundation
 
 struct K {
     struct ProductionServer {
-        static let baseURL = "http://test100.revival.one/api/ios/v2/"
+        static let baseURL = ""//Hidden for security
         static let user="users/"
         static let OwnersBusiness="OwnersBusiness/"
         static let PlayGround="PlayGrounds/"
